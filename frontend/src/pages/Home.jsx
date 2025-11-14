@@ -120,13 +120,13 @@ const Home = () => {
           
           <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
             <p>
-              You're a CEO. You're running payroll, managing customers, putting out fires, and trying to grow. You know AI could help. You've heard the stories. The productivity gains. The speed. The accuracy.
+              You&apos;re a CEO. You&apos;re running payroll, managing customers, putting out fires, and trying to grow. You know AI could help. You&apos;ve heard the stories. The productivity gains. The speed. The accuracy.
             </p>
             <p>
-              But here's the problem: <span className="text-white font-semibold">You don't have time to become an AI expert.</span> And your team doesn't either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you're left wondering when you'll ever catch up.
+              But here&apos;s the problem: <span className="text-white font-semibold">You don&apos;t have time to become an AI expert.</span> And your team doesn&apos;t either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you&apos;re left wondering when you&apos;ll ever catch up.
             </p>
             <p>
-              That's exactly why we built LevReg.AI. We don't teach theory. We don't sell you a course and wish you luck. <span className="text-blue-400 font-semibold">We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
+              That&apos;s exactly why we built LevReg.AI. We don&apos;t teach theory. We don&apos;t sell you a course and wish you luck. <span className="text-blue-400 font-semibold">We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 my-8 pt-8">
