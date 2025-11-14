@@ -45,13 +45,15 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
+                to={item.href}
+                className={`text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium ${
+                  location.pathname === item.href ? 'text-blue-400' : ''
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
