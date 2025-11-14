@@ -23,7 +23,7 @@ const Home = () => {
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Systems That Stick',
-      description: 'We don\'t just train your people—we install workflows, dashboards, and prompts that become part of how your business runs.'
+      description: 'We don't just train your people—we install workflows, dashboards, and prompts that become part of how your business runs.'
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
