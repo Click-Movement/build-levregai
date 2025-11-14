@@ -18,7 +18,7 @@ const Home = () => {
     {
       icon: <Users className="w-8 h-8" />,
       title: 'Employees Who Level Up',
-      description: 'Your team doesn\'t get replaced. They get equipped. They do better work, feel more capable, and drive more value.'
+      description: 'Your team doesn't get replaced. They get equipped. They do better work, feel more capable, and drive more value.'
     },
     {
       icon: <Shield className="w-8 h-8" />,
