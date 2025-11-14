@@ -79,11 +79,11 @@ const Home = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your Team Knows Their Job.
-            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-              Now Teach Them to Do It 10x Faster.
+              Triple Your Team&apos;s Output
             </span>
+            <br />
+            Without Hiring a Single Person
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
