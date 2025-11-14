@@ -21,6 +21,11 @@ const Home = () => {
       description: "Your team doesn't get replaced. They get equipped. They do better work, feel more capable, and drive more value."
     },
     {
+      icon: <BarChart className="w-8 h-8" />,
+      title: 'Profit Margins Get Better',
+      description: 'Do more with the same team. Lower cost per output. Higher revenue per employee. Better margins without sacrificing quality.'
+    },
+    {
       icon: <Shield className="w-8 h-8" />,
       title: 'Systems That Stick',
       description: "We don't just train your people—we install workflows, dashboards, and prompts that become part of how your business runs."
