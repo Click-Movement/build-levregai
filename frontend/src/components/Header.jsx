@@ -86,14 +86,16 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-800 pt-4">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 py-2"
+                  to={item.href}
+                  className={`text-gray-300 hover:text-blue-400 transition-colors duration-200 py-2 ${
+                    location.pathname === item.href ? 'text-blue-400' : ''
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <Button 
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-2"
