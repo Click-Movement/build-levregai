@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Target, Heart, Lightbulb, CheckCircle, Clock, TrendingUp } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const values = [
@@ -36,38 +37,38 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
       <section className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/10 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/30 border border-blue-500/20 mb-8">
-            <Heart className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-300">Our Story</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
+            <Heart className="w-4 h-4 text-blue-600" />
+            <span className="text-sm text-blue-700 font-medium">Our Story</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            We Built <span className="text-blue-400">LevReg.AI</span> Because CEOs
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-black">
+            We Built <span className="text-blue-600">LevReg.AI</span> Because CEOs
             <br />
             Shouldn&apos;t Have to Become AI Experts
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
             The story behind the mission to make every small business AI-first.
           </p>
         </div>
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-black">
             It Started with a
-            <span className="text-blue-400"> Simple Question</span>
+            <span className="text-blue-600"> Simple Question</span>
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
-            <p className="text-2xl font-semibold text-white text-center mb-8">
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <p className="text-2xl font-semibold text-black text-center mb-8">
               "Why are small businesses getting left behind?"
             </p>
             
@@ -80,10 +81,10 @@ const About = () => {
             </p>
             
             <p>
-              Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <span className="text-white font-semibold">That&apos;s not training. That&apos;s abandonment.</span>
+              Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <span className="text-black font-semibold">That&apos;s not training. That&apos;s abandonment.</span>
             </p>
             
-            <p className="text-xl text-white font-semibold pt-4">
+            <p className="text-xl text-black font-semibold pt-4">
               So we built something different. LevReg.AI isn&apos;t a course. It&apos;s not a tool. It&apos;s a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.
             </p>
           </div>
@@ -91,15 +92,15 @@ const About = () => {
       </section>
 
       {/* AI-First Vision */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-black">
             What It Means to Be
-            <span className="text-blue-400"> AI-First</span>
+            <span className="text-blue-600"> AI-First</span>
           </h2>
           
-          <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl p-8 md:p-12">
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-12">
+            <p className="text-xl text-gray-700 leading-relaxed mb-6">
               An AI-first company doesn&apos;t replace humans with robots. It amplifies human capability with intelligent systems.
             </p>
             
@@ -111,13 +112,13 @@ const About = () => {
                 'Your employees feel empowered, not overwhelmed.'
               ].map((text, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <span className="text-gray-300 text-lg">{text}</span>
+                  <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700 text-lg">{text}</span>
                 </div>
               ))}
             </div>
             
-            <p className="text-xl text-white font-semibold mt-8 pt-8 border-t border-gray-800">
+            <p className="text-xl text-black font-semibold mt-8 pt-8 border-t border-gray-200">
               That&apos;s what we&apos;re building. One small business at a time.
             </p>
           </div>
@@ -125,31 +126,31 @@ const About = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Technology <span className="text-blue-400">Enhances People.</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+            Technology <span className="text-blue-600">Enhances People.</span>
             <br />
             It Doesn&apos;t Replace Them.
           </h2>
           
-          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
             We believe in a future where AI makes work better—not scarcer. Where employees feel more capable, not more anxious. Where small businesses compete on speed and intelligence, not just budget. Where the tools are so good, so intuitive, and so specific to your needs that using them feels like an unfair advantage.
           </p>
           
-          <p className="text-2xl text-white font-bold mt-8">
+          <p className="text-2xl text-black font-bold mt-8">
             That&apos;s not a distant dream. That&apos;s what we&apos;re installing right now.
           </p>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-            What <span className="text-blue-400">Drives Us</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+            What <span className="text-blue-600">Drives Us</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             The principles that guide everything we build
           </p>
           
@@ -157,14 +158,14 @@ const About = () => {
             {values.map((value, idx) => (
               <Card 
                 key={idx} 
-                className="bg-[#0f0f0f] border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
               >
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
                     {value.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">{value.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-black">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -173,67 +174,68 @@ const About = () => {
       </section>
 
       {/* Why Now Section */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/30 border border-red-500/20 mb-8">
-            <Clock className="w-4 h-4 text-red-400" />
-            <span className="text-sm text-red-300">Time Is Running Out</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 mb-8">
+            <Clock className="w-4 h-4 text-red-600" />
+            <span className="text-sm text-red-700 font-medium">Time Is Running Out</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
             Small Businesses Can&apos;t
             <br />
-            <span className="text-blue-400">Afford to Wait</span>
+            <span className="text-blue-600">Afford to Wait</span>
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed mb-12">
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-12">
             <p>
               AI isn&apos;t coming. It&apos;s here. Your competitors are using it. Your customers expect the speed and accuracy it enables. Your employees are burning out doing work that could be automated.
             </p>
-            <p className="text-xl text-white font-semibold">
+            <p className="text-xl text-black font-semibold">
               The gap between AI-enabled businesses and everyone else is widening every day.
             </p>
-            <p className="text-2xl text-white font-bold pt-4">
+            <p className="text-2xl text-black font-bold pt-4">
               You can close it. But only if you act now.
             </p>
           </div>
           
-          <Button 
-            size="lg" 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-            onClick={scrollToContact}
-          >
-            Book Your Free Discovery Call
-            <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/discovery">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+            >
+              Book Your Free Discovery Call
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            The <span className="text-blue-400">Impact</span> We&apos;re Making
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-black">
+            The <span className="text-blue-600">Impact</span> We&apos;re Making
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-xl bg-[#0f0f0f] border border-gray-800">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-3">
+            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
                 3x
               </div>
-              <div className="text-gray-400">Average productivity increase</div>
+              <div className="text-gray-600">Average productivity increase</div>
             </div>
-            <div className="text-center p-8 rounded-xl bg-[#0f0f0f] border border-gray-800">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-3">
+            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
                 30 Days
               </div>
-              <div className="text-gray-400">To full ROI for most clients</div>
+              <div className="text-gray-600">To full ROI for most clients</div>
             </div>
-            <div className="text-center p-8 rounded-xl bg-[#0f0f0f] border border-gray-800">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-3">
+            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
                 100%
               </div>
-              <div className="text-gray-400">Focused on small businesses</div>
+              <div className="text-gray-600">Focused on small businesses</div>
             </div>
           </div>
         </div>

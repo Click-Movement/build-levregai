@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle, Headphones, Megaphone, TrendingUp, FileText, Settings, Users, Zap, Target, BarChart } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const roles = [
@@ -77,44 +78,44 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
       <section className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/10 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/30 border border-blue-500/20 mb-8">
-            <Zap className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-300">Programs & Training</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
+            <Zap className="w-4 h-4 text-blue-600" />
+            <span className="text-sm text-blue-700 font-medium">Programs & Training</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-black">
             AI Employee Enablement
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">
               Programs
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
             Role-specific training and systems that make your entire team more productive—immediately.
           </p>
         </div>
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 px-6 bg-[#0f0f0f]">
+      <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
             This Isn&apos;t a Course.
             <br />
-            <span className="text-blue-400">It&apos;s a Business Upgrade.</span>
+            <span className="text-blue-600">It&apos;s a Business Upgrade.</span>
           </h2>
           
-          <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
             <p>
               Most AI training teaches theory. LevReg.AI installs systems. We don&apos;t hand your team a chatbot and say "good luck." We build workflow-specific, role-specific, use-case-specific AI infrastructure designed around what your employees actually do every day. Then we train them to use it. Hands-on. Real scenarios. Immediate results.
             </p>
-            <p className="text-xl font-semibold text-white pt-4">
+            <p className="text-xl font-semibold text-black pt-4">
               By the time we&apos;re done, your team isn&apos;t just AI-aware—they&apos;re AI-enabled.
             </p>
           </div>
@@ -122,13 +123,13 @@ const Services = () => {
       </section>
 
       {/* Role-Specific Training */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
             Role-Specific
-            <span className="text-blue-400"> AI Enablement</span>
+            <span className="text-blue-600"> AI Enablement</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
             Custom AI systems built for every role in your business
           </p>
           
@@ -136,29 +137,29 @@ const Services = () => {
             {roles.map((role, idx) => (
               <Card 
                 key={idx} 
-                className="bg-[#0f0f0f] border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
               >
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${role.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
                     {role.icon}
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4 text-white">{role.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-black">{role.title}</h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-red-400 font-semibold mb-2 text-sm uppercase tracking-wide">The Problem</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">{role.problem}</p>
+                      <h4 className="text-red-500 font-semibold mb-2 text-sm uppercase tracking-wide">The Problem</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">{role.problem}</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-blue-400 font-semibold mb-2 text-sm uppercase tracking-wide">The Solution</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">{role.solution}</p>
+                      <h4 className="text-blue-600 font-semibold mb-2 text-sm uppercase tracking-wide">The Solution</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">{role.solution}</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-green-400 font-semibold mb-2 text-sm uppercase tracking-wide">The Result</h4>
-                      <p className="text-gray-300 text-sm font-medium leading-relaxed">{role.result}</p>
+                      <h4 className="text-green-600 font-semibold mb-2 text-sm uppercase tracking-wide">The Result</h4>
+                      <p className="text-gray-700 text-sm font-medium leading-relaxed">{role.result}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -169,12 +170,12 @@ const Services = () => {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-            What You <span className="text-blue-400">Actually Get</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+            What You <span className="text-blue-600">Actually Get</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-12">
+          <p className="text-xl text-gray-600 text-center mb-12">
             This isn&apos;t vaporware. When you work with LevReg.AI, you receive:
           </p>
           
@@ -182,10 +183,10 @@ const Services = () => {
             {deliverables.map((item, idx) => (
               <div 
                 key={idx}
-                className="flex items-start gap-4 p-6 rounded-xl bg-[#0a0a0a] border border-gray-800 hover:border-blue-500/50 transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-sm"
               >
-                <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                <p className="text-gray-300 leading-relaxed">{item}</p>
+                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <p className="text-gray-700 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -193,12 +194,12 @@ const Services = () => {
       </section>
 
       {/* Productivity Metrics */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-            The Numbers <span className="text-blue-400">Don&apos;t Lie</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+            The Numbers <span className="text-blue-600">Don&apos;t Lie</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-12">
+          <p className="text-xl text-gray-600 text-center mb-12">
             Our clients see measurable gains across every function:
           </p>
           
@@ -206,46 +207,47 @@ const Services = () => {
             {metrics.map((metric, idx) => (
               <div 
                 key={idx}
-                className="text-center p-8 rounded-xl bg-[#0f0f0f] border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200 hover:border-blue-400 transition-all duration-300 group"
               >
-                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-3">
+                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
                   {metric.value}
                 </div>
-                <div className="text-gray-400 text-sm leading-tight">{metric.label}</div>
+                <div className="text-gray-600 text-sm leading-tight">{metric.label}</div>
               </div>
             ))}
           </div>
           
-          <p className="text-center text-xl text-white font-semibold mt-12">
+          <p className="text-center text-xl text-black font-semibold mt-12">
             These aren&apos;t projections. They&apos;re results.
           </p>
         </div>
       </section>
 
       {/* Pricing CTA Section */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Investment That Is a
-            <span className="text-blue-400"> Multiplier</span>
+            <span className="text-blue-600"> Multiplier</span>
           </h2>
           
-          <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+          <p className="text-xl text-gray-700 mb-6 leading-relaxed">
             When your team works 60% faster, produces better work, and makes fewer mistakes, the ROI is immediate. Most clients see payback within 30 days.
           </p>
           
-          <p className="text-lg text-gray-400 mb-12">
+          <p className="text-lg text-gray-600 mb-12">
             Want specifics? Let&apos;s talk about your team, your workflows, and your goals.
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-            onClick={scrollToContact}
-          >
-            Get a Custom Quote
-            <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/discovery">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+            >
+              Get a Custom Quote
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
