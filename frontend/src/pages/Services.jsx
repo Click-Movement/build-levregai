@@ -127,13 +127,13 @@ const Services = () => {
       </section>
 
       {/* Role-Specific Training */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
             Role-Specific
-            <span className="text-blue-600"> AI Enablement</span>
+            <span className={theme.textAccent}> AI Enablement</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
             Custom AI systems built for every role in your business
           </p>
           
@@ -141,29 +141,29 @@ const Services = () => {
             {roles.map((role, idx) => (
               <Card 
                 key={idx} 
-                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
+                className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${role.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
                     {role.icon}
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4 text-black">{role.title}</h3>
+                  <h3 className={`text-2xl font-bold mb-4 ${theme.textPrimary}`}>{role.title}</h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-red-500 font-semibold mb-2 text-sm uppercase tracking-wide">The Problem</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{role.problem}</p>
+                      <h4 className={`${isDark ? 'text-red-400' : 'text-red-500'} font-semibold mb-2 text-sm uppercase tracking-wide`}>The Problem</h4>
+                      <p className={`${theme.textTertiary} text-sm leading-relaxed`}>{role.problem}</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-blue-600 font-semibold mb-2 text-sm uppercase tracking-wide">The Solution</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{role.solution}</p>
+                      <h4 className={`${theme.textAccent} font-semibold mb-2 text-sm uppercase tracking-wide`}>The Solution</h4>
+                      <p className={`${theme.textTertiary} text-sm leading-relaxed`}>{role.solution}</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-green-600 font-semibold mb-2 text-sm uppercase tracking-wide">The Result</h4>
-                      <p className="text-gray-700 text-sm font-medium leading-relaxed">{role.result}</p>
+                      <h4 className={`${isDark ? 'text-green-400' : 'text-green-600'} font-semibold mb-2 text-sm uppercase tracking-wide`}>The Result</h4>
+                      <p className={`${theme.textSecondary} text-sm font-medium leading-relaxed`}>{role.result}</p>
                     </div>
                   </div>
                 </CardContent>
