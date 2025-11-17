@@ -41,38 +41,38 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
       {/* Hero Section */}
       <section className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
+        <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
-            <Heart className="w-4 h-4 text-blue-600" />
-            <span className="text-sm text-blue-700 font-medium">Our Story</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
+            <Heart className={`w-4 h-4 ${theme.badgeIcon}`} />
+            <span className={`text-sm ${theme.badgeText} font-medium`}>Our Story</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-black">
-            We Built <span className="text-blue-600">LevReg.AI</span> Because CEOs
+          <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
+            We Built <span className={theme.textAccent}>LevReg.AI</span> Because CEOs
             <br />
             Shouldn&apos;t Have to Become AI Experts
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
             The story behind the mission to make every small business AI-first.
           </p>
         </div>
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${theme.textPrimary}`}>
             It Started with a
-            <span className="text-blue-600"> Simple Question</span>
+            <span className={theme.textAccent}> Simple Question</span>
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p className="text-2xl font-semibold text-black text-center mb-8">
+          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed`}>
+            <p className={`text-2xl font-semibold ${theme.textPrimary} text-center mb-8`}>
               "Why are small businesses getting left behind?"
             </p>
             
@@ -85,10 +85,10 @@ const About = () => {
             </p>
             
             <p>
-              Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <span className="text-black font-semibold">That&apos;s not training. That&apos;s abandonment.</span>
+              Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <span className={`${theme.textPrimary} font-semibold`}>That&apos;s not training. That&apos;s abandonment.</span>
             </p>
             
-            <p className="text-xl text-black font-semibold pt-4">
+            <p className={`text-xl ${theme.textPrimary} font-semibold pt-4`}>
               So we built something different. LevReg.AI isn&apos;t a course. It&apos;s not a tool. It&apos;s a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.
             </p>
           </div>
