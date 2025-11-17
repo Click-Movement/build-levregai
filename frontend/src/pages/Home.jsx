@@ -268,14 +268,14 @@ const Home = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="contact" className="py-24 px-6 bg-gray-50">
+      <section id="contact" className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
             Stop Waiting.
-            <span className="text-blue-600"> Start Winning.</span>
+            <span className={theme.textAccent}> Start Winning.</span>
           </h2>
           
-          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className={`text-xl ${theme.textSecondary} mb-12 max-w-2xl mx-auto leading-relaxed`}>
             Your competitors are already using AI. Your team is already overwhelmed. The only question is: how long will you wait to close the gap?
           </p>
           
@@ -289,7 +289,7 @@ const Home = () => {
             </Button>
           </Link>
           
-          <p className="text-gray-600">
+          <p className={theme.textTertiary}>
             Free discovery session. No pressure. Just clarity on what AI can do for your business.
           </p>
         </div>
