@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Zap, Target, Users, TrendingUp, BarChart, CheckCircle, Sparkles, Clock, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const benefits = [
@@ -72,42 +73,43 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/10 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
         </div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/30 border border-blue-500/20 mb-8">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-300">AI Skills Development</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <span className="text-sm text-blue-700 font-medium">AI Skills Development</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Your Team. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Amplified By Ai.</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
+            Your Team. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Amplified By Ai.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
             LevReg.AI helps install custom AI systems for every role in your business, so your employees work smarter, faster, and more accurately.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
-              onClick={() => scrollToSection('contact')}
-            >
-              Get Your AI Enablement Plan
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/discovery">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
+              >
+                Get Your AI Enablement Plan
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white px-8 py-6 text-lg transition-all duration-300"
+              className="border-blue-300 hover:border-blue-500 hover:bg-blue-50 text-black px-8 py-6 text-lg transition-all duration-300"
               onClick={() => scrollToSection('how-it-works')}
             >
               See How It Works
@@ -117,21 +119,21 @@ const Home = () => {
       </section>
 
       {/* Origin Story Section */}
-      <section id="origin" className="py-24 px-6 bg-[#0f0f0f]">
+      <section id="origin" className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            Why <span className="text-blue-400">LevReg.AI</span> Exists
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-black">
+            Why <span className="text-blue-600">LevReg.AI</span> Exists
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
-              You&apos;re a CEO. You&apos;re running payroll, managing customers, putting out fires, and trying to grow. You know AI could help. You&apos;ve heard the stories. The productivity gains. The speed. The accuracy.
+              You're a CEO. You're running payroll, managing customers, putting out fires, and trying to grow. You know AI could help. You've heard the stories. The productivity gains. The speed. The accuracy.
             </p>
             <p>
-              But here&apos;s the problem: <span className="text-white font-semibold">You don&apos;t have time to become an AI expert.</span> And your team doesn&apos;t either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you&apos;re left wondering when you&apos;ll ever catch up.
+              But here's the problem: <span className="text-black font-semibold">You don't have time to become an AI expert.</span> And your team doesn't either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you're left wondering when you'll ever catch up.
             </p>
             <p>
-              That&apos;s exactly why we built LevReg.AI. We don&apos;t teach theory. We don&apos;t sell you a course and wish you luck. <span className="text-blue-400 font-semibold">We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
+              That's exactly why we built LevReg.AI. We don't teach theory. We don't sell you a course and wish you luck. <span className="text-blue-600 font-semibold">We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 my-8 pt-8">
@@ -141,14 +143,14 @@ const Home = () => {
                 'Sales gets prospecting tools and follow-up workflows.',
                 'Operations gets process documentation and error-catching systems.'
               ].map((text, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-blue-950/20 border border-blue-500/10">
-                  <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{text}</span>
+                <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-blue-50 border border-blue-100">
+                  <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{text}</span>
                 </div>
               ))}
             </div>
             
-            <p className="text-xl font-semibold text-white pt-4">
+            <p className="text-xl font-semibold text-black pt-4">
               We handle the training. We build the systems. Your team shows up and starts winning.
             </p>
           </div>
@@ -156,13 +158,13 @@ const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
             What Happens When Your Team Goes
-            <span className="text-blue-400"> AI-First</span>
+            <span className="text-blue-600"> AI-First</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             Transform your entire organization with measurable, immediate results
           </p>
           
@@ -170,14 +172,14 @@ const Home = () => {
             {benefits.map((benefit, idx) => (
               <Card 
                 key={idx} 
-                className="bg-[#0f0f0f] border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
               >
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 rounded-xl bg-blue-950/30 flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-950/50 transition-colors duration-300">
+                  <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-100 transition-colors duration-300">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-black">{benefit.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -186,13 +188,13 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-24 px-6 bg-[#0f0f0f]">
+      <section id="how-it-works" className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
             From Overwhelmed to AI-Enabled
-            <span className="text-blue-400"> in 4 Steps</span>
+            <span className="text-blue-600"> in 4 Steps</span>
           </h2>
-          <p className="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             A proven process that transforms your team from AI-curious to AI-powered
           </p>
           
@@ -200,60 +202,61 @@ const Home = () => {
             {steps.map((step, idx) => (
               <div 
                 key={idx}
-                className="relative p-8 rounded-2xl bg-[#0a0a0a] border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="relative p-8 rounded-2xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
               >
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-2xl font-bold shadow-lg shadow-blue-600/30">
+                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white">
                   {step.number}
                 </div>
                 <div className="mt-6">
-                  <h3 className="text-2xl font-bold mb-3 text-white">{step.title}</h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">{step.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-black">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
           
           <div className="text-center mt-16">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group"
-              onClick={() => scrollToSection('contact')}
-            >
-              Start Your AI Transformation
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/discovery">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group"
+              >
+                Start Your AI Transformation
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Proof & Trust Section */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-            Built for <span className="text-blue-400">Real Businesses</span>,
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-black">
+            Built for <span className="text-blue-600">Real Businesses</span>,
             <br />Not Tech Companies
           </h2>
           
-          <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl p-8 md:p-12">
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-12">
+            <p className="text-xl text-gray-700 leading-relaxed mb-8">
               LevReg.AI was designed for small business owners who don't have time to learn AI, but need their teams to use it. We've worked with customer support teams drowning in tickets, marketing departments stuck on repetitive tasks, sales teams losing deals to slow follow-up, and operations managers buried in manual workflows.
             </p>
-            <p className="text-xl text-white font-semibold">
+            <p className="text-xl text-black font-semibold">
               The result? Teams that move faster, work smarter, and deliver better outcomes without hiring more people or working longer hours.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-800">
+            <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">40-60%</div>
-                <div className="text-gray-400">Time Saved on Tasks</div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">40-60%</div>
+                <div className="text-gray-600">Time Saved on Tasks</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">10-20hrs</div>
-                <div className="text-gray-400">Saved Per Employee/Week</div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">10-20hrs</div>
+                <div className="text-gray-600">Saved Per Employee/Week</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">30 Days</div>
-                <div className="text-gray-400">to Full ROI</div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">30 Days</div>
+                <div className="text-gray-600">to Full ROI</div>
               </div>
             </div>
           </div>
@@ -261,26 +264,28 @@ const Home = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="contact" className="py-24 px-6 bg-[#0f0f0f]">
+      <section id="contact" className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
             Stop Waiting.
-            <span className="text-blue-400"> Start Winning.</span>
+            <span className="text-blue-600"> Start Winning.</span>
           </h2>
           
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
             Your competitors are already using AI. Your team is already overwhelmed. The only question is: how long will you wait to close the gap?
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
-          >
-            Book Your AI Enablement Call
-            <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/discovery">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
+            >
+              Book Your AI Enablement Call
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
           
-          <p className="text-gray-400">
+          <p className="text-gray-600">
             Free discovery session. No pressure. Just clarity on what AI can do for your business.
           </p>
         </div>
