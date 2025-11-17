@@ -174,12 +174,12 @@ const Services = () => {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
-            What You <span className="text-blue-600">Actually Get</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            What You <span className={theme.textAccent}>Actually Get</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
             This isn&apos;t vaporware. When you work with LevReg.AI, you receive:
           </p>
           
@@ -187,10 +187,10 @@ const Services = () => {
             {deliverables.map((item, idx) => (
               <div 
                 key={idx}
-                className="flex items-start gap-4 p-6 rounded-xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-sm"
+                className={`flex items-start gap-4 p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}
               >
-                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 leading-relaxed">{item}</p>
+                <CheckCircle className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
+                <p className={`${theme.textSecondary} leading-relaxed`}>{item}</p>
               </div>
             ))}
           </div>
@@ -198,12 +198,12 @@ const Services = () => {
       </section>
 
       {/* Productivity Metrics */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
-            The Numbers <span className="text-blue-600">Don&apos;t Lie</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            The Numbers <span className={theme.textAccent}>Don&apos;t Lie</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
             Our clients see measurable gains across every function:
           </p>
           
@@ -211,35 +211,35 @@ const Services = () => {
             {metrics.map((metric, idx) => (
               <div 
                 key={idx}
-                className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200 hover:border-blue-400 transition-all duration-300 group"
+                className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group`}
               >
-                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
+                <div className={`text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
                   {metric.value}
                 </div>
-                <div className="text-gray-600 text-sm leading-tight">{metric.label}</div>
+                <div className={`${theme.textTertiary} text-sm leading-tight`}>{metric.label}</div>
               </div>
             ))}
           </div>
           
-          <p className="text-center text-xl text-black font-semibold mt-12">
+          <p className={`text-center text-xl ${theme.textPrimary} font-semibold mt-12`}>
             These aren&apos;t projections. They&apos;re results.
           </p>
         </div>
       </section>
 
       {/* Pricing CTA Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme.textPrimary}`}>
             Investment That Is a
-            <span className="text-blue-600"> Multiplier</span>
+            <span className={theme.textAccent}> Multiplier</span>
           </h2>
           
-          <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+          <p className={`text-xl ${theme.textSecondary} mb-6 leading-relaxed`}>
             When your team works 60% faster, produces better work, and makes fewer mistakes, the ROI is immediate. Most clients see payback within 30 days.
           </p>
           
-          <p className="text-lg text-gray-600 mb-12">
+          <p className={`text-lg ${theme.textTertiary} mb-12`}>
             Want specifics? Let&apos;s talk about your team, your workflows, and your goals.
           </p>
           
