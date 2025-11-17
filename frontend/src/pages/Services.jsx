@@ -73,10 +73,7 @@ const Services = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = '/discovery';
   };
 
   return (
