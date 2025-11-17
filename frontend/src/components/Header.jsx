@@ -26,7 +26,7 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-gray-800/50' 
+          ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm' 
           : 'bg-transparent'
       }`}
     >
@@ -47,8 +47,8 @@ const Header = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className={`text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium ${
-                  location.pathname === item.href ? 'text-blue-400' : ''
+                className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm font-medium ${
+                  location.pathname === item.href ? 'text-blue-600' : ''
                 }`}
               >
                 {item.label}
@@ -69,7 +69,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-black p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,14 +78,14 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-800 pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`text-gray-300 hover:text-blue-400 transition-colors duration-200 py-2 ${
-                    location.pathname === item.href ? 'text-blue-400' : ''
+                  className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2 ${
+                    location.pathname === item.href ? 'text-blue-600' : ''
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

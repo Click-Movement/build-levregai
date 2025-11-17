@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0a0a0a] border-t border-gray-800">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
@@ -28,23 +28,23 @@ const Footer = () => {
               alt="LevReg.AI" 
               className="h-10 w-auto mb-4"
             />
-            <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+            <p className="text-gray-600 text-sm leading-relaxed max-w-md">
               LevReg.AI helps small businesses become AI-first by training employees to use role-specific AI systems for speed, accuracy, and efficiency.
             </p>
-            <p className="text-blue-400 text-sm font-semibold mt-4">
+            <p className="text-blue-600 text-sm font-semibold mt-4">
               Your team. Amplified by AI.
             </p>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-black font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </a>
@@ -55,13 +55,13 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-black font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </a>
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
             © {currentYear} LevReg.AI. All rights reserved.
           </p>
@@ -80,21 +80,21 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
