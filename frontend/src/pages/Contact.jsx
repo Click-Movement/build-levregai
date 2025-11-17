@@ -87,14 +87,14 @@ const Contact = () => {
       </section>
 
       {/* What Happens on the Call */}
-      <section className="py-16 px-6 bg-[#0f0f0f]">
+      <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
             Here&apos;s What Happens
-            <span className="text-blue-400"> on the Call</span>
+            <span className="text-blue-600"> on the Call</span>
           </h2>
           
-          <p className="text-xl text-gray-400 text-center mb-12">
+          <p className="text-xl text-gray-600 text-center mb-12">
             This isn&apos;t a sales pitch. It&apos;s a strategy session. We&apos;ll talk about:
           </p>
           
@@ -102,15 +102,15 @@ const Contact = () => {
             {callDetails.map((detail, idx) => (
               <div 
                 key={idx}
-                className="flex items-start gap-4 p-6 rounded-xl bg-[#0a0a0a] border border-gray-800 hover:border-blue-500/50 transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-sm"
               >
-                <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                <p className="text-gray-300 leading-relaxed">{detail}</p>
+                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <p className="text-gray-700 leading-relaxed">{detail}</p>
               </div>
             ))}
           </div>
           
-          <p className="text-xl text-white font-semibold text-center">
+          <p className="text-xl text-black font-semibold text-center">
             You&apos;ll walk away with clarity. Whether you work with us or not, you&apos;ll know exactly what AI can do for your business.
           </p>
         </div>
