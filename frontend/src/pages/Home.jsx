@@ -84,10 +84,10 @@ const Home = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            We Help Your Team Use AI To
+            Your Team.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-              Do Their Best Work Every Day.
+              Amplified By AI.
             </span>
           </h1>
           
