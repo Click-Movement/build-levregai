@@ -3,8 +3,12 @@ import { ArrowRight, CheckCircle, Headphones, Megaphone, TrendingUp, FileText, S
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import { getThemeClasses } from '../utils/themeClasses';
 
 const Services = () => {
+  const { isDark } = useTheme();
+  const theme = getThemeClasses(isDark);
   const roles = [
     {
       icon: <Headphones className="w-8 h-8" />,
