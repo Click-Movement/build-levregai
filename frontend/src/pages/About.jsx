@@ -149,12 +149,12 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
-            What <span className="text-blue-600">Drives Us</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            What <span className={theme.textAccent}>Drives Us</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
             The principles that guide everything we build
           </p>
           
@@ -162,14 +162,14 @@ const About = () => {
             {values.map((value, idx) => (
               <Card 
                 key={idx} 
-                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
+                className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
                     {value.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-black">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{value.description}</p>
+                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>{value.title}</h3>
+                  <p className={`${theme.textTertiary} leading-relaxed text-lg`}>{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -178,27 +178,27 @@ const About = () => {
       </section>
 
       {/* Why Now Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 mb-8">
-            <Clock className="w-4 h-4 text-red-600" />
-            <span className="text-sm text-red-700 font-medium">Time Is Running Out</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-red-950/30 border-red-500/20' : 'bg-red-50 border-red-200'} border mb-8`}>
+            <Clock className={`w-4 h-4 ${isDark ? 'text-red-400' : 'text-red-600'}`} />
+            <span className={`text-sm ${isDark ? 'text-red-300' : 'text-red-700'} font-medium`}>Time Is Running Out</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black">
+          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
             Small Businesses Can&apos;t
             <br />
-            <span className="text-blue-600">Afford to Wait</span>
+            <span className={theme.textAccent}>Afford to Wait</span>
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-12">
+          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed mb-12`}>
             <p>
               AI isn&apos;t coming. It&apos;s here. Your competitors are using it. Your customers expect the speed and accuracy it enables. Your employees are burning out doing work that could be automated.
             </p>
-            <p className="text-xl text-black font-semibold">
+            <p className={`text-xl ${theme.textPrimary} font-semibold`}>
               The gap between AI-enabled businesses and everyone else is widening every day.
             </p>
-            <p className="text-2xl text-black font-bold pt-4">
+            <p className={`text-2xl ${theme.textPrimary} font-bold pt-4`}>
               You can close it. But only if you act now.
             </p>
           </div>
@@ -216,30 +216,30 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-black">
-            The <span className="text-blue-600">Impact</span> We&apos;re Making
+          <h2 className={`text-4xl md:text-5xl font-bold mb-16 text-center ${theme.textPrimary}`}>
+            The <span className={theme.textAccent}>Impact</span> We&apos;re Making
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
+            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
                 3x
               </div>
-              <div className="text-gray-600">Average productivity increase</div>
+              <div className={theme.textTertiary}>Average productivity increase</div>
             </div>
-            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
+            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
                 30 Days
               </div>
-              <div className="text-gray-600">To full ROI for most clients</div>
+              <div className={theme.textTertiary}>To full ROI for most clients</div>
             </div>
-            <div className="text-center p-8 rounded-xl bg-gray-50 border border-gray-200">
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 mb-3">
+            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
                 100%
               </div>
-              <div className="text-gray-600">Focused on small businesses</div>
+              <div className={theme.textTertiary}>Focused on small businesses</div>
             </div>
           </div>
         </div>
