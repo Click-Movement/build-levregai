@@ -24,7 +24,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <img 
-              src="https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png" 
+              src="https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png" 
               alt="LevReg.AI" 
               className="h-10 w-auto mb-4"
             />
