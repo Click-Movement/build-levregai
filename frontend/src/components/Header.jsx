@@ -28,7 +28,9 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm' 
+          ? isDark 
+            ? 'bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-gray-800/50' 
+            : 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -37,7 +39,10 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png" 
+              src={isDark 
+                ? "https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png"
+                : "https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png"
+              }
               alt="LevReg.AI" 
               className="h-10 md:h-12 w-auto"
             />
@@ -49,8 +54,8 @@ const Header = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 text-sm font-medium ${
-                  location.pathname === item.href ? 'text-blue-600' : ''
+                className={`${isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition-colors duration-200 text-sm font-medium ${
+                  location.pathname === item.href ? (isDark ? 'text-blue-400' : 'text-blue-600') : ''
                 }`}
               >
                 {item.label}
@@ -58,8 +63,19 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button and Theme Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-colors duration-200 ${
+                isDark 
+                  ? 'hover:bg-gray-800 text-gray-300' 
+                  : 'hover:bg-gray-100 text-gray-700'
+              }`}
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <Link to="/discovery">
               <Button 
                 className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
@@ -70,12 +86,25 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-black p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-colors duration-200 ${
+                isDark 
+                  ? 'text-gray-300' 
+                  : 'text-gray-700'
+              }`}
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
+              className={`p-2 ${isDark ? 'text-white' : 'text-black'}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
