@@ -234,33 +234,33 @@ const Home = () => {
       </section>
 
       {/* Proof & Trust Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-black">
-            Built for <span className="text-blue-600">Real Businesses</span>,
+          <h2 className={`text-4xl md:text-5xl font-bold mb-8 text-center ${theme.textPrimary}`}>
+            Built for <span className={theme.textAccent}>Real Businesses</span>,
             <br />Not Tech Companies
           </h2>
           
-          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-12">
-            <p className="text-xl text-gray-700 leading-relaxed mb-8">
+          <div className={`${theme.bgSecondary} border ${theme.border} rounded-2xl p-8 md:p-12`}>
+            <p className={`text-xl ${theme.textSecondary} leading-relaxed mb-8`}>
               LevReg.AI was designed for small business owners who don't have time to learn AI, but need their teams to use it. We've worked with customer support teams drowning in tickets, marketing departments stuck on repetitive tasks, sales teams losing deals to slow follow-up, and operations managers buried in manual workflows.
             </p>
-            <p className="text-xl text-black font-semibold">
+            <p className={`text-xl ${theme.textPrimary} font-semibold`}>
               The result? Teams that move faster, work smarter, and deliver better outcomes without hiring more people or working longer hours.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
+            <div className={`grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t ${theme.border}`}>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">40-60%</div>
-                <div className="text-gray-600">Time Saved on Tasks</div>
+                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>40-60%</div>
+                <div className={theme.textTertiary}>Time Saved on Tasks</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">10-20hrs</div>
-                <div className="text-gray-600">Saved Per Employee/Week</div>
+                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>10-20hrs</div>
+                <div className={theme.textTertiary}>Saved Per Employee/Week</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">30 Days</div>
-                <div className="text-gray-600">to Full ROI</div>
+                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>30 Days</div>
+                <div className={theme.textTertiary}>to Full ROI</div>
               </div>
             </div>
           </div>
