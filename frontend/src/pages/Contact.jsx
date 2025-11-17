@@ -5,9 +5,13 @@ import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { useToast } from '../hooks/use-toast';
+import { useTheme } from '../context/ThemeContext';
+import { getThemeClasses } from '../utils/themeClasses';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { isDark } = useTheme();
+  const theme = getThemeClasses(isDark);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
