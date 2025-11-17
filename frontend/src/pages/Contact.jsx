@@ -136,7 +136,7 @@ const Contact = () => {
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Full Name *
                   </label>
                   <Input
@@ -146,13 +146,13 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
                     placeholder="John Smith"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Email Address *
                   </label>
                   <Input
@@ -162,13 +162,13 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
                     placeholder="john@company.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="company" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Company Name *
                   </label>
                   <Input
@@ -178,13 +178,13 @@ const Contact = () => {
                     required
                     value={formData.company}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
                     placeholder="Your Company"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Phone Number
                   </label>
                   <Input
@@ -193,13 +193,13 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="teamSize" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="teamSize" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Team Size
                   </label>
                   <Input
@@ -208,13 +208,13 @@ const Contact = () => {
                     type="text"
                     value={formData.teamSize}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
                     placeholder="e.g., 5-10 employees"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className={`block text-sm font-medium ${theme.inputLabel} mb-2`}>
                     Tell us about your biggest challenges
                   </label>
                   <Textarea
@@ -223,7 +223,7 @@ const Contact = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-white border-gray-300 focus:border-blue-500 text-black resize-none"
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText} resize-none`}
                     placeholder="What are your team's biggest productivity bottlenecks?"
                   />
                 </div>
@@ -238,7 +238,7 @@ const Contact = () => {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 
-                <p className="text-sm text-gray-600 text-center">
+                <p className={`text-sm ${theme.textTertiary} text-center`}>
                   Free. No pressure. Just clarity on what AI can do for your business.
                 </p>
               </form>
