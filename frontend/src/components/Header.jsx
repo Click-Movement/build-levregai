@@ -92,18 +92,14 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button 
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-2"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Get Started
-              </Button>
+              <Link to="/discovery" className="w-full">
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
