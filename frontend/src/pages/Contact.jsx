@@ -246,32 +246,32 @@ const Contact = () => {
             
             {/* Additional Info */}
             <div className="space-y-8">
-              <Card className="bg-white border-gray-200 shadow-sm">
+              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-blue-600" />
+                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                      <Clock className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2">Call Duration</h3>
-                      <p className="text-gray-600">45-60 minutes</p>
+                      <h3 className={`text-xl font-bold ${theme.textPrimary} mb-2`}>Call Duration</h3>
+                      <p className={theme.textTertiary}>45-60 minutes</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white border-gray-200 shadow-sm">
+              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-blue-600" />
+                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                      <CheckCircle className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-4">What to Prepare</h3>
+                      <h3 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>What to Prepare</h3>
                       <ul className="space-y-3">
                         {prepItems.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-gray-600 text-sm">
-                            <span className="text-blue-600 mt-1">•</span>
+                          <li key={idx} className={`flex items-start gap-2 ${theme.textTertiary} text-sm`}>
+                            <span className={`${theme.textAccent} mt-1`}>•</span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -281,18 +281,18 @@ const Contact = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white border-gray-200 shadow-sm">
+              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-6 h-6 text-blue-600" />
+                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                      <ArrowRight className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2">What Happens Next</h3>
-                      <p className="text-gray-600 mb-4">
+                      <h3 className={`text-xl font-bold ${theme.textPrimary} mb-2`}>What Happens Next</h3>
+                      <p className={`${theme.textTertiary} mb-4`}>
                         If we&apos;re a fit, we&apos;ll build a custom AI enablement plan for your business.
                       </p>
-                      <p className="text-gray-600">
+                      <p className={theme.textTertiary}>
                         If we&apos;re not, we&apos;ll point you in the right direction.
                       </p>
                     </div>
