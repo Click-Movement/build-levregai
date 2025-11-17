@@ -96,15 +96,15 @@ const About = () => {
       </section>
 
       {/* AI-First Vision */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-8 text-center ${theme.textPrimary}`}>
             What It Means to Be
-            <span className="text-blue-600"> AI-First</span>
+            <span className={theme.textAccent}> AI-First</span>
           </h2>
           
-          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-12">
-            <p className="text-xl text-gray-700 leading-relaxed mb-6">
+          <div className={`${theme.bgSecondary} border ${theme.border} rounded-2xl p-8 md:p-12`}>
+            <p className={`text-xl ${theme.textSecondary} leading-relaxed mb-6`}>
               An AI-first company doesn&apos;t replace humans with robots. It amplifies human capability with intelligent systems.
             </p>
             
@@ -116,13 +116,13 @@ const About = () => {
                 'Your employees feel empowered, not overwhelmed.'
               ].map((text, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-gray-700 text-lg">{text}</span>
+                  <CheckCircle className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
+                  <span className={`${theme.textSecondary} text-lg`}>{text}</span>
                 </div>
               ))}
             </div>
             
-            <p className="text-xl text-black font-semibold mt-8 pt-8 border-t border-gray-200">
+            <p className={`text-xl ${theme.textPrimary} font-semibold mt-8 pt-8 border-t ${theme.border}`}>
               That&apos;s what we&apos;re building. One small business at a time.
             </p>
           </div>
@@ -130,19 +130,19 @@ const About = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
-            Technology <span className="text-blue-600">Enhances People.</span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${theme.textPrimary}`}>
+            Technology <span className={theme.textAccent}>Enhances People.</span>
             <br />
             It Doesn&apos;t Replace Them.
           </h2>
           
-          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className={`text-xl ${theme.textSecondary} leading-relaxed max-w-3xl mx-auto`}>
             We believe in a future where AI makes work better—not scarcer. Where employees feel more capable, not more anxious. Where small businesses compete on speed and intelligence, not just budget. Where the tools are so good, so intuitive, and so specific to your needs that using them feels like an unfair advantage.
           </p>
           
-          <p className="text-2xl text-black font-bold mt-8">
+          <p className={`text-2xl ${theme.textPrimary} font-bold mt-8`}>
             That&apos;s not a distant dream. That&apos;s what we&apos;re installing right now.
           </p>
         </div>
