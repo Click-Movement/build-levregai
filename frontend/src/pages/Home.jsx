@@ -162,13 +162,13 @@ const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
             What Happens When Your Team Goes
-            <span className="text-blue-600"> AI-First</span>
+            <span className={theme.textAccent}> AI-First</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
             Transform your entire organization with measurable, immediate results
           </p>
           
@@ -176,14 +176,14 @@ const Home = () => {
             {benefits.map((benefit, idx) => (
               <Card 
                 key={idx} 
-                className="bg-white border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
+                className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-100 transition-colors duration-300">
+                  <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-blue-950/30 group-hover:bg-blue-950/50' : 'bg-blue-50 group-hover:bg-blue-100'} flex items-center justify-center mb-6 ${theme.textAccent} transition-colors duration-300`}>
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-black">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                  <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>{benefit.title}</h3>
+                  <p className={`${theme.textTertiary} leading-relaxed`}>{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
