@@ -84,15 +84,15 @@ const Home = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-              Triple Your Team&apos;s Output
-            </span>
+            We Help Your Team Use AI To
             <br />
-            Without Hiring a Single Person
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+              Do Their Best Work Every Day.
+            </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            LevReg.AI builds custom AI systems for every role in your business, so your employees work smarter, faster, and more accurately. No tech degree required.
+            LevReg.AI helps install custom AI systems for every role in your business, so your employees work smarter, faster, and more accurately.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
