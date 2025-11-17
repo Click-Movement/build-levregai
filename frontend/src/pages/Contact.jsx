@@ -66,39 +66,39 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
       {/* Hero Section */}
       <section className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
+        <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
-            <Calendar className="w-4 h-4 text-blue-600" />
-            <span className="text-sm text-blue-700 font-medium">Free Discovery Call</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
+            <Calendar className={`w-4 h-4 ${theme.badgeIcon}`} />
+            <span className={`text-sm ${theme.badgeText} font-medium`}>Free Discovery Call</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-black">
+          <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
             Let&apos;s Build Your
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
               AI-First Business
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
             Book a free discovery call and find out exactly how AI can transform your team&apos;s productivity.
           </p>
         </div>
       </section>
 
       {/* What Happens on the Call */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className={`py-16 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${theme.textPrimary}`}>
             Here&apos;s What Happens
-            <span className="text-blue-600"> on the Call</span>
+            <span className={theme.textAccent}> on the Call</span>
           </h2>
           
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
             This isn&apos;t a sales pitch. It&apos;s a strategy session. We&apos;ll talk about:
           </p>
           
@@ -106,15 +106,15 @@ const Contact = () => {
             {callDetails.map((detail, idx) => (
               <div 
                 key={idx}
-                className="flex items-start gap-4 p-6 rounded-xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-sm"
+                className={`flex items-start gap-4 p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}
               >
-                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 leading-relaxed">{detail}</p>
+                <CheckCircle className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
+                <p className={`${theme.textSecondary} leading-relaxed`}>{detail}</p>
               </div>
             ))}
           </div>
           
-          <p className="text-xl text-black font-semibold text-center">
+          <p className={`text-xl ${theme.textPrimary} font-semibold text-center`}>
             You&apos;ll walk away with clarity. Whether you work with us or not, you&apos;ll know exactly what AI can do for your business.
           </p>
         </div>
