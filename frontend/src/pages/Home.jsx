@@ -192,13 +192,13 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-24 px-6 bg-gray-50">
+      <section id="how-it-works" className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
             From Overwhelmed to AI-Enabled
-            <span className="text-blue-600"> in 4 Steps</span>
+            <span className={theme.textAccent}> in 4 Steps</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
             A proven process that transforms your team from AI-curious to AI-powered
           </p>
           
@@ -206,14 +206,14 @@ const Home = () => {
             {steps.map((step, idx) => (
               <div 
                 key={idx}
-                className="relative p-8 rounded-2xl bg-white border border-gray-200 hover:border-blue-400 transition-all duration-300 group shadow-sm"
+                className={`relative p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white">
+                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white shadow-blue-600/30">
                   {step.number}
                 </div>
                 <div className="mt-6">
-                  <h3 className="text-2xl font-bold mb-3 text-black">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{step.description}</p>
+                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>{step.title}</h3>
+                  <p className={`${theme.textTertiary} leading-relaxed text-lg`}>{step.description}</p>
                 </div>
               </div>
             ))}
