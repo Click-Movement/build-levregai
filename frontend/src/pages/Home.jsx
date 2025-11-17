@@ -80,7 +80,7 @@ const Home = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/30 border border-blue-500/20 mb-8">
             <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-300">AI Employee Enablement</span>
+            <span className="text-sm text-blue-300">AI Skills Development</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
