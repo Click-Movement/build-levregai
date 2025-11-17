@@ -83,12 +83,8 @@ const Home = () => {
             <span className="text-sm text-blue-300">AI Employee Enablement</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your Team.
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-              Amplified By AI.
-            </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            Your Team. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Amplified By AI.</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
