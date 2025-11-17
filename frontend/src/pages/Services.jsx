@@ -82,44 +82,44 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
       {/* Hero Section */}
       <section className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-transparent to-transparent pointer-events-none" />
+        <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
-            <Zap className="w-4 h-4 text-blue-600" />
-            <span className="text-sm text-blue-700 font-medium">Programs & Training</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
+            <Zap className={`w-4 h-4 ${theme.badgeIcon}`} />
+            <span className={`text-sm ${theme.badgeText} font-medium`}>Programs & Training</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-black">
+          <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
             AI Employee Enablement
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
               Programs
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
             Role-specific training and systems that make your entire team more productive—immediately.
           </p>
         </div>
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className={`py-16 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${theme.textPrimary}`}>
             This Isn&apos;t a Course.
             <br />
-            <span className="text-blue-600">It&apos;s a Business Upgrade.</span>
+            <span className={theme.textAccent}>It&apos;s a Business Upgrade.</span>
           </h2>
           
-          <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+          <div className={`space-y-4 text-lg ${theme.textSecondary} leading-relaxed`}>
             <p>
               Most AI training teaches theory. LevReg.AI installs systems. We don&apos;t hand your team a chatbot and say "good luck." We build workflow-specific, role-specific, use-case-specific AI infrastructure designed around what your employees actually do every day. Then we train them to use it. Hands-on. Real scenarios. Immediate results.
             </p>
-            <p className="text-xl font-semibold text-black pt-4">
+            <p className={`text-xl font-semibold ${theme.textPrimary} pt-4`}>
               By the time we&apos;re done, your team isn&apos;t just AI-aware—they&apos;re AI-enabled.
             </p>
           </div>
