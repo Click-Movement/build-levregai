@@ -301,26 +301,26 @@ const Contact = () => {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-24 px-6 bg-[#0f0f0f]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/30 border border-red-500/20 mb-8">
-            <AlertCircle className="w-4 h-4 text-red-400" />
-            <span className="text-sm text-red-300">Time-Sensitive</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 mb-8">
+            <AlertCircle className="w-4 h-4 text-red-600" />
+            <span className="text-sm text-red-700 font-medium">Time-Sensitive</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             You&apos;re Not Behind
-            <span className="text-blue-400"> — Yet</span>
+            <span className="text-blue-600"> — Yet</span>
           </h2>
           
-          <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
             <p>
               Right now, you&apos;re in the window. AI adoption is accelerating. The businesses that move now will dominate their markets. The ones that wait will spend years playing catch-up.
             </p>
-            <p className="text-white font-semibold">
+            <p className="text-black font-semibold">
               Your team wants to work smarter. Your customers expect faster, better service. Your bottom line needs more output without more overhead.
             </p>
-            <p className="text-2xl text-blue-400 font-bold pt-4">
+            <p className="text-2xl text-blue-600 font-bold pt-4">
               This is how you get all three.
             </p>
           </div>
