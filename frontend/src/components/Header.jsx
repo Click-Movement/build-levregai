@@ -58,17 +58,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Get Started
-            </Button>
+            <Link to="/discovery">
+              <Button 
+                className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
