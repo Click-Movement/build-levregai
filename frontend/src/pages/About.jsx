@@ -3,8 +3,12 @@ import { ArrowRight, Target, Heart, Lightbulb, CheckCircle, Clock, TrendingUp } 
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import { getThemeClasses } from '../utils/themeClasses';
 
 const About = () => {
+  const { isDark } = useTheme();
+  const theme = getThemeClasses(isDark);
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
