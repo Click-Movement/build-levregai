@@ -242,32 +242,32 @@ const Contact = () => {
             
             {/* Additional Info */}
             <div className="space-y-8">
-              <Card className="bg-[#0f0f0f] border-gray-800">
+              <Card className="bg-white border-gray-200 shadow-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-950/30 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">Call Duration</h3>
-                      <p className="text-gray-400">45-60 minutes</p>
+                      <h3 className="text-xl font-bold text-black mb-2">Call Duration</h3>
+                      <p className="text-gray-600">45-60 minutes</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-[#0f0f0f] border-gray-800">
+              <Card className="bg-white border-gray-200 shadow-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-950/30 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-4">What to Prepare</h3>
+                      <h3 className="text-xl font-bold text-black mb-4">What to Prepare</h3>
                       <ul className="space-y-3">
                         {prepItems.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-gray-400 text-sm">
-                            <span className="text-blue-400 mt-1">•</span>
+                          <li key={idx} className="flex items-start gap-2 text-gray-600 text-sm">
+                            <span className="text-blue-600 mt-1">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -277,18 +277,18 @@ const Contact = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-[#0f0f0f] border-gray-800">
+              <Card className="bg-white border-gray-200 shadow-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-blue-950/30 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">What Happens Next</h3>
-                      <p className="text-gray-400 mb-4">
+                      <h3 className="text-xl font-bold text-black mb-2">What Happens Next</h3>
+                      <p className="text-gray-600 mb-4">
                         If we&apos;re a fit, we&apos;ll build a custom AI enablement plan for your business.
                       </p>
-                      <p className="text-gray-400">
+                      <p className="text-gray-600">
                         If we&apos;re not, we&apos;ll point you in the right direction.
                       </p>
                     </div>
