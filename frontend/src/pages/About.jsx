@@ -32,7 +32,7 @@ const About = () => {
   ];
 
   const scrollToContact = () => {
-    window.location.href = '/contact';
+    window.location.href = '/discovery';
   };
 
   return (
