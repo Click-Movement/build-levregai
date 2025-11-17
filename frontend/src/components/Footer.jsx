@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { isDark } = useTheme();
 
   const footerLinks = {
     company: [
