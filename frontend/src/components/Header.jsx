@@ -109,14 +109,14 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+          <div className={`md:hidden mt-4 pb-4 ${isDark ? 'border-t border-gray-800' : 'border-t border-gray-200'} pt-4`}>
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2 ${
-                    location.pathname === item.href ? 'text-blue-600' : ''
+                  className={`${isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition-colors duration-200 py-2 ${
+                    location.pathname === item.href ? (isDark ? 'text-blue-400' : 'text-blue-600') : ''
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
