@@ -305,26 +305,26 @@ const Contact = () => {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 mb-8">
-            <AlertCircle className="w-4 h-4 text-red-600" />
-            <span className="text-sm text-red-700 font-medium">Time-Sensitive</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-red-950/30 border-red-500/20' : 'bg-red-50 border-red-200'} border mb-8`}>
+            <AlertCircle className={`w-4 h-4 ${isDark ? 'text-red-400' : 'text-red-600'}`} />
+            <span className={`text-sm ${isDark ? 'text-red-300' : 'text-red-700'} font-medium`}>Time-Sensitive</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme.textPrimary}`}>
             You&apos;re Not Behind
-            <span className="text-blue-600"> — Yet</span>
+            <span className={theme.textAccent}> — Yet</span>
           </h2>
           
-          <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+          <div className={`space-y-4 text-lg ${theme.textSecondary} leading-relaxed`}>
             <p>
               Right now, you&apos;re in the window. AI adoption is accelerating. The businesses that move now will dominate their markets. The ones that wait will spend years playing catch-up.
             </p>
-            <p className="text-black font-semibold">
+            <p className={`${theme.textPrimary} font-semibold`}>
               Your team wants to work smarter. Your customers expect faster, better service. Your bottom line needs more output without more overhead.
             </p>
-            <p className="text-2xl text-blue-600 font-bold pt-4">
+            <p className={`text-2xl ${theme.textAccent} font-bold pt-4`}>
               This is how you get all three.
             </p>
           </div>
