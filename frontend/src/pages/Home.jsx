@@ -103,7 +103,7 @@ const Home = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 px-8 py-6 text-lg transition-all duration-300"
+              className="border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white px-8 py-6 text-lg transition-all duration-300"
               onClick={() => scrollToSection('how-it-works')}
             >
               See How It Works
