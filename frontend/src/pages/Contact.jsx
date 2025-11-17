@@ -117,16 +117,16 @@ const Contact = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-24 px-6 bg-[#0a0a0a]">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-6 text-black">
                 Schedule Your
-                <span className="text-blue-400"> Discovery Session</span>
+                <span className="text-blue-600"> Discovery Session</span>
               </h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-gray-600 mb-8">
                 Fill out the form below and we&apos;ll reach out within 24 hours to schedule your call.
               </p>
               
