@@ -11,10 +11,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Initialize theme from localStorage or default to 'light'
+  // Initialize theme from localStorage or default to 'dark'
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'light';
+    return savedTheme || 'dark';
   });
 
   // Update localStorage and document class when theme changes
