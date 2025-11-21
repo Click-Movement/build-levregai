@@ -131,7 +131,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto">
           <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
             Role-Specific
-            <span className={theme.textAccent}> AI Enablement</span>
+            <span className={theme.textAccent}> AI Development</span>
           </h2>
           <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
             Custom AI systems built for every role in your business
