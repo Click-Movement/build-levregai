@@ -13,7 +13,7 @@ const About = () => {
     {
       icon: <Target className="w-8 h-8" />,
       title: 'Practicality Over Hype',
-      description: 'We don&apos;t care about buzzwords. We care about results. If it doesn&apos;t make your team faster or better, we don&apos;t build it.',
+      description: 'We don't care about buzzwords. We care about results. If it doesn't make your team faster or better, we don't build it.',
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -25,13 +25,13 @@ const About = () => {
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: 'Small Business Obsession',
-      description: 'We&apos;re not building for enterprises. We&apos;re building for the businesses that can&apos;t afford to waste time or money on tools that don&apos;t work.',
+      description: 'We're not building for enterprises. We're building for the businesses that can't afford to waste time or money on tools that don't work.',
       color: 'from-purple-500 to-indigo-500'
     },
     {
       icon: <CheckCircle className="w-8 h-8" />,
       title: 'Accountability',
-      description: 'We measure everything. If we say you&apos;ll see productivity gains, we track them. If something doesn&apos;t work, we fix it.',
+      description: 'We measure everything. If we say you'll see productivity gains, we track them. If something doesn't work, we fix it.',
       color: 'from-green-500 to-emerald-500'
     }
   ];
