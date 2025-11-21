@@ -243,7 +243,7 @@ const Home = () => {
           
           <div className={`${theme.bgSecondary} border ${theme.border} rounded-2xl p-8 md:p-12`}>
             <p className={`text-xl ${theme.textSecondary} leading-relaxed mb-8`}>
-              LevReg.AI was designed for small business owners who don't have time to learn AI, but need their teams to use it. We've worked with customer support teams drowning in tickets, marketing departments stuck on repetitive tasks, sales teams losing deals to slow follow-up, and operations managers buried in manual workflows.
+              LevReg.Ai was designed for small business owners who don't have time to learn AI, but need their teams to use it. We've worked with customer support teams drowning in tickets, marketing departments stuck on repetitive tasks, sales teams losing deals to slow follow-up, and operations managers buried in manual workflows.
             </p>
             <p className={`text-xl ${theme.textPrimary} font-semibold`}>
               The result? Teams that move faster, work smarter, and deliver better outcomes without hiring more people or working longer hours.
