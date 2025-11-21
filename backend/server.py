@@ -87,6 +87,33 @@ async def get_status_checks():
     
     return status_checks
 
+# Discovery Call Endpoints
+@api_router.post("/discovery", response_model=DiscoveryCall)
+async def create_discovery_call(input: DiscoveryCallCreate):
+    """Submit a discovery call request"""
+    discovery_dict = input.model_dump()
+    discovery_obj = DiscoveryCall(**discovery_dict)
+    
+    # Convert to dict and serialize datetime to ISO string for MongoDB
+    doc = discovery_obj.model_dump()
+    doc['timestamp'] = doc['timestamp'].isoformat()
+    
+    await db.discovery_calls.insert_one(doc)
+    logger.info(f"New discovery call request from {discovery_obj.email}")
+    return discovery_obj
+
+@api_router.get("/discovery", response_model=List[DiscoveryCall])
+async def get_discovery_calls():
+    """Get all discovery call requests"""
+    discovery_calls = await db.discovery_calls.find({}, {"_id": 0}).to_list(1000)
+    
+    # Convert ISO string timestamps back to datetime objects
+    for call in discovery_calls:
+        if isinstance(call['timestamp'], str):
+            call['timestamp'] = datetime.fromisoformat(call['timestamp'])
+    
+    return discovery_calls
+
 # Include the router in the main app
 app.include_router(api_router)
 
