@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className={`pt-8 ${isDark ? 'border-t border-gray-800' : 'border-t border-gray-200'} flex flex-col md:flex-row justify-between items-center gap-4`}>
           <p className="text-gray-500 text-sm">
-            © {currentYear} LevReg.AI. All rights reserved.
+            © {currentYear} LevReg.Ai. All rights reserved.
           </p>
           
           <div className="flex items-center gap-4">
