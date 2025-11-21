@@ -106,7 +106,7 @@ const Home = () => {
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
               >
-                Get Your AI Enablement Plan
+                Start Your Ai Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
