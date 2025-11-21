@@ -117,7 +117,7 @@ const Services = () => {
           
           <div className={`space-y-4 text-lg ${theme.textSecondary} leading-relaxed`}>
             <p>
-              Most AI training teaches theory. LevReg.AI installs systems. We don&apos;t hand your team a chatbot and say "good luck." We build workflow-specific, role-specific, use-case-specific AI infrastructure designed around what your employees actually do every day. Then we train them to use it. Hands-on. Real scenarios. Immediate results.
+              Most AI training teaches theory. LevReg.Ai installs systems. We don&apos;t hand your team a chatbot and say "good luck." We build workflow-specific, role-specific, use-case-specific AI infrastructure designed around what your employees actually do every day. Then we train them to use it. Hands-on. Real scenarios. Immediate results.
             </p>
             <p className={`text-xl font-semibold ${theme.textPrimary} pt-4`}>
               By the time we&apos;re done, your team isn&apos;t just AI-aware they&apos;re AI-enabled.
