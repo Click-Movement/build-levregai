@@ -340,8 +340,7 @@ const Contact = () => {
           </div>
           
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme.textPrimary}`}>
-            You&apos;re Not Behind
-            <span className={theme.textAccent}> — Yet</span>
+            You&apos;re Not Behind. <span className={theme.textAccent}>Yet!</span>
           </h2>
           
           <div className={`space-y-4 text-lg ${theme.textSecondary} leading-relaxed`}>
