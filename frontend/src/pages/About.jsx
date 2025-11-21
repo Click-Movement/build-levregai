@@ -89,7 +89,7 @@ const About = () => {
             </p>
             
             <p className={`text-xl ${theme.textPrimary} font-semibold pt-4`}>
-              So we built something different. LevReg.AI isn&apos;t a course. It&apos;s not a tool. It&apos;s a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.
+              So we built something different. LevReg.Ai isn&apos;t a course. It&apos;s not a tool. It&apos;s a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.
             </p>
           </div>
         </div>
