@@ -180,7 +180,7 @@ const Services = () => {
             What You <span className={theme.textAccent}>Actually Get</span>
           </h2>
           <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
-            This isn&apos;t vaporware. When you work with LevReg.AI, you receive:
+            This isn&apos;t vaporware. When you work with LevReg.Ai, you receive:
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
