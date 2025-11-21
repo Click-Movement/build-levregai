@@ -43,7 +43,7 @@ const Header = () => {
                 ? "https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png"
                 : "https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png"
               }
-              alt="LevReg.AI" 
+              alt="LevReg.Ai" 
               className="h-10 md:h-12 w-auto"
             />
           </Link>
