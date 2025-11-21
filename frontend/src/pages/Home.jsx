@@ -97,7 +97,7 @@ const Home = () => {
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            LevReg.AI helps your employees put AI to work inside their job responsibilities, making every task faster and more efficient.
+            LevReg.Ai helps your employees put AI to work inside their job responsibilities, making every task faster and more efficient.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
