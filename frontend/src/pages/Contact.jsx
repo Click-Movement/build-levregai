@@ -121,36 +121,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* What Happens on the Call */}
-      <section className={`py-16 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${theme.textPrimary}`}>
-            Here&apos;s What Happens
-            <span className={theme.textAccent}> on the Call</span>
-          </h2>
-          
-          <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
-            This isn&apos;t a sales pitch. It&apos;s a strategy session. We&apos;ll talk about:
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {callDetails.map((detail, idx) => (
-              <div 
-                key={idx}
-                className={`flex items-start gap-4 p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}
-              >
-                <CheckCircle className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
-                <p className={`${theme.textSecondary} leading-relaxed`}>{detail}</p>
-              </div>
-            ))}
-          </div>
-          
-          <p className={`text-xl ${theme.textPrimary} font-semibold text-center`}>
-            You&apos;ll walk away with clarity. Whether you work with us or not, you&apos;ll know exactly what AI can do for your business.
-          </p>
-        </div>
-      </section>
-
       {/* Form Section */}
       <section className={`py-24 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-4xl mx-auto">
