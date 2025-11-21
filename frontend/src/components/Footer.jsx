@@ -84,23 +84,38 @@ const Footer = () => {
           
           <div className="flex items-center gap-4">
             <a
-              href="#"
-              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
+              href="https://www.linkedin.com/company/levregai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/levregai"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
-              aria-label="Twitter"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/levregai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com/levregai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              aria-label="X (Twitter)"
             >
               <Twitter className="w-5 h-5" />
             </a>
