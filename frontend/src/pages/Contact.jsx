@@ -302,7 +302,7 @@ const Contact = () => {
       </section>
 
       {/* What Happens on the Call */}
-      <section className={`py-16 px-6 ${theme.bgSecondary}`}>
+      <section className={`py-16 px-6 ${theme.bgPrimary}`}>
         <div className="max-w-5xl mx-auto">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${theme.textPrimary}`}>
             Here&apos;s What Happens
