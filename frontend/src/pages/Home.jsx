@@ -126,7 +126,7 @@ const Home = () => {
       <section id="origin" className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto">
           <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${theme.textPrimary}`}>
-            Why <span className={theme.textAccent}>LevReg.AI</span> Exists
+            Why <span className={theme.textAccent}>LevReg.Ai</span> Exists
           </h2>
           
           <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed`}>
