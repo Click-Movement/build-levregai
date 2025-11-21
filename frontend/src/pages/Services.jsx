@@ -101,7 +101,7 @@ const Services = () => {
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            Role-specific training and systems that make your entire team more productive—immediately.
+            Role-specific training and systems that transform your team into super humans.
           </p>
         </div>
       </section>
