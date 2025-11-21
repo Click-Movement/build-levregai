@@ -52,7 +52,7 @@ const About = () => {
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            We Built <span className={theme.textAccent}>LevReg.AI</span> Because CEOs
+            We Built <span className={theme.textAccent}>LevReg.Ai</span> Because CEOs
             <br />
             Shouldn&apos;t Have to Become AI Experts
           </h1>
