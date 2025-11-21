@@ -137,7 +137,7 @@ const Home = () => {
               But here's the problem: <span className={`${theme.textPrimary} font-semibold`}>You don't have time to become an AI expert.</span> And your team doesn't either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you're left wondering when you'll ever catch up.
             </p>
             <p>
-              That's exactly why we built LevReg.AI. We don't teach theory. We don't sell you a course and wish you luck. <span className={`${theme.textAccent} font-semibold`}>We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
+              That's exactly why we built LevReg.Ai. We don't teach theory. We don't sell you a course and wish you luck. <span className={`${theme.textAccent} font-semibold`}>We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 my-8 pt-8">
