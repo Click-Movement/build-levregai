@@ -30,11 +30,11 @@ const Footer = () => {
                 ? "https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png"
                 : "https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png"
               }
-              alt="LevReg.AI" 
+              alt="LevReg.Ai" 
               className="h-10 w-auto mb-4"
             />
             <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm leading-relaxed max-w-md`}>
-              LevReg.AI helps small businesses become AI-first by training employees to use role-specific AI systems for speed, accuracy, and efficiency.
+              LevReg.Ai helps small businesses become AI-first by training employees to use role-specific AI systems for speed, accuracy, and efficiency.
             </p>
             <p className={`${isDark ? 'text-blue-400' : 'text-blue-600'} text-sm font-semibold mt-4`}>
               Your team. Amplified by AI.
