@@ -118,7 +118,7 @@ const Contact = () => {
       </section>
 
       {/* Form Section */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
+      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
