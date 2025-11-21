@@ -248,7 +248,7 @@ const Services = () => {
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
             >
-              Get a Custom Quote
+              Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
