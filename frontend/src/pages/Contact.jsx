@@ -34,7 +34,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || import.meta.env.REACT_APP_BACKEND_URL;
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || "";
       const response = await fetch(`${backendUrl}/api/discovery`, {
         method: 'POST',
         headers: {
