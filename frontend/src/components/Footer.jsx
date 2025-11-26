@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -8,14 +9,14 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { label: 'About', href: '#about' },
-      { label: 'Services', href: '#services' },
-      { label: 'Contact', href: '#contact' }
+      { label: 'About', href: '/about', internal: true },
+      { label: 'Services', href: '/services', internal: true },
+      { label: 'Contact', href: '/discovery', internal: true }
     ],
     legal: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Service', href: '#terms' },
-      { label: 'Cookie Policy', href: '#cookies' }
+      { label: 'Privacy Policy', href: '#privacy', internal: false },
+      { label: 'Terms of Service', href: '#terms', internal: false },
+      { label: 'Cookie Policy', href: '#cookies', internal: false }
     ]
   };
 
@@ -47,12 +48,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
-                  >
-                    {link.label}
-                  </a>
+                  {link.internal ? (
+                    <Link
+                      to={link.href}
+                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -64,12 +74,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
-                  >
-                    {link.label}
-                  </a>
+                  {link.internal ? (
+                    <Link
+                      to={link.href}
+                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

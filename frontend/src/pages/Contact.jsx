@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Calendar, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -97,8 +98,29 @@ const Contact = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>Schedule Free AI Discovery Call | LevReg.Ai</title>
+        <meta name="description" content="Book a free 45-minute discovery call to learn how AI can transform your team's productivity. No pressure, just clarity on what AI can do for your business." />
+        <meta name="keywords" content="AI discovery call, free AI consultation, business AI assessment, AI transformation consultation, schedule AI demo" />
+        <link rel="canonical" href="https://levreg.ai/discovery" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://levreg.ai/discovery" />
+        <meta property="og:title" content="Schedule Free AI Discovery Call | LevReg.Ai" />
+        <meta property="og:description" content="Book a free 45-minute discovery call to learn how AI can transform your team's productivity. No pressure, just clarity." />
+        <meta property="og:site_name" content="LevReg.Ai" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@levregai" />
+        <meta name="twitter:title" content="Schedule Free AI Discovery Call | LevReg.Ai" />
+        <meta name="twitter:description" content="Book a free 45-minute discovery call to learn how AI can transform your team's productivity." />
+      </Helmet>
+      
+      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
+        {/* Hero Section */}
       <section className="relative py-24 px-6">
         <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -356,7 +378,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Target, Heart, Lightbulb, CheckCircle, Clock, TrendingUp } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -41,8 +42,29 @@ const About = () => {
   };
 
   return (
-    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>About LevReg.Ai - Making Small Businesses AI-First</title>
+        <meta name="description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts. We install, train, and support your team's AI transformation journey." />
+        <meta name="keywords" content="about LevReg AI, AI transformation, small business AI expert, AI-first business, employee AI enablement" />
+        <link rel="canonical" href="https://levreg.ai/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://levreg.ai/about" />
+        <meta property="og:title" content="About LevReg.Ai - Making Small Businesses AI-First" />
+        <meta property="og:description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts. We install, train, and support your team's AI transformation journey." />
+        <meta property="og:site_name" content="LevReg.Ai" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@levregai" />
+        <meta name="twitter:title" content="About LevReg.Ai - Making Small Businesses AI-First" />
+        <meta name="twitter:description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts." />
+      </Helmet>
+      
+      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
+        {/* Hero Section */}
       <section className="relative py-24 px-6">
         <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -244,7 +266,8 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

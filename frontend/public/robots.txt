@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow discovery form (internal use)
+Disallow: /discovery
+
+# Sitemap location
+Sitemap: https://levreg.ai/sitemap.xml
+

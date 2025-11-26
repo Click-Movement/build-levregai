@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, CheckCircle, Headphones, Megaphone, TrendingUp, FileText, Settings, Users, Zap, Target, BarChart } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -82,8 +83,29 @@ const Services = () => {
   };
 
   return (
-    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>AI Skills Development Programs & Training | LevReg.Ai</title>
+        <meta name="description" content="Custom AI systems for customer support, marketing, sales, and operations. Role-specific training that makes your team 3x more productive. See measurable results in 30 days." />
+        <meta name="keywords" content="AI skills development, AI training programs, role-specific AI, customer support AI, marketing automation, sales AI tools" />
+        <link rel="canonical" href="https://levreg.ai/services" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://levreg.ai/services" />
+        <meta property="og:title" content="AI Skills Development Programs & Training | LevReg.Ai" />
+        <meta property="og:description" content="Custom AI systems for customer support, marketing, sales, and operations. Role-specific training that makes your team 3x more productive." />
+        <meta property="og:site_name" content="LevReg.Ai" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@levregai" />
+        <meta name="twitter:title" content="AI Skills Development Programs & Training | LevReg.Ai" />
+        <meta name="twitter:description" content="Custom AI systems for customer support, marketing, sales, and operations. Role-specific training that makes your team 3x more productive." />
+      </Helmet>
+      
+      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
+        {/* Hero Section */}
       <section className="relative py-24 px-6">
         <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -254,7 +276,8 @@ const Services = () => {
           </a>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

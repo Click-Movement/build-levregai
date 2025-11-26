@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Zap, Target, Users, TrendingUp, BarChart, CheckCircle, Sparkles, Clock, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -77,8 +78,29 @@ const Home = () => {
   };
 
   return (
-    <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>AI Training for Small Business Teams | LevReg.Ai</title>
+        <meta name="description" content="Transform your small business with role-specific AI training. LevReg.Ai installs custom AI workflows that boost team productivity by 40-60%. Get your free discovery call." />
+        <meta name="keywords" content="AI training, small business AI, employee AI training, AI productivity, business automation, AI transformation" />
+        <link rel="canonical" href="https://levreg.ai/" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://levreg.ai/" />
+        <meta property="og:title" content="AI Training for Small Business Teams | LevReg.Ai" />
+        <meta property="og:description" content="Transform your small business with role-specific AI training. Boost team productivity by 40-60%." />
+        <meta property="og:site_name" content="LevReg.Ai" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@levregai" />
+        <meta name="twitter:title" content="AI Training for Small Business Teams | LevReg.Ai" />
+        <meta name="twitter:description" content="Transform your small business with role-specific AI training. Boost team productivity by 40-60%." />
+      </Helmet>
+      
+      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
+        {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
         <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -294,7 +316,8 @@ const Home = () => {
           </p>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
