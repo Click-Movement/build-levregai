@@ -101,7 +101,7 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/discovery">
+            <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
@@ -109,7 +109,7 @@ const Home = () => {
                 Start Your Ai Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
+            </a>
             <Button 
               size="lg" 
               variant="outline" 
@@ -220,7 +220,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-16">
-            <Link to="/discovery">
+            <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group"
@@ -228,7 +228,7 @@ const Home = () => {
                 Start Your AI Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -279,7 +279,7 @@ const Home = () => {
             Your competitors are already using AI. Your team is already overwhelmed. The only question is: how long will you wait to close the gap?
           </p>
           
-          <Link to="/discovery">
+          <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
@@ -287,7 +287,7 @@ const Home = () => {
               Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </Link>
+          </a>
           
           <p className={theme.textTertiary}>
             Free discovery session. No pressure. Just clarity on what AI can do for your business.

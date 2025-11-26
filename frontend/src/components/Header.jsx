@@ -76,13 +76,13 @@ const Header = () => {
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <Link to="/discovery">
+            <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
               <Button 
                 className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
               >
                 Get Started
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -123,14 +123,14 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/discovery" className="w-full">
+              <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button 
                   className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get Started
                 </Button>
-              </Link>
+              </a>
             </nav>
           </div>
         )}
