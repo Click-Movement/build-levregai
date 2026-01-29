@@ -16,6 +16,10 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
+# Lock files (Vercel uses Yarn)
+package-lock.json
+yarn.lock
+
 # Testing
 /coverage
 
