@@ -98,7 +98,7 @@ const TransformationCall = () => {
       answer: "Just come ready to discuss your business honestly. From what's working, what's not, where you're spending too much time. The more context you share, the more specific our recommendations."
     },
     {
-      question: 'What if I'm not ready to implement yet?',
+      question: "What if I'm not ready to implement yet?",
       answer: "That's fine. Many people use this call to get clarity before committing to anything. You'll walk away knowing exactly what AI could do for your business and what implementation would look like. It's valuable information whether you act now or later."
     },
     {

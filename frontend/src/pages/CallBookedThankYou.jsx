@@ -25,7 +25,7 @@ const CallBookedThankYou = () => {
       description: "You've probably seen a lot of AI hype. Good. Bring your tough questions. The more honest our conversation, the more valuable your roadmap will be."
     },
     {
-      title: 'Be Ready to Share What's Working (and What's Not)',
+      title: "Be Ready to Share What's Working (and What's Not)",
       description: "The best recommendations come from understanding your whole picture—not just where you're struggling, but what's already working well."
     }
   ];
