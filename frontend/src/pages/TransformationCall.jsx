@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { Calendar, CheckCircle, ArrowRight, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -111,12 +112,6 @@ const TransformationCall = () => {
     }
   ];
 
-  const scrollToBooking = () => {
-    const element = document.getElementById('booking');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
@@ -167,14 +162,15 @@ const TransformationCall = () => {
               Schedule a free 30-minute AI Transformation Call and get a personalized roadmap for automating your marketing and operations - designed by a 17-year business operator, not a Silicon Valley guru.
             </p>
             
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300 mb-4"
-              onClick={scrollToBooking}
-            >
-              Schedule Your Free AI Transformation Call
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/book-call">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300 mb-4"
+              >
+                Schedule Your Free AI Transformation Call
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             
             <p className={`${theme.textTertiary} text-sm`}>
               Limited spots available. No sales pitch. Just honest answers.
@@ -391,24 +387,15 @@ const TransformationCall = () => {
               <span className={theme.textAccent}>Actually Do for Your Business?</span>
             </h2>
             
-            {/* Booking Placeholder - Calendar embed will go here */}
-            <div className={`${theme.cardBg} border-2 ${theme.cardBorder} rounded-2xl p-12 mb-8`}>
-              <Calendar className={`w-20 h-20 mx-auto mb-6 ${theme.textAccent}`} />
-              <h3 className={`text-2xl font-bold mb-4 ${theme.textPrimary}`}>Calendar Integration Coming Soon</h3>
-              <p className={`${theme.textTertiary} mb-8 text-lg`}>
-                Calendly or Cal.com embed will be integrated here
-              </p>
-              {/* Temporary CTA button */}
-              <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group"
-                >
-                  Schedule Your Free AI Transformation Call
-                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
-            </div>
+            <Link to="/book-call">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+              >
+                Schedule Your Free AI Transformation Call
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             
             <p className={`${theme.textTertiary}`}>
               30 minutes. No pitch. Just honest answers.
@@ -451,14 +438,15 @@ const TransformationCall = () => {
               <span className={theme.textAccent}>Why Should You?</span>
             </h2>
             
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-              onClick={scrollToBooking}
-            >
-              Schedule Your Free AI Transformation Call
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/book-call">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+              >
+                Schedule Your Free AI Transformation Call
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
