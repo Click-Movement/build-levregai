@@ -10,6 +10,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetail from './pages/CaseStudyDetail';
+import TransformationCall from './pages/TransformationCall';
+import CallBookedThankYou from './pages/CallBookedThankYou';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -28,6 +30,8 @@ function App() {
                 <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/discovery" element={<Contact />} />
+                <Route path="/transformation-call" element={<TransformationCall />} />
+                <Route path="/thank-you" element={<CallBookedThankYou />} />
               </Routes>
             </main>
             <Footer />
