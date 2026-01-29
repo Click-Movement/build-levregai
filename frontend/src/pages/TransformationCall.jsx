@@ -102,7 +102,7 @@ const TransformationCall = () => {
       answer: "That's fine. Many people use this call to get clarity before committing to anything. You'll walk away knowing exactly what AI could do for your business and what implementation would look like. It's valuable information whether you act now or later."
     },
     {
-      question: 'I'm not technical. Is this still for me?',
+      question: "I'm not technical. Is this still for me?",
       answer: "Absolutely. Most of our clients aren't technical. They're business owners who understand their business deeply but don't want to learn to code. That's exactly who we work with. We handle the technical implementation; you handle the business decisions."
     },
     {
