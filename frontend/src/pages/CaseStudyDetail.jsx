@@ -294,7 +294,7 @@ const CaseStudyDetail = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
+              <Link to="/transformation-call">
                 <Button 
                   size="lg" 
                   className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
@@ -302,7 +302,7 @@ const CaseStudyDetail = () => {
                   Start Your Ai Transformation
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </a>
+              </Link>
               <Link to="/case-studies">
                 <Button 
                   size="lg" 

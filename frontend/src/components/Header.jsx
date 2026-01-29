@@ -25,6 +25,11 @@ const Header = () => {
     { label: 'About', href: '/about' }
   ];
 
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -55,6 +60,7 @@ const Header = () => {
               <Link
                 key={item.label}
                 to={item.href}
+                onClick={() => window.scrollTo(0, 0)}
                 className={`${isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition-colors duration-200 text-sm font-medium ${
                   location.pathname === item.href ? (isDark ? 'text-blue-400' : 'text-blue-600') : ''
                 }`}
@@ -77,13 +83,13 @@ const Header = () => {
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
+            <Link to="/transformation-call">
               <Button 
                 className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
               >
-                Get Started
+                Learn More
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,19 +125,18 @@ const Header = () => {
                   className={`${isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition-colors duration-200 py-2 ${
                     location.pathname === item.href ? (isDark ? 'text-blue-400' : 'text-blue-600') : ''
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={handleNavClick}
                 >
                   {item.label}
                 </Link>
               ))}
-              <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer" className="w-full">
+              <Link to="/transformation-call" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
                   className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Get Started
+                  Learn More
                 </Button>
-              </a>
+              </Link>
             </nav>
           </div>
         )}

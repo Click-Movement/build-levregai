@@ -74,9 +74,9 @@ const About = () => {
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            We Built <span className={theme.textAccent}>LevReg.Ai</span> Because Business Owners
+            We Exist So Business Owners
             <br />
-            Shouldn&apos;t Have to Become AI Experts
+            Don&apos;t Have to Become <span className={theme.textAccent}>AI Experts</span>
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
@@ -225,7 +225,7 @@ const About = () => {
             </p>
           </div>
           
-          <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
+          <Link to="/transformation-call">
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
@@ -233,7 +233,7 @@ const About = () => {
               Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
 

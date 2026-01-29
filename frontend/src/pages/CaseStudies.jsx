@@ -197,7 +197,7 @@ const CaseStudies = () => {
               These aren't exceptional cases. They're what happens when you install AI systems built specifically for your business. Want similar results?
             </p>
             
-            <a href="https://we.levreg.ai/transform" target="_blank" rel="noopener noreferrer">
+            <Link to="/transformation-call">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
@@ -205,7 +205,7 @@ const CaseStudies = () => {
                 Start Your Ai Transformation
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </a>
+            </Link>
             
             <p className={`${theme.textTertiary} mt-6`}>
               Free discovery session. No pressure. Just clarity on what AI can do for your business.

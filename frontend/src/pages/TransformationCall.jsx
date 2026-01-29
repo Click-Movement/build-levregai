@@ -155,7 +155,7 @@ const TransformationCall = () => {
               <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
                 Transform Your Business
               </span>{' '}
-              in the Next 90 Days
+              in the Next 30 Days
             </h1>
             
             <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-4xl mx-auto leading-relaxed`}>
@@ -233,6 +233,18 @@ const TransformationCall = () => {
                 You don&apos;t need more information. You need someone who&apos;s actually built businesses to show you what works.
               </p>
             </div>
+            
+            <div className="text-center mt-12">
+              <Link to="/book-call">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                >
+                  Schedule Your Free AI Transformation Call
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -286,7 +298,7 @@ const TransformationCall = () => {
         <section className={`py-24 px-6 ${theme.bgPrimary}`}>
           <div className="max-w-4xl mx-auto">
             <h2 className={`text-4xl md:text-5xl font-bold mb-8 text-center ${theme.textPrimary}`}>
-              Why I&apos;m Different From
+              Why We Are Different From
               <br />
               <span className={theme.textAccent}>the AI Gurus</span>
             </h2>
@@ -319,6 +331,18 @@ const TransformationCall = () => {
                   <p className={`${theme.textSecondary} leading-relaxed`}>{item.description}</p>
                 </div>
               ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link to="/book-call">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                >
+                  Schedule Your Free AI Transformation Call
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
