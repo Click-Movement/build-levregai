@@ -18,6 +18,121 @@ export const pillarColors = {
 
 export const caseStudies = [
   {
+    id: 8,
+    slug: 'ai-gatekeeper-phone-receptionist',
+    title: 'The AI Gatekeeper',
+    subtitle: 'How a Local Business Reclaimed Their Phone Line',
+    pillar: pillars.AUTOMATION,
+    industry: 'Local Business',
+    icon: 'Phone',
+    problem: `A local business owner was drowning in phone calls. Not good calls—a flood of interruptions that pulled them away from actual work. Half were spam. The other half were a mix of tire-kickers, wrong numbers, and the occasional legitimate inquiry buried in the noise.
+
+The obvious solution? Hire a receptionist. Someone to sit by the phone, screen calls, and route the important ones through.
+
+But that's a $35,000+ annual commitment for what amounts to a filtering function. And human receptionists get overwhelmed, take breaks, call in sick, and can't work after hours when many calls come in.`,
+    system: [
+      'Built an AI voice receptionist that handles the entire front-line phone experience:',
+      'Answers every call instantly—no hold music, no "please wait"',
+      'Screens for intent: Is this a sales call? A spam call? A legitimate inquiry?',
+      'Handles spam and robocalls automatically—they never reach the owner',
+      'Books appointments directly into the calendar for qualified callers',
+      'Transfers important calls to the owner with context: "This is [Name] calling about [Reason]"',
+      'The system doesn\'t just answer calls. It makes decisions',
+      'It knows the difference between a vendor pitch and a customer inquiry',
+      'It can handle basic questions without escalation',
+      'When a call matters, it routes it through with full context'
+    ],
+    result: `The owner went from being interrupted 20+ times daily to receiving only the calls that actually required their attention—typically 3-5 per day. Appointments now book automatically. Spam calls disappeared entirely. And they never hired that receptionist.`,
+    metrics: {
+      before: '20+ daily interruptions',
+      after: '3-5 important calls',
+      savings: '$35,000+/year',
+      automation: 'Appointment booking'
+    },
+    quote: "If you're hiring for tasks that don't require judgment, you're building a job, not a business.",
+    principle: `Before you hire someone to answer phones, ask: Does this task require human judgment, or just human-like interaction? Screening calls, booking appointments, and filtering spam don't require judgment. They require consistency. That's exactly what AI excels at.`
+  },
+  {
+    id: 9,
+    slug: 'sleeping-database-reactivation',
+    title: 'The Sleeping Database',
+    subtitle: 'How a Med Spa Reactivated Past Clients',
+    pillar: pillars.LEVERAGE,
+    industry: 'Healthcare & Wellness',
+    icon: 'Database',
+    problem: `A local med spa had a problem hiding in plain sight: a database full of past customers they weren't talking to.
+
+These weren't cold leads. These were people who had already walked through the door, experienced the service, and paid for it. Many were overdue for their next appointment.
+
+But reaching out to them required someone on staff to manually sort through records, identify who was due, make phone calls, send messages, and follow up.
+
+Nobody had time for that. So the database sat there—thousands of potential appointments, completely dormant.
+
+The owner knew the revenue was there. They just couldn't figure out how to unlock it without hiring someone whose entire job was making outbound calls.`,
+    system: [
+      'Built an outbound AI reactivation system that works the database automatically:',
+      'Scans the customer database daily to identify clients due for service',
+      'Initiates personalized outreach via phone and text',
+      'Handles the conversation: "Hi [Name], it\'s been [X months] since your last [Service]. Would you like to book your next appointment?"',
+      'Books appointments directly into the scheduling system',
+      'Follows up with non-responders on a cadence—without being annoying',
+      'The system doesn\'t blast everyone at once',
+      'Works methodically through the database, prioritizing high-value clients and recent customers first',
+      'Adapts timing based on response patterns',
+      'Knows when to stop—no one gets harassed'
+    ],
+    result: `Past customer appointments increased by 25%. This wasn't new customer acquisition—it was revenue that already existed in their database, finally unlocked.
+
+The med spa added significant monthly revenue without spending a dollar on advertising or hiring additional staff.`,
+    metrics: {
+      before: 'Dormant database',
+      after: '25% increase',
+      investment: '$0 on ads/staff',
+      type: 'Existing customers'
+    },
+    quote: 'Revenue is what you make. Leverage is what you keep—in money and time.',
+    principle: `Most businesses are sitting on untapped leverage. Before you spend money acquiring new customers, ask: Are we fully extracting value from the customers we already have? The highest-ROI marketing isn't always finding new people—it's reactivating the ones who already trust you.`
+  },
+  {
+    id: 10,
+    slug: 'five-minute-window-lead-response',
+    title: 'The 5-Minute Window',
+    subtitle: 'How AI Stopped Leads From Going Cold',
+    pillar: pillars.TIME_FREEDOM,
+    industry: 'Sales & Lead Generation',
+    icon: 'Zap',
+    problem: `A business owner had a good problem: too many inbound leads. Their marketing was working. Forms were being filled out. Phone calls were coming in. But their team couldn't keep up.
+
+Here's the thing about inbound leads: speed matters. Data consistently shows that responding within 5 minutes versus 30 minutes can increase conversion rates by 8x or more. After an hour, most leads have moved on—they've contacted your competitor, lost interest, or simply forgotten why they reached out.
+
+The owner's team was doing their best, but "their best" meant response times of 2-4 hours during business hours. After 5pm and on weekends? Leads sat until Monday morning.
+
+They were generating leads and watching them go cold. The obvious fix—hire more people—would mean more overhead, more management, and still no coverage at 2am when leads don't stop coming in.`,
+    system: [
+      'Built a speed-to-lead AI system that responds to every inquiry within 5 minutes, 24/7:',
+      'Monitors all lead sources: form submissions, phone calls, chat, email',
+      'Initiates contact within 5 minutes via phone call AND text message',
+      'Qualifies the lead: What do they need? What\'s their timeline? Are they a fit?',
+      'Books qualified leads directly onto the sales calendar',
+      'Works 24/7—weekends, holidays, 3am—whenever leads come in',
+      'The AI doesn\'t just send a generic "thanks for reaching out" message',
+      'It has a real conversation. It asks the right questions',
+      'It pre-screens so the sales team only talks to qualified prospects',
+      'Does this whether the lead comes in at 10am or 10pm'
+    ],
+    result: `Lead response time dropped from hours to under 5 minutes—every single time. The sales team now receives pre-qualified appointments instead of cold leads to chase.
+
+Weekend and after-hours leads, previously lost, now convert at the same rate as business-hours leads. The owner's team works normal hours while the system works around the clock.`,
+    metrics: {
+      before: '2-4 hours response',
+      after: 'Under 5 minutes',
+      coverage: '24/7/365',
+      conversion: '8x improvement'
+    },
+    quote: "If your business can't run without you, you don't own a business—you ARE the business.",
+    principle: `The goal isn't to work more hours or hire more people to cover more hours. The goal is to build systems that work when you don't. A business that requires human presence to capture revenue isn't scalable—it's just a job with better marketing. True leverage means the system performs whether you're awake or not.`
+  },
+  {
     id: 1,
     slug: 'daily-newsletter-production',
     title: 'Daily Newsletter Production',
@@ -248,121 +363,6 @@ The owner now reviews and refines rather than creates from zero. Same voice. Sam
     },
     quote: 'The gap isn\'t knowledge. Everyone knows they \'should\' be using AI. The gap is implementation.',
     principle: `This is the implementation gap in action. The owner knew what good content looked like. They knew their voice. They knew their audience. What they didn't have was a system that turned that knowledge into consistent execution. We didn't teach them about content. We installed the system that makes content happen.`
-  },
-  {
-    id: 8,
-    slug: 'ai-gatekeeper-phone-receptionist',
-    title: 'The AI Gatekeeper',
-    subtitle: 'How a Local Business Reclaimed Their Phone Line',
-    pillar: pillars.AUTOMATION,
-    industry: 'Local Business',
-    icon: 'Phone',
-    problem: `A local business owner was drowning in phone calls. Not good calls—a flood of interruptions that pulled them away from actual work. Half were spam. The other half were a mix of tire-kickers, wrong numbers, and the occasional legitimate inquiry buried in the noise.
-
-The obvious solution? Hire a receptionist. Someone to sit by the phone, screen calls, and route the important ones through.
-
-But that's a $35,000+ annual commitment for what amounts to a filtering function. And human receptionists get overwhelmed, take breaks, call in sick, and can't work after hours when many calls come in.`,
-    system: [
-      'Built an AI voice receptionist that handles the entire front-line phone experience:',
-      'Answers every call instantly—no hold music, no "please wait"',
-      'Screens for intent: Is this a sales call? A spam call? A legitimate inquiry?',
-      'Handles spam and robocalls automatically—they never reach the owner',
-      'Books appointments directly into the calendar for qualified callers',
-      'Transfers important calls to the owner with context: "This is [Name] calling about [Reason]"',
-      'The system doesn\'t just answer calls. It makes decisions',
-      'It knows the difference between a vendor pitch and a customer inquiry',
-      'It can handle basic questions without escalation',
-      'When a call matters, it routes it through with full context'
-    ],
-    result: `The owner went from being interrupted 20+ times daily to receiving only the calls that actually required their attention—typically 3-5 per day. Appointments now book automatically. Spam calls disappeared entirely. And they never hired that receptionist.`,
-    metrics: {
-      before: '20+ daily interruptions',
-      after: '3-5 important calls',
-      savings: '$35,000+/year',
-      automation: 'Appointment booking'
-    },
-    quote: "If you're hiring for tasks that don't require judgment, you're building a job, not a business.",
-    principle: `Before you hire someone to answer phones, ask: Does this task require human judgment, or just human-like interaction? Screening calls, booking appointments, and filtering spam don't require judgment. They require consistency. That's exactly what AI excels at.`
-  },
-  {
-    id: 9,
-    slug: 'sleeping-database-reactivation',
-    title: 'The Sleeping Database',
-    subtitle: 'How a Med Spa Reactivated Past Clients',
-    pillar: pillars.LEVERAGE,
-    industry: 'Healthcare & Wellness',
-    icon: 'Database',
-    problem: `A local med spa had a problem hiding in plain sight: a database full of past customers they weren't talking to.
-
-These weren't cold leads. These were people who had already walked through the door, experienced the service, and paid for it. Many were overdue for their next appointment.
-
-But reaching out to them required someone on staff to manually sort through records, identify who was due, make phone calls, send messages, and follow up.
-
-Nobody had time for that. So the database sat there—thousands of potential appointments, completely dormant.
-
-The owner knew the revenue was there. They just couldn't figure out how to unlock it without hiring someone whose entire job was making outbound calls.`,
-    system: [
-      'Built an outbound AI reactivation system that works the database automatically:',
-      'Scans the customer database daily to identify clients due for service',
-      'Initiates personalized outreach via phone and text',
-      'Handles the conversation: "Hi [Name], it\'s been [X months] since your last [Service]. Would you like to book your next appointment?"',
-      'Books appointments directly into the scheduling system',
-      'Follows up with non-responders on a cadence—without being annoying',
-      'The system doesn\'t blast everyone at once',
-      'Works methodically through the database, prioritizing high-value clients and recent customers first',
-      'Adapts timing based on response patterns',
-      'Knows when to stop—no one gets harassed'
-    ],
-    result: `Past customer appointments increased by 25%. This wasn't new customer acquisition—it was revenue that already existed in their database, finally unlocked.
-
-The med spa added significant monthly revenue without spending a dollar on advertising or hiring additional staff.`,
-    metrics: {
-      before: 'Dormant database',
-      after: '25% increase',
-      investment: '$0 on ads/staff',
-      type: 'Existing customers'
-    },
-    quote: 'Revenue is what you make. Leverage is what you keep—in money and time.',
-    principle: `Most businesses are sitting on untapped leverage. Before you spend money acquiring new customers, ask: Are we fully extracting value from the customers we already have? The highest-ROI marketing isn't always finding new people—it's reactivating the ones who already trust you.`
-  },
-  {
-    id: 10,
-    slug: 'five-minute-window-lead-response',
-    title: 'The 5-Minute Window',
-    subtitle: 'How AI Stopped Leads From Going Cold',
-    pillar: pillars.TIME_FREEDOM,
-    industry: 'Sales & Lead Generation',
-    icon: 'Zap',
-    problem: `A business owner had a good problem: too many inbound leads. Their marketing was working. Forms were being filled out. Phone calls were coming in. But their team couldn't keep up.
-
-Here's the thing about inbound leads: speed matters. Data consistently shows that responding within 5 minutes versus 30 minutes can increase conversion rates by 8x or more. After an hour, most leads have moved on—they've contacted your competitor, lost interest, or simply forgotten why they reached out.
-
-The owner's team was doing their best, but "their best" meant response times of 2-4 hours during business hours. After 5pm and on weekends? Leads sat until Monday morning.
-
-They were generating leads and watching them go cold. The obvious fix—hire more people—would mean more overhead, more management, and still no coverage at 2am when leads don't stop coming in.`,
-    system: [
-      'Built a speed-to-lead AI system that responds to every inquiry within 5 minutes, 24/7:',
-      'Monitors all lead sources: form submissions, phone calls, chat, email',
-      'Initiates contact within 5 minutes via phone call AND text message',
-      'Qualifies the lead: What do they need? What\'s their timeline? Are they a fit?',
-      'Books qualified leads directly onto the sales calendar',
-      'Works 24/7—weekends, holidays, 3am—whenever leads come in',
-      'The AI doesn\'t just send a generic "thanks for reaching out" message',
-      'It has a real conversation. It asks the right questions',
-      'It pre-screens so the sales team only talks to qualified prospects',
-      'Does this whether the lead comes in at 10am or 10pm'
-    ],
-    result: `Lead response time dropped from hours to under 5 minutes—every single time. The sales team now receives pre-qualified appointments instead of cold leads to chase.
-
-Weekend and after-hours leads, previously lost, now convert at the same rate as business-hours leads. The owner's team works normal hours while the system works around the clock.`,
-    metrics: {
-      before: '2-4 hours response',
-      after: 'Under 5 minutes',
-      coverage: '24/7/365',
-      conversion: '8x improvement'
-    },
-    quote: "If your business can't run without you, you don't own a business—you ARE the business.",
-    principle: `The goal isn't to work more hours or hire more people to cover more hours. The goal is to build systems that work when you don't. A business that requires human presence to capture revenue isn't scalable—it's just a job with better marketing. True leverage means the system performs whether you're awake or not.`
   }
 ];
 
