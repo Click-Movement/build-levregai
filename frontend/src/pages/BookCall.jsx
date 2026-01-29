@@ -89,7 +89,7 @@ const BookCall = () => {
         <section className="relative py-16 px-6">
           <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
           
-          <div className="max-w-5xl mx-auto text-center relative z-10 mb-8">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mb-4">
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-6`}>
               <Calendar className={`w-4 h-4 ${theme.badgeIcon}`} />
               <span className={`text-sm ${theme.badgeText} font-medium`}>Schedule Your Call</span>
@@ -109,18 +109,15 @@ const BookCall = () => {
           </div>
 
           {/* Cal.com Embed Container */}
-          <div className="max-w-4xl mx-auto relative z-10">
-            <div className={`${theme.cardBg} border ${theme.cardBorder} rounded-2xl p-4 md:p-8 ${theme.shadow}`}>
-              <div 
-                id="my-cal-inline-30min" 
-                style={{
-                  width: '100%',
-                  height: '700px',
-                  overflow: 'auto'
-                }}
-                className={`${isDark ? '[&_*]:!text-white [&_button]:!bg-blue-600 [&_button]:!text-white' : ''}`}
-              />
-            </div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div 
+              id="my-cal-inline-30min" 
+              style={{
+                width: '100%',
+                height: '700px',
+                overflow: 'auto'
+              }}
+            />
           </div>
 
           {/* Additional Info */}
