@@ -25,13 +25,6 @@ const CaseStudies = () => {
   const { isDark } = useTheme();
   const theme = getThemeClasses(isDark);
 
-  const aggregateStats = [
-    { value: '10', label: 'Success Stories' },
-    { value: '93-95%', label: 'Time Reduction' },
-    { value: '25%+', label: 'Revenue Increase' },
-    { value: '24/7', label: 'System Availability' }
-  ];
-
   const philosophyPillars = [
     {
       icon: <Target className="w-8 h-8" />,
@@ -103,7 +96,7 @@ const CaseStudies = () => {
             </div>
             
             <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-              Real Businesses. Real Systems.
+              Real Systems.
               <br />
               <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
                 Real Results.
@@ -113,25 +106,6 @@ const CaseStudies = () => {
             <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
               See how businesses like yours transformed their operations with AI. From 3-hour tasks to 5 minutes, manual processes to automated systems, and overwhelmed teams to empowered operations.
             </p>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className={`py-16 px-6 ${theme.bgSecondary}`}>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6">
-              {aggregateStats.map((stat, idx) => (
-                <div 
-                  key={idx}
-                  className={`text-center p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group`}
-                >
-                  <div className={`text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
-                    {stat.value}
-                  </div>
-                  <div className={`${theme.textTertiary} text-sm leading-tight`}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

@@ -111,19 +111,17 @@ const Services = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
             <Zap className={`w-4 h-4 ${theme.badgeIcon}`} />
-            <span className={`text-sm ${theme.badgeText} font-medium`}>Programs & Training</span>
+            <span className={`text-sm ${theme.badgeText} font-medium`}>AI Powered Systems</span>
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
-              Ai Skills Development
-            </span>
+            We Install <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>AI Systems.</span>
             <br />
-            For Your Employees
+            You Get Your Time Back.
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            Role-specific training and systems that transform your team into super humans.
+            We don't sell information about AI. We provide the transformative systems that create permanent leverage in your business.
           </p>
         </div>
       </section>

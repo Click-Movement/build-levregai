@@ -74,7 +74,7 @@ const About = () => {
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            We Built <span className={theme.textAccent}>LevReg.Ai</span> Because CEOs
+            We Built <span className={theme.textAccent}>LevReg.Ai</span> Because Business Owners
             <br />
             Shouldn&apos;t Have to Become AI Experts
           </h1>
@@ -255,7 +255,7 @@ const About = () => {
               <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
                 30 Days
               </div>
-              <div className={theme.textTertiary}>To full ROI for most clients</div>
+              <div className={theme.textTertiary}>To ROI for most clients</div>
             </div>
             <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
               <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
