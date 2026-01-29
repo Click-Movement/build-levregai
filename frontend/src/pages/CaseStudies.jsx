@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Award, Filter, TrendingUp, CheckCircle, Target, Lightbulb, Zap, Clock, FileText, Edit3, Scale, Video, Users, Calendar, Sparkles, Phone, Database } from 'lucide-react';
+import { ArrowRight, Award, TrendingUp, CheckCircle, Target, Lightbulb, Zap, Clock, FileText, Edit3, Scale, Video, Users, Calendar, Sparkles, Phone, Database } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
-import { caseStudies, pillars, pillarColors, getIndustries } from '../data/caseStudiesData';
+import { caseStudies, pillars, pillarColors } from '../data/caseStudiesData';
 
 const iconMap = {
   FileText: FileText,
@@ -24,25 +24,6 @@ const iconMap = {
 const CaseStudies = () => {
   const { isDark } = useTheme();
   const theme = getThemeClasses(isDark);
-  const [selectedPillar, setSelectedPillar] = useState('all');
-  const [selectedIndustry, setSelectedIndustry] = useState('all');
-
-  const industries = getIndustries();
-
-  const filteredStudies = caseStudies.filter(study => {
-    const pillarMatch = selectedPillar === 'all' || study.pillar === selectedPillar;
-    const industryMatch = selectedIndustry === 'all' || study.industry === selectedIndustry;
-    return pillarMatch && industryMatch;
-  });
-
-  const pillarsList = [
-    { value: 'all', label: 'All Case Studies', icon: Award },
-    { value: pillars.IMPLEMENTATION, label: 'Implementation', icon: Target },
-    { value: pillars.SYSTEMS, label: 'Systems', icon: Lightbulb },
-    { value: pillars.AUTOMATION, label: 'Automation', icon: Zap },
-    { value: pillars.LEVERAGE, label: 'Leverage', icon: TrendingUp },
-    { value: pillars.TIME_FREEDOM, label: 'Time Freedom', icon: Clock }
-  ];
 
   const aggregateStats = [
     { value: '10', label: 'Success Stories' },
@@ -154,88 +135,11 @@ const CaseStudies = () => {
           </div>
         </section>
 
-        {/* Filter Section */}
-        <section className={`py-12 px-6 ${theme.bgPrimary}`}>
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-3 mb-6">
-              <Filter className={`w-5 h-5 ${theme.textAccent}`} />
-              <h2 className={`text-2xl font-bold ${theme.textPrimary}`}>Filter Case Studies</h2>
-            </div>
-            
-            {/* Pillar Filter */}
-            <div className="mb-6">
-              <h3 className={`text-sm font-medium ${theme.textSecondary} mb-3 uppercase tracking-wide`}>By Principle</h3>
-              <div className="flex flex-wrap gap-3">
-                {pillarsList.map((pillar) => {
-                  const Icon = pillar.icon;
-                  const isActive = selectedPillar === pillar.value;
-                  return (
-                    <button
-                      key={pillar.value}
-                      onClick={() => setSelectedPillar(pillar.value)}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                        isActive
-                          ? 'bg-blue-600 text-white'
-                          : isDark
-                          ? 'bg-[#0f0f0f] border border-gray-800 text-gray-300 hover:border-blue-500/50'
-                          : 'bg-white border border-gray-200 text-gray-700 hover:border-blue-400'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                      <span className="text-sm">{pillar.label}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Industry Filter */}
-            <div>
-              <h3 className={`text-sm font-medium ${theme.textSecondary} mb-3 uppercase tracking-wide`}>By Industry</h3>
-              <div className="flex flex-wrap gap-3">
-                <button
-                  onClick={() => setSelectedIndustry('all')}
-                  className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-                    selectedIndustry === 'all'
-                      ? 'bg-blue-600 text-white'
-                      : isDark
-                      ? 'bg-[#0f0f0f] border border-gray-800 text-gray-300 hover:border-blue-500/50'
-                      : 'bg-white border border-gray-200 text-gray-700 hover:border-blue-400'
-                  }`}
-                >
-                  All Industries
-                </button>
-                {industries.map((industry) => (
-                  <button
-                    key={industry}
-                    onClick={() => setSelectedIndustry(industry)}
-                    className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-                      selectedIndustry === industry
-                        ? 'bg-blue-600 text-white'
-                        : isDark
-                        ? 'bg-[#0f0f0f] border border-gray-800 text-gray-300 hover:border-blue-500/50'
-                        : 'bg-white border border-gray-200 text-gray-700 hover:border-blue-400'
-                    }`}
-                  >
-                    {industry}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Case Studies Grid */}
         <section className={`py-16 px-6 ${theme.bgSecondary}`}>
           <div className="max-w-7xl mx-auto">
-            <div className="mb-8">
-              <p className={`text-lg ${theme.textSecondary}`}>
-                Showing <span className={`font-bold ${theme.textPrimary}`}>{filteredStudies.length}</span> case {filteredStudies.length === 1 ? 'study' : 'studies'}
-              </p>
-            </div>
-            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredStudies.map((study) => {
+              {caseStudies.map((study) => {
                 const IconComponent = iconMap[study.icon];
                 const pillarColor = pillarColors[study.pillar];
                 
@@ -282,10 +186,10 @@ const CaseStudies = () => {
         <section className={`py-24 px-6 ${theme.bgPrimary}`}>
           <div className="max-w-7xl mx-auto">
             <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-              The 5 Core <span className={theme.textAccent}>Principles</span>
+              Our Core <span className={theme.textAccent}>Principles</span>
             </h2>
             <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
-              Every case study demonstrates one of these fundamental principles for AI transformation
+              Every case study demonstrates one of our fundamental principles for AI transformation
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
