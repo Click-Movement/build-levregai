@@ -9,34 +9,55 @@ const BookCall = () => {
   const theme = getThemeClasses(isDark);
 
   useEffect(() => {
-    // Load Cal.com embed script
-    const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
-    document.head.appendChild(script);
-    
-    script.onload = () => {
-      // Initialize Cal.com
-      if (window.Cal) {
-        window.Cal("init", "30min", {origin:"https://app.cal.com"});
-        
-        window.Cal.ns = window.Cal.ns || {};
-        window.Cal.ns["30min"] = window.Cal.ns["30min"] || function() {};
-        
-        window.Cal.ns["30min"]("inline", {
-          elementOrSelector:"#my-cal-inline-30min",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "levregai/30min",
-        });
-        
-        window.Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-      }
-    };
-    
+    // Cal.com initialization function (their standard pattern)
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if(typeof namespace === "string"){
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    // Initialize Cal.com with namespace
+    window.Cal("init", "30min", {origin:"https://app.cal.com"});
+
+    // Setup inline embed
+    window.Cal.ns["30min"]("inline", {
+      elementOrSelector:"#my-cal-inline-30min",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "levregai/30min",
+    });
+
+    // Configure UI
+    window.Cal.ns["30min"]("ui", {
+      "hideEventTypeDetails":false,
+      "layout":"month_view"
+    });
+
+    // Cleanup function
     return () => {
-      // Cleanup: remove script when component unmounts
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
+      // Cal.com handles its own cleanup
+      if (window.Cal) {
+        delete window.Cal;
       }
     };
   }, []);
