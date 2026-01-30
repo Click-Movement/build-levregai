@@ -51,6 +51,7 @@ const Footer = () => {
                   {link.internal ? (
                     <Link
                       to={link.href}
+                      onClick={() => window.scrollTo(0, 0)}
                       className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
                     >
                       {link.label}
@@ -77,6 +78,7 @@ const Footer = () => {
                   {link.internal ? (
                     <Link
                       to={link.href}
+                      onClick={() => window.scrollTo(0, 0)}
                       className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
                     >
                       {link.label}
