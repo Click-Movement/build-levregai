@@ -14,9 +14,9 @@ const Footer = () => {
       { label: 'Contact', href: '/discovery', internal: true }
     ],
     legal: [
-      { label: 'Privacy Policy', href: '#privacy', internal: false },
-      { label: 'Terms of Service', href: '#terms', internal: false },
-      { label: 'Cookie Policy', href: '#cookies', internal: false }
+      { label: 'Privacy Policy', href: '/privacy-policy', internal: true },
+      { label: 'Terms of Service', href: '/terms-of-service', internal: true },
+      { label: 'Cookie Policy', href: '/cookie-policy', internal: true }
     ]
   };
 
