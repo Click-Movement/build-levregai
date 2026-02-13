@@ -756,22 +756,6 @@ const BlogDetail = () => {
             <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-8 leading-relaxed`}>
               {article.subtitle}
             </p>
-            
-            {/* Meta Information */}
-            <div className={`flex flex-wrap items-center gap-6 ${theme.textTertiary} text-sm border-t border-b ${theme.border} py-4`}>
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{article.author.name}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{formatDate(article.publishDate)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{article.readingTime}</span>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -859,7 +843,7 @@ const BlogDetail = () => {
                   className={`${isDark ? 'border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white' : 'border-blue-300 hover:border-blue-500 hover:bg-blue-50'} ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
                 >
                   <ArrowLeft className="mr-2 w-6 h-6" />
-                  View All Articles
+                  View All Insights
                 </Button>
               </Link>
             </div>

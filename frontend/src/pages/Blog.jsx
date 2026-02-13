@@ -103,18 +103,6 @@ const Blog = () => {
                           {article.excerpt}
                         </p>
                         
-                        {/* Meta Info */}
-                        <div className={`flex items-center gap-4 ${theme.textTertiary} text-sm mb-6 border-t ${theme.border} pt-4`}>
-                          <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            <span>{article.readingTime}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{formatDate(article.publishDate)}</span>
-                          </div>
-                        </div>
-                        
                         {/* Read More Link */}
                         <div className={`flex items-center gap-2 ${theme.textAccent} font-medium group-hover:gap-3 transition-all`}>
                           Read Article

@@ -20,10 +20,10 @@ const Header = () => {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
     { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' }
+    { label: 'Insights', href: '/blog' },
+    { label: 'Services', href: '/services' }
   ];
 
   const handleNavClick = () => {
