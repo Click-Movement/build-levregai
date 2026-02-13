@@ -67,5 +67,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- Blog Article: AI Consulting Services -->
+  <url>
+    <loc>https://levreg.ai/blog/ai-consulting-services-scale-without-tech-team</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>

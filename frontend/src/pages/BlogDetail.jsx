@@ -55,6 +55,16 @@ const BlogDetail = () => {
           {section.content && section.content.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}
+          {section.list && (
+            <ul className="space-y-2 ml-6 mt-4">
+              {section.list.map((item, idx) => (
+                <li key={idx} className="list-disc">{item}</li>
+              ))}
+            </ul>
+          )}
+          {section.conclusion && (
+            <p className="mt-4">{section.conclusion}</p>
+          )}
           {section.assumptionsList && (
             <ul className="space-y-2 ml-6">
               {section.assumptionsList.map((item, idx) => (
@@ -304,6 +314,241 @@ const BlogDetail = () => {
               </div>
             )}
           </div>
+        </div>
+      );
+    }
+
+    // Service (numbered service with items/systems)
+    if (section.type === 'service') {
+      return (
+        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+          <div className="flex items-center gap-4 mb-6">
+            <div className={`w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xl font-bold`}>
+              {section.number}
+            </div>
+            <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
+          </div>
+          
+          <p className={`${theme.textSecondary} leading-relaxed mb-4`}>{section.content}</p>
+          
+          {section.items && (
+            <ul className="space-y-2 ml-6 mb-4">
+              {section.items.map((item, idx) => (
+                <li key={idx} className={`list-disc ${theme.textSecondary}`}>{item}</li>
+              ))}
+            </ul>
+          )}
+          
+          {section.systems && (
+            <div className="space-y-4 mt-6">
+              {section.systems.map((sys, idx) => (
+                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border`}>
+                  <h4 className={`font-bold ${theme.textPrimary} mb-2`}>{sys.name}</h4>
+                  <ul className="space-y-1">
+                    {sys.features.map((feature, fidx) => (
+                      <li key={fidx} className={`text-sm ${theme.textSecondary} flex items-start gap-2`}>
+                        <span className="mt-1">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {section.footer && (
+            <p className={`${theme.textAccent} font-semibold mt-6 italic`}>{section.footer}</p>
+          )}
+        </div>
+      );
+    }
+
+    // Costs breakdown
+    if (section.type === 'costs') {
+      return (
+        <div key={index} className="my-12 space-y-6">
+          {section.costs.map((cost, idx) => (
+            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>{cost.title}</h4>
+              <p className={`${theme.textSecondary} leading-relaxed mb-2`}>{cost.description}</p>
+              {cost.calculation && (
+                <p className={`${theme.textTertiary} text-sm mb-2`}>{cost.calculation}</p>
+              )}
+              <p className={`${theme.textAccent} font-bold text-lg`}>{cost.total}</p>
+            </div>
+          ))}
+          
+          <div className={`p-6 rounded-xl bg-blue-600 text-white`}>
+            <p className="text-2xl font-bold mb-2">{section.totalCost}</p>
+            <p className="text-blue-100 mb-4">{section.comparison}</p>
+            <p className="text-xl font-bold">{section.roi}</p>
+          </div>
+        </div>
+      );
+    }
+
+    // Red/Green Flags
+    if (section.type === 'flags') {
+      return (
+        <div key={index} className="my-12 grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Red Flags:</h3>
+            <div className="space-y-4">
+              {section.redFlags.map((flag, idx) => (
+                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
+                  <div className="flex items-start gap-3 mb-2">
+                    <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
+                    <h4 className={`font-bold ${isDark ? 'text-red-400' : 'text-red-700'}`}>{flag.title}</h4>
+                  </div>
+                  <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Green Flags:</h3>
+            <div className="space-y-4">
+              {section.greenFlags.map((flag, idx) => (
+                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
+                    <h4 className={`font-bold ${isDark ? 'text-green-400' : 'text-green-700'}`}>{flag.title}</h4>
+                  </div>
+                  <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // System (problem/solution/result)
+    if (section.type === 'system') {
+      return (
+        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+          <div className="flex items-center gap-4 mb-6">
+            <div className={`w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xl font-bold`}>
+              {section.number}
+            </div>
+            <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
+          </div>
+          
+          <div className="space-y-6">
+            <div>
+              <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-2`}>The Problem:</h4>
+              <p className={`${theme.textSecondary} leading-relaxed`}>{section.problem}</p>
+            </div>
+            
+            <div>
+              <h4 className={`text-lg font-semibold ${theme.textAccent} mb-2`}>The System:</h4>
+              <ul className="space-y-2 ml-6">
+                {section.solution.map((item, idx) => (
+                  <li key={idx} className={`list-disc ${theme.textSecondary}`}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
+              <h4 className={`text-lg font-semibold ${isDark ? 'text-green-400' : 'text-green-700'} mb-2`}>Typical Result:</h4>
+              <p className={`${theme.textSecondary} font-semibold`}>{section.result}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Pricing models
+    if (section.type === 'pricing') {
+      return (
+        <div key={index} className="my-12 space-y-6">
+          {section.models.map((model, idx) => (
+            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+              <div className="flex items-baseline justify-between mb-3">
+                <h4 className={`text-xl font-bold ${theme.textPrimary}`}>{model.name}</h4>
+                <span className={`text-2xl font-bold ${theme.textAccent}`}>{model.price}</span>
+              </div>
+              <p className={`${theme.textSecondary} leading-relaxed`}>{model.description}</p>
+            </div>
+          ))}
+          
+          {section.factors && (
+            <div className={`p-6 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border mt-8`}>
+              <h4 className={`text-lg font-bold ${theme.textPrimary} mb-3`}>What determines price:</h4>
+              <ul className="space-y-2 ml-6">
+                {section.factors.map((factor, idx) => (
+                  <li key={idx} className={`list-disc ${theme.textSecondary}`}>{factor}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Industries list
+    if (section.type === 'industries') {
+      return (
+        <div key={index} className="my-12 space-y-6">
+          {section.list.map((industry, idx) => (
+            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>{industry.name}</h4>
+              <p className={`${theme.textSecondary} leading-relaxed mb-3`}>{industry.description}</p>
+              <div className={`p-3 rounded-lg ${isDark ? 'bg-blue-950/20' : 'bg-blue-50'}`}>
+                <p className={`text-sm ${theme.textAccent} font-semibold`}>Why it works: {industry.why}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // Question groups
+    if (section.type === 'question-groups') {
+      return (
+        <div key={index} className="my-12 space-y-8">
+          {section.groups.map((group, idx) => (
+            <div key={idx}>
+              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{group.category}:</h4>
+              <ol className="space-y-3 ml-6">
+                {group.questions.map((q, qidx) => (
+                  <li key={qidx} className={`${theme.textSecondary} leading-relaxed`}>
+                    {qidx + 1}. {q}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // Options (numbered choices)
+    if (section.type === 'options') {
+      return (
+        <div key={index} className="my-12 space-y-6">
+          {section.options.map((option, idx) => (
+            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+              <div className="flex items-start gap-4 mb-3">
+                <div className={`w-10 h-10 rounded-lg ${isDark ? 'bg-blue-950/30 text-blue-400' : 'bg-blue-100 text-blue-700'} flex items-center justify-center font-bold flex-shrink-0`}>
+                  {option.number}
+                </div>
+                <div className="flex-1">
+                  <h4 className={`text-xl font-bold ${theme.textPrimary} mb-2`}>Option {option.number}: {option.title}</h4>
+                  <p className={`${theme.textSecondary} leading-relaxed mb-2`}>{option.description}</p>
+                  <p className={`${theme.textTertiary} italic text-sm`}>{option.reality}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          {section.conclusion && (
+            <div className={`p-6 rounded-xl bg-blue-600 text-white mt-8`}>
+              <p className="text-lg leading-relaxed whitespace-pre-line">{section.conclusion}</p>
+            </div>
+          )}
         </div>
       );
     }
