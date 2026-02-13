@@ -231,6 +231,83 @@ const BlogDetail = () => {
       );
     }
 
+    // Callout Box
+    if (section.type === 'callout') {
+      return (
+        <div key={index} className={`my-12 p-8 rounded-xl bg-blue-600 text-white`}>
+          <p className="text-xl font-bold mb-2" dangerouslySetInnerHTML={{ __html: section.content }} />
+          {section.subtext && (
+            <p className="text-blue-100">{section.subtext}</p>
+          )}
+        </div>
+      );
+    }
+
+    // Questions List
+    if (section.type === 'questions') {
+      return (
+        <div key={index} className="my-12 space-y-6">
+          {section.questions.map((q, idx) => (
+            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+              <div className="flex items-start gap-4">
+                <div className={`w-10 h-10 rounded-lg ${isDark ? 'bg-blue-950/30 text-blue-400' : 'bg-blue-100 text-blue-700'} flex items-center justify-center font-bold flex-shrink-0`}>
+                  {q.number}
+                </div>
+                <div className="flex-1">
+                  <h4 className={`text-lg font-bold ${theme.textPrimary} mb-2`}>{q.question}</h4>
+                  <p className={`${theme.textSecondary} leading-relaxed`}>{q.answer}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          {section.conclusion && (
+            <div className={`mt-6 text-lg ${theme.textSecondary} leading-relaxed space-y-4`}>
+              {section.conclusion.split('\n\n').map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Example (Wrong/Right comparison)
+    if (section.type === 'example') {
+      return (
+        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
+          <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>{section.title}</h3>
+          
+          <div className="space-y-6">
+            <div className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
+              <div className="flex items-start gap-3 mb-2">
+                <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
+                <p className={`font-semibold ${isDark ? 'text-red-400' : 'text-red-700'}`}>The answer approach:</p>
+              </div>
+              <p className={`${theme.textSecondary} ml-8 italic`}>"{section.wrong}"</p>
+            </div>
+            
+            <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
+              <div className="flex items-start gap-3 mb-2">
+                <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
+                <p className={`font-semibold ${isDark ? 'text-green-400' : 'text-green-700'}`}>The outcome approach:</p>
+              </div>
+              <p className={`${theme.textSecondary} ml-8 italic`}>"{section.right}"</p>
+            </div>
+            
+            {section.explanation && (
+              <p className={`${theme.textSecondary} leading-relaxed`}>{section.explanation}</p>
+            )}
+            
+            {section.key && (
+              <div className={`p-4 rounded-lg ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border`}>
+                <p className={`${theme.textSecondary} leading-relaxed`}>{section.key}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
     // Individual Role
     if (section.type === 'role') {
       return (
