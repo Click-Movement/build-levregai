@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, X, Check, Zap, Shield, TrendingUp, Users, Target, CheckCircle, ChevronRight } from 'lucide-react';
+import { X, Zap, Shield, TrendingUp, Users, Target, ChevronRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
-import { useTheme } from '../context/ThemeContext';
-import { getThemeClasses } from '../utils/themeClasses';
 import { toast } from 'sonner';
 
 const CustomerAutomation = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
-  
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -34,7 +29,6 @@ const CustomerAutomation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic here
     console.log('Form submitted:', formData);
     toast.success('Thank you! We\'ll respond within 24 hours to schedule your free automation audit.');
     setFormData({
@@ -83,7 +77,7 @@ const CustomerAutomation = () => {
   const howItWorksSteps = [
     {
       number: '01',
-      title: 'Audit',
+      title: 'Step 1: Audit',
       days: 'Days 1-3',
       items: [
         'Define automation scope',
@@ -94,7 +88,7 @@ const CustomerAutomation = () => {
     },
     {
       number: '02',
-      title: 'Setup',
+      title: 'Step 2: Setup',
       days: 'Days 4-10',
       items: [
         'Assign Certified Architect',
@@ -105,7 +99,7 @@ const CustomerAutomation = () => {
     },
     {
       number: '03',
-      title: 'Launch',
+      title: 'Step 3: Launch',
       days: 'Days 11-14',
       items: [
         'Run pilot with 10% of leads',
@@ -226,6 +220,9 @@ const CustomerAutomation = () => {
         <meta name="description" content="The infrastructure that combines AI-powered engagement with human strategic oversight to accelerate the customer lifecycle from lead to advocate." />
         <meta name="keywords" content="customer automation, AI automation, lead conversion, CRM automation, sales automation, lifecycle engine" />
         <link rel="canonical" href="https://levreg.ai/automation" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -241,31 +238,25 @@ const CustomerAutomation = () => {
         <meta name="twitter:description" content="The infrastructure that combines AI-powered engagement with human strategic oversight to accelerate the customer lifecycle." />
       </Helmet>
       
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
+      <div className="automation-theme min-h-screen bg-background text-foreground">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-          <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className={`absolute top-1/4 -left-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-            <div className={`absolute bottom-1/4 -right-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-          </div>
-          
+        <section className="relative min-h-screen flex items-center justify-center px-6 py-32">
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight text-foreground">
               CustomerAutomation
             </h1>
             
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight ${theme.textPrimary}`}>
-              AI Speed. Human Strategy. <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-cyan-400 to-cyan-600' : 'from-cyan-600 to-cyan-500'}`}>Zero Bottlenecks.</span>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-foreground text-shadow-glow">
+              AI Speed. Human Strategy. Zero Bottlenecks.
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
               <a href="#contact-form">
                 <Button 
                   size="lg" 
-                  className="glow-cyan-hover text-lg font-mono font-bold uppercase tracking-wider px-12 py-6 bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
+                  className="glow-cyan-hover font-automation-mono text-lg font-bold uppercase tracking-wider px-12 py-6 bg-primary text-primary-foreground hover:bg-primary/90"
                 >
-                  Schedule Your AI Automation Audit
+                  Schedule Your Ai Automation Audit
                 </Button>
               </a>
             </div>
@@ -273,12 +264,12 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Three Broken Models Section */}
-        <section className={`py-24 px-6 ${theme.bgSecondary}`}>
+        <section className="py-24 px-6 bg-secondary">
           <div className="max-w-7xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
               The Three Broken Models
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
+            <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               You are caught between expensive agencies, disconnected tools, and the slow pace of hiring.
             </p>
             
@@ -286,14 +277,14 @@ const CustomerAutomation = () => {
               {brokenModels.map((model, idx) => (
                 <Card 
                   key={idx} 
-                  className={`${theme.cardBg} ${theme.cardBorder} border-2 transition-all duration-300 ${theme.shadow}`}
+                  className="bg-card border-border border transition-all duration-300"
                 >
                   <CardContent className="p-8">
-                    <h3 className={`text-2xl font-bold mb-2 ${theme.textPrimary}`}>{model.title}</h3>
-                    <p className={`text-lg ${theme.textTertiary} mb-6`}>{model.subtitle}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{model.title}</h3>
+                    <p className="text-lg text-muted-foreground mb-6">{model.subtitle}</p>
                     <ul className="space-y-3">
                       {model.problems.map((problem, pIdx) => (
-                        <li key={pIdx} className={`flex items-start gap-3 ${theme.textSecondary}`}>
+                        <li key={pIdx} className="flex items-start gap-3 text-muted-foreground">
                           <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                           <span>{problem}</span>
                         </li>
@@ -307,52 +298,52 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Defining Customer Automation Section */}
-        <section className={`py-24 px-6 ${theme.bgPrimary}`}>
+        <section className="py-24 px-6 bg-background">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-              Defining <span className={theme.textAccent}>Customer Automation</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
+              Defining Customer Automation
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
+            <p className="text-xl text-muted-foreground text-center mb-12">
               It's not a tool. It's not a service. It's infrastructure.
             </p>
             
-            <Card className={`${isDark ? 'bg-gradient-to-br from-cyan-950/20 to-blue-950/20 border-cyan-500/30' : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-300'} border-2 mb-16 ${theme.shadow}`}>
+            <Card className="bg-card border-primary/30 border-2 mb-16">
               <CardContent className="p-12 text-center">
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${theme.textPrimary}`}>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
                   The Definition
                 </h3>
-                <p className={`text-xl md:text-2xl leading-relaxed ${theme.textSecondary}`}>
-                  The infrastructure that combines <span className={`${theme.textAccent} font-semibold`}>AI-powered engagement</span> with <span className={`${theme.textAccent} font-semibold`}>human strategic oversight</span> to accelerate the customer lifecycle from lead to advocate.
+                <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+                  The infrastructure that combines <span className="text-primary font-semibold">AI-powered engagement</span> with <span className="text-primary font-semibold">human strategic oversight</span> to accelerate the customer lifecycle from lead to advocate.
                 </p>
               </CardContent>
             </Card>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8 text-center">
-                  <Zap className={`w-12 h-12 mx-auto mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>AI Speed</h3>
-                  <p className={`${theme.textSecondary} text-lg`}>
+                  <Zap className="w-12 h-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">AI Speed</h3>
+                  <p className="text-muted-foreground text-lg">
                     Instant execution across Voice, Email, and Chat — 24/7.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8 text-center">
-                  <Users className={`w-12 h-12 mx-auto mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>Human Strategy</h3>
-                  <p className={`${theme.textSecondary} text-lg`}>
+                  <Users className="w-12 h-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">Human Strategy</h3>
+                  <p className="text-muted-foreground text-lg">
                     Managed by Certified Automation Architects.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8 text-center">
-                  <Target className={`w-12 h-12 mx-auto mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>Lifecycle Scope</h3>
-                  <p className={`${theme.textSecondary} text-lg`}>
+                  <Target className="w-12 h-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">Lifecycle Scope</h3>
+                  <p className="text-muted-foreground text-lg">
                     Automation across Acquisition, Conversion, Retention, Reactivation.
                   </p>
                 </CardContent>
@@ -362,12 +353,12 @@ const CustomerAutomation = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className={`py-24 px-6 ${theme.bgSecondary}`}>
+        <section className="py-24 px-6 bg-secondary">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
               How It Works
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
+            <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               From audit to launch in 14 days. No long ramp. No technical complexity.
             </p>
             
@@ -375,18 +366,18 @@ const CustomerAutomation = () => {
               {howItWorksSteps.map((step, idx) => (
                 <div 
                   key={idx}
-                  className={`relative p-8 rounded-2xl ${theme.cardBg} border-2 ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
+                  className="relative p-8 bg-card border border-border hover:border-primary/50 transition-all duration-300 group"
                 >
-                  <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-cyan-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white shadow-cyan-600/30">
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary flex items-center justify-center text-2xl font-bold text-primary-foreground shadow-lg">
                     {step.number}
                   </div>
                   <div className="mt-6">
-                    <h3 className={`text-2xl font-bold mb-2 ${theme.textPrimary}`}>{step.title}</h3>
-                    <p className={`text-lg ${theme.textAccent} mb-4 font-semibold`}>{step.days}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{step.title}</h3>
+                    <p className="text-lg text-primary mb-4 font-semibold">{step.days}</p>
                     <ul className="space-y-2">
                       {step.items.map((item, iIdx) => (
-                        <li key={iIdx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                          <ChevronRight className={`w-5 h-5 ${theme.textAccent} flex-shrink-0 mt-0.5`} />
+                        <li key={iIdx} className="flex items-start gap-2 text-muted-foreground">
+                          <ChevronRight className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -399,12 +390,12 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Lifecycle Engine Section */}
-        <section className={`py-24 px-6 ${theme.bgPrimary}`}>
+        <section className="py-24 px-6 bg-background">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-              The <span className={theme.textAccent}>Lifecycle Engine</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
+              The Lifecycle Engine
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
+            <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               One unified system. Three distinct phases. Zero revenue leaks.
             </p>
             
@@ -412,15 +403,15 @@ const CustomerAutomation = () => {
               {lifecycleEngines.map((engine, idx) => (
                 <Card 
                   key={idx} 
-                  className={`${theme.cardBg} border-2 ${idx === 0 ? 'border-cyan-500/50' : idx === 1 ? 'border-blue-500/50' : 'border-purple-500/50'} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
+                  className="bg-card border border-border hover:border-primary/50 transition-all duration-300 group"
                 >
                   <CardContent className="p-8">
-                    <h3 className={`text-2xl font-bold mb-2 ${theme.textPrimary}`}>{engine.title}</h3>
-                    <p className={`text-lg ${theme.textAccent} mb-6 font-semibold`}>{engine.subtitle}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{engine.title}</h3>
+                    <p className="text-lg text-primary mb-6 font-semibold">{engine.subtitle}</p>
                     <ul className="space-y-3">
                       {engine.features.map((feature, fIdx) => (
-                        <li key={fIdx} className={`flex items-start gap-3 ${theme.textSecondary}`}>
-                          <ChevronRight className={`w-5 h-5 ${theme.textAccent} flex-shrink-0 mt-0.5`} />
+                        <li key={fIdx} className="flex items-start gap-3 text-muted-foreground">
+                          <ChevronRight className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -433,52 +424,52 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Managed by Architects Section */}
-        <section className={`py-24 px-6 ${theme.bgSecondary}`}>
+        <section className="py-24 px-6 bg-secondary">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-              Managed by <span className={theme.textAccent}>Architects</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
+              Managed by Architects
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-3xl mx-auto`}>
+            <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               Automation without oversight is dangerous. That's why we include the human.
             </p>
             
-            <Card className={`${isDark ? 'bg-gradient-to-br from-blue-950/20 to-purple-950/20 border-blue-500/30' : 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-300'} border-2 mb-12 ${theme.shadow}`}>
+            <Card className="bg-card border-primary/30 border-2 mb-12">
               <CardContent className="p-12">
-                <h3 className={`text-3xl font-bold mb-4 ${theme.textPrimary} text-center`}>
-                  Certified Automation Architect
+                <h3 className="text-3xl font-bold mb-4 text-primary text-center">
+                  CertifiedAutomationArchitect
                 </h3>
-                <p className={`text-xl ${theme.textSecondary} text-center mb-8`}>
+                <p className="text-xl text-muted-foreground text-center mb-8">
                   Not a support rep. Not a VA. A strategic partner trained to design, monitor, and optimize your Lifecycle Engine.
                 </p>
               </CardContent>
             </Card>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8">
-                  <Shield className={`w-12 h-12 mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>System Design</h3>
-                  <p className={`${theme.textSecondary} leading-relaxed`}>
+                  <Shield className="w-12 h-12 mb-4 text-primary" />
+                  <h3 className="text-xl font-bold mb-3 text-foreground">System Design</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     They map your customer journey and configure the AI to mirror your best sales processes.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8">
-                  <Target className={`w-12 h-12 mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>Active Oversight</h3>
-                  <p className={`${theme.textSecondary} leading-relaxed`}>
+                  <Target className="w-12 h-12 mb-4 text-primary" />
+                  <h3 className="text-xl font-bold mb-3 text-foreground">Active Oversight</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     They monitor AI conversations daily, intervening if quality drops or complexity spikes.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 ${theme.shadow}`}>
+              <Card className="bg-card border-border border transition-all duration-300 hover:border-primary/50">
                 <CardContent className="p-8">
-                  <TrendingUp className={`w-12 h-12 mb-4 ${theme.textAccent}`} />
-                  <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>Continuous Optimization</h3>
-                  <p className={`${theme.textSecondary} leading-relaxed`}>
+                  <TrendingUp className="w-12 h-12 mb-4 text-primary" />
+                  <h3 className="text-xl font-bold mb-3 text-foreground">Continuous Optimization</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     They analyze conversion data to tweak scripts, prompts, and timing for better results.
                   </p>
                 </CardContent>
@@ -488,12 +479,12 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Real Results Section */}
-        <section className={`py-24 px-6 ${theme.bgPrimary}`}>
+        <section className="py-24 px-6 bg-background">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-              Real <span className={theme.textAccent}>Results</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
+              Real Results
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16`}>
+            <p className="text-xl text-muted-foreground text-center mb-16">
               From revenue leaks to revenue engines.
             </p>
             
@@ -501,38 +492,37 @@ const CustomerAutomation = () => {
               {caseStudies.map((study, idx) => (
                 <Card 
                   key={idx} 
-                  className={`${theme.cardBg} ${theme.cardBorder} border-2 transition-all duration-300 ${theme.shadow}`}
+                  className="bg-card border-border border transition-all duration-300"
                 >
                   <CardContent className="p-8">
                     <div className="mb-6">
-                      <p className={`text-sm uppercase tracking-wider ${theme.textAccent} font-semibold mb-1`}>
-                        {study.type}
+                      <p className="text-sm uppercase tracking-wider text-primary font-semibold mb-1">
+                        {study.type} &bull; {study.scale}
                       </p>
-                      <p className={`text-sm ${theme.textTertiary}`}>{study.scale}</p>
                     </div>
                     
-                    <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${theme.textPrimary}`}>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                       {study.headline}
                     </h3>
                     
                     <div className="space-y-4 mb-6">
-                      <div className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
-                        <p className={`text-sm ${theme.textTertiary} mb-1`}>{study.beforeLabel}</p>
-                        <p className={`text-3xl font-bold ${theme.textPrimary}`}>{study.beforeValue}</p>
+                      <div className="flex justify-between items-center p-4 bg-secondary border border-border">
+                        <span className="text-sm text-muted-foreground">{study.beforeLabel}</span>
+                        <span className="text-2xl font-bold text-foreground">{study.beforeValue}</span>
                       </div>
                       
-                      <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
-                        <p className={`text-sm ${theme.textTertiary} mb-1`}>{study.afterLabel}</p>
-                        <p className={`text-3xl font-bold ${theme.textPrimary}`}>{study.afterValue}</p>
+                      <div className="flex justify-between items-center p-4 bg-secondary border border-border">
+                        <span className="text-sm text-muted-foreground">{study.afterLabel}</span>
+                        <span className="text-2xl font-bold text-primary">{study.afterValue}</span>
                       </div>
                       
-                      <div className={`p-4 rounded-lg ${isDark ? 'bg-cyan-950/20 border-cyan-500/20' : 'bg-cyan-50 border-cyan-200'} border`}>
-                        <p className={`text-sm ${theme.textTertiary} mb-1`}>{study.revenueLabel}</p>
-                        <p className={`text-3xl font-bold ${theme.textAccent}`}>{study.revenue}</p>
+                      <div className="flex justify-between items-center p-4 bg-primary/20 border border-primary/30">
+                        <span className="text-sm text-muted-foreground">{study.revenueLabel}</span>
+                        <span className="text-2xl font-bold text-primary">{study.revenue}</span>
                       </div>
                     </div>
                     
-                    <blockquote className={`${theme.textSecondary} italic text-lg border-l-4 ${isDark ? 'border-cyan-500' : 'border-cyan-600'} pl-4`}>
+                    <blockquote className="text-muted-foreground italic text-lg border-l-4 border-primary pl-4">
                       {study.quote}
                     </blockquote>
                   </CardContent>
@@ -543,12 +533,12 @@ const CustomerAutomation = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className={`py-24 px-6 ${theme.bgSecondary}`}>
+        <section className="py-24 px-6 bg-secondary">
           <div className="max-w-4xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-16`}>
+            <p className="text-xl text-muted-foreground text-center mb-16">
               The answers to the questions you're already thinking.
             </p>
             
@@ -557,12 +547,12 @@ const CustomerAutomation = () => {
                 <AccordionItem 
                   key={idx} 
                   value={`item-${idx}`}
-                  className={`${theme.cardBg} ${theme.cardBorder} border rounded-lg px-6 ${theme.shadow}`}
+                  className="bg-card border-border border px-6"
                 >
-                  <AccordionTrigger className={`text-left ${theme.textPrimary} hover:${theme.textAccent} text-lg font-semibold`}>
+                  <AccordionTrigger className="text-left text-foreground hover:no-underline text-lg font-semibold px-6 py-4 group">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className={`${theme.textSecondary} text-base leading-relaxed pt-2`}>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -572,23 +562,23 @@ const CustomerAutomation = () => {
         </section>
 
         {/* Final CTA Form Section */}
-        <section id="contact-form" className={`py-24 px-6 ${theme.bgPrimary}`}>
+        <section id="contact-form" className="py-24 px-6 bg-background">
           <div className="max-w-3xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-foreground tracking-tight">
               Stop Buying Tools.
             </h2>
-            <h3 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${theme.textAccent}`}>
+            <h3 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-primary tracking-tight">
               Start Building Your Engine.
             </h3>
-            <p className={`text-xl ${theme.textTertiary} text-center mb-12`}>
+            <p className="text-xl text-muted-foreground text-center mb-12">
               Schedule Your Automation Audit
             </p>
             
-            <Card className={`${theme.cardBg} ${theme.cardBorder} border-2 ${theme.shadow}`}>
+            <Card className="bg-card border-border border">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="fullName" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="fullName" className="text-foreground font-semibold">
                       Full Name *
                     </Label>
                     <Input 
@@ -598,12 +588,12 @@ const CustomerAutomation = () => {
                       required
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="email" className="text-foreground font-semibold">
                       Email *
                     </Label>
                     <Input 
@@ -613,12 +603,12 @@ const CustomerAutomation = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="company" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="company" className="text-foreground font-semibold">
                       Company *
                     </Label>
                     <Input 
@@ -628,12 +618,12 @@ const CustomerAutomation = () => {
                       required
                       value={formData.company}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="phone" className="text-foreground font-semibold">
                       Phone
                     </Label>
                     <Input 
@@ -642,12 +632,12 @@ const CustomerAutomation = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="monthlyLeads" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="monthlyLeads" className="text-foreground font-semibold">
                       Monthly Inbound Leads (Approx.)
                     </Label>
                     <Input 
@@ -656,12 +646,12 @@ const CustomerAutomation = () => {
                       type="text"
                       value={formData.monthlyLeads}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="challenge" className={`${theme.textPrimary} font-semibold`}>
+                    <Label htmlFor="challenge" className="text-foreground font-semibold">
                       Tell Us About Your Biggest Challenge
                     </Label>
                     <Textarea 
@@ -670,18 +660,18 @@ const CustomerAutomation = () => {
                       rows={4}
                       value={formData.challenge}
                       onChange={handleInputChange}
-                      className={`mt-2 ${theme.inputBg} ${theme.inputBorder} ${theme.inputText}`}
+                      className="mt-2 bg-secondary border-border text-foreground"
                     />
                   </div>
 
                   <Button 
                     type="submit"
-                    className="w-full glow-cyan-hover text-lg font-mono font-bold uppercase tracking-wider h-14 bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
+                    className="w-full glow-cyan-hover font-automation-mono text-lg font-bold uppercase tracking-wider h-14 bg-primary text-primary-foreground hover:bg-primary/90"
                   >
                     Request Your Audit
                   </Button>
 
-                  <p className={`text-center text-sm ${theme.textTertiary} pt-2`}>
+                  <p className="text-center text-sm text-muted-foreground pt-2">
                     * We'll respond within 24 hours to schedule your free automation audit
                   </p>
                 </form>
