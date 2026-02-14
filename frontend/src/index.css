@@ -113,3 +113,19 @@ code {
         border-bottom-color: inherit;
     }
 }
+
+/* Customer Automation Page Styles */
+@layer utilities {
+    .glow-cyan-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .glow-cyan-hover:hover {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .dark .glow-cyan-hover:hover {
+        box-shadow: 0 0 25px rgba(34, 211, 238, 0.6), 0 0 50px rgba(34, 211, 238, 0.4);
+    }
+}
