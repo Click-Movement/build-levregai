@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/go/medspa/:path*",
+      "destination": "https://medspa-amber.vercel.app/:path*"
+    },
+    {
+      "source": "/go/medspa",
+      "destination": "https://medspa-amber.vercel.app/"
+    }
+  ]
+}
