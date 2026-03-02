@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -23,36 +23,47 @@ import AiOsWorkshop from './pages/AiOsWorkshop';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
+const HEADERLESS_ROUTES = ['/ai-os-workshop'];
+
+function AppContent() {
+  const location = useLocation();
+  const hideHeader = HEADERLESS_ROUTES.includes(location.pathname);
+
+  return (
+    <div className="App">
+      {!hideHeader && <Header />}
+      <main className={hideHeader ? '' : 'pt-20'}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/discovery" element={<Contact />} />
+          <Route path="/automation" element={<CustomerAutomation />} />
+          <Route path="/ai-os-workshop" element={<AiOsWorkshop />} />
+          <Route path="/transformation-call" element={<TransformationCall />} />
+          <Route path="/book-call" element={<BookCall />} />
+          <Route path="/thank-you" element={<CallBookedThankYou />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+        </Routes>
+      </main>
+      <Footer />
+      <Toaster />
+    </div>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
         <BrowserRouter>
-          <div className="App">
-            <Header />
-            <main className="pt-20">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/case-studies" element={<CaseStudies />} />
-                <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogDetail />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/discovery" element={<Contact />} />
-                <Route path="/automation" element={<CustomerAutomation />} />
-                <Route path="/ai-os-workshop" element={<AiOsWorkshop />} />
-                <Route path="/transformation-call" element={<TransformationCall />} />
-                <Route path="/book-call" element={<BookCall />} />
-                <Route path="/thank-you" element={<CallBookedThankYou />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="/cookie-policy" element={<CookiePolicy />} />
-              </Routes>
-            </main>
-            <Footer />
-            <Toaster />
-          </div>
+          <AppContent />
         </BrowserRouter>
       </ThemeProvider>
     </HelmetProvider>

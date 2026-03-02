@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, X, Users, Brain, Zap, Target, FileText, Copy, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -249,6 +250,19 @@ const AiOsWorkshop = () => {
 
       <div className="workshop-theme min-h-screen bg-background text-foreground">
 
+        {/* LOGO HEADER */}
+        <header className="bg-background px-6 py-4">
+          <div className="max-w-7xl mx-auto">
+            <Link to="/">
+              <img
+                src="https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png"
+                alt="LevReg.Ai"
+                className="h-10 md:h-12 w-auto"
+              />
+            </Link>
+          </div>
+        </header>
+
         {/* SECTION 1: HERO */}
         <section className="relative min-h-screen flex items-center justify-center px-6 py-32">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
@@ -256,7 +270,7 @@ const AiOsWorkshop = () => {
             <p className="text-primary font-medium tracking-wide uppercase text-sm mb-6">
               The Art of Building a Business That Runs Itself
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-blue">
               Leverage The "2-Day AI Takeover" To Automate 80% of Your Busywork and Free Yourself to Actually Grow Your Business.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -265,7 +279,7 @@ const AiOsWorkshop = () => {
             <Button
               size="lg"
               onClick={scrollToApply}
-              className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+              className="glow-blue-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
             >
               Apply for Your AI OS Workshop
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -742,7 +756,7 @@ const AiOsWorkshop = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full glow-green-hover text-lg font-bold h-14 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                    className="w-full glow-blue-hover text-lg font-bold h-14 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                   >
                     Submit Application
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -784,7 +798,7 @@ const AiOsWorkshop = () => {
         {/* SECTION 10: FINAL CTA */}
         <section className="py-24 px-6 bg-secondary">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-green">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-blue">
               Stop Playing With AI.{' '}
               <span className="text-primary">Start Running Your Business on It.</span>
             </h2>
@@ -794,7 +808,7 @@ const AiOsWorkshop = () => {
             <Button
               size="lg"
               onClick={scrollToApply}
-              className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+              className="glow-blue-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
             >
               Apply Now
               <ArrowRight className="ml-2 w-5 h-5" />
