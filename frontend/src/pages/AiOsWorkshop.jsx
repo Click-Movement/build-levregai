@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, CheckCircle, X, Users, Brain, Zap, Target, FileText, Copy, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Label } from '../components/ui/label';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '../components/ui/accordion';
-import { toast } from 'sonner';
 
 const faqItems = [
   {
@@ -195,44 +192,9 @@ const processSteps = [
 ];
 
 const AiOsWorkshop = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    companyName: '',
-    roleTitle: '',
-    companySize: '',
-    annualRevenue: '',
-    goals: '',
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Workshop application submitted:', formData);
-    toast.success('Application submitted! We\'ll be in touch within 48 hours.');
-    setFormData({
-      fullName: '',
-      email: '',
-      companyName: '',
-      roleTitle: '',
-      companySize: '',
-      annualRevenue: '',
-      goals: '',
-    });
-  };
-
-  const scrollToApply = (e) => {
-    e.preventDefault();
-    document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <>
@@ -262,14 +224,15 @@ const AiOsWorkshop = () => {
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
               Now you can build an AI-Powered "Command Center" to run your entire business... even if you don't know a thing about technology
             </p>
-            <Button
-              size="lg"
-              onClick={scrollToApply}
-              className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-            >
-              Apply for Your AI OS Workshop
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link to="/ai-os-workshop/apply">
+              <Button
+                size="lg"
+                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+              >
+                Apply for Your AI OS Workshop
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <p className="text-muted-foreground text-sm mt-4">
               Limited to 5 companies per month. Application required.
             </p>
@@ -373,6 +336,17 @@ const AiOsWorkshop = () => {
             <p className="text-center text-foreground font-semibold text-lg mt-12">
               This isn't a planning meeting. It's a strategic buildout.
             </p>
+            <div className="text-center mt-10">
+              <Link to="/ai-os-workshop/apply">
+                <Button
+                  size="lg"
+                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                >
+                  Apply for Your AI OS Workshop
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -522,6 +496,17 @@ const AiOsWorkshop = () => {
                 </div>
               </CardContent>
             </Card>
+            <div className="text-center mt-10">
+              <Link to="/ai-os-workshop/apply">
+                <Button
+                  size="lg"
+                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                >
+                  Apply for Your AI OS Workshop
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -624,135 +609,20 @@ const AiOsWorkshop = () => {
               ))}
             </div>
 
-            {/* Application Form */}
-            <Card className="bg-card border-2 border-primary/30 max-w-2xl mx-auto">
-              <CardContent className="p-8 md:p-10">
-                <h3 className="text-2xl font-extrabold text-foreground mb-8 text-center">Apply for Your AI OS Workshop</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="fullName" className="text-foreground font-semibold">Full Name *</Label>
-                      <Input
-                        id="fullName"
-                        name="fullName"
-                        type="text"
-                        required
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        className="mt-2 bg-secondary border-border text-foreground"
-                        placeholder="Jane Smith"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email" className="text-foreground font-semibold">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="mt-2 bg-secondary border-border text-foreground"
-                        placeholder="jane@company.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="companyName" className="text-foreground font-semibold">Company Name *</Label>
-                      <Input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        required
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        className="mt-2 bg-secondary border-border text-foreground"
-                        placeholder="Acme Corp"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="roleTitle" className="text-foreground font-semibold">Your Role / Title *</Label>
-                      <Input
-                        id="roleTitle"
-                        name="roleTitle"
-                        type="text"
-                        required
-                        value={formData.roleTitle}
-                        onChange={handleInputChange}
-                        className="mt-2 bg-secondary border-border text-foreground"
-                        placeholder="CEO, Founder, COO..."
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="companySize" className="text-foreground font-semibold">Company Size *</Label>
-                      <select
-                        id="companySize"
-                        name="companySize"
-                        required
-                        value={formData.companySize}
-                        onChange={handleInputChange}
-                        className="mt-2 w-full h-9 rounded-md border border-border bg-secondary text-foreground px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      >
-                        <option value="">Select...</option>
-                        <option value="1-5">1-5 employees</option>
-                        <option value="6-15">6-15 employees</option>
-                        <option value="16-50">16-50 employees</option>
-                        <option value="51-100">51-100 employees</option>
-                        <option value="100+">100+ employees</option>
-                      </select>
-                    </div>
-                    <div>
-                      <Label htmlFor="annualRevenue" className="text-foreground font-semibold">Annual Revenue *</Label>
-                      <select
-                        id="annualRevenue"
-                        name="annualRevenue"
-                        required
-                        value={formData.annualRevenue}
-                        onChange={handleInputChange}
-                        className="mt-2 w-full h-9 rounded-md border border-border bg-secondary text-foreground px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      >
-                        <option value="">Select...</option>
-                        <option value="under-500k">Under $500K</option>
-                        <option value="500k-1m">$500K - $1M</option>
-                        <option value="1m-5m">$1M - $5M</option>
-                        <option value="5m-10m">$5M - $10M</option>
-                        <option value="10m+">$10M+</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="goals" className="text-foreground font-semibold">What are you looking to accomplish? *</Label>
-                    <Textarea
-                      id="goals"
-                      name="goals"
-                      required
-                      value={formData.goals}
-                      onChange={handleInputChange}
-                      className="mt-2 bg-secondary border-border text-foreground min-h-[120px]"
-                      placeholder="Tell us about your business goals and what you'd like AI to help with..."
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full glow-green-hover text-lg font-bold h-14 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-                  >
-                    Submit Application
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                  <p className="text-muted-foreground text-sm text-center">
-                    Limited availability. We work with a small number of companies each month to maintain quality and preparation.
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
+            <div className="text-center">
+              <Link to="/ai-os-workshop/apply">
+                <Button
+                  size="lg"
+                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                >
+                  Apply for Your AI OS Workshop
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <p className="text-muted-foreground text-sm mt-4">
+                Limited availability. We work with a small number of companies each month to maintain quality and preparation.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -791,14 +661,15 @@ const AiOsWorkshop = () => {
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Apply for the AI OS Workshop and build the AI Operating System your business has been missing.
             </p>
-            <Button
-              size="lg"
-              onClick={scrollToApply}
-              className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-            >
-              Apply Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link to="/ai-os-workshop/apply">
+              <Button
+                size="lg"
+                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+              >
+                Apply Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <p className="text-muted-foreground text-sm mt-4">
               Limited spots each month. Application takes ~5 minutes.
             </p>
