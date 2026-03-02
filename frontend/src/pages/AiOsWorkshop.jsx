@@ -201,9 +201,9 @@ const AiOsWorkshop = () => {
       <Helmet>
         <title>AI OS Workshop | Build Your AI Operating System in 2 Days | LevReg.Ai</title>
         <meta name="description" content="Leverage the 2-Day AI Takeover to automate 80% of your busywork. Build an AI-Powered Command Center to run your entire business — even if you don't know a thing about technology." />
-        <link rel="canonical" href="https://levreg.ai/ai-os-workshop" />
+        <link rel="canonical" href="https://levreg.ai/workshop" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://levreg.ai/ai-os-workshop" />
+        <meta property="og:url" content="https://levreg.ai/workshop" />
         <meta property="og:title" content="AI OS Workshop | Build Your AI Operating System in 2 Days" />
         <meta property="og:description" content="Leverage the 2-Day AI Takeover to automate 80% of your busywork. Build an AI-Powered Command Center to run your entire business." />
         <meta property="og:site_name" content="LevReg.Ai" />
@@ -224,7 +224,7 @@ const AiOsWorkshop = () => {
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
               Now you can build an AI-Powered "Command Center" to run your entire business... even if you don't know a thing about technology
             </p>
-            <Link to="/ai-os-workshop/apply">
+            <Link to="/workshop/apply">
               <Button
                 size="lg"
                 className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
@@ -337,7 +337,7 @@ const AiOsWorkshop = () => {
               This isn't a planning meeting. It's a strategic buildout.
             </p>
             <div className="text-center mt-10">
-              <Link to="/ai-os-workshop/apply">
+              <Link to="/workshop/apply">
                 <Button
                   size="lg"
                   className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
@@ -497,7 +497,7 @@ const AiOsWorkshop = () => {
               </CardContent>
             </Card>
             <div className="text-center mt-10">
-              <Link to="/ai-os-workshop/apply">
+              <Link to="/workshop/apply">
                 <Button
                   size="lg"
                   className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
@@ -610,7 +610,7 @@ const AiOsWorkshop = () => {
             </div>
 
             <div className="text-center">
-              <Link to="/ai-os-workshop/apply">
+              <Link to="/workshop/apply">
                 <Button
                   size="lg"
                   className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
@@ -661,7 +661,7 @@ const AiOsWorkshop = () => {
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Apply for the AI OS Workshop and build the AI Operating System your business has been missing.
             </p>
-            <Link to="/ai-os-workshop/apply">
+            <Link to="/workshop/apply">
               <Button
                 size="lg"
                 className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"

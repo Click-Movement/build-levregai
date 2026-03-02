@@ -25,7 +25,7 @@ import AiOsWorkshopConfirmed from './pages/AiOsWorkshopConfirmed';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
-const HEADERLESS_PREFIXES = ['/ai-os-workshop'];
+const HEADERLESS_PREFIXES = ['/workshop'];
 
 function AppContent() {
   const location = useLocation();
@@ -45,9 +45,9 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/discovery" element={<Contact />} />
           <Route path="/automation" element={<CustomerAutomation />} />
-          <Route path="/ai-os-workshop" element={<AiOsWorkshop />} />
-          <Route path="/ai-os-workshop/apply" element={<AiOsWorkshopApply />} />
-          <Route path="/ai-os-workshop/confirmed" element={<AiOsWorkshopConfirmed />} />
+          <Route path="/workshop" element={<AiOsWorkshop />} />
+          <Route path="/workshop/apply" element={<AiOsWorkshopApply />} />
+          <Route path="/workshop/confirmed" element={<AiOsWorkshopConfirmed />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />

@@ -12,7 +12,7 @@ const AiOsWorkshopApply = () => {
         <title>Apply — AI OS Workshop | LevReg AI</title>
         <meta name="description" content="Apply to the AI OS Workshop. Limited to 5 companies per month." />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://levreg.ai/ai-os-workshop/apply" />
+        <link rel="canonical" href="https://levreg.ai/workshop/apply" />
       </Helmet>
 
       <div className="workshop-theme min-h-screen bg-background text-foreground">

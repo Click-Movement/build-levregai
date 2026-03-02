@@ -134,7 +134,7 @@ These three roles cover the entire revenue cycle\u2014attract, convert, retain\u
       ],
 
       relatedLinks: [
-        { text: 'Sign Up for the AI OS Workshop', url: '/ai-os-workshop' },
+        { text: 'Sign Up for the AI OS Workshop', url: '/workshop' },
         { text: 'Schedule a Free Discovery Call', url: '/transformation-call' },
         { text: 'Learn About Our AI Services', url: '/services' }
       ]

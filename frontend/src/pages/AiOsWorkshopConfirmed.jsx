@@ -13,7 +13,7 @@ const AiOsWorkshopConfirmed = () => {
         <title>Application Confirmed — AI OS Workshop | LevReg AI</title>
         <meta name="description" content="Your AI OS Workshop application has been received. We will contact you shortly." />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://levreg.ai/ai-os-workshop/confirmed" />
+        <link rel="canonical" href="https://levreg.ai/workshop/confirmed" />
       </Helmet>
 
       <div className="workshop-theme min-h-screen bg-background text-foreground">
