@@ -20,14 +20,16 @@ import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import CustomerAutomation from './pages/CustomerAutomation';
 import AiOsWorkshop from './pages/AiOsWorkshop';
+import AiOsWorkshopApply from './pages/AiOsWorkshopApply';
+import AiOsWorkshopConfirmed from './pages/AiOsWorkshopConfirmed';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
-const HEADERLESS_ROUTES = ['/ai-os-workshop'];
+const HEADERLESS_PREFIXES = ['/ai-os-workshop'];
 
 function AppContent() {
   const location = useLocation();
-  const hideHeader = HEADERLESS_ROUTES.includes(location.pathname);
+  const hideHeader = HEADERLESS_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
 
   return (
     <div className="App">
@@ -44,6 +46,8 @@ function AppContent() {
           <Route path="/discovery" element={<Contact />} />
           <Route path="/automation" element={<CustomerAutomation />} />
           <Route path="/ai-os-workshop" element={<AiOsWorkshop />} />
+          <Route path="/ai-os-workshop/apply" element={<AiOsWorkshopApply />} />
+          <Route path="/ai-os-workshop/confirmed" element={<AiOsWorkshopConfirmed />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />

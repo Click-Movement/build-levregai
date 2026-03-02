@@ -141,25 +141,25 @@ code {
 
 /* AI OS Workshop Page Styles */
 .workshop-theme {
-    --background: 220 20% 5%;
+    --background: 150 20% 5%;
     --foreground: 0 0% 100%;
-    --card: 220 15% 8%;
+    --card: 150 15% 8%;
     --card-foreground: 0 0% 100%;
-    --popover: 220 15% 8%;
+    --popover: 150 15% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 217 91% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 10% 12%;
+    --primary: 160 80% 40%;
+    --primary-foreground: 150 20% 5%;
+    --secondary: 150 10% 12%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 10% 15%;
+    --muted: 150 10% 15%;
     --muted-foreground: 0 0% 60%;
-    --accent: 217 91% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 160 80% 40%;
+    --accent-foreground: 150 20% 5%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 10% 18%;
-    --input: 220 10% 15%;
-    --ring: 217 91% 53%;
+    --border: 150 10% 18%;
+    --input: 150 10% 15%;
+    --ring: 160 80% 40%;
     --radius: 0.5rem;
     font-family: 'Inter', system-ui, sans-serif;
 }
@@ -185,15 +185,15 @@ code {
         font-family: 'Roboto Mono', monospace;
     }
 
-    .glow-blue-hover {
+    .glow-green-hover {
         transition: box-shadow 0.3s;
     }
 
-    .glow-blue-hover:hover {
-        box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
+    .glow-green-hover:hover {
+        box-shadow: 0 0 30px rgba(30, 180, 120, 0.7);
     }
 
-    .text-shadow-blue {
-        text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    .text-shadow-green {
+        text-shadow: 0 0 20px rgba(30, 180, 120, 0.5);
     }
 }
