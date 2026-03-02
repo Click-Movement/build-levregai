@@ -139,6 +139,31 @@ code {
     font-family: 'Inter', system-ui, sans-serif;
 }
 
+/* AI OS Workshop Page Styles */
+.workshop-theme {
+    --background: 150 20% 5%;
+    --foreground: 0 0% 100%;
+    --card: 150 15% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 150 15% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 160 80% 40%;
+    --primary-foreground: 150 20% 5%;
+    --secondary: 150 10% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 150 10% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 160 80% 40%;
+    --accent-foreground: 150 20% 5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 10% 18%;
+    --input: 150 10% 15%;
+    --ring: 160 80% 40%;
+    --radius: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
 @layer utilities {
     .glow-cyan {
         box-shadow: 0 0 20px rgba(0, 163, 170, 0.5);
@@ -158,5 +183,17 @@ code {
 
     .font-automation-mono {
         font-family: 'Roboto Mono', monospace;
+    }
+
+    .glow-green-hover {
+        transition: box-shadow 0.3s;
+    }
+
+    .glow-green-hover:hover {
+        box-shadow: 0 0 30px rgba(30, 180, 120, 0.7);
+    }
+
+    .text-shadow-green {
+        text-shadow: 0 0 20px rgba(30, 180, 120, 0.5);
     }
 }

@@ -19,6 +19,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import CustomerAutomation from './pages/CustomerAutomation';
+import AiOsWorkshop from './pages/AiOsWorkshop';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/discovery" element={<Contact />} />
                 <Route path="/automation" element={<CustomerAutomation />} />
+                <Route path="/ai-os-workshop" element={<AiOsWorkshop />} />
                 <Route path="/transformation-call" element={<TransformationCall />} />
                 <Route path="/book-call" element={<BookCall />} />
                 <Route path="/thank-you" element={<CallBookedThankYou />} />
