@@ -142,15 +142,15 @@ code {
 /* AI OS Workshop Page Styles */
 .workshop-theme {
     --background: 150 20% 5%;
-    --foreground: 0 0% 100%;
+    --foreground: 210 20% 98%;
     --card: 150 15% 8%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: 210 20% 98%;
     --popover: 150 15% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 210 20% 98%;
     --primary: 160 80% 40%;
     --primary-foreground: 150 20% 5%;
     --secondary: 150 10% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 210 20% 98%;
     --muted: 150 10% 15%;
     --muted-foreground: 0 0% 60%;
     --accent: 160 80% 40%;
