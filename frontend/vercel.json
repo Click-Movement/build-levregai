@@ -10,11 +10,11 @@
     },
     {
       "source": "/scorecard/:path*",
-      "destination": "https://three-engine-scorecard-c8d3nmtzy-optimized-assets.vercel.app/:path*"
+      "destination": "https://three-engine-scorecard.vercel.app/:path*"
     },
     {
       "source": "/scorecard",
-      "destination": "https://three-engine-scorecard-c8d3nmtzy-optimized-assets.vercel.app/"
+      "destination": "https://three-engine-scorecard.vercel.app/"
     }
   ]
 }
