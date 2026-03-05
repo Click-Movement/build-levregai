@@ -23,6 +23,7 @@ import AiOsWorkshop from './pages/AiOsWorkshop';
 import AiOsWorkshopApply from './pages/AiOsWorkshopApply';
 import AiOsWorkshopConfirmed from './pages/AiOsWorkshopConfirmed';
 import MarketingAssistantWorkshop from './pages/MarketingAssistantWorkshop';
+import MarketingAssistantThankYou from './pages/MarketingAssistantThankYou';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -50,6 +51,7 @@ function AppContent() {
           <Route path="/workshop/apply" element={<AiOsWorkshopApply />} />
           <Route path="/workshop/confirmed" element={<AiOsWorkshopConfirmed />} />
           <Route path="/workshop/marketing-assistant" element={<MarketingAssistantWorkshop />} />
+          <Route path="/workshop/marketing-assistant/thank-you" element={<MarketingAssistantThankYou />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
