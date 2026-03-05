@@ -7,6 +7,14 @@
     {
       "source": "/go/medspa",
       "destination": "https://medspa-amber.vercel.app/"
+    },
+    {
+      "source": "/scorecard/:path*",
+      "destination": "https://three-engine-scorecard.vercel.app/:path*"
+    },
+    {
+      "source": "/scorecard",
+      "destination": "https://three-engine-scorecard.vercel.app/"
     }
   ]
 }
