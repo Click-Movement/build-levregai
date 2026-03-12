@@ -115,20 +115,21 @@ const Home = () => {
           </div>
           
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            Your Team. <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>Amplified By Ai.</span>
+            We're Accepting Applications for the AI&nbsp;OS Workshop.<br />
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>5 Spots. One Is Reserved for a Company Like Yours.</span>
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            LevReg.Ai helps your employees put AI to work inside their job responsibilities, making every task faster and more efficient.
+            In two days, we'll build your complete AI Operating System alongside you… strategy, AI employees, SOPs, and a 90-day roadmap. Here's what that means in practice.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/transformation-call">
+            <Link to="/ai-os-workshop-apply">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
               >
-                Start Your Ai Transformation
+                Apply Now
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -140,6 +141,35 @@ const Home = () => {
             >
               See How It Works
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Section */}
+      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
+        <div className="max-w-4xl mx-auto">
+          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed`}>
+            <p>
+              Each month, we work with <span className={`${theme.textPrimary} font-semibold`}>exactly five companies.</span>
+            </p>
+            <p>
+              Not because we can't take more. Because the work we do — building a complete AI Operating System from the ground up, tailored to your business, your team, and your goals — requires the kind of preparation and attention that doesn't scale beyond five.
+            </p>
+            <p>
+              We research your business before we arrive. We review your processes, your org chart, your competitive landscape, and your existing documentation. We come to Day 1 already knowing where your biggest leverage points are.
+            </p>
+            <p>
+              By the end of Day 2, you leave with <span className={`${theme.textAccent} font-semibold`}>AI employees built, trained on your proprietary materials, stress-tested against real scenarios from your business, and documented with SOPs your team can use immediately.</span> You also leave with a 90-day implementation roadmap and a complete workshop playbook delivered within 48 hours.
+            </p>
+            <p>
+              This is not a course. It is not a consulting engagement where someone tells you what to do and leaves you to figure out the rest. It is two days of intensive, hands-on buildout. <span className={`${theme.textPrimary} font-semibold`}>Done with you, not for you</span> — that ends with a working system, not a plan for one.
+            </p>
+            <p>
+              Applications for our next workshop are open now. We review every application within 48 hours and schedule a short call with qualified companies to confirm fit and scope.
+            </p>
+            <p>
+              If you've been trying to make AI work in your business and haven't found the approach that actually sticks, <span className={`${theme.textAccent} font-semibold`}>this is worth five minutes of your time.</span>
+            </p>
           </div>
         </div>
       </section>
