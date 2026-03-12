@@ -212,7 +212,7 @@ const AiOsWorkshop = () => {
       <div className="workshop-theme min-h-screen bg-background text-foreground">
 
         {/* SECTION 1: HERO */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-32">
+        <section className="relative min-h-[80vh] flex items-center justify-center px-6 py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <p className="text-primary font-medium tracking-wide uppercase text-sm mb-6">
@@ -241,14 +241,14 @@ const AiOsWorkshop = () => {
         </section>
 
         {/* LEAD SECTION */}
-        <section className="py-24 px-6 bg-background">
+        <section className="pt-0 pb-24 px-6 bg-background">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Each month, we work with <span className="text-foreground font-semibold">exactly five companies.</span>
               </p>
               <p>
-                Not because we can't take more. Because the work we do — building a complete AI Operating System from the ground up, tailored to your business, your team, and your goals — requires the kind of preparation and attention that doesn't scale beyond five.
+                Not because we can't take more. Because the work we do, building a complete AI Operating System from the ground up, tailored to your business, your team, and your goals, requires the kind of preparation and attention that doesn't scale beyond five.
               </p>
               <p>
                 We research your business before we arrive. We review your processes, your org chart, your competitive landscape, and your existing documentation. We come to Day 1 already knowing where your biggest leverage points are.
@@ -257,7 +257,7 @@ const AiOsWorkshop = () => {
                 By the end of Day 2, you leave with <span className="text-primary font-semibold">AI employees built, trained on your proprietary materials, stress-tested against real scenarios from your business, and documented with SOPs your team can use immediately.</span> You also leave with a 90-day implementation roadmap and a complete workshop playbook delivered within 48 hours.
               </p>
               <p>
-                This is not a course. It is not a consulting engagement where someone tells you what to do and leaves you to figure out the rest. It is two days of intensive, hands-on buildout. <span className="text-foreground font-semibold">Done with you, not for you</span> — that ends with a working system, not a plan for one.
+                This is not a course. It is not a consulting engagement where someone tells you what to do and leaves you to figure out the rest. It is two days of intensive, hands-on buildout. <span className="text-foreground font-semibold">Done with you, not for you</span> that ends with a working system, not a plan for one.
               </p>
               <p>
                 Applications for our next workshop are open now. We review every application within 48 hours and schedule a short call with qualified companies to confirm fit and scope.
