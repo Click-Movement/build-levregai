@@ -30,10 +30,7 @@ const Footer = () => {
               className="h-10 w-auto mb-4"
             />
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
-              LevReg.Ai helps small businesses become AI-first by training employees to use role-specific AI systems for speed, accuracy, and efficiency.
-            </p>
-            <p className="text-brand-400 text-sm font-semibold mt-4">
-              Your team. Amplified by AI.
+              LevReg.Ai partners with businesses to implement AI solutions that deliver measurable results with your Marketing, Sales, and Fulfillment.
             </p>
           </div>
 
