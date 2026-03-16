@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Calendar } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
+import LandingFooter from '../components/LandingFooter';
 
 const BookCall = () => {
   const { isDark } = useTheme();
@@ -86,6 +87,7 @@ const BookCall = () => {
           </div>
         </section>
       </div>
+      <LandingFooter />
     </>
   );
 };

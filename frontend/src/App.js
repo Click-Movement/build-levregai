@@ -28,10 +28,12 @@ import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
 const HEADERLESS_PREFIXES = ['/workshop'];
+const LANDING_FOOTER_PATHS = ['/book-call'];
 
 function AppContent() {
   const location = useLocation();
   const hideHeader = HEADERLESS_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
+  const hidMainFooter = LANDING_FOOTER_PATHS.includes(location.pathname);
 
   return (
     <div className="App">
@@ -60,7 +62,7 @@ function AppContent() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </main>
-      <Footer />
+      {!hidMainFooter && <Footer />}
       <Toaster />
     </div>
   );
