@@ -66,13 +66,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/scorecard">
+            <a href="https://www.levreg.ai/scorecard">
               <Button 
                 className="bg-brand hover:bg-brand-700 text-white transition-colors duration-200"
               >
                 Start Here
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,13 +102,13 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/scorecard" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href="https://www.levreg.ai/scorecard" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
                   className="bg-brand hover:bg-brand-700 text-white w-full mt-2"
                 >
                   Start Here
                 </Button>
-              </Link>
+              </a>
             </nav>
           </div>
         )}
