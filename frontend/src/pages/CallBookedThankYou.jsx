@@ -103,7 +103,7 @@ const CallBookedThankYou = () => {
                   className={`relative p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} transition-all duration-300 ${theme.shadow}`}
                 >
                   <div className="flex items-start gap-6">
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg`}>
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-xl bg-brand flex items-center justify-center text-white font-bold text-2xl shadow-lg`}>
                       {idx + 1}
                     </div>
                     <div className="flex-1">
@@ -146,7 +146,7 @@ const CallBookedThankYou = () => {
               <Link to="/case-studies">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group w-full md:w-auto"
+                  className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group w-full md:w-auto"
                 >
                   Read the Full Case Studies
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -176,7 +176,7 @@ const CallBookedThankYou = () => {
               </a>
               
               <div className={`pt-8 border-t ${theme.border}`}>
-                <div className={`inline-flex items-start gap-3 ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border rounded-xl p-6 text-left max-w-2xl`}>
+                <div className={`inline-flex items-start gap-3 ${'bg-brand-950/20 border-brand-500/20'} border rounded-xl p-6 text-left max-w-2xl`}>
                   <BookOpen className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
                   <div>
                     <p className={`${theme.textPrimary} font-semibold mb-2`}>Pro Tip:</p>

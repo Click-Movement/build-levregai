@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTheme } from '../context/ThemeContext';
 
 const CookiePolicy = () => {
-  const { isDark } = useTheme();
-
   return (
     <>
       <Helmet>
@@ -13,18 +10,18 @@ const CookiePolicy = () => {
         <link rel="canonical" href="https://www.levreg.ai/cookie-policy" />
       </Helmet>
 
-      <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'} py-20`}>
+      <div className="min-h-screen bg-[#0a0a0a] py-20">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className={`text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+          <h1 className="text-4xl font-bold mb-4 text-white">
             Cookie Policy for LevReg.AI
           </h1>
-          <p className={`text-sm mb-12 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+          <p className="text-sm mb-12 text-gray-400">
             Last Updated: January 30, 2026
           </p>
 
-          <div className={`space-y-8 ${isDark ? 'text-gray-300' : 'text-gray-700'} leading-relaxed`}>
+          <div className="space-y-8 text-gray-300 leading-relaxed">
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 1. Introduction
               </h2>
               <p>
@@ -33,7 +30,7 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 2. What Are Cookies?
               </h2>
               <p className="mb-4">
@@ -45,7 +42,7 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 3. Why Do We Use Cookies?
               </h2>
               <p>
@@ -54,32 +51,32 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 4. What Types of Cookies Do We Use?
               </h2>
               
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-white`}>
                 Essential Website Cookies
               </h3>
               <p className="mb-4">
                 These cookies are strictly necessary to provide you with services available through our Website and to use some of its features, such as access to secure areas.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-white`}>
                 Performance and Functionality Cookies
               </h3>
               <p className="mb-4">
                 These cookies are used to enhance the performance and functionality of our Website but are non-essential to their use. However, without these cookies, certain functionality may become unavailable.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-white`}>
                 Analytics and Customization Cookies
               </h3>
               <p className="mb-4">
                 These cookies collect information that is used either in aggregate form to help us understand how our Website is being used or how effective our marketing campaigns are, or to help us customize our Website for you.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-white`}>
                 Advertising Cookies
               </h3>
               <p>
@@ -88,7 +85,7 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 5. How Can You Control Cookies?
               </h2>
               <p className="mb-4">
@@ -100,7 +97,7 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 6. Changes to This Cookie Policy
               </h2>
               <p>
@@ -109,7 +106,7 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 7. Contact Us
               </h2>
               <p className="mb-2">

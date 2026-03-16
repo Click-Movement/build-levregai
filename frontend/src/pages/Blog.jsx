@@ -57,7 +57,7 @@ const Blog = () => {
             <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
               AI Insights for
               <br />
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">
                 Smart Business Owners
               </span>
             </h1>
@@ -84,12 +84,12 @@ const Blog = () => {
                     >
                       <CardContent className="p-8">
                         {/* Category Badge */}
-                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${isDark ? 'bg-blue-950/30 text-blue-300 border border-blue-500/20' : 'bg-blue-50 text-blue-700 border border-blue-200'}`}>
+                        <div className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-brand-950/30 text-brand-300 border border-brand-500/20">
                           {article.category}
                         </div>
                         
                         {/* Title */}
-                        <h2 className={`text-2xl font-bold mb-3 ${theme.textPrimary} group-hover:text-blue-500 transition-colors line-clamp-3`}>
+                        <h2 className={`text-2xl font-bold mb-3 ${theme.textPrimary} group-hover:text-brand-400 transition-colors line-clamp-3`}>
                           {article.title}
                         </h2>
                         
@@ -132,7 +132,7 @@ const Blog = () => {
             <Link to="/transformation-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
               >
                 Start Your AI Transformation
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />

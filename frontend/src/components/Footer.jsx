@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { isDark } = useTheme();
 
   const footerLinks = {
     company: [
@@ -21,30 +19,27 @@ const Footer = () => {
   };
 
   return (
-    <footer className={isDark ? 'bg-[#0a0a0a] border-t border-gray-800' : 'bg-gray-50 border-t border-gray-200'}>
+    <footer className="bg-[#0a0a0a] border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
             <img 
-              src={isDark 
-                ? "https://customer-assets.emergentagent.com/job_7e29061e-ffd5-4596-a601-775e365ccb93/artifacts/eiumndvy_LevRegWhiteBlue_Logo.png"
-                : "https://customer-assets.emergentagent.com/job_levreg-marketing/artifacts/rcnyj81p_LevRegBlackBlue_Logo.png"
-              }
+              src="/LevReg_WhiteGreen.png"
               alt="LevReg.Ai" 
               className="h-10 w-auto mb-4"
             />
-            <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm leading-relaxed max-w-md`}>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               LevReg.Ai helps small businesses become AI-first by training employees to use role-specific AI systems for speed, accuracy, and efficiency.
             </p>
-            <p className={`${isDark ? 'text-blue-400' : 'text-blue-600'} text-sm font-semibold mt-4`}>
+            <p className="text-brand-400 text-sm font-semibold mt-4">
               Your team. Amplified by AI.
             </p>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className={`${isDark ? 'text-white' : 'text-black'} font-semibold mb-4`}>Company</h3>
+            <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -52,14 +47,14 @@ const Footer = () => {
                     <Link
                       to={link.href}
                       onClick={() => window.scrollTo(0, 0)}
-                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                      className="text-gray-400 hover:text-brand-400 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
                   ) : (
                     <a
                       href={link.href}
-                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                      className="text-gray-400 hover:text-brand-400 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </a>
@@ -71,7 +66,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h3 className={`${isDark ? 'text-white' : 'text-black'} font-semibold mb-4`}>Legal</h3>
+            <h3 className="text-white font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -79,14 +74,14 @@ const Footer = () => {
                     <Link
                       to={link.href}
                       onClick={() => window.scrollTo(0, 0)}
-                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                      className="text-gray-400 hover:text-brand-400 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
                   ) : (
                     <a
                       href={link.href}
-                      className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200 text-sm`}
+                      className="text-gray-400 hover:text-brand-400 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </a>
@@ -98,7 +93,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className={`pt-8 ${isDark ? 'border-t border-gray-800' : 'border-t border-gray-200'} flex flex-col md:flex-row justify-between items-center gap-4`}>
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
             © {currentYear} LevReg.Ai. All rights reserved.
           </p>
@@ -108,7 +103,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/levregai/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              className="text-gray-400 hover:text-brand-400 transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -117,7 +112,7 @@ const Footer = () => {
               href="https://www.facebook.com/levregai"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              className="text-gray-400 hover:text-brand-400 transition-colors duration-200"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
@@ -126,7 +121,7 @@ const Footer = () => {
               href="https://www.instagram.com/levregai/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              className="text-gray-400 hover:text-brand-400 transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
@@ -135,7 +130,7 @@ const Footer = () => {
               href="https://x.com/levregai"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${isDark ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors duration-200`}
+              className="text-gray-400 hover:text-brand-400 transition-colors duration-200"
               aria-label="X (Twitter)"
             >
               <Twitter className="w-5 h-5" />

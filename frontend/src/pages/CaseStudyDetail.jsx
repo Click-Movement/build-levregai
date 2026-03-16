@@ -40,7 +40,7 @@ const CaseStudyDetail = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
           <Link to="/case-studies">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-brand hover:bg-brand-700 text-white">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Case Studies
             </Button>
@@ -108,7 +108,7 @@ const CaseStudyDetail = () => {
                 {IconComponent && <IconComponent className="w-10 h-10" />}
               </div>
               <div>
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${isDark ? 'bg-blue-950/30 text-blue-300 border border-blue-500/20' : 'bg-blue-50 text-blue-700 border border-blue-200'}`}>
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 bg-brand-950/30 text-brand-300 border border-brand-500/20">
                   {caseStudy.industry}
                 </div>
                 <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ml-2 ${isDark ? 'bg-purple-950/30 text-purple-300 border border-purple-500/20' : 'bg-purple-50 text-purple-700 border border-purple-200'}`}>
@@ -166,7 +166,7 @@ const CaseStudyDetail = () => {
         <section className={`py-16 px-6 ${theme.bgPrimary}`}>
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center`}>
+              <div className="w-12 h-12 rounded-lg bg-brand-950/30 flex items-center justify-center">
                 <TrendingUp className={`w-6 h-6 ${theme.textAccent}`} />
               </div>
               <h2 className={`text-3xl md:text-4xl font-bold ${theme.textPrimary}`}>The System We Installed</h2>
@@ -207,10 +207,10 @@ const CaseStudyDetail = () => {
         {/* Philosophy Section */}
         <section className={`py-16 px-6 ${theme.bgPrimary}`}>
           <div className="max-w-4xl mx-auto">
-            <Card className={`${theme.cardBg} border-2 ${isDark ? 'border-blue-500/30' : 'border-blue-300'}`}>
+            <Card className={`${theme.cardBg} border-2 border-brand-500/30`}>
               <CardContent className="p-12">
                 <div className={`text-center mb-8`}>
-                  <div className={`inline-block px-4 py-2 rounded-full ${isDark ? 'bg-blue-950/30 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border mb-6`}>
+                  <div className="inline-block px-4 py-2 rounded-full bg-brand-950/30 border-brand-500/20 border mb-6">
                     <span className={`text-sm ${theme.textAccent} font-semibold uppercase tracking-wide`}>
                       Core Principle
                     </span>
@@ -259,7 +259,7 @@ const CaseStudyDetail = () => {
                             {RelatedIcon && <RelatedIcon className="w-7 h-7" />}
                           </div>
                           
-                          <h3 className={`text-xl font-bold mb-2 ${theme.textPrimary} group-hover:text-blue-500 transition-colors`}>
+                          <h3 className={`text-xl font-bold mb-2 ${theme.textPrimary} group-hover:text-brand-400 transition-colors`}>
                             {study.title}
                           </h3>
                           
@@ -297,7 +297,7 @@ const CaseStudyDetail = () => {
               <Link to="/transformation-call">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                  className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
                 >
                   Start Your Ai Transformation
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -307,7 +307,7 @@ const CaseStudyDetail = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className={`${isDark ? 'border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white' : 'border-blue-300 hover:border-blue-500 hover:bg-blue-50'} ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
+                  className={`border-brand-500/30 hover:border-brand-500 hover:bg-brand-950/30 hover:text-white ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
                 >
                   <ArrowLeft className="mr-2 w-6 h-6" />
                   View All Case Studies

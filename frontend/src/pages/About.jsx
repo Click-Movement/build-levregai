@@ -15,7 +15,7 @@ const About = () => {
       icon: <Target className="w-8 h-8" />,
       title: 'Practicality Over Hype',
       description: "We don't care about buzzwords. We care about results. If it doesn't make your team faster or better, we don't build it.",
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-brand-400 to-brand'
     },
     {
       icon: <Heart className="w-8 h-8" />,
@@ -202,9 +202,9 @@ const About = () => {
       {/* Why Now Section */}
       <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-red-950/30 border-red-500/20' : 'bg-red-50 border-red-200'} border mb-8`}>
-            <Clock className={`w-4 h-4 ${isDark ? 'text-red-400' : 'text-red-600'}`} />
-            <span className={`text-sm ${isDark ? 'text-red-300' : 'text-red-700'} font-medium`}>Time Is Running Out</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${'bg-red-950/30 border-red-500/20'} border mb-8`}>
+            <Clock className={`w-4 h-4 ${'text-red-400'}`} />
+            <span className={`text-sm ${'text-red-300'} font-medium`}>Time Is Running Out</span>
           </div>
           
           <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
@@ -228,7 +228,7 @@ const About = () => {
           <Link to="/transformation-call">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+              className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
             >
               Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -246,19 +246,19 @@ const About = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
                 3x
               </div>
               <div className={theme.textTertiary}>Average productivity increase</div>
             </div>
             <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
                 30 Days
               </div>
               <div className={theme.textTertiary}>To ROI for most clients</div>
             </div>
             <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
+              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
                 100%
               </div>
               <div className={theme.textTertiary}>Focused on small businesses</div>

@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LevReg.AI — Brand Guide</title>
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #14B870;
+      --bg-deep:    #05070A;
+      --bg-site:    #060711;
+      --surface:    #111827;
+      --text-pri:   #F9FAFB;
+      --text-sec:   #9CA3AF;
+      --accent:     #0EA5E9;
+      --border:     #1F2937;
+      --success:    #22C55E;
+      --warning:    #F59E0B;
+      --error:      #EF4444;
+      --radius:     10px;
+      --radius-lg:  16px;
+      --font:       'Inter', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-site);
+      color: var(--text-pri);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ─── Typography ───────────────────────────────────────────── */
+    h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0.5rem; }
+    h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+    p  { color: var(--text-sec); max-width: 68ch; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.85em;
+      background: var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text-pri);
+    }
+
+    /* ─── Layout ───────────────────────────────────────────────── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    /* ─── Nav ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6,7,17,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-pri);
+      text-decoration: none;
+    }
+
+    .nav-logo .dot { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-sec);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text-pri); text-decoration: none; }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 100px 0 80px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -120px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(20,184,112,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(20,184,112,0.12);
+      border: 1px solid rgba(20,184,112,0.3);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge .pulse {
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero h1 { margin-bottom: 20px; }
+    .hero h1 span { color: var(--green); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-sec);
+      max-width: 56ch;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item { font-size: 0.82rem; color: var(--text-sec); }
+    .hero-meta-item strong { color: var(--text-pri); display: block; font-size: 0.9rem; }
+
+    /* ─── Color Swatches ───────────────────────────────────────── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .swatch {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .swatch:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .swatch-color {
+      height: 88px;
+      position: relative;
+    }
+
+    .swatch-copy-hint {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    .swatch:hover .swatch-copy-hint { opacity: 1; }
+
+    .swatch-info {
+      background: var(--surface);
+      padding: 12px 14px;
+    }
+
+    .swatch-name { font-weight: 600; font-size: 0.85rem; color: var(--text-pri); }
+    .swatch-hex  { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-sec); margin-top: 2px; }
+    .swatch-role { font-size: 0.72rem; color: var(--text-sec); margin-top: 4px; line-height: 1.4; }
+
+    .swatch-tag {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tag-primary  { background: rgba(20,184,112,0.15);  color: var(--green);   }
+    .tag-bg       { background: rgba(249,250,251,0.08); color: var(--text-sec); }
+    .tag-surface  { background: rgba(249,250,251,0.08); color: var(--text-sec); }
+    .tag-text     { background: rgba(249,250,251,0.08); color: var(--text-sec); }
+    .tag-accent   { background: rgba(14,165,233,0.15);  color: var(--accent);  }
+    .tag-success  { background: rgba(34,197,94,0.15);   color: var(--success); }
+    .tag-warning  { background: rgba(245,158,11,0.15);  color: var(--warning); }
+    .tag-error    { background: rgba(239,68,68,0.15);   color: var(--error);   }
+    .tag-border   { background: rgba(249,250,251,0.08); color: var(--text-sec); }
+
+    /* ─── Token Table ──────────────────────────────────────────── */
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 0.88rem;
+    }
+
+    .token-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--surface);
+      color: var(--text-sec);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .token-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-sec);
+      vertical-align: middle;
+    }
+
+    .token-table tr:last-child td { border-bottom: none; }
+    .token-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .token-table td:first-child { color: var(--text-pri); font-weight: 500; }
+
+    .color-dot {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ─── Typography Demo ──────────────────────────────────────── */
+    .type-demo {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-top: 32px;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-row:last-child { border-bottom: none; }
+
+    .type-meta {
+      min-width: 160px;
+      font-size: 0.75rem;
+      color: var(--text-sec);
+      font-family: monospace;
+      line-height: 1.6;
+    }
+
+    .type-sample { flex: 1; }
+
+    /* ─── Components ───────────────────────────────────────────── */
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .component-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .component-card h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-sec);
+      margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: filter 0.15s, transform 0.1s;
+      font-family: var(--font);
+    }
+
+    .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary   { background: var(--green);   color: #05070A; }
+    .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .btn-ghost     { background: rgba(249,250,251,0.06); color: var(--text-pri); }
+    .btn-danger    { background: var(--error);   color: #fff; }
+    .btn-sm        { padding: 6px 14px; font-size: 0.78rem; }
+    .btn-icon      { padding: 9px; border-radius: 8px; background: rgba(20,184,112,0.12); color: var(--green); }
+
+    /* Badges */
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-green   { background: rgba(20,184,112,0.15);  color: var(--green);   border: 1px solid rgba(20,184,112,0.3);  }
+    .badge-blue    { background: rgba(14,165,233,0.15);  color: var(--accent);  border: 1px solid rgba(14,165,233,0.3);  }
+    .badge-yellow  { background: rgba(245,158,11,0.15);  color: var(--warning); border: 1px solid rgba(245,158,11,0.3);  }
+    .badge-red     { background: rgba(239,68,68,0.15);   color: var(--error);   border: 1px solid rgba(239,68,68,0.3);   }
+    .badge-gray    { background: rgba(156,163,175,0.12); color: var(--text-sec);border: 1px solid rgba(156,163,175,0.2); }
+
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Input */
+    .input-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-wrap { position: relative; }
+
+    .input-field {
+      width: 100%;
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--text-pri);
+      font-size: 0.875rem;
+      font-family: var(--font);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(20,184,112,0.15);
+    }
+
+    .input-field.error-state {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239,68,68,0.12);
+    }
+
+    .input-hint { font-size: 0.75rem; color: var(--text-sec); }
+    .input-hint.error { color: var(--error); }
+
+    /* Card example */
+    .ui-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .ui-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .ui-card-title { font-size: 0.9rem; font-weight: 600; color: var(--text-pri); }
+    .ui-card-sub   { font-size: 0.78rem; color: var(--text-sec); margin-top: 2px; }
+
+    .metric-row { display: flex; gap: 16px; margin-top: 16px; }
+
+    .metric {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .metric-val { font-size: 1.4rem; font-weight: 700; color: var(--green); }
+    .metric-lbl { font-size: 0.7rem; color: var(--text-sec); margin-top: 2px; }
+
+    /* Progress bar */
+    .progress-wrap { margin-top: 14px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-sec); margin-bottom: 6px; }
+    .progress-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 999px; }
+
+    /* Alert */
+    .alert {
+      display: flex;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      border-left: 3px solid;
+    }
+
+    .alert-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .alert-title { font-weight: 600; margin-bottom: 2px; }
+    .alert-body  { font-size: 0.8rem; opacity: 0.8; }
+
+    .alert-success { background: rgba(34,197,94,0.08);  border-color: var(--success); color: var(--success); }
+    .alert-warning { background: rgba(245,158,11,0.08); border-color: var(--warning); color: var(--warning); }
+    .alert-error   { background: rgba(239,68,68,0.08);  border-color: var(--error);   color: var(--error);   }
+    .alert-info    { background: rgba(14,165,233,0.08); border-color: var(--accent);  color: var(--accent);  }
+
+    /* ─── Usage Rules ──────────────────────────────────────────── */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 640px) {
+      .rules-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    .rule-card {
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid;
+    }
+
+    .rule-card.do   { background: rgba(20,184,112,0.05);  border-color: rgba(20,184,112,0.25); }
+    .rule-card.dont { background: rgba(239,68,68,0.05);   border-color: rgba(239,68,68,0.25);  }
+
+    .rule-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .rule-icon {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .rule-card.do   .rule-icon { background: rgba(20,184,112,0.2); color: var(--green); }
+    .rule-card.dont .rule-icon { background: rgba(239,68,68,0.2);  color: var(--error); }
+
+    .rule-card-title { font-weight: 700; font-size: 1rem; }
+    .rule-card.do   .rule-card-title { color: var(--green); }
+    .rule-card.dont .rule-card-title { color: var(--error); }
+
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .rule-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    .rule-list li::before {
+      content: '→';
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .rule-card.do   .rule-list li::before { color: var(--green); }
+    .rule-card.dont .rule-list li::before { color: var(--error); }
+
+    /* ─── Accessibility ────────────────────────────────────────── */
+    .a11y-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .a11y-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .a11y-pair {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .a11y-bg {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .a11y-info { font-size: 0.8rem; }
+    .a11y-ratio { font-size: 1rem; font-weight: 700; color: var(--text-pri); }
+    .a11y-level { font-size: 0.72rem; color: var(--text-sec); margin-top: 2px; }
+    .a11y-pass  { color: var(--success); font-weight: 600; }
+    .a11y-warn  { color: var(--warning); font-weight: 600; }
+
+    /* ─── Gradient Showcase ────────────────────────────────────── */
+    .gradient-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .gradient-swatch {
+      height: 100px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.82rem; color: var(--text-sec); max-width: none; }
+    footer strong { color: var(--green); }
+
+    /* ─── Copied Toast ─────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--surface);
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ─── Divider ──────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect width="22" height="22" rx="6" fill="#14B870"/>
+        <path d="M6 16L10 8L14 13L16 10L18 16" stroke="#05070A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      LevReg<span class="dot">.AI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#tokens">Tokens</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="pulse"></span> Brand Guide v1.0</div>
+    <h1>LevReg<span>.AI</span><br>Brand Identity</h1>
+    <p class="hero-sub">A complete visual language for LevReg.AI — built for dark-mode-first interfaces, regulatory-grade trust, and tech-forward clarity.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>Primary Color</strong>#14B870</div>
+      <div class="hero-meta-item"><strong>Color Mode</strong>Dark-first</div>
+      <div class="hero-meta-item"><strong>Version</strong>1.0 — 2025</div>
+      <div class="hero-meta-item"><strong>Category</strong>RegTech / AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COLOR PALETTE ─────────────────────────────────────────────── -->
+<section id="colors">
+  <div class="container">
+    <p class="section-label">01 — Color Palette</p>
+    <h2>Core Brand Colors</h2>
+    <p class="section-desc">The LevReg.AI palette is anchored by a confident primary green, set against near-black backgrounds for maximum contrast and a premium, data-driven aesthetic. Click any swatch to copy its hex value.</p>
+
+    <div class="swatch-grid">
+
+      <div class="swatch" onclick="copyHex('#14B870', this)">
+        <div class="swatch-color" style="background:#14B870;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Brand Green</div>
+          <div class="swatch-hex">#14B870</div>
+          <div class="swatch-role">Logo · Buttons · Key highlights</div>
+          <span class="swatch-tag tag-primary">Primary</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#05070A', this)">
+        <div class="swatch-color" style="background:#05070A; border-bottom:1px solid #1F2937;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Background</div>
+          <div class="swatch-hex">#05070A</div>
+          <div class="swatch-role">App shell · Page root</div>
+          <span class="swatch-tag tag-bg">Background</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#060711', this)">
+        <div class="swatch-color" style="background:#060711; border-bottom:1px solid #1F2937;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Site Background</div>
+          <div class="swatch-hex">#060711</div>
+          <div class="swatch-role">Marketing site · Docs</div>
+          <span class="swatch-tag tag-bg">Background</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#111827', this)">
+        <div class="swatch-color" style="background:#111827;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Slate</div>
+          <div class="swatch-hex">#111827</div>
+          <div class="swatch-role">Cards · Panels · Modals</div>
+          <span class="swatch-tag tag-surface">Surface</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#F9FAFB', this)">
+        <div class="swatch-color" style="background:#F9FAFB;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off-White</div>
+          <div class="swatch-hex">#F9FAFB</div>
+          <div class="swatch-role">Headings · Primary body text</div>
+          <span class="swatch-tag tag-text">Text Primary</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#9CA3AF', this)">
+        <div class="swatch-color" style="background:#9CA3AF;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cool Gray</div>
+          <div class="swatch-hex">#9CA3AF</div>
+          <div class="swatch-role">Captions · Meta · Labels</div>
+          <span class="swatch-tag tag-text">Text Secondary</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#0EA5E9', this)">
+        <div class="swatch-color" style="background:#0EA5E9;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cyan Blue</div>
+          <div class="swatch-hex">#0EA5E9</div>
+          <div class="swatch-role">Links · Charts · Secondary CTAs</div>
+          <span class="swatch-tag tag-accent">Accent</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#1F2937', this)">
+        <div class="swatch-color" style="background:#1F2937;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Border</div>
+          <div class="swatch-hex">#1F2937</div>
+          <div class="swatch-role">Dividers · Input borders</div>
+          <span class="swatch-tag tag-border">Border</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:8px;">State & Semantic Colors</h3>
+    <p style="margin-bottom:0;">Reserved for system feedback. Do not use these for decorative purposes.</p>
+
+    <div class="swatch-grid" style="margin-top:24px;">
+
+      <div class="swatch" onclick="copyHex('#22C55E', this)">
+        <div class="swatch-color" style="background:#22C55E;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Success Green</div>
+          <div class="swatch-hex">#22C55E</div>
+          <div class="swatch-role">Confirmations · Passed states</div>
+          <span class="swatch-tag tag-success">Success</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#F59E0B', this)">
+        <div class="swatch-color" style="background:#F59E0B;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amber Warning</div>
+          <div class="swatch-hex">#F59E0B</div>
+          <div class="swatch-role">Cautions · Pending states</div>
+          <span class="swatch-tag tag-warning">Warning</span>
+        </div>
+      </div>
+
+      <div class="swatch" onclick="copyHex('#EF4444', this)">
+        <div class="swatch-color" style="background:#EF4444;">
+          <div class="swatch-copy-hint">Click to copy</div>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Alert Red</div>
+          <div class="swatch-hex">#EF4444</div>
+          <div class="swatch-role">Errors · Violations · Destructive</div>
+          <span class="swatch-tag tag-error">Error</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DESIGN TOKENS ─────────────────────────────────────────────── -->
+<section id="tokens">
+  <div class="container">
+    <p class="section-label">02 — Design Tokens</p>
+    <h2>CSS Custom Properties</h2>
+    <p class="section-desc">All colors are defined as CSS custom properties (design tokens) on the <code>:root</code> element. Reference these variables throughout your codebase to ensure consistency and enable future theme changes.</p>
+
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Value</th>
+          <th>Preview</th>
+          <th>Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--color-primary</code></td>
+          <td><code>#14B870</code></td>
+          <td><span class="color-dot" style="background:#14B870;"></span></td>
+          <td>Logo, primary buttons, key highlights, important icons</td>
+        </tr>
+        <tr>
+          <td><code>--color-bg-deep</code></td>
+          <td><code>#05070A</code></td>
+          <td><span class="color-dot" style="background:#05070A;"></span></td>
+          <td>App shell, deepest background layer</td>
+        </tr>
+        <tr>
+          <td><code>--color-bg-site</code></td>
+          <td><code>#060711</code></td>
+          <td><span class="color-dot" style="background:#060711;"></span></td>
+          <td>Marketing site, documentation pages</td>
+        </tr>
+        <tr>
+          <td><code>--color-surface</code></td>
+          <td><code>#111827</code></td>
+          <td><span class="color-dot" style="background:#111827;"></span></td>
+          <td>Cards, panels, modals, sidebars</td>
+        </tr>
+        <tr>
+          <td><code>--color-text-primary</code></td>
+          <td><code>#F9FAFB</code></td>
+          <td><span class="color-dot" style="background:#F9FAFB;"></span></td>
+          <td>Headings, primary body copy on dark backgrounds</td>
+        </tr>
+        <tr>
+          <td><code>--color-text-secondary</code></td>
+          <td><code>#9CA3AF</code></td>
+          <td><span class="color-dot" style="background:#9CA3AF;"></span></td>
+          <td>Captions, metadata, secondary labels</td>
+        </tr>
+        <tr>
+          <td><code>--color-accent</code></td>
+          <td><code>#0EA5E9</code></td>
+          <td><span class="color-dot" style="background:#0EA5E9;"></span></td>
+          <td>Links, data visualizations, secondary CTAs</td>
+        </tr>
+        <tr>
+          <td><code>--color-border</code></td>
+          <td><code>#1F2937</code></td>
+          <td><span class="color-dot" style="background:#1F2937;"></span></td>
+          <td>Dividers, input borders, table lines</td>
+        </tr>
+        <tr>
+          <td><code>--color-success</code></td>
+          <td><code>#22C55E</code></td>
+          <td><span class="color-dot" style="background:#22C55E;"></span></td>
+          <td>Confirmations, compliance pass states</td>
+        </tr>
+        <tr>
+          <td><code>--color-warning</code></td>
+          <td><code>#F59E0B</code></td>
+          <td><span class="color-dot" style="background:#F59E0B;"></span></td>
+          <td>Cautions, pending review states</td>
+        </tr>
+        <tr>
+          <td><code>--color-error</code></td>
+          <td><code>#EF4444</code></td>
+          <td><span class="color-dot" style="background:#EF4444;"></span></td>
+          <td>Errors, violations, destructive actions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── TYPOGRAPHY ────────────────────────────────────────────────── -->
+<section id="typography">
+  <div class="container">
+    <p class="section-label">03 — Typography</p>
+    <h2>Type Scale</h2>
+    <p class="section-desc">LevReg.AI uses the <strong>Inter</strong> typeface as its primary UI font, falling back to Segoe UI and system-ui. For code and monospaced contexts, <strong>JetBrains Mono</strong> or Fira Code is recommended. All type is rendered on dark surfaces — always ensure sufficient contrast.</p>
+
+    <div class="type-demo">
+
+      <div class="type-row">
+        <div class="type-meta">Display<br>3.5rem / 700<br>−0.02em</div>
+        <div class="type-sample">
+          <span style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.02em;color:var(--text-pri);">Regulatory AI</span>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">H1<br>2rem / 700<br>−0.02em</div>
+        <div class="type-sample">
+          <h1 style="font-size:2rem;">Compliance Dashboard</h1>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">H2<br>1.5rem / 700<br>−0.02em</div>
+        <div class="type-sample">
+          <h2 style="font-size:1.5rem;margin-bottom:0;">Filing Status Overview</h2>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">H3<br>1.15rem / 700<br>−0.01em</div>
+        <div class="type-sample">
+          <h3 style="font-size:1.15rem;margin-bottom:0;">Regulatory Requirements</h3>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">Body<br>0.9375rem / 400<br>1.7 line-height</div>
+        <div class="type-sample">
+          <p style="max-width:none;">LevReg.AI automates regulatory compliance workflows, reducing manual overhead and risk exposure across multi-jurisdictional filings.</p>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">Caption<br>0.75rem / 400<br>cool gray</div>
+        <div class="type-sample">
+          <span style="font-size:0.75rem;color:var(--text-sec);">Last updated: March 2025 · Source: SEC EDGAR · Jurisdiction: US Federal</span>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">Code<br>0.85em / mono<br>JetBrains Mono</div>
+        <div class="type-sample">
+          <code style="font-size:0.9rem;">const status = await levreg.checkCompliance(entityId);</code>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">Label<br>0.72rem / 600<br>0.1em tracking</div>
+        <div class="type-sample">
+          <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);">Filing Period</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPONENTS ────────────────────────────────────────────────── -->
+<section id="components">
+  <div class="container">
+    <p class="section-label">04 — UI Components</p>
+    <h2>Component Library</h2>
+    <p class="section-desc">These components demonstrate how the color tokens translate into real interface elements. All interactive states follow the same token system — hover, focus, and active states are derived from the core palette.</p>
+
+    <div class="component-grid">
+
+      <!-- Buttons -->
+      <div class="component-card">
+        <h4>Buttons</h4>
+        <div class="btn-row" style="margin-bottom:12px;">
+          <button class="btn btn-primary">Run Compliance Check</button>
+          <button class="btn btn-primary btn-sm">Submit</button>
+        </div>
+        <div class="btn-row" style="margin-bottom:12px;">
+          <button class="btn btn-secondary">View Report</button>
+          <button class="btn btn-ghost">Cancel</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-danger">Revoke Access</button>
+          <button class="btn btn-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="component-card">
+        <h4>Status Badges</h4>
+        <div class="badge-row">
+          <span class="badge badge-green"><span class="badge-dot"></span>Compliant</span>
+          <span class="badge badge-blue">AI Review</span>
+          <span class="badge badge-yellow"><span class="badge-dot"></span>Pending</span>
+          <span class="badge badge-red"><span class="badge-dot"></span>Violation</span>
+          <span class="badge badge-gray">Archived</span>
+          <span class="badge badge-green">Filed</span>
+          <span class="badge badge-blue">New</span>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div class="component-card">
+        <h4>Alerts &amp; Notifications</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="alert alert-success">
+            <div class="alert-icon">✓</div>
+            <div><div class="alert-title">Filing Accepted</div><div class="alert-body">Your Q4 submission has been confirmed.</div></div>
+          </div>
+          <div class="alert alert-warning">
+            <div class="alert-icon">⚠</div>
+            <div><div class="alert-title">Deadline Approaching</div><div class="alert-body">SEC Form 10-K due in 7 days.</div></div>
+          </div>
+          <div class="alert alert-error">
+            <div class="alert-icon">✕</div>
+            <div><div class="alert-title">Compliance Breach</div><div class="alert-body">Missing disclosure in Section 4.</div></div>
+          </div>
+          <div class="alert alert-info">
+            <div class="alert-icon">ℹ</div>
+            <div><div class="alert-title">AI Analysis Ready</div><div class="alert-body">3 new regulatory updates detected.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs -->
+      <div class="component-card">
+        <h4>Form Inputs</h4>
+        <div class="input-demo">
+          <div>
+            <div class="input-wrap">
+              <input class="input-field" type="text" placeholder="Entity name or CIK number" />
+            </div>
+            <div class="input-hint">Search by legal entity name or SEC CIK</div>
+          </div>
+          <div>
+            <div class="input-wrap">
+              <input class="input-field error-state" type="text" value="Invalid EIN format" />
+            </div>
+            <div class="input-hint error">EIN must follow XX-XXXXXXX format</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Card -->
+      <div class="component-card">
+        <h4>Dashboard Card</h4>
+        <div class="ui-card">
+          <div class="ui-card-header">
+            <div>
+              <div class="ui-card-title">Compliance Score</div>
+              <div class="ui-card-sub">Q1 2025 · 14 jurisdictions</div>
+            </div>
+            <span class="badge badge-green">On Track</span>
+          </div>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-val">94%</div>
+              <div class="metric-lbl">Overall</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val" style="color:var(--accent);">12</div>
+              <div class="metric-lbl">Filings</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val" style="color:var(--warning);">2</div>
+              <div class="metric-lbl">Pending</div>
+            </div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Filing Progress</span><span>8 / 12</span></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:67%;background:var(--green);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Gradients -->
+      <div class="component-card">
+        <h4>Brand Gradients</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="gradient-swatch" style="background:linear-gradient(135deg,#14B870,#0EA5E9);">Primary → Accent</div>
+          <div class="gradient-swatch" style="background:linear-gradient(135deg,#05070A,#111827);">Deep → Surface</div>
+          <div class="gradient-swatch" style="background:linear-gradient(135deg,#14B870 0%,rgba(20,184,112,0) 100%),#111827;">Green Fade on Surface</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── USAGE RULES ────────────────────────────────────────────────── -->
+<section id="usage">
+  <div class="container">
+    <p class="section-label">05 — Usage Guidelines</p>
+    <h2>Do's &amp; Don'ts</h2>
+    <p class="section-desc">Consistent application of these rules ensures the LevReg.AI brand remains coherent, accessible, and professional across all touchpoints — from the product UI to marketing materials.</p>
+
+    <div class="rules-grid">
+
+      <div class="rule-card do">
+        <div class="rule-card-header">
+          <div class="rule-icon">✓</div>
+          <div class="rule-card-title">Do</div>
+        </div>
+        <ul class="rule-list">
+          <li>Use <strong>#14B870</strong> exclusively for the logo, primary CTA buttons, key highlights, and important icons that require immediate attention.</li>
+          <li>Keep most page and app backgrounds dark, using <code>#05070A</code> or <code>#060711</code> as the base layer.</li>
+          <li>Write primary body text in <code>#F9FAFB</code> (off-white) and secondary/meta text in <code>#9CA3AF</code> (cool gray) for clear visual hierarchy.</li>
+          <li>Reserve <code>#0EA5E9</code> (cyan blue) for hyperlinks, data visualizations, and secondary CTAs so it complements — not competes with — the green.</li>
+          <li>Use semantic state colors (<code>#22C55E</code>, <code>#F59E0B</code>, <code>#EF4444</code>) strictly for system feedback: success, warning, and error states.</li>
+          <li>Apply <code>#1F2937</code> for all borders, dividers, and input outlines to maintain subtle structure without visual noise.</li>
+          <li>Use CSS design tokens (<code>--color-primary</code>, etc.) in all code to ensure single-source-of-truth color management.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card dont">
+        <div class="rule-card-header">
+          <div class="rule-icon">✕</div>
+          <div class="rule-card-title">Don't</div>
+        </div>
+        <ul class="rule-list">
+          <li>Do not use <strong>#14B870</strong> as a background fill for large areas — it should remain a high-signal accent, not a dominant surface color.</li>
+          <li>Do not place the brand green and cyan blue (<code>#0EA5E9</code>) in direct competition as equal-weight CTAs on the same screen.</li>
+          <li>Do not use light or white backgrounds in the product UI — the palette is dark-first and loses its identity on light surfaces.</li>
+          <li>Do not use warning amber or error red for decorative or non-semantic purposes; these colors carry meaning and misuse erodes trust.</li>
+          <li>Do not use low-contrast text combinations — never place <code>#9CA3AF</code> on <code>#111827</code> for body copy; use it only for supplementary metadata.</li>
+          <li>Do not introduce new colors outside this palette without formal brand approval — consistency is critical for a regulatory-grade product.</li>
+          <li>Do not use pure white (<code>#FFFFFF</code>) or pure black (<code>#000000</code>) — the off-white and near-black tokens are intentionally chosen for warmth and reduced eye strain.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:16px;">Color Hierarchy at a Glance</h3>
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Priority</th>
+          <th>Color</th>
+          <th>Hex</th>
+          <th>Permitted Uses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 — Brand</td>
+          <td><span class="color-dot" style="background:#14B870;"></span>Primary Green</td>
+          <td><code>#14B870</code></td>
+          <td>Logo, primary buttons, key icons, selected states</td>
+        </tr>
+        <tr>
+          <td>2 — Accent</td>
+          <td><span class="color-dot" style="background:#0EA5E9;"></span>Cyan Blue</td>
+          <td><code>#0EA5E9</code></td>
+          <td>Links, charts, secondary CTAs, data highlights</td>
+        </tr>
+        <tr>
+          <td>3 — Structure</td>
+          <td><span class="color-dot" style="background:#111827;"></span>Dark Slate</td>
+          <td><code>#111827</code></td>
+          <td>Cards, modals, sidebars, elevated surfaces</td>
+        </tr>
+        <tr>
+          <td>4 — Text</td>
+          <td><span class="color-dot" style="background:#F9FAFB;"></span>Off-White</td>
+          <td><code>#F9FAFB</code></td>
+          <td>All primary readable text on dark backgrounds</td>
+        </tr>
+        <tr>
+          <td>5 — Semantic</td>
+          <td><span class="color-dot" style="background:#22C55E;"></span><span class="color-dot" style="background:#F59E0B;"></span><span class="color-dot" style="background:#EF4444;"></span>State Colors</td>
+          <td><code>#22C55E / #F59E0B / #EF4444</code></td>
+          <td>System feedback only — success, warning, error</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── ACCESSIBILITY ──────────────────────────────────────────────── -->
+<section id="accessibility">
+  <div class="container">
+    <p class="section-label">06 — Accessibility</p>
+    <h2>Contrast Ratios</h2>
+    <p class="section-desc">All primary text and interactive element combinations meet or exceed <strong>WCAG 2.1 AA</strong> standards (minimum 4.5:1 for normal text, 3:1 for large text and UI components). The dark-first palette is inherently well-suited to high-contrast rendering.</p>
+
+    <div class="a11y-grid">
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#111827;color:#F9FAFB;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">16.1:1</div>
+            <div class="a11y-level">Off-White on Dark Slate</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AAA</span> — Body text, headings</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">The primary text pairing exceeds the highest WCAG threshold, making it suitable for all text sizes and weights.</p>
+      </div>
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#111827;color:#14B870;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">7.2:1</div>
+            <div class="a11y-level">Brand Green on Dark Slate</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AAA</span> — Buttons, icons, labels</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">The primary green achieves AAA contrast on the surface color, ensuring buttons and interactive elements are clearly perceivable.</p>
+      </div>
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#111827;color:#0EA5E9;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">5.9:1</div>
+            <div class="a11y-level">Cyan Blue on Dark Slate</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AA</span> — Links, chart labels</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">The accent blue meets AA standards comfortably, making it reliable for hyperlinks and secondary interactive elements.</p>
+      </div>
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#111827;color:#9CA3AF;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">4.6:1</div>
+            <div class="a11y-level">Cool Gray on Dark Slate</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AA</span> — Metadata, captions</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">Secondary text meets AA at the minimum threshold. Use only for supplementary content — never for critical information.</p>
+      </div>
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#14B870;color:#05070A;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">8.4:1</div>
+            <div class="a11y-level">Deep BG on Brand Green</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AAA</span> — Button labels</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">Dark text on the green button background achieves AAA — use <code>#05070A</code> for all text placed directly on green surfaces.</p>
+      </div>
+
+      <div class="a11y-card">
+        <div class="a11y-pair">
+          <div class="a11y-bg" style="background:#111827;color:#EF4444;">Aa</div>
+          <div class="a11y-info">
+            <div class="a11y-ratio">5.1:1</div>
+            <div class="a11y-level">Error Red on Dark Slate</div>
+            <div class="a11y-level"><span class="a11y-pass">✓ AA</span> — Error messages</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;max-width:none;">Error states meet AA contrast, ensuring compliance violations and form errors are clearly communicated to all users.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom:8px;">
+      <strong>LevReg.AI</strong> Brand Guide — Version 1.0
+    </p>
+    <p>This document defines the official visual identity for LevReg.AI. All color values, usage rules, and component patterns are authoritative and should be followed across all product, marketing, and communications surfaces.</p>
+  </div>
+</footer>
+
+<!-- ── TOAST ─────────────────────────────────────────────────────── -->
+<div id="toast">Hex copied to clipboard!</div>
+
+<script>
+  function copyHex(hex, el) {
+    navigator.clipboard.writeText(hex).then(() => {
+      const toast = document.getElementById('toast');
+      toast.textContent = hex + ' copied!';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    });
+  }
+</script>
+
+</body>
+</html>

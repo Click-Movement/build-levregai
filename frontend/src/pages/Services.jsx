@@ -17,7 +17,7 @@ const Services = () => {
       problem: 'Your support team is drowning. Tickets pile up. Response times slip. Quality suffers. Customers get frustrated.',
       solution: 'We build AI-powered response systems, routing workflows, and knowledge base tools that help your team resolve issues faster and more accurately.',
       result: 'Faster responses. Happier customers. A support team that&apos;s finally ahead of the queue.',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-brand-400 to-brand'
     },
     {
       icon: <Megaphone className="w-8 h-8" />,
@@ -57,7 +57,7 @@ const Services = () => {
       problem: 'You&apos;re making decisions with incomplete information. You don&apos;t have time to synthesize data, research options, or scenario-plan.',
       solution: 'We create AI-powered decision support systems, strategic planning tools, and executive communication workflows.',
       result: 'Clarity when you need it. Confidence in your decisions. Time back in your day.',
-      color: 'from-indigo-500 to-blue-500'
+      color: 'from-indigo-500 to-brand'
     }
   ];
 
@@ -115,7 +115,7 @@ const Services = () => {
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            We Install <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>AI Systems.</span>
+            We Install <span className={`text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand`}>AI Systems.</span>
             <br />
             You Get Your Time Back.
           </h1>
@@ -172,7 +172,7 @@ const Services = () => {
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className={`${isDark ? 'text-red-400' : 'text-red-500'} font-semibold mb-2 text-sm uppercase tracking-wide`}>The Problem</h4>
+                      <h4 className={`text-red-400 font-semibold mb-2 text-sm uppercase tracking-wide`}>The Problem</h4>
                       <p className={`${theme.textTertiary} text-sm leading-relaxed`}>{role.problem}</p>
                     </div>
                     
@@ -182,7 +182,7 @@ const Services = () => {
                     </div>
                     
                     <div>
-                      <h4 className={`${isDark ? 'text-green-400' : 'text-green-600'} font-semibold mb-2 text-sm uppercase tracking-wide`}>The Result</h4>
+                      <h4 className={`text-green-400 font-semibold mb-2 text-sm uppercase tracking-wide`}>The Result</h4>
                       <p className={`${theme.textSecondary} text-sm font-medium leading-relaxed`}>{role.result}</p>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ const Services = () => {
                 key={idx}
                 className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group`}
               >
-                <div className={`text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'} mb-3`}>
+                <div className={`text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand mb-3`}>
                   {metric.value}
                 </div>
                 <div className={`${theme.textTertiary} text-sm leading-tight`}>{metric.label}</div>
@@ -266,7 +266,7 @@ const Services = () => {
           <Link to="/transformation-call">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+              className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
             >
               Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />

@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTheme } from '../context/ThemeContext';
 
 const TermsOfService = () => {
-  const { isDark } = useTheme();
-
   return (
     <>
       <Helmet>
@@ -13,18 +10,18 @@ const TermsOfService = () => {
         <link rel="canonical" href="https://www.levreg.ai/terms-of-service" />
       </Helmet>
 
-      <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'} py-20`}>
+      <div className="min-h-screen bg-[#0a0a0a] py-20">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className={`text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+          <h1 className="text-4xl font-bold mb-4 text-white">
             Terms of Service for LevReg.AI
           </h1>
-          <p className={`text-sm mb-12 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+          <p className="text-sm mb-12 text-gray-400">
             Last Updated: January 30, 2026
           </p>
 
-          <div className={`space-y-8 ${isDark ? 'text-gray-300' : 'text-gray-700'} leading-relaxed`}>
+          <div className="space-y-8 text-gray-300 leading-relaxed">
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 1. Agreement to Terms
               </h2>
               <p className="mb-4">
@@ -36,7 +33,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 2. Intellectual Property Rights
               </h2>
               <p>
@@ -45,7 +42,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 3. User Representations
               </h2>
               <p>
@@ -54,7 +51,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 4. Prohibited Activities
               </h2>
               <p className="mb-4">
@@ -73,7 +70,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 5. Submissions
               </h2>
               <p>
@@ -82,7 +79,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 6. Site Management
               </h2>
               <p>
@@ -91,7 +88,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 7. Term and Termination
               </h2>
               <p>
@@ -100,7 +97,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 8. Governing Law
               </h2>
               <p>
@@ -109,7 +106,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 9. Dispute Resolution
               </h2>
               <p>
@@ -118,7 +115,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 10. Disclaimer
               </h2>
               <p>
@@ -127,7 +124,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 11. Limitations of Liability
               </h2>
               <p>
@@ -136,7 +133,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 12. Indemnification
               </h2>
               <p>
@@ -145,7 +142,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 13. User Data
               </h2>
               <p>
@@ -154,7 +151,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 14. Electronic Communications
               </h2>
               <p>
@@ -163,7 +160,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 15. Miscellaneous
               </h2>
               <p>
@@ -172,7 +169,7 @@ const TermsOfService = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-white`}>
                 16. Contact Us
               </h2>
               <p className="mb-2">

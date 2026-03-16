@@ -55,7 +55,7 @@ const BookCall = () => {
             <h1 className={`text-4xl md:text-5xl font-bold mb-4 leading-tight ${theme.textPrimary}`}>
               Book Your Free
               <br />
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
+              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'}`}>
                 AI Automation Audit
               </span>
             </h1>

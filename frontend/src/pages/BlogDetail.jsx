@@ -27,7 +27,7 @@ const BlogDetail = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
           <Link to="/blog">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-brand hover:bg-brand-700 text-white">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
             </Button>
@@ -154,12 +154,12 @@ const BlogDetail = () => {
           )}
           {section.badApproach && (
             <div className="mt-6 space-y-4">
-              <div className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
-                <p className={`font-semibold ${isDark ? 'text-red-400' : 'text-red-700'} mb-2`}>Bad approach:</p>
+              <div className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
+                <p className="font-semibold text-red-400 mb-2">Bad approach:</p>
                 <p className={theme.textSecondary}>{section.badApproach}</p>
               </div>
-              <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
-                <p className={`font-semibold ${isDark ? 'text-green-400' : 'text-green-700'} mb-2`}>Good approach:</p>
+              <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
+                <p className="font-semibold text-green-400 mb-2">Good approach:</p>
                 <p className={theme.textSecondary}>{section.goodApproach}</p>
               </div>
               {section.principle && (
@@ -211,7 +211,7 @@ const BlogDetail = () => {
                 ))}
               </ul>
             </div>
-            <div className={`p-6 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/30' : 'bg-blue-50 border-blue-200'} border`}>
+            <div className={`p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border`}>
               <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.after.title}</h4>
               <ul className="space-y-3">
                 {section.after.items.map((item, idx) => (
@@ -230,7 +230,7 @@ const BlogDetail = () => {
     // Quote/Callout
     if (section.type === 'quote') {
       return (
-        <div key={index} className={`my-12 p-8 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/30' : 'bg-blue-50 border-blue-200'} border-l-4 ${isDark ? 'border-l-blue-400' : 'border-l-blue-600'}`}>
+        <div key={index} className="my-12 p-8 rounded-xl bg-brand-950/20 border-brand-500/30 border-l-4 border-l-brand-400 border">
           <p className={`text-xl ${theme.textAccent} font-semibold italic mb-4`}>
             "{section.content}"
           </p>
@@ -244,10 +244,10 @@ const BlogDetail = () => {
     // Callout Box
     if (section.type === 'callout') {
       return (
-        <div key={index} className={`my-12 p-8 rounded-xl bg-blue-600 text-white`}>
+        <div key={index} className="my-12 p-8 rounded-xl bg-brand text-white">
           <p className="text-xl font-bold mb-2" dangerouslySetInnerHTML={{ __html: section.content }} />
           {section.subtext && (
-            <p className="text-blue-100">{section.subtext}</p>
+            <p className="text-brand-100">{section.subtext}</p>
           )}
         </div>
       );
@@ -260,7 +260,7 @@ const BlogDetail = () => {
           {section.questions.map((q, idx) => (
             <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
               <div className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-lg ${isDark ? 'bg-blue-950/30 text-blue-400' : 'bg-blue-100 text-blue-700'} flex items-center justify-center font-bold flex-shrink-0`}>
+                <div className={`w-10 h-10 rounded-lg bg-brand-950/30 text-brand-400 flex items-center justify-center font-bold flex-shrink-0`}>
                   {q.number}
                 </div>
                 <div className="flex-1">
@@ -288,18 +288,18 @@ const BlogDetail = () => {
           <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>{section.title}</h3>
           
           <div className="space-y-6">
-            <div className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
+            <div className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
               <div className="flex items-start gap-3 mb-2">
-                <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
-                <p className={`font-semibold ${isDark ? 'text-red-400' : 'text-red-700'}`}>The answer approach:</p>
+                <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                <p className="font-semibold text-red-400">The answer approach:</p>
               </div>
               <p className={`${theme.textSecondary} ml-8 italic`}>"{section.wrong}"</p>
             </div>
             
-            <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
+            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
               <div className="flex items-start gap-3 mb-2">
-                <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
-                <p className={`font-semibold ${isDark ? 'text-green-400' : 'text-green-700'}`}>The outcome approach:</p>
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                <p className="font-semibold text-green-400">The outcome approach:</p>
               </div>
               <p className={`${theme.textSecondary} ml-8 italic`}>"{section.right}"</p>
             </div>
@@ -309,7 +309,7 @@ const BlogDetail = () => {
             )}
             
             {section.key && (
-              <div className={`p-4 rounded-lg ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border`}>
+              <div className={`p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border`}>
                 <p className={`${theme.textSecondary} leading-relaxed`}>{section.key}</p>
               </div>
             )}
@@ -323,7 +323,7 @@ const BlogDetail = () => {
       return (
         <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
           <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xl font-bold`}>
+            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
               {section.number}
             </div>
             <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
@@ -342,7 +342,7 @@ const BlogDetail = () => {
           {section.systems && (
             <div className="space-y-4 mt-6">
               {section.systems.map((sys, idx) => (
-                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border`}>
+                <div key={idx} className={`p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border`}>
                   <h4 className={`font-bold ${theme.textPrimary} mb-2`}>{sys.name}</h4>
                   <ul className="space-y-1">
                     {sys.features.map((feature, fidx) => (
@@ -379,9 +379,9 @@ const BlogDetail = () => {
             </div>
           ))}
           
-          <div className={`p-6 rounded-xl bg-blue-600 text-white`}>
+          <div className={`p-6 rounded-xl bg-brand text-white`}>
             <p className="text-2xl font-bold mb-2">{section.totalCost}</p>
-            <p className="text-blue-100 mb-4">{section.comparison}</p>
+            <p className="text-brand-100 mb-4">{section.comparison}</p>
             <p className="text-xl font-bold">{section.roi}</p>
           </div>
         </div>
@@ -396,10 +396,10 @@ const BlogDetail = () => {
             <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Red Flags:</h3>
             <div className="space-y-4">
               {section.redFlags.map((flag, idx) => (
-                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-red-950/20 border-red-500/20' : 'bg-red-50 border-red-200'} border`}>
+                <div key={idx} className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
                   <div className="flex items-start gap-3 mb-2">
-                    <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
-                    <h4 className={`font-bold ${isDark ? 'text-red-400' : 'text-red-700'}`}>{flag.title}</h4>
+                    <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                    <h4 className="font-bold text-red-400">{flag.title}</h4>
                   </div>
                   <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
                 </div>
@@ -411,10 +411,10 @@ const BlogDetail = () => {
             <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Green Flags:</h3>
             <div className="space-y-4">
               {section.greenFlags.map((flag, idx) => (
-                <div key={idx} className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
+                <div key={idx} className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
                   <div className="flex items-start gap-3 mb-2">
-                    <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
-                    <h4 className={`font-bold ${isDark ? 'text-green-400' : 'text-green-700'}`}>{flag.title}</h4>
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <h4 className="font-bold text-green-400">{flag.title}</h4>
                   </div>
                   <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
                 </div>
@@ -430,7 +430,7 @@ const BlogDetail = () => {
       return (
         <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
           <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xl font-bold`}>
+            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
               {section.number}
             </div>
             <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
@@ -451,8 +451,8 @@ const BlogDetail = () => {
               </ul>
             </div>
             
-            <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
-              <h4 className={`text-lg font-semibold ${isDark ? 'text-green-400' : 'text-green-700'} mb-2`}>Typical Result:</h4>
+            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
+              <h4 className="text-lg font-semibold text-green-400 mb-2">Typical Result:</h4>
               <p className={`${theme.textSecondary} font-semibold`}>{section.result}</p>
             </div>
           </div>
@@ -475,7 +475,7 @@ const BlogDetail = () => {
           ))}
           
           {section.factors && (
-            <div className={`p-6 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/20' : 'bg-blue-50 border-blue-200'} border mt-8`}>
+            <div className="p-6 rounded-xl bg-brand-950/20 border-brand-500/20 border mt-8">
               <h4 className={`text-lg font-bold ${theme.textPrimary} mb-3`}>What determines price:</h4>
               <ul className="space-y-2 ml-6">
                 {section.factors.map((factor, idx) => (
@@ -496,7 +496,7 @@ const BlogDetail = () => {
             <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
               <h4 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>{industry.name}</h4>
               <p className={`${theme.textSecondary} leading-relaxed mb-3`}>{industry.description}</p>
-              <div className={`p-3 rounded-lg ${isDark ? 'bg-blue-950/20' : 'bg-blue-50'}`}>
+              <div className="p-3 rounded-lg bg-brand-950/20">
                 <p className={`text-sm ${theme.textAccent} font-semibold`}>Why it works: {industry.why}</p>
               </div>
             </div>
@@ -532,7 +532,7 @@ const BlogDetail = () => {
           {section.options.map((option, idx) => (
             <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
               <div className="flex items-start gap-4 mb-3">
-                <div className={`w-10 h-10 rounded-lg ${isDark ? 'bg-blue-950/30 text-blue-400' : 'bg-blue-100 text-blue-700'} flex items-center justify-center font-bold flex-shrink-0`}>
+                <div className={`w-10 h-10 rounded-lg bg-brand-950/30 text-brand-400 flex items-center justify-center font-bold flex-shrink-0`}>
                   {option.number}
                 </div>
                 <div className="flex-1">
@@ -545,7 +545,7 @@ const BlogDetail = () => {
           ))}
           
           {section.conclusion && (
-            <div className={`p-6 rounded-xl bg-blue-600 text-white mt-8`}>
+            <div className={`p-6 rounded-xl bg-brand text-white mt-8`}>
               <p className="text-lg leading-relaxed whitespace-pre-line">{section.conclusion}</p>
             </div>
           )}
@@ -558,7 +558,7 @@ const BlogDetail = () => {
       return (
         <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
           <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xl font-bold`}>
+            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
               {section.number}
             </div>
             <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
@@ -575,8 +575,8 @@ const BlogDetail = () => {
               <p className={`${theme.textSecondary} leading-relaxed`}>{section.aiSolution}</p>
             </div>
             
-            <div className={`p-4 rounded-lg ${isDark ? 'bg-green-950/20 border-green-500/20' : 'bg-green-50 border-green-200'} border`}>
-              <h4 className={`text-lg font-semibold ${isDark ? 'text-green-400' : 'text-green-700'} mb-2`}>Result:</h4>
+            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
+              <h4 className="text-lg font-semibold text-green-400 mb-2">Result:</h4>
               <p className={`${theme.textSecondary} leading-relaxed`}>{section.result}</p>
             </div>
           </div>
@@ -588,24 +588,24 @@ const BlogDetail = () => {
     if (section.type === 'criteria') {
       return (
         <div key={index} className="my-12 grid md:grid-cols-2 gap-6">
-          <div className={`p-6 rounded-xl ${isDark ? 'bg-green-950/20 border-green-500/30' : 'bg-green-50 border-green-200'} border`}>
+          <div className="p-6 rounded-xl bg-green-950/20 border-green-500/30 border">
             <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Replace When:</h4>
             <ul className="space-y-3">
               {section.replaceWhen.map((item, idx) => (
                 <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                  <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className={`p-6 rounded-xl ${isDark ? 'bg-red-950/20 border-red-500/30' : 'bg-red-50 border-red-200'} border`}>
+          <div className="p-6 rounded-xl bg-red-950/20 border-red-500/30 border">
             <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Keep When:</h4>
             <ul className="space-y-3">
               {section.keepWhen.map((item, idx) => (
                 <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                  <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -613,7 +613,7 @@ const BlogDetail = () => {
           </div>
           
           {section.test && (
-            <div className={`md:col-span-2 p-6 rounded-xl ${theme.cardBg} border-2 ${isDark ? 'border-blue-500/30' : 'border-blue-300'}`}>
+            <div className={`md:col-span-2 p-6 rounded-xl ${theme.cardBg} border-2 border-brand-500/30`}>
               <p className={`text-lg ${theme.textSecondary} leading-relaxed`}>
                 <span className={`font-semibold ${theme.textPrimary}`}>The test: </span>
                 {section.test}
@@ -634,7 +634,7 @@ const BlogDetail = () => {
               className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300`}
             >
               <div className="flex items-start gap-4">
-                <div className={`px-3 py-1 rounded-lg ${isDark ? 'bg-blue-950/30 text-blue-400' : 'bg-blue-100 text-blue-700'} font-semibold text-sm whitespace-nowrap`}>
+                <div className={`px-3 py-1 rounded-lg bg-brand-950/30 text-brand-400 font-semibold text-sm whitespace-nowrap`}>
                   {week.week}
                 </div>
                 <div className="flex-1">
@@ -646,7 +646,7 @@ const BlogDetail = () => {
           ))}
           
           {section.summary && (
-            <div className={`mt-6 p-6 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/30' : 'bg-blue-50 border-blue-200'} border`}>
+            <div className="mt-6 p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border">
               <p className={`${theme.textPrimary} font-semibold mb-2`}>{section.summary}</p>
               {section.comparison && (
                 <p className={`${theme.textSecondary}`}>{section.comparison}</p>
@@ -674,21 +674,21 @@ const BlogDetail = () => {
               </p>
             </div>
             
-            <div className={`p-6 rounded-xl ${isDark ? 'bg-green-950/20 border-green-500/30' : 'bg-green-50 border-green-200'} border`}>
+            <div className={`p-6 rounded-xl bg-green-950/20 border-green-500/30 border`}>
               <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.after.title}</h4>
               <ul className="space-y-2 mb-4">
                 {section.after.items.map((item, idx) => (
                   <li key={idx} className={`${theme.textSecondary} text-sm`}>• {item}</li>
                 ))}
               </ul>
-              <p className={`${theme.textTertiary} text-sm italic border-t ${isDark ? 'border-green-500/30' : 'border-green-200'} pt-4`}>
+              <p className={`${theme.textTertiary} text-sm italic border-t border-green-500/30 pt-4`}>
                 {section.after.total}
               </p>
             </div>
           </div>
           
           {section.savings && (
-            <div className={`p-6 rounded-xl bg-blue-600 text-white text-center`}>
+            <div className={`p-6 rounded-xl bg-brand text-white text-center`}>
               <p className="text-2xl font-bold">{section.savings}</p>
             </div>
           )}
@@ -743,7 +743,7 @@ const BlogDetail = () => {
         <section className="relative py-16 px-6">
           <div className="max-w-4xl mx-auto">
             {/* Category Badge */}
-            <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${isDark ? 'bg-blue-950/30 text-blue-300 border border-blue-500/20' : 'bg-blue-50 text-blue-700 border border-blue-200'}`}>
+            <div className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 bg-brand-950/30 text-brand-300 border border-brand-500/20">
               {article.category}
             </div>
             
@@ -795,7 +795,7 @@ const BlogDetail = () => {
             
             {/* Related Links */}
             {article.content.relatedLinks && article.content.relatedLinks.length > 0 && (
-              <div className={`mt-12 p-8 rounded-xl ${isDark ? 'bg-blue-950/20 border-blue-500/30' : 'bg-blue-50 border-blue-200'} border`}>
+              <div className="mt-12 p-8 rounded-xl bg-brand-950/20 border-brand-500/30 border">
                 <h3 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Continue Your Journey</h3>
                 <div className="space-y-3">
                   {article.content.relatedLinks.map((link, idx) => (
@@ -830,7 +830,7 @@ const BlogDetail = () => {
               <Link to="/transformation-call">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                  className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
                 >
                   Start Your AI Transformation
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -840,7 +840,7 @@ const BlogDetail = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className={`${isDark ? 'border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white' : 'border-blue-300 hover:border-blue-500 hover:bg-blue-50'} ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
+                  className={`border-brand-500/30 hover:border-brand-500 hover:bg-brand-950/30 hover:text-white ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
                 >
                   <ArrowLeft className="mr-2 w-6 h-6" />
                   View All Insights

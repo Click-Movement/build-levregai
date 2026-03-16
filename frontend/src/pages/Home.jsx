@@ -115,7 +115,7 @@ const Home = () => {
           </div>
           
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            Your Team. <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>Amplified By Ai.</span>
+            Your Team. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">Amplified By Ai.</span>
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
@@ -126,7 +126,7 @@ const Home = () => {
             <Link to="/transformation-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group transition-all duration-300"
+                className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group transition-all duration-300"
               >
                 Start Your Ai Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -135,7 +135,7 @@ const Home = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className={`${isDark ? 'border-blue-500/30 hover:border-blue-500 hover:bg-blue-950/30 hover:text-white' : 'border-blue-300 hover:border-blue-500 hover:bg-blue-50'} ${theme.textPrimary} px-8 py-6 text-lg transition-all duration-300`}
+              className={`border-brand-500/30 hover:border-brand-500 hover:bg-brand-950/30 hover:text-white ${theme.textPrimary} px-8 py-6 text-lg transition-all duration-300`}
               onClick={() => scrollToSection('how-it-works')}
             >
               See How It Works
@@ -169,7 +169,7 @@ const Home = () => {
                 'Sales gets prospecting tools and follow-up workflows.',
                 'Operations gets process documentation and error-catching systems.'
               ].map((text, idx) => (
-                <div key={idx} className={`flex items-start gap-3 p-4 rounded-lg ${isDark ? 'bg-blue-950/20 border-blue-500/10' : 'bg-blue-50 border-blue-100'} border`}>
+                <div key={idx} className={`flex items-start gap-3 p-4 rounded-lg bg-brand-950/20 border-brand-500/10 border`}>
                   <CheckCircle className={`w-5 h-5 ${theme.textAccent} flex-shrink-0 mt-0.5`} />
                   <span className={theme.textSecondary}>{text}</span>
                 </div>
@@ -201,7 +201,7 @@ const Home = () => {
                 className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
                 <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-blue-950/30 group-hover:bg-blue-950/50' : 'bg-blue-50 group-hover:bg-blue-100'} flex items-center justify-center mb-6 ${theme.textAccent} transition-colors duration-300`}>
+                  <div className={`w-16 h-16 rounded-xl bg-brand-950/30 group-hover:bg-brand-950/50 flex items-center justify-center mb-6 ${theme.textAccent} transition-colors duration-300`}>
                     {benefit.icon}
                   </div>
                   <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>{benefit.title}</h3>
@@ -230,7 +230,7 @@ const Home = () => {
                 key={idx}
                 className={`relative p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
               >
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white shadow-blue-600/30">
+                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-brand flex items-center justify-center text-2xl font-bold shadow-lg text-white shadow-brand/30">
                   {step.number}
                 </div>
                 <div className="mt-6">
@@ -245,7 +245,7 @@ const Home = () => {
             <Link to="/transformation-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg group"
+                className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group"
               >
                 Start Your AI Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -304,7 +304,7 @@ const Home = () => {
           <Link to="/transformation-call">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
+              className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
             >
               Start Your Ai Transformation
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />

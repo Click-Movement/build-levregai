@@ -130,7 +130,7 @@ const Contact = () => {
           </div>
           
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            Start Your <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>Ai Transformation</span>
+            Start Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">Ai Transformation</span>
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
@@ -165,7 +165,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText}`}
                     placeholder="John Smith"
                   />
                 </div>
@@ -181,7 +181,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText}`}
                     placeholder="john@company.com"
                   />
                 </div>
@@ -197,7 +197,7 @@ const Contact = () => {
                     required
                     value={formData.company}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText}`}
                     placeholder="Your Company"
                   />
                 </div>
@@ -212,7 +212,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText}`}
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -227,7 +227,7 @@ const Contact = () => {
                     type="text"
                     value={formData.teamSize}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText}`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText}`}
                     placeholder="e.g., 5-10 employees"
                   />
                 </div>
@@ -242,7 +242,7 @@ const Contact = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-blue-500 ${theme.inputText} resize-none`}
+                    className={`${theme.inputBg} ${theme.inputBorder} focus:border-brand ${theme.inputText} resize-none`}
                     placeholder="What are your team's biggest productivity bottlenecks?"
                   />
                 </div>
@@ -251,7 +251,7 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group transition-all duration-300"
+                  className="w-full bg-brand hover:bg-brand-700 text-white py-6 text-lg group transition-all duration-300"
                 >
                   {isSubmitting ? 'Sending...' : 'Schedule Discovery Call'}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -268,7 +268,7 @@ const Contact = () => {
               <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-12 h-12 rounded-lg bg-brand-950/30 flex items-center justify-center flex-shrink-0`}>
                       <Clock className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
@@ -282,7 +282,7 @@ const Contact = () => {
               <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-12 h-12 rounded-lg bg-brand-950/30 flex items-center justify-center flex-shrink-0`}>
                       <CheckCircle className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
@@ -303,7 +303,7 @@ const Contact = () => {
               <Card className={`${theme.cardBg} ${theme.cardBorder} ${theme.shadow}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-blue-950/30' : 'bg-blue-50'} flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-12 h-12 rounded-lg bg-brand-950/30 flex items-center justify-center flex-shrink-0`}>
                       <ArrowRight className={`w-6 h-6 ${theme.textAccent}`} />
                     </div>
                     <div>
@@ -356,9 +356,9 @@ const Contact = () => {
       {/* Why It Matters */}
       <section className={`py-24 px-6 ${theme.bgSecondary}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-red-950/30 border-red-500/20' : 'bg-red-50 border-red-200'} border mb-8`}>
-            <AlertCircle className={`w-4 h-4 ${isDark ? 'text-red-400' : 'text-red-600'}`} />
-            <span className={`text-sm ${isDark ? 'text-red-300' : 'text-red-700'} font-medium`}>Time-Sensitive</span>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/30 border-red-500/20 border mb-8`}>
+            <AlertCircle className="w-4 h-4 text-red-400" />
+            <span className="text-sm text-red-300 font-medium">Time-Sensitive</span>
           </div>
           
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme.textPrimary}`}>

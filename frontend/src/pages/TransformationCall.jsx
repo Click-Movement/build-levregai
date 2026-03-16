@@ -152,7 +152,7 @@ const TransformationCall = () => {
             
             <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
               Identify the 3-5 AI Systems That Will{' '}
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
+              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'}`}>
                 Transform Your Business
               </span>{' '}
               in the Next 30 Days
@@ -165,7 +165,7 @@ const TransformationCall = () => {
             <Link to="/book-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300 mb-4"
+                className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300 mb-4"
               >
                 Schedule Your Free AI Transformation Call
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -238,7 +238,7 @@ const TransformationCall = () => {
               <Link to="/book-call">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                  className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
                 >
                   Schedule Your Free AI Transformation Call
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -263,13 +263,13 @@ const TransformationCall = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Right for you */}
               <div className={`p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.shadow}`}>
-                <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-green-400' : 'text-green-600'}`}>
+                <h3 className={`text-2xl font-bold mb-6 ${'text-green-400'}`}>
                   This is right for you if:
                 </h3>
                 <ul className="space-y-4">
                   {rightForYou.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} flex-shrink-0 mt-0.5`} />
+                      <CheckCircle className={`w-5 h-5 ${'text-green-400'} flex-shrink-0 mt-0.5`} />
                       <span className={theme.textSecondary}>{item}</span>
                     </li>
                   ))}
@@ -278,13 +278,13 @@ const TransformationCall = () => {
               
               {/* Not for you */}
               <div className={`p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.shadow}`}>
-                <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-red-400' : 'text-red-600'}`}>
+                <h3 className={`text-2xl font-bold mb-6 ${'text-red-400'}`}>
                   This is NOT for you if:
                 </h3>
                 <ul className="space-y-4">
                   {notForYou.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <X className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'} flex-shrink-0 mt-0.5`} />
+                      <X className={`w-5 h-5 ${'text-red-400'} flex-shrink-0 mt-0.5`} />
                       <span className={theme.textSecondary}>{item}</span>
                     </li>
                   ))}
@@ -337,7 +337,7 @@ const TransformationCall = () => {
               <Link to="/book-call">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                  className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
                 >
                   Schedule Your Free AI Transformation Call
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -414,7 +414,7 @@ const TransformationCall = () => {
             <Link to="/book-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
               >
                 Schedule Your Free AI Transformation Call
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -465,7 +465,7 @@ const TransformationCall = () => {
             <Link to="/book-call">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-xl group transition-all duration-300"
+                className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
               >
                 Schedule Your Free AI Transformation Call
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
