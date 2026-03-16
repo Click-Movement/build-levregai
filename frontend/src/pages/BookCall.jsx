@@ -79,12 +79,6 @@ const BookCall = () => {
             />
           </div>
 
-          {/* Additional Info */}
-          <div className="max-w-4xl mx-auto mt-8 text-center">
-            <p className={`${theme.textTertiary} text-sm`}>
-              30 minutes · Free · No obligation · Pure value
-            </p>
-          </div>
         </section>
       </div>
       <LandingFooter />
