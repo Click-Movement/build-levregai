@@ -66,11 +66,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/transformation-call">
+            <Link to="/scorecard">
               <Button 
                 className="bg-brand hover:bg-brand-700 text-white transition-colors duration-200"
               >
-                Learn More
+                Start Here
               </Button>
             </Link>
           </div>
@@ -102,11 +102,11 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/transformation-call" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/scorecard" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
                   className="bg-brand hover:bg-brand-700 text-white w-full mt-2"
                 >
-                  Learn More
+                  Start Here
                 </Button>
               </Link>
             </nav>

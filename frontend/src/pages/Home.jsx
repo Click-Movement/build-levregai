@@ -123,12 +123,12 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/transformation-call">
+            <Link to="/scorecard">
               <Button 
                 size="lg" 
                 className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group transition-all duration-300"
               >
-                Start Your Ai Transformation
+                Free 2 Minute Assessment
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
