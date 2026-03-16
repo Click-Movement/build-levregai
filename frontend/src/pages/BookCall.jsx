@@ -22,23 +22,23 @@ const BookCall = () => {
   return (
     <>
       <Helmet>
-        <title>Book Your AI Transformation Call | LevReg.Ai</title>
-        <meta name="description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
-        <meta name="keywords" content="book call, schedule meeting, AI consultation, transformation call" />
+        <title>Book Your AI Automation Audit | LevReg.Ai</title>
+        <meta name="description" content="Schedule your free AI automation audit. Choose a time that works for you." />
+        <meta name="keywords" content="book call, schedule meeting, AI consultation, automation audit" />
         <link rel="canonical" href="https://levreg.ai/book-call" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://levreg.ai/book-call" />
-        <meta property="og:title" content="Book Your AI Transformation Call | LevReg.Ai" />
-        <meta property="og:description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
+        <meta property="og:title" content="Book Your AI Automation Audit | LevReg.Ai" />
+        <meta property="og:description" content="Schedule your free AI automation audit. Choose a time that works for you." />
         <meta property="og:site_name" content="LevReg.Ai" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
-        <meta name="twitter:title" content="Book Your AI Transformation Call | LevReg.Ai" />
-        <meta name="twitter:description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
+        <meta name="twitter:title" content="Book Your AI Automation Audit | LevReg.Ai" />
+        <meta name="twitter:description" content="Schedule your free AI automation audit. Choose a time that works for you." />
       </Helmet>
       
       <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
@@ -56,7 +56,7 @@ const BookCall = () => {
               Book Your Free
               <br />
               <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-blue-400 to-blue-600' : 'from-blue-600 to-blue-500'}`}>
-                AI Transformation Call
+                AI Automation Audit
               </span>
             </h1>
             
