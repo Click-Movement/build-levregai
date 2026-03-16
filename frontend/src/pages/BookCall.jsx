@@ -9,56 +9,13 @@ const BookCall = () => {
   const theme = getThemeClasses(isDark);
 
   useEffect(() => {
-    // Cal.com initialization function (their standard pattern)
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
-      let d = C.document;
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal;
-        let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api = function () { p(api, arguments); };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          if(typeof namespace === "string"){
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
 
-    // Initialize Cal.com with namespace
-    window.Cal("init", "30min", {origin:"https://app.cal.com"});
-
-    // Setup inline embed
-    window.Cal.ns["30min"]("inline", {
-      elementOrSelector:"#my-cal-inline-30min",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "levregai/30min",
-    });
-
-    // Configure UI
-    window.Cal.ns["30min"]("ui", {
-      "hideEventTypeDetails":false,
-      "layout":"month_view"
-    });
-
-    // Cleanup function
     return () => {
-      // Cal.com handles its own cleanup
-      if (window.Cal) {
-        delete window.Cal;
-      }
+      document.head.removeChild(script);
     };
   }, []);
 
@@ -66,7 +23,7 @@ const BookCall = () => {
     <>
       <Helmet>
         <title>Book Your AI Transformation Call | LevReg.Ai</title>
-        <meta name="description" content="Schedule your free 30-minute AI transformation call. Choose a time that works for you." />
+        <meta name="description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
         <meta name="keywords" content="book call, schedule meeting, AI consultation, transformation call" />
         <link rel="canonical" href="https://levreg.ai/book-call" />
         
@@ -74,14 +31,14 @@ const BookCall = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://levreg.ai/book-call" />
         <meta property="og:title" content="Book Your AI Transformation Call | LevReg.Ai" />
-        <meta property="og:description" content="Schedule your free 30-minute AI transformation call. Choose a time that works for you." />
+        <meta property="og:description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
         <meta property="og:site_name" content="LevReg.Ai" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
         <meta name="twitter:title" content="Book Your AI Transformation Call | LevReg.Ai" />
-        <meta name="twitter:description" content="Schedule your free 30-minute AI transformation call. Choose a time that works for you." />
+        <meta name="twitter:description" content="Schedule your free AI transformation audit. Choose a time that works for you." />
       </Helmet>
       
       <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
@@ -108,10 +65,11 @@ const BookCall = () => {
             </p>
           </div>
 
-          {/* Cal.com Embed Container */}
+          {/* Calendly Embed Container */}
           <div className="max-w-6xl mx-auto relative z-10">
-            <div 
-              id="my-cal-inline-30min" 
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/levregai/audit"
               style={{
                 width: '100%',
                 height: '700px',
