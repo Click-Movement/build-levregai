@@ -115,11 +115,11 @@ const Home = () => {
           </div>
           
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            Your Team. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">Amplified By Ai.</span>
+            AI Transformation that Delivers <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">Measurable ROI</span>
           </h1>
           
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            LevReg.Ai helps your employees put AI to work inside their job responsibilities, making every task faster and more efficient.
+            We help businesses implement AI solutions that deliver measurable results with Marketing, Sales, and Fulfillment.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
