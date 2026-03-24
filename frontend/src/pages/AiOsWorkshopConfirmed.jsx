@@ -28,7 +28,7 @@ const AiOsWorkshopConfirmed = () => {
               Confirmed! We Will Contact You Shortly.
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Thank you for applying to the AI OS Workshop. Our team will review your application and reach out to you soon.
+              Thank you for applying to work with us. Our team will review your application and reach out to you soon.
             </p>
           </div>
         </section>

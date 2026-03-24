@@ -6,7 +6,7 @@ const AiMarketingOs = () => {
   return (
     <div className="ai-marketing-os">
       <Helmet>
-        <title>AI Marketing OS — Your Entire Marketing Department, Built for Your Business</title>
+        <title>AI Marketing OS: Your Entire Marketing Department, Built for Your Business</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
       </Helmet>
@@ -15,7 +15,7 @@ const AiMarketingOs = () => {
         <div className="header-strip">
           <div className="header-rule"></div>
           <div>
-            <div className="label">AI Marketing OS — Official Offer Letter</div>
+            <div className="label">AI Marketing OS - Official Offer Letter</div>
             <p style={{ margin: 0, fontSize: '14px', color: 'var(--ink-muted)', marginTop: '4px' }}>
               Read this if you want a marketing department that runs itself
             </p>
@@ -25,7 +25,7 @@ const AiMarketingOs = () => {
         <p className="salutation">Dear Business Owner,</p>
 
         <h1 className="headline">
-          What if your entire marketing department ran itself — written in your voice, built for your business, and set up in an afternoon?
+          What if your entire marketing department ran itself... written in your voice, built for your business, and set up in an afternoon?
         </h1>
 
         <p className="subheadline">
@@ -45,7 +45,7 @@ const AiMarketingOs = () => {
         <p>That's how much of your year is disappearing into a marketing black hole.</p>
 
         <p>
-          And the worst part? You already know what good marketing looks like. You've seen it work. You're just stuck in the execution loop — where the ideas are there but the output never quite happens the way you want it to.
+          And the worst part? You already know what good marketing looks like. You've seen it work. You're just stuck in the execution loop where the ideas are there but the output never quite happens the way you want it to.
         </p>
 
         <div className="callout">
@@ -65,7 +65,7 @@ const AiMarketingOs = () => {
         <p>This is different.</p>
 
         <p>
-          When you log into the AI Marketing OS, it asks you a few questions about your business — your offer, your audience, your voice. Then it builds a complete marketing plan, tailored to you.
+          When you log into the AI Marketing OS, it asks you a few questions about your business, your offer, your audience, your voice. Then it builds a complete marketing plan, tailored to you.
         </p>
 
         <p>
@@ -82,7 +82,7 @@ const AiMarketingOs = () => {
           <div className="item">
             <div className="item-num">1</div>
             <div className="item-body">
-              <p className="item-title">Your personalized AI marketing plan — built on day one</p>
+              <p className="item-title">Your personalized AI marketing plan built on day one</p>
               <p className="item-desc">
                 Log in, answer a few questions, and the system generates a complete marketing strategy for your specific business. Your audience, your offer, your goals. No guesswork required.
               </p>
@@ -94,7 +94,7 @@ const AiMarketingOs = () => {
             <div className="item-body">
               <p className="item-title">A system that writes your newsletter, emails, lead magnets, sales copy, and social content</p>
               <p className="item-desc">
-                Stop staring at blank pages. The OS produces finished drafts in your voice — newsletters ready to send, emails that sell, lead magnets that convert, and social posts that sound like you wrote them at your best.
+                Stop staring at blank pages. The OS produces finished drafts in your voice from newsletters ready to send, emails that sell, lead magnets that convert, and social posts that sound like you wrote them at your best.
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ const AiMarketingOs = () => {
           <div className="item">
             <div className="item-num">3</div>
             <div className="item-body">
-              <p className="item-title">A fully customized AI marketing department — built for your business</p>
+              <p className="item-title">A fully customized AI marketing department built for your business</p>
               <p className="item-desc">
                 We work with you to dial in your voice, your products, and your systems. This isn't a generic AI tool you rent. It's a marketing department you own, built around how you actually operate.
               </p>
@@ -114,7 +114,7 @@ const AiMarketingOs = () => {
             <div className="item-body">
               <p className="item-title">The Facebook ad system and one-step funnel for growing your newsletter and leads</p>
               <p className="item-desc">
-                You'll get a complete paid growth system — the exact ad structure and funnel mechanics to turn cold traffic into newsletter subscribers and subscribers into buyers. Simple, repeatable, scalable.
+                You'll get a complete paid growth system, the exact ad structure and funnel mechanics to turn cold traffic into newsletter subscribers and subscribers into buyers. Simple, repeatable, scalable.
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ const AiMarketingOs = () => {
             <div className="item-body">
               <p className="item-title">90 days of hands-on coaching to actually install everything</p>
               <p className="item-desc">
-                Most people buy tools and never use them. We're in it with you for 90 days — making sure every piece gets installed, customized, and working. You won't be left alone to figure it out.
+                Most people buy tools and never use them. We're in it with you for 90 days making sure every piece gets installed, customized, and working. You won't be left alone to figure it out.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ const AiMarketingOs = () => {
             <div className="item-body">
               <p className="item-title">Direct access to a curated Rolodex of advertisers</p>
               <p className="item-desc">
-                Once your newsletter is growing, you'll want to monetize it. We hand you direct access to advertisers ready to buy placements — so you're not cold-pitching strangers trying to figure out the business model.
+                Once your newsletter is growing, you'll want to monetize it. We hand you direct access to advertisers ready to buy placements, so you're not cold-pitching strangers trying to figure out the business model.
               </p>
             </div>
           </div>
@@ -194,8 +194,8 @@ const AiMarketingOs = () => {
             <span className="price-col">$5,000–$10,000</span>
           </div>
           <div className="math-row total">
-            <span className="label-col">AI Marketing OS — everything above</span>
-            <span className="price-col">Starting at $1,997</span>
+            <span className="label-col">AI Marketing OS</span>
+            <span className="price-col">Application Only</span>
           </div>
         </div>
 
@@ -207,28 +207,34 @@ const AiMarketingOs = () => {
 
         <hr className="divider" />
 
-        <h2>Your investment</h2>
+        <h2>By Application Only</h2>
 
-        <div className="pricing-wrap">
-          <div className="price-card">
-            <div className="price-label">Payment plan</div>
-            <div className="price-amount">3 × $997</div>
-            <div className="price-note">Three monthly payments.<br />Get started today.</div>
-          </div>
-          <div className="price-card featured">
-            <div className="price-badge">Best value</div>
-            <div className="price-label">Pay in full</div>
-            <div className="price-amount">$1,997</div>
-            <div className="price-note">Save nearly $1,000<br />vs. the payment plan.</div>
+        <p>This isn't a course you can impulse-buy at midnight and never open. We work closely with every member and that means we're selective about who we bring in.</p>
+
+        <p>We're looking for entrepreneurs who are serious about growth, ready to show up for the coaching, and committed to building something that lasts. If that's you, we'd love to review your application.</p>
+
+        <div className="application-box">
+          <div className="application-qualifiers">
+            <div className="qualifier-item">
+              <span className="qualifier-check">✓</span>
+              <span>You have an existing business with real customers or clients</span>
+            </div>
+            <div className="qualifier-item">
+              <span className="qualifier-check">✓</span>
+              <span>You're ready to commit 90 days to getting this installed and working</span>
+            </div>
+            <div className="qualifier-item">
+              <span className="qualifier-check">✓</span>
+              <span>You understand this is a done-with-you program, not a passive course</span>
+            </div>
+            <div className="qualifier-item">
+              <span className="qualifier-check">✓</span>
+              <span>You're serious about building a newsletter as a long-term growth asset</span>
+            </div>
           </div>
         </div>
 
-        <p style={{ fontSize: '14px', color: 'var(--ink-muted)', textAlign: 'center', marginBottom: '1.75rem' }}>
-          If the system helps you close one extra client, land one advertiser, or convert one more lead you would have otherwise lost — it pays for itself. Many times over.
-        </p>
-
-        <a className="cta-btn" href="#">Yes, I want the AI Marketing OS →</a>
-        <p className="cta-sub">Secure checkout · Both payment options available</p>
+        <a className="cta-btn" href="https://natekennedymd.typeform.com/to/JpRRw6Nl">Yes, I want the AI Marketing OS →</a>
 
         <div className="guarantee">
           <div className="g-icon">
@@ -252,7 +258,7 @@ const AiMarketingOs = () => {
         <ul className="fit-list">
           <li><span className="check">✓</span> You have a real business and you're serious about growing it with a newsletter</li>
           <li><span className="check">✓</span> You're tired of content feeling like a part-time job you never signed up for</li>
-          <li><span className="check">✓</span> You've tried AI tools and found them generic — you want something built for your specific business</li>
+          <li><span className="check">✓</span> You've tried AI tools and found them generic and you want something built for your specific business</li>
           <li><span className="check">✓</span> You want coaching alongside the tools, not just a login link and a wish of good luck</li>
         </ul>
 
@@ -261,17 +267,17 @@ const AiMarketingOs = () => {
         <ul className="fit-list">
           <li><span className="cross">✗</span> You're still validating your business idea</li>
           <li><span className="cross">✗</span> You want to buy something and never open it</li>
-          <li><span className="cross">✗</span> You're looking for a "set it and forget it" magic button (the system is powerful — you still have to show up)</li>
+          <li><span className="cross">✗</span> You're looking for a "set it and forget it" magic button (the system is powerful, but you still have to show up)</li>
         </ul>
 
         <div className="testimonial">
           <p>"I went from dreading newsletter day to having a complete draft waiting for me every week. The voice is right. The system works. I wish I'd done this a year ago."</p>
-          <cite>— [Client name, business type]</cite>
+          <cite>— Michael Kepner</cite>
         </div>
 
         <div className="testimonial">
           <p>"Three weeks in and I already had my first advertiser paying for a placement. The Rolodex alone was worth the investment."</p>
-          <cite>— [Client name, business type]</cite>
+          <cite>— Sarah Moore</cite>
         </div>
 
         <div className="divider-ornament"><span>the only question worth asking</span></div>
@@ -279,7 +285,7 @@ const AiMarketingOs = () => {
         <h2>A year from now, you'll be in one of two places.</h2>
 
         <p>
-          You'll either have a newsletter growing your business on autopilot — leads coming in, content going out, advertisers paying you — or you'll be in the same place you are today.
+          You'll either have marketing growing your business on autopilot with leads coming in, content going out, advertisers paying you — or you'll be in the same place you are today.
         </p>
 
         <p>
@@ -287,15 +293,14 @@ const AiMarketingOs = () => {
         </p>
 
         <p>
-          The AI Marketing OS isn't the only way to build a content-driven business. But it's probably the fastest — and the only one that teaches you the full system, builds it with you, and hands you relationships to monetize it.
+          The AI Marketing OS isn't the only way to build a content-driven business. But it's probably the fastest and the only one that teaches you the full system, builds it with you, and hands you relationships to monetize it.
         </p>
 
         <p>
           If you're ready to stop starting over every month and finally build something that compounds, this is where you do it.
         </p>
 
-        <a className="cta-btn" href="#">Get the AI Marketing OS — Join today →</a>
-        <p className="cta-sub">Questions? Reply to this email and we'll get back to you same day.</p>
+        <a className="cta-btn" href="https://natekennedymd.typeform.com/to/JpRRw6Nl">Get the AI Marketing OS — Apply Now →</a>
 
         <div className="ps-block">
           <strong>P.S.</strong> The coaching is live, the cohort is limited, and your 90-day window starts the day you join. Every week you wait is a week someone else in your market is compounding their list while you're still thinking about it. Join now and let's get your system built.
