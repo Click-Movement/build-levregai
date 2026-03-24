@@ -24,11 +24,12 @@ import AiOsWorkshopApply from './pages/AiOsWorkshopApply';
 import AiOsWorkshopConfirmed from './pages/AiOsWorkshopConfirmed';
 import MarketingAssistantWorkshop from './pages/MarketingAssistantWorkshop';
 import MarketingAssistantThankYou from './pages/MarketingAssistantThankYou';
+import AiMarketingOs from './pages/AiMarketingOs';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
-const HEADERLESS_PREFIXES = ['/workshop'];
-const LANDING_FOOTER_PATHS = ['/book-call'];
+const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os'];
+const LANDING_FOOTER_PATHS = ['/book-call', '/marketing-os'];
 
 function AppContent() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function AppContent() {
           <Route path="/workshop/confirmed" element={<AiOsWorkshopConfirmed />} />
           <Route path="/workshop/marketing-assistant" element={<MarketingAssistantWorkshop />} />
           <Route path="/workshop/marketing-assistant/thank-you" element={<MarketingAssistantThankYou />} />
+          <Route path="/marketing-os" element={<AiMarketingOs />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
