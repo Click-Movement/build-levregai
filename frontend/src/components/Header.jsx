@@ -37,10 +37,10 @@ const Header = () => {
         isScrolled
           ? isDark
             ? 'bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-gray-800/50'
-            : 'bg-white/95 backdrop-blur-lg border-b border-gray-200/50'
+            : 'bg-white border-b border-gray-200'
           : isDark
             ? 'bg-transparent'
-            : 'bg-white/90 backdrop-blur-sm'
+            : 'bg-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
