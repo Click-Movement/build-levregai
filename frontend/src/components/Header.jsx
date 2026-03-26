@@ -19,9 +19,9 @@ const Header = () => {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
     { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Insights', href: '/blog' },
-    { label: 'Services', href: '/services' }
+    { label: 'Insights', href: '/blog' }
   ];
 
   const handleNavClick = () => {
