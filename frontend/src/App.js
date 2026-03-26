@@ -25,16 +25,18 @@ import AiOsWorkshopConfirmed from './pages/AiOsWorkshopConfirmed';
 import MarketingAssistantWorkshop from './pages/MarketingAssistantWorkshop';
 import MarketingAssistantThankYou from './pages/MarketingAssistantThankYou';
 import AiMarketingOs from './pages/AiMarketingOs';
+import StackSolo from './pages/lm/StackSolo';
+import StackSoloThankYou from './pages/lm/StackSoloThankYou';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
-const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os'];
-const LANDING_FOOTER_PATHS = ['/book-call', '/marketing-os'];
+const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm'];
+const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm'];
 
 function AppContent() {
   const location = useLocation();
   const hideHeader = HEADERLESS_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
-  const hidMainFooter = LANDING_FOOTER_PATHS.includes(location.pathname);
+  const hidMainFooter = LANDING_FOOTER_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
 
   return (
     <div className="App">
@@ -56,6 +58,8 @@ function AppContent() {
           <Route path="/workshop/marketing-assistant" element={<MarketingAssistantWorkshop />} />
           <Route path="/workshop/marketing-assistant/thank-you" element={<MarketingAssistantThankYou />} />
           <Route path="/marketing-os" element={<AiMarketingOs />} />
+          <Route path="/lm/stack-solo" element={<StackSolo />} />
+          <Route path="/lm/stack-solo/thankyou" element={<StackSoloThankYou />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />

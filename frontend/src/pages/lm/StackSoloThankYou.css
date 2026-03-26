@@ -1,0 +1,289 @@
+/* Thank-you page styles — /lm/stack-solo/thankyou */
+
+/* ── Animations ───────────────────────────────────────────── */
+
+@keyframes lmCheckDraw {
+  from { stroke-dashoffset: 40; opacity: 0; }
+  to   { stroke-dashoffset: 0;  opacity: 1; }
+}
+
+@keyframes lmCirclePop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  70%  { transform: scale(1.06); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Confirmation ─────────────────────────────────────────── */
+
+.lm-stack-solo-ty .confirm-section {
+  padding: 3.5rem 0 0;
+  text-align: left;
+}
+
+.lm-stack-solo-ty .check-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  animation: lmCirclePop 0.55s 0.05s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.lm-stack-solo-ty .check-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lm-stack-solo-ty .check-wrap svg path {
+  stroke: var(--ink-mid);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: lmCheckDraw 0.45s 0.5s ease forwards;
+}
+
+.lm-stack-solo-ty .confirm-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.85rem;
+}
+
+.lm-stack-solo-ty .confirm-headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.14;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.lm-stack-solo-ty .confirm-headline em {
+  font-style: italic;
+  color: var(--ink-light);
+}
+
+.lm-stack-solo-ty .confirm-sub {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--ink-mid);
+  max-width: 500px;
+  margin-bottom: 0;
+}
+
+/* ── Delivery card ────────────────────────────────────────── */
+
+.lm-stack-solo-ty .delivery-card {
+  background: var(--white);
+  border: 0.5px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.lm-stack-solo-ty .delivery-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lm-stack-solo-ty .delivery-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--ink-mid);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lm-stack-solo-ty .delivery-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.lm-stack-solo-ty .delivery-desc {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  line-height: 1.55;
+}
+
+/* ── Download button ──────────────────────────────────────── */
+
+.lm-stack-solo-ty .download-wrap {
+  margin-top: 1.1rem;
+}
+
+.lm-stack-solo-ty .download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--ink);
+  color: var(--white);
+  border: none;
+  border-radius: 7px;
+  font-family: var(--sans);
+  font-size: 0.87rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+}
+
+.lm-stack-solo-ty .download-btn:hover {
+  opacity: 0.86;
+}
+
+.lm-stack-solo-ty .download-btn:active {
+  opacity: 0.72;
+  transform: scale(0.99);
+}
+
+.lm-stack-solo-ty .download-btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.lm-stack-solo-ty .download-note {
+  font-size: 0.73rem;
+  color: var(--ink-light);
+  margin-top: 0.6rem;
+}
+
+/* ── Next steps list ──────────────────────────────────────── */
+
+.lm-stack-solo-ty .next-list {
+  list-style: none;
+  border-top: 0.5px solid var(--rule);
+}
+
+.lm-stack-solo-ty .next-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.lm-stack-solo-ty .next-num {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  min-width: 22px;
+  padding-top: 2px;
+  letter-spacing: 0.04em;
+}
+
+.lm-stack-solo-ty .next-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.lm-stack-solo-ty .next-desc {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  line-height: 1.55;
+}
+
+/* ── Bridge CTA ───────────────────────────────────────────── */
+
+.lm-stack-solo-ty .bridge-block {
+  background: var(--ink);
+  border-radius: 12px;
+  padding: 2rem 2rem 2.25rem;
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+.lm-stack-solo-ty .bridge-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888780;
+  margin-bottom: 0.7rem;
+}
+
+.lm-stack-solo-ty .bridge-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--white);
+  margin-bottom: 0.9rem;
+}
+
+.lm-stack-solo-ty .bridge-body {
+  font-size: 0.87rem;
+  line-height: 1.75;
+  color: #B4B2A9;
+  max-width: 430px;
+  margin: 0 auto 1.5rem;
+}
+
+.lm-stack-solo-ty .bridge-btn {
+  display: inline-block;
+  padding: 0.78rem 1.5rem;
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 7px;
+  font-family: var(--sans);
+  font-size: 0.87rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity 0.15s ease;
+}
+
+.lm-stack-solo-ty .bridge-btn:hover {
+  opacity: 0.88;
+}
+
+.lm-stack-solo-ty .bridge-note {
+  font-size: 0.72rem;
+  color: #666663;
+  margin-top: 0.75rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .lm-stack-solo-ty .confirm-section {
+    padding: 2.5rem 0 0;
+  }
+  .lm-stack-solo-ty .bridge-block {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+  .lm-stack-solo-ty .delivery-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

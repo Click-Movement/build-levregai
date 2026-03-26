@@ -1,0 +1,136 @@
+/* Shared design tokens and layout for /lm lead-magnet pages */
+
+.lm-page {
+  --ink:        #1A1A18;
+  --ink-mid:    #4A4A47;
+  --ink-light:  #888780;
+  --rule:       #D3D1C7;
+  --surface:    #F1EFE8;
+  --bg:         #FAF9F5;
+  --white:      #FFFFFF;
+  --serif:      'Instrument Serif', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+
+@keyframes lmFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lmFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes lmLineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.lm-page .a1 { animation: lmFadeUp 0.65s 0.10s ease both; }
+.lm-page .a2 { animation: lmFadeUp 0.65s 0.22s ease both; }
+.lm-page .a3 { animation: lmFadeUp 0.65s 0.34s ease both; }
+.lm-page .a4 { animation: lmFadeUp 0.65s 0.46s ease both; }
+.lm-page .a5 { animation: lmFadeUp 0.65s 0.58s ease both; }
+.lm-page .a6 { animation: lmFadeUp 0.65s 0.70s ease both; }
+
+.lm-page .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lm-page .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Layout ───────────────────────────────────────────────── */
+
+.lm-page .container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.lm-page .lm-main {
+  flex: 1;
+}
+
+/* ── Nav ──────────────────────────────────────────────────── */
+
+.lm-page .lm-nav {
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  animation: lmFadeIn 0.6s ease both;
+}
+
+.lm-page .lm-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lm-page .nav-brand {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lm-page .nav-tagline {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  letter-spacing: 0.04em;
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+
+.lm-page .divider {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 2rem 0;
+  transform-origin: left;
+}
+
+.lm-page .divider.animated {
+  animation: lmLineGrow 0.8s 0.4s ease both;
+}
+
+/* ── Section label ────────────────────────────────────────── */
+
+.lm-page .section-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.9rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+
+.lm-page .lm-footer {
+  border-top: 0.5px solid var(--rule);
+  padding: 1.75rem 0 2.5rem;
+  margin-top: 3rem;
+}
+
+.lm-page .footer-text {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  line-height: 1.65;
+}
