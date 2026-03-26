@@ -40,7 +40,7 @@ const Header = () => {
             : 'bg-white/95 backdrop-blur-lg border-b border-gray-200/50'
           : isDark
             ? 'bg-transparent'
-            : 'bg-[#F9FAFB]/80 backdrop-blur-sm'
+            : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -66,7 +66,7 @@ const Header = () => {
                     ? 'text-brand-500'
                     : isDark
                       ? 'text-gray-300 hover:text-brand-400'
-                      : 'text-gray-600 hover:text-brand-500'
+                      : 'text-gray-900 hover:text-brand-500'
                 }`}
               >
                 {item.label}
@@ -81,7 +81,7 @@ const Header = () => {
               className={`p-2 rounded-lg transition-colors duration-200 ${
                 isDark
                   ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  : 'text-gray-900 hover:text-gray-700 hover:bg-gray-100'
               }`}
               aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
             >
@@ -103,7 +103,7 @@ const Header = () => {
               className={`p-2 rounded-lg transition-colors duration-200 ${
                 isDark
                   ? 'text-gray-300 hover:text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-gray-900 hover:text-gray-700'
               }`}
               aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
             >
@@ -131,7 +131,7 @@ const Header = () => {
                       ? 'text-brand-500'
                       : isDark
                         ? 'text-gray-300 hover:text-brand-400'
-                        : 'text-gray-600 hover:text-brand-500'
+                        : 'text-gray-900 hover:text-brand-500'
                   }`}
                   onClick={handleNavClick}
                 >
