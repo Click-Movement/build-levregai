@@ -38,7 +38,9 @@ const Header = () => {
           ? isDark
             ? 'bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-gray-800/50'
             : 'bg-white/95 backdrop-blur-lg border-b border-gray-200/50'
-          : 'bg-transparent'
+          : isDark
+            ? 'bg-transparent'
+            : 'bg-[#F9FAFB]/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
