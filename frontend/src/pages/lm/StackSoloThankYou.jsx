@@ -14,7 +14,7 @@ const StackSoloThankYou = () => {
   return (
     <div className="lm-page lm-stack-solo-ty">
       <Helmet>
-        <title>Your Guide Is On Its Way &mdash; Customer Automation</title>
+        <title>Your Guide Is On Its Way &mdash; LevReg.Ai</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -25,7 +25,7 @@ const StackSoloThankYou = () => {
 
       <nav className="lm-nav">
         <div className="container">
-          <Link to="/lm/stack-solo" className="nav-brand">Customer Automation</Link>
+          <Link to="/lm/stack-solo" className="nav-brand">LevReg.Ai</Link>
           <span className="nav-tagline">Human insight. AI speed.</span>
         </div>
       </nav>
@@ -123,7 +123,7 @@ const StackSoloThankYou = () => {
           <div className="bridge-block a6">
             <p className="bridge-eyebrow">Want it built for you?</p>
             <h2 className="bridge-headline">
-              Customer Automation gives you all three<br />departments, ready to run.
+              LevReg.Ai gives you all three<br />departments, ready to run.
             </h2>
             <p className="bridge-body">
               Marketing, Sales, and Customer Success &mdash; pre-built, connected, and
@@ -143,7 +143,7 @@ const StackSoloThankYou = () => {
       <footer className="lm-footer">
         <div className="container">
           <p className="footer-text">
-            Customer Automation is built for the one-person company.<br />
+            LevReg.Ai is built for the one-person company.<br />
             Human insight. AI speed. That&apos;s the whole model.
           </p>
         </div>
