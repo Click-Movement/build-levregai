@@ -130,9 +130,8 @@ const StackSoloThankYou = () => {
               customized to your business. The stack in the guide, without the build time.
               For a fraction of what an agency costs.
             </p>
-            {/* Replace href with your actual product URL */}
-            <a href="https://customerautomation.com" className="bridge-btn">
-              See how it works
+            <a href="https://www.levreg.ai/book-call" className="bridge-btn">
+              Book A Free Ai Audit
             </a>
             <p className="bridge-note">No commitment. No sales call required.</p>
           </div>
