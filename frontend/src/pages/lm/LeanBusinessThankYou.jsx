@@ -42,7 +42,7 @@ const LeanBusinessThankYou = () => {
 
             <p className="confirm-eyebrow a1">You&apos;re in</p>
             <h1 className="confirm-headline a2">
-              The blueprint for your new<br />team is{' '}<em>on its way.</em>
+              The blueprint for your lean<br />business is{' '}<em>on its way.</em>
             </h1>
             <p className="confirm-sub a3">
               Check your inbox. The Lean Business System guide will be there shortly.

@@ -89,7 +89,7 @@ const LeanBusiness = () => {
           <section className="hero">
             <p className="hero-eyebrow">Free Guide &middot; The Lean Business System</p>
             <h1 className="hero-headline">
-              The invisible AI team most<br />solopreneurs{' '}
+              The automated business system most<br />solopreneurs{' '}
               <em>don&apos;t know<br />exists yet.</em>
             </h1>
             <p className="hero-sub">
