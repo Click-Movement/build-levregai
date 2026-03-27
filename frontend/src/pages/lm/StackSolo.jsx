@@ -67,7 +67,7 @@ const StackSolo = () => {
   return (
     <div className="lm-page lm-stack-solo">
       <Helmet>
-        <title>The AI Agent Stack &mdash; LevReg.Ai</title>
+        <title>The AI Team of One &mdash; LevReg.Ai</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -87,21 +87,21 @@ const StackSolo = () => {
         <div className="container">
 
           <section className="hero">
-            <p className="hero-eyebrow">Free Guide &middot; The AI Agent Stack</p>
+            <p className="hero-eyebrow">Free Guide &middot; The AI Team of One</p>
             <h1 className="hero-headline">
-              The AI agent stack most<br />solopreneurs{' '}
+              The invisible AI team most<br />solopreneurs{' '}
               <em>don&apos;t know<br />exists yet.</em>
             </h1>
             <p className="hero-sub">
-              It&apos;s not ChatGPT. It&apos;s not another Zapier workflow. It&apos;s the exact combination
-              of agents, connected in a specific order, that handles your lead generation,
-              follow-up, content, and customer communication without requiring your daily attention.
+              It&apos;s not ChatGPT. It&apos;s not another Zapier workflow. It&apos;s the exact sequence
+              of AI agents that handles your lead generation, content, and customer follow-up,
+              giving you the output of a 5-person business for $100/month. (Zero coding required).
             </p>
           </section>
 
           <div className="optin-box optin-box-hero">
             <p className="optin-label">Get the free guide</p>
-            <h2 className="optin-heading">Send me the AI Agent Stack</h2>
+            <h2 className="optin-heading">Send me the AI Team of One</h2>
 
             <form
               action="https://app.kit.com/forms/9252701/subscriptions"
@@ -138,7 +138,7 @@ const StackSolo = () => {
                   </div>
                   <button data-element="submit" className="formkit-submit" type="submit">
                     <div className="formkit-spinner"><div></div><div></div><div></div></div>
-                    <span>Send me the stack</span>
+                    <span>Build Your AI Team of One</span>
                   </button>
                 </div>
               </div>
@@ -165,12 +165,12 @@ const StackSolo = () => {
 
           <div className="stat-block reveal">
             <div className="stat-item">
-              <div className="stat-number">$500&ndash;$2k</div>
+              <div className="stat-number">$3K&ndash;$10K</div>
               <div className="stat-label">saved per month by small businesses using AI automation</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">4 hrs+</div>
-              <div className="stat-label">saved per week by marketers using AI tools</div>
+              <div className="stat-number">3X Your Output</div>
+              <div className="stat-label">Take on 5 more clients without working weekends.</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">42%</div>
@@ -178,7 +178,7 @@ const StackSolo = () => {
             </div>
           </div>
           <p className="stat-note reveal">
-            These aren&apos;t projections. They&apos;re documented outcomes from people who built the stack.
+            Stop working like a freelancer. Start operating like a CEO with an AI-powered team.
           </p>
 
           <div className="body-copy mt-md reveal">
@@ -198,7 +198,7 @@ const StackSolo = () => {
               <li className="inside-item">
                 <span className="inside-num">01</span>
                 <div className="inside-text">
-                  <div className="inside-title">The complete agent stack, mapped end to end</div>
+                  <div className="inside-title">The complete AI team of one, mapped end to end</div>
                   <div className="inside-desc">Marketing, Sales, and Customer Success. Every agent, explained plainly.</div>
                 </div>
               </li>
@@ -251,7 +251,7 @@ const StackSolo = () => {
 
           <div className="optin-box reveal">
             <p className="optin-label">Get the free guide</p>
-            <h2 className="optin-heading">Send me the AI Agent Stack</h2>
+            <h2 className="optin-heading">Send me the AI Team of One</h2>
 
             <form
               action="https://app.kit.com/forms/9252701/subscriptions"
@@ -288,7 +288,7 @@ const StackSolo = () => {
                   </div>
                   <button data-element="submit" className="formkit-submit" type="submit">
                     <div className="formkit-spinner"><div></div><div></div><div></div></div>
-                    <span>Send me the stack</span>
+                    <span>Build Your AI Team of One</span>
                   </button>
                 </div>
               </div>

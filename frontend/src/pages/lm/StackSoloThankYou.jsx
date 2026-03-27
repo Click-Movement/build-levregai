@@ -14,7 +14,7 @@ const StackSoloThankYou = () => {
   return (
     <div className="lm-page lm-stack-solo-ty">
       <Helmet>
-        <title>Your Guide Is On Its Way &mdash; LevReg.Ai</title>
+        <title>Your AI Team Blueprint Is On Its Way &mdash; LevReg.Ai</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -42,11 +42,11 @@ const StackSoloThankYou = () => {
 
             <p className="confirm-eyebrow a1">You&apos;re in</p>
             <h1 className="confirm-headline a2">
-              Your guide is<br /><em>on its way.</em>
+              The blueprint for your new<br />team is{' '}<em>on its way.</em>
             </h1>
             <p className="confirm-sub a3">
-              Check your inbox. The AI Agent Stack guide will be there shortly.
-              While you wait, here&apos;s what to do next.
+              Check your inbox. The AI Team of One guide will be there shortly.
+              While you wait, here is how to prepare for your new &ldquo;hires.&rdquo;
             </p>
           </section>
 
@@ -61,7 +61,7 @@ const StackSoloThankYou = () => {
                 </svg>
               </div>
               <div className="delivery-content">
-                <div className="delivery-title">The AI Agent Stack &mdash; Free Guide</div>
+                <div className="delivery-title">The AI Team of One &mdash; Free Guide</div>
                 <div className="delivery-desc">
                   Sent to your inbox now. If it doesn&apos;t arrive in the next few minutes,
                   check your spam folder and mark it as not spam.
@@ -89,10 +89,10 @@ const StackSoloThankYou = () => {
               <li className="next-item">
                 <span className="next-num">01</span>
                 <div className="next-text">
-                  <div className="next-title">Start with the Marketing Department</div>
+                  <div className="next-title">Start with your Marketing &ldquo;Hire&rdquo;</div>
                   <div className="next-desc">
-                    The guide walks you through build order. Marketing first &mdash; without leads,
-                    nothing else in the stack matters. Don&apos;t skip ahead.
+                    The guide walks you through the exact build order. You must start with
+                    marketing &mdash; without leads, the rest of your AI team has nothing to do. Don&apos;t skip ahead.
                   </div>
                 </div>
               </li>
@@ -101,19 +101,19 @@ const StackSoloThankYou = () => {
                 <div className="next-text">
                   <div className="next-title">Pick tools with staying power</div>
                   <div className="next-desc">
-                    Something new shows up every week. Ignore it. Build on the tools that
-                    have been around, are actively improving, and won&apos;t disappear in 18 months.
+                    A new AI tool shows up every week. Ignore the hype. Build your team using
+                    platforms that have been around, are actively improving, and won&apos;t disappear in 18 months.
                   </div>
                 </div>
               </li>
               <li className="next-item">
                 <span className="next-num">03</span>
                 <div className="next-text">
-                  <div className="next-title">Build one agent at a time</div>
+                  <div className="next-title">Onboard one agent at a time</div>
                   <div className="next-desc">
-                    This is not hard to do as long as you build it one brick at a time.
-                    Resist the urge to do everything at once. One agent running beats
-                    five agents half-built.
+                    This is not hard to do as long as you take it step by step.
+                    Resist the urge to build everything at once. One fully functioning AI agent beats
+                    five half-built workflows.
                   </div>
                 </div>
               </li>
@@ -121,17 +121,18 @@ const StackSoloThankYou = () => {
           </div>
 
           <div className="bridge-block a6">
-            <p className="bridge-eyebrow">Want it built for you?</p>
+            <p className="bridge-eyebrow">Want it done for you?</p>
             <h2 className="bridge-headline">
-              LevReg.Ai gives you all three<br />departments, ready to run.
+              LevReg.Ai hands you a fully trained<br />AI team, ready to work.
             </h2>
             <p className="bridge-body">
-              Marketing, Sales, and Customer Success &mdash; pre-built, connected, and
-              customized to your business. The stack in the guide, without the build time.
-              For a fraction of what an agency costs.
+              Marketing, Sales, and Customer Success&mdash;pre-built, connected, and
+              customized to your specific business. You get the exact system outlined in
+              the guide, without spending months building it yourself. Get the output of
+              a 5-person agency for a fraction of the cost.
             </p>
             <a href="https://www.levreg.ai/book-call" className="bridge-btn">
-              Book A Free Ai Audit
+              Book A Free AI Audit
             </a>
             <p className="bridge-note">No commitment. No sales call required.</p>
           </div>
