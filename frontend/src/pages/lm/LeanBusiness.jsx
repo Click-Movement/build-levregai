@@ -89,8 +89,8 @@ const LeanBusiness = () => {
           <section className="hero">
             <p className="hero-eyebrow">Free Guide &middot; The Lean Business System</p>
             <h1 className="hero-headline">
-              The automated business system most<br />solopreneurs{' '}
-              <em>don&apos;t know<br />exists yet.</em>
+              The automated business system most solopreneurs{' '}
+              <em>don&apos;t know exists yet.</em>
             </h1>
             <p className="hero-sub">
               It&apos;s not ChatGPT. It&apos;s not another Zapier workflow. It&apos;s the exact sequence
