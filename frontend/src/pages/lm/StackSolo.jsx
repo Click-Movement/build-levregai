@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './lm-shared.css';
@@ -24,8 +24,6 @@ const KIT_FORM_OPTIONS = JSON.stringify({
 });
 
 const StackSolo = () => {
-  const kitFormRef = useRef(null);
-
   useEffect(() => {
     const prev = document.body.style.background;
     document.body.style.background = '#FAF9F5';
@@ -33,9 +31,9 @@ const StackSolo = () => {
   }, []);
 
   useEffect(() => {
-    if (kitFormRef.current) {
-      kitFormRef.current.setAttribute('min-width', '400 500 600 700 800');
-    }
+    document.querySelectorAll('.lm-stack-solo .formkit-form').forEach(form => {
+      form.setAttribute('min-width', '400 500 600 700 800');
+    });
     const script = document.createElement('script');
     script.src = 'https://f.convertkit.com/ckjs/ck.5.js';
     script.async = true;
@@ -100,6 +98,54 @@ const StackSolo = () => {
               follow-up, content, and customer communication without requiring your daily attention.
             </p>
           </section>
+
+          <div className="optin-box optin-box-hero">
+            <p className="optin-label">Get the free guide</p>
+            <h2 className="optin-heading">Send me the AI Agent Stack</h2>
+
+            <form
+              action="https://app.kit.com/forms/9252701/subscriptions"
+              className="seva-form formkit-form"
+              method="post"
+              data-sv-form="9252701"
+              data-uid="310e9c5a7d"
+              data-format="inline"
+              data-version="5"
+              data-options={KIT_FORM_OPTIONS}
+            >
+              <div data-style="clean">
+                <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      aria-label="First Name"
+                      name="fields[first_name]"
+                      required
+                      placeholder="First name"
+                      type="text"
+                    />
+                  </div>
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      name="email_address"
+                      aria-label="Email Address"
+                      placeholder="Email address"
+                      required
+                      type="email"
+                    />
+                  </div>
+                  <button data-element="submit" className="formkit-submit" type="submit">
+                    <div className="formkit-spinner"><div></div><div></div><div></div></div>
+                    <span>Send me the stack</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <p className="microcopy">Free. No spam. Unsubscribe any time.</p>
+          </div>
 
           <hr className="divider animated" />
 
@@ -208,7 +254,6 @@ const StackSolo = () => {
             <h2 className="optin-heading">Send me the AI Agent Stack</h2>
 
             <form
-              ref={kitFormRef}
               action="https://app.kit.com/forms/9252701/subscriptions"
               className="seva-form formkit-form"
               method="post"

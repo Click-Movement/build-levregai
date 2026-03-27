@@ -190,6 +190,11 @@
   margin-bottom: 1.4rem;
 }
 
+.lm-stack-solo .optin-box-hero {
+  margin-top: 0;
+  animation: lmFadeUp 0.7s 0.34s ease both;
+}
+
 /* ── Kit form overrides (match page design) ───────────────── */
 
 .lm-stack-solo .formkit-form {
