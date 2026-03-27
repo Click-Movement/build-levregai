@@ -36,7 +36,7 @@
   line-height: 1.75;
   color: var(--ink-mid);
   max-width: 520px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.125rem;
   animation: lmFadeUp 0.7s 0.26s ease both;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .lm-stack-solo .optin-box-hero {
-  margin-top: 0;
+  margin-top: 1.125rem;
   animation: lmFadeUp 0.7s 0.34s ease both;
 }
 
