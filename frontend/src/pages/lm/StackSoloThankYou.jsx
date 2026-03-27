@@ -25,7 +25,7 @@ const StackSoloThankYou = () => {
 
       <nav className="lm-nav">
         <div className="container">
-          <Link to="/lm/aiteam" className="nav-brand">LevReg.Ai</Link>
+          <Link to="/lm/oneteam" className="nav-brand">LevReg.Ai</Link>
           <span className="nav-tagline">Human insight. AI speed.</span>
         </div>
       </nav>
