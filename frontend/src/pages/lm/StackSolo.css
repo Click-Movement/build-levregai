@@ -3,7 +3,7 @@
 /* ── Hero ─────────────────────────────────────────────────── */
 
 .lm-stack-solo .hero {
-  padding: 4rem 0 2.5rem;
+  padding: 4rem 0 1.25rem;
 }
 
 .lm-stack-solo .hero-eyebrow {
@@ -36,7 +36,7 @@
   line-height: 1.75;
   color: var(--ink-mid);
   max-width: 520px;
-  margin-bottom: 1.125rem;
+  margin-bottom: 0;
   animation: lmFadeUp 0.7s 0.26s ease both;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .lm-stack-solo .optin-box-hero {
-  margin-top: 1.125rem;
+  margin-top: 0;
   animation: lmFadeUp 0.7s 0.34s ease both;
 }
 
