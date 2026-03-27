@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './lm-shared.css';
 import './StackSolo.css';
-import './kit-form.css';
+import './kit-form-lean.css';
 
 const KIT_FORM_OPTIONS = JSON.stringify({
   settings: {
