@@ -67,8 +67,7 @@ const StackSoloThankYou = () => {
                   check your spam folder and mark it as not spam.
                 </div>
                 <div className="download-wrap">
-                  {/* Replace href with your actual PDF URL */}
-                  <a href="CustomerAutomation_AIAgentStack_Guide.pdf" download className="download-btn">
+                  <a href="https://drive.google.com/file/d/1dgGBDzjv4AMQ1K_ZPewC3lLNyYJQVba_/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="download-btn">
                     <svg viewBox="0 0 24 24">
                       <path d="M12 3v13M7 11l5 5 5-5" />
                       <path d="M3 19h18" />
