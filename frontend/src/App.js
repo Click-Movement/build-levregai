@@ -27,6 +27,8 @@ import MarketingAssistantThankYou from './pages/MarketingAssistantThankYou';
 import AiMarketingOs from './pages/AiMarketingOs';
 import StackSolo from './pages/lm/StackSolo';
 import StackSoloThankYou from './pages/lm/StackSoloThankYou';
+import LeanBusiness from './pages/lm/LeanBusiness';
+import LeanBusinessThankYou from './pages/lm/LeanBusinessThankYou';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -60,6 +62,8 @@ function AppContent() {
           <Route path="/marketing-os" element={<AiMarketingOs />} />
           <Route path="/lm/oneteam" element={<StackSolo />} />
           <Route path="/lm/oneteam/access" element={<StackSoloThankYou />} />
+          <Route path="/lm/lean" element={<LeanBusiness />} />
+          <Route path="/lm/lean/access" element={<LeanBusinessThankYou />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
