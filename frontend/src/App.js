@@ -58,8 +58,8 @@ function AppContent() {
           <Route path="/workshop/marketing-assistant" element={<MarketingAssistantWorkshop />} />
           <Route path="/workshop/marketing-assistant/thank-you" element={<MarketingAssistantThankYou />} />
           <Route path="/marketing-os" element={<AiMarketingOs />} />
-          <Route path="/lm/stack-solo" element={<StackSolo />} />
-          <Route path="/lm/stack-solo/thankyou" element={<StackSoloThankYou />} />
+          <Route path="/lm/aiteam" element={<StackSolo />} />
+          <Route path="/lm/aiteam/thankyou" element={<StackSoloThankYou />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />

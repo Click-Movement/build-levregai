@@ -10,7 +10,7 @@ const KIT_FORM_OPTIONS = JSON.stringify({
     after_subscribe: {
       action: "redirect",
       success_message: "Success! Now check your email to confirm your subscription.",
-      redirect_url: "https://www.levreg.ai/lm/stack-solo/thankyou"
+      redirect_url: "https://www.levreg.ai/lm/aiteam/thankyou"
     },
     analytics: { google: null, fathom: null, facebook: null, segment: null, pinterest: null, sparkloop: null, googletagmanager: null },
     modal: { trigger: "timer", scroll_percentage: null, timer: 5, devices: "all", show_once_every: 15 },
@@ -78,7 +78,7 @@ const StackSolo = () => {
 
       <nav className="lm-nav">
         <div className="container">
-          <Link to="/lm/stack-solo" className="nav-brand">LevReg.Ai</Link>
+          <Link to="/lm/aiteam" className="nav-brand">LevReg.Ai</Link>
           <span className="nav-tagline">Human insight. AI speed.</span>
         </div>
       </nav>
