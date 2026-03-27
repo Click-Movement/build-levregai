@@ -273,6 +273,10 @@
   margin-top: 0.75rem;
 }
 
+.lm-stack-solo-ty .bridge-block + div {
+  margin-top: 2.25rem;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 480px) {
