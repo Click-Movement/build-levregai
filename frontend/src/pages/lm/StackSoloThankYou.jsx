@@ -74,7 +74,7 @@ const StackSoloThankYou = () => {
                     </svg>
                     Download directly
                   </a>
-                  <p className="download-note">PDF &middot; 8 pages &middot; Free</p>
+                  <p className="download-note">PDF &middot; 10 pages &middot; Free</p>
                 </div>
               </div>
             </div>
