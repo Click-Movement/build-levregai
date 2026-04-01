@@ -89,7 +89,7 @@ const StackSolo = () => {
           <section className="hero">
             <p className="hero-eyebrow">Free Guide &middot; The AI Team of One</p>
             <h1 className="hero-headline">
-              The invisible AI team most<br />solopreneurs{' '}
+              The Lean AI Business System most<br />solopreneurs{' '}
               <em>don&apos;t know<br />exists yet.</em>
             </h1>
             <p className="hero-sub">
