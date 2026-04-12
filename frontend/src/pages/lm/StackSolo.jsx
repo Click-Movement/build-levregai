@@ -89,8 +89,8 @@ const StackSolo = () => {
           <section className="hero">
             <p className="hero-eyebrow">Free Guide &middot; The AI Team of One</p>
             <h1 className="hero-headline">
-              The Lean AI Business System most<br />solopreneurs{' '}
-              <em>don&apos;t know<br />exists yet.</em>
+              The Lean Business System Powered By Ai That Most Entrepreneurs{' '}
+              <em>Don&apos;t Know Exists.</em>
             </h1>
             <p className="hero-sub">
               It&apos;s not ChatGPT. It&apos;s not another Zapier workflow. It&apos;s the exact sequence
