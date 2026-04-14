@@ -91,6 +91,11 @@
   gap: 1.1rem;
 }
 
+.lm-stack-solo-ty .confirm-section .delivery-card {
+  margin-top: 1.75rem;
+  max-width: 620px;
+}
+
 .lm-stack-solo-ty .delivery-icon {
   width: 40px;
   height: 40px;
@@ -271,10 +276,6 @@
   font-size: 0.72rem;
   color: #666663;
   margin-top: 0.75rem;
-}
-
-.lm-stack-solo-ty .bridge-block + div {
-  margin-top: 2.25rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

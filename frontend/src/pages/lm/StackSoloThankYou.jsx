@@ -42,18 +42,43 @@ const StackSoloThankYou = () => {
 
             <p className="confirm-eyebrow a1">You&apos;re in</p>
             <h1 className="confirm-headline a2">
-              The blueprint for your new<br />team is{' '}<em>on its way.</em>
+              Here is your blueprint for running an Ai Powered Business.
             </h1>
             <p className="confirm-sub a3">
               Check your inbox. The AI Team of One guide will be there shortly.
               We included a bonus prompt to get started.
               In the meantime, here is how to prepare for your new &ldquo;hires.&rdquo;
             </p>
+            <div className="delivery-card a4">
+              <div className="delivery-icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M2 7l10 7 10-7" />
+                </svg>
+              </div>
+              <div className="delivery-content">
+                <div className="delivery-title">The AI Team of One &mdash; Free Guide</div>
+                <div className="delivery-desc">
+                  Sent to your inbox now. If it doesn&apos;t arrive in the next few minutes,
+                  check your spam folder and mark it as not spam.
+                </div>
+                <div className="download-wrap">
+                  <a href="https://drive.google.com/file/d/1dgGBDzjv4AMQ1K_ZPewC3lLNyYJQVba_/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="download-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 3v13M7 11l5 5 5-5" />
+                      <path d="M3 19h18" />
+                    </svg>
+                    Download directly
+                  </a>
+                  <p className="download-note">PDF &middot; 10 pages &middot; Free</p>
+                </div>
+              </div>
+            </div>
           </section>
 
-          <hr className="divider a4" />
+          <hr className="divider a5" />
 
-          <div className="a5">
+          <div className="a6">
             <p className="section-label">While you wait</p>
             <ul className="next-list">
               <li className="next-item">
@@ -90,7 +115,7 @@ const StackSoloThankYou = () => {
             </ul>
           </div>
 
-          <div className="bridge-block a6">
+          <div className="bridge-block a7">
             <p className="bridge-eyebrow">Want it done for you?</p>
             <h2 className="bridge-headline">
               LevReg.Ai hands you a fully trained<br />AI team, ready to work.
@@ -105,34 +130,6 @@ const StackSoloThankYou = () => {
               Book A Free AI Audit
             </a>
             <p className="bridge-note">No commitment. No sales call required.</p>
-          </div>
-
-          <div className="a6">
-            <div className="delivery-card">
-              <div className="delivery-icon">
-                <svg viewBox="0 0 24 24">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="M2 7l10 7 10-7" />
-                </svg>
-              </div>
-              <div className="delivery-content">
-                <div className="delivery-title">The AI Team of One &mdash; Free Guide</div>
-                <div className="delivery-desc">
-                  Sent to your inbox now. If it doesn&apos;t arrive in the next few minutes,
-                  check your spam folder and mark it as not spam.
-                </div>
-                <div className="download-wrap">
-                  <a href="https://drive.google.com/file/d/1dgGBDzjv4AMQ1K_ZPewC3lLNyYJQVba_/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="download-btn">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M12 3v13M7 11l5 5 5-5" />
-                      <path d="M3 19h18" />
-                    </svg>
-                    Download directly
-                  </a>
-                  <p className="download-note">PDF &middot; 10 pages &middot; Free</p>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>
