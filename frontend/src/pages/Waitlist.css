@@ -4,24 +4,27 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 24px 0;
+  justify-content: flex-start;
+  padding: 12px 0 24px;
 }
 
 .waitlist-container {
   max-width: 580px;
   width: 100%;
-  padding: 60px 32px;
+  padding: 28px 32px 60px;
   text-align: center;
 }
 
+.waitlist-confirmed-container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
 .waitlist-logo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #2d6a4f;
-  margin-bottom: 48px;
-  text-transform: uppercase;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .waitlist-container h1 {

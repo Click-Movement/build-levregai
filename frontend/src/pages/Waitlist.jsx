@@ -5,9 +5,9 @@ import './Waitlist.css';
 const KIT_FORM_OPTIONS = JSON.stringify({
   settings: {
     after_subscribe: {
-      action: 'message',
+      action: 'redirect',
       success_message: 'Success! Now check your email to confirm your subscription.',
-      redirect_url: ''
+      redirect_url: 'https://www.levreg.ai/waitlist/confirmed'
     },
     analytics: {
       google: null,
@@ -59,7 +59,12 @@ const Waitlist = () => {
       </Helmet>
 
       <div className="waitlist-container">
-        <div className="waitlist-logo">LevregAi</div>
+        <img
+          className="waitlist-logo"
+          src="/LevReg_BlackGreen.png"
+          alt="LevRegAi"
+          width="200"
+        />
 
         <h1>We&apos;re at capacity right now.<br />That&apos;s a good sign.</h1>
 
@@ -74,8 +79,8 @@ const Waitlist = () => {
 
         <div className="waitlist-form-wrapper">
           <p>
-            Join the waitlist and we&apos;ll send you details as soon as a spot opens up. No spam, no pitch sequences - just a
-            heads-up when we&apos;re ready for you.
+            Join the waitlist and we&apos;ll send you details as soon as a spot opens up. Keep a lookout for a heads-up when
+            we&apos;re ready for you.
           </p>
 
           <form
@@ -111,11 +116,11 @@ const Waitlist = () => {
             </div>
           </form>
 
-          <p className="waitlist-fine-print">No spam. Just one email when availability opens.</p>
+          <p className="waitlist-fine-print">Good things take a little patience.</p>
         </div>
 
         <p className="waitlist-note">
-          Good things take a little patience.<br />We&apos;d rather do this right than do it fast.
+          We&apos;d rather do this right than do it fast.
         </p>
       </div>
     </div>

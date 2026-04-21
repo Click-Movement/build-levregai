@@ -30,6 +30,7 @@ import StackSoloThankYou from './pages/lm/StackSoloThankYou';
 import LeanBusiness from './pages/lm/LeanBusiness';
 import LeanBusinessThankYou from './pages/lm/LeanBusinessThankYou';
 import Waitlist from './pages/Waitlist';
+import WaitlistConfirmed from './pages/WaitlistConfirmed';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -68,6 +69,7 @@ function AppContent() {
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/waitlist" element={<Waitlist />} />
+          <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
