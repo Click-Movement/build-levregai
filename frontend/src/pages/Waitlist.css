@@ -4,13 +4,14 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 12px 0 24px;
 }
 
 .waitlist-container {
   max-width: 580px;
   width: 100%;
+  margin: 0 auto;
   padding: 28px 32px 60px;
   text-align: center;
 }
