@@ -17,15 +17,24 @@
 }
 
 .waitlist-confirmed-container {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.waitlist-confirmed-container .waitlist-logo {
+  margin-bottom: 12px;
+}
+
+.waitlist-confirmed-container h1 {
+  margin-bottom: 0;
 }
 
 .waitlist-logo {
+  display: block;
   width: 200px;
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .waitlist-container h1 {
