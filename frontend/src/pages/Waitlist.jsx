@@ -33,14 +33,10 @@ const KIT_FORM_OPTIONS = JSON.stringify({
 
 const Waitlist = () => {
   useEffect(() => {
-    const existingScript = document.querySelector('script[src="https://f.convertkit.com/ckjs/ck.5.js"]');
-    const script = existingScript || document.createElement('script');
-
-    if (!existingScript) {
-      script.src = 'https://f.convertkit.com/ckjs/ck.5.js';
-      script.async = true;
-      document.head.appendChild(script);
-    }
+    const script = document.createElement('script');
+    script.src = 'https://f.convertkit.com/ckjs/ck.5.js';
+    script.async = true;
+    document.head.appendChild(script);
 
     const form = document.querySelector('.waitlist-page .formkit-form');
     if (form) {
@@ -48,7 +44,7 @@ const Waitlist = () => {
     }
 
     return () => {
-      if (!existingScript && script.parentNode) script.parentNode.removeChild(script);
+      if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, []);
 
