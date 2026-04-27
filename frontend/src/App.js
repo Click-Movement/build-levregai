@@ -31,11 +31,12 @@ import LeanBusiness from './pages/lm/LeanBusiness';
 import LeanBusinessThankYou from './pages/lm/LeanBusinessThankYou';
 import Waitlist from './pages/Waitlist';
 import WaitlistConfirmed from './pages/WaitlistConfirmed';
+import Build from './pages/Build';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from './context/ThemeContext';
 
-const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist'];
-const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm', '/waitlist'];
+const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build'];
+const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm', '/waitlist', '/build'];
 
 function AppContent() {
   const location = useLocation();
@@ -70,6 +71,7 @@ function AppContent() {
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
+          <Route path="/build" element={<Build />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
