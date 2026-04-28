@@ -115,23 +115,13 @@ const Build = () => {
 
         <section className="build-section">
           <h2>Bonuses included</h2>
-          <div className="build-bonus">
-            <div className="build-bonus-tag">Bonus 1</div>
-            <h3>Your First 3 AI Employees: Done-For-You Blueprints</h3>
-            <p>You don&apos;t have to start from scratch. We&apos;re handing you the exact blueprints for the three agents that deliver the fastest results in most businesses.</p>
-            <ul>
-              <li><strong>Market Research Analyst</strong>Continuously monitors your market, competitors, and customer signals so you always know what&apos;s shifting before it hits you.</li>
-              <li><strong>Marketing Content Creator</strong>Trained on your brand voice and content strategy, producing on-brand content at scale without a full creative team.</li>
-              <li><strong>Sales Call Analyst</strong>Reviews your sales calls, surfaces objections, tracks conversion patterns, and feeds insights back into your sales process automatically.</li>
-            </ul>
-          </div>
-          <div className="build-bonus"><div className="build-bonus-tag">Bonus 2</div><h3>The Prompt Database</h3><p>Access our internal database of high-converting, battle-tested prompts, organized by use case, department, and agent type. Stop writing prompts from scratch. Start from what already works.</p></div>
-          <div className="build-bonus"><div className="build-bonus-tag">Bonus 3</div><h3>The Future of AI Operators: How to Get Paid as One</h3><p>This bonus is worth the entire course. Once you know how to build AI employees, you have a skill businesses are actively paying for right now. This module shows you exactly how to turn your new capabilities into cashflow, helping other businesses build their AI workforce and getting paid well to do it.</p></div>
+          <div className="build-bonus"><div className="build-bonus-tag">Bonus 1</div><h3>The Prompt Database</h3><p>Access our internal database of high-converting, battle-tested prompts, organized by use case, department, and agent type. Stop writing prompts from scratch. Start from what already works.</p></div>
+          <div className="build-bonus"><div className="build-bonus-tag">Bonus 2</div><h3>The Future of AI Operators: How to Get Paid as One</h3><p>This bonus is worth the entire course. Once you know how to build AI employees, you have a skill businesses are actively paying for right now. This module shows you exactly how to turn your new capabilities into cashflow, helping other businesses build their AI workforce and getting paid well to do it.</p></div>
         </section>
 
         <section className="build-section">
           <h2>Frequently asked questions</h2>
-          <details><summary>What&apos;s included in the course?</summary><p>You get all eight modules, the three done-for-you AI employee blueprints, the Prompt Database, and the AI Operators bonus. Everything is self-paced and yours to keep.</p></details>
+          <details><summary>What&apos;s included in the course?</summary><p>You get all eight modules, Bonus 1 (The Prompt Database), and Bonus 2 (The Future of AI Operators: How to Get Paid as One). Everything is self-paced and yours to keep.</p></details>
           <details><summary>Who should take this course?</summary><p>Founders, CEOs, and leaders who want to scale their operations without scaling their headcount. Also powerful for solopreneurs who want to build the infrastructure for their next stage of growth.</p></details>
           <details><summary>How much AI experience do I need?</summary><p>None required. Most people who join us are already using AI occasionally, but this program is designed to work whether you&apos;re a beginner or someone who&apos;s been experimenting for a while and wants a real system.</p></details>
           <details><summary>What&apos;s included in the 1:1 Coaching Call?</summary><p>The coaching call is a private session where we map your specific business, identify your highest-leverage AI employee opportunity, and build a custom roadmap for your first deployment. You leave with a clear action plan, not just more information.</p></details>
@@ -145,7 +135,7 @@ const Build = () => {
             <div className="build-price-card" id="option-course">
               <div className="build-price-label">Option 1</div>
               <h3>Course Only</h3>
-              <p className="build-desc">All eight modules, all three bonuses, and lifetime access.</p>
+              <p className="build-desc">All eight modules, both bonuses, and lifetime access.</p>
               <div className="build-price-amount">$199<span>one-time</span></div>
               <a href={checkoutUrl} className="build-btn build-btn-secondary">Enroll Now</a>
             </div>
