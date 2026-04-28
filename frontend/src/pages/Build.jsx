@@ -4,6 +4,7 @@ import './Build.css';
 
 const Build = () => {
   const [showVideo, setShowVideo] = useState(false);
+  const checkoutUrl = 'https://cmo.thrivecart.com/agentic-leverage/';
 
   return (
     <div className="build-page">
@@ -17,8 +18,7 @@ const Build = () => {
 
       <div className="build-wrap">
         <header className="build-header">
-          <div className="build-logo">LevregAi</div>
-          <a href="#enroll" className="build-nav-cta">Enroll</a>
+          <img className="build-logo" src="/LevReg_BlackGreen.png" alt="LevregAi" />
         </header>
 
         <div className="build-eyebrow">Build &amp; Deploy AI Employees</div>
@@ -45,8 +45,8 @@ const Build = () => {
         </div>
 
         <div className="build-cta-cluster">
-          <a href="#option-coaching" className="build-btn build-btn-primary">Course + 1:1 Coaching Call</a>
-          <a href="#option-course" className="build-btn build-btn-secondary">Unlock Full Course ($2500 Value) For $199</a>
+          <a href={checkoutUrl} className="build-btn build-btn-primary">Course + 1:1 Coaching Call</a>
+          <a href={checkoutUrl} className="build-btn build-btn-secondary">Unlock Full Course ($2500 Value) For $199</a>
         </div>
         <p className="build-cta-note">Lifetime access. Self-paced. All bonuses included.</p>
 
@@ -147,7 +147,7 @@ const Build = () => {
               <h3>Course Only</h3>
               <p className="build-desc">All eight modules, all three bonuses, and lifetime access.</p>
               <div className="build-price-amount">$199<span>one-time</span></div>
-              <a href="#" className="build-btn build-btn-secondary">Enroll Now</a>
+              <a href={checkoutUrl} className="build-btn build-btn-secondary">Enroll Now</a>
             </div>
             <div className="build-price-card featured" id="option-coaching">
               <span className="build-featured-tag">Most Popular</span>
@@ -155,13 +155,18 @@ const Build = () => {
               <h3>Course + 1:1 Coaching Call</h3>
               <p className="build-desc">Everything in the course, plus a private session where we map your business and build your custom deployment roadmap together.</p>
               <div className="build-price-amount">$499<span>one-time</span></div>
-              <a href="#" className="build-btn build-btn-primary">Work 1:1 With Us</a>
+              <a href={checkoutUrl} className="build-btn build-btn-primary">Work 1:1 With Us</a>
             </div>
           </div>
         </section>
 
         <footer className="build-footer">
           <p>Questions? Reach us at <a href="mailto:team@levregai.com">team@levregai.com</a></p>
+          <nav className="build-footer-links" aria-label="Legal">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+          </nav>
           <p style={{ marginTop: '8px' }}>&copy; {new Date().getFullYear()} LevregAi. All rights reserved.</p>
         </footer>
       </div>
