@@ -91,54 +91,9 @@
 .build-video {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d6a4f 100%);
   border-radius: 12px;
   margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.85);
-  cursor: pointer;
   overflow: hidden;
-}
-
-.build-video::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-}
-
-.build-play-btn {
-  position: relative;
-  z-index: 1;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.build-play-btn::before {
-  content: "";
-  border-style: solid;
-  border-width: 12px 0 12px 20px;
-  border-color: transparent transparent transparent var(--build-green);
-  margin-left: 4px;
-}
-
-.build-video-label {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
-  z-index: 1;
 }
 
 .build-cta-cluster {

@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Build.css';
 
 const Build = () => {
-  const [showVideo, setShowVideo] = useState(false);
   const checkoutUrl = 'https://cmo.thrivecart.com/agentic-leverage/';
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.text = `(function (v, i, d, a, l, y, t, c, s) {
+    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+    if (!vsl){vsl=function(u,cb){
+        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+        i.getElementsByTagName("head")[0].appendChild(s);
+    };}
+    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+})(window, document, 'Vidalytics', 'vidalytics_embed_VSvGgU2avI3wQhy3', 'https://fast.vidalytics.com/embeds/I5a5wJoO/VSvGgU2avI3wQhy3/');`;
+
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="build-page">
@@ -29,19 +49,11 @@ const Build = () => {
           their business, connected to their tools, and executing real workflows without supervision.
         </p>
 
-        <div className="build-video" onClick={() => setShowVideo(true)} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setShowVideo(true)}>
-          {showVideo ? (
-            <iframe
-              title="LevregAi Overview"
-              src=""
-              style={{ width: '100%', height: '100%', border: 0, borderRadius: '12px' }}
-            />
-          ) : (
-            <>
-              <div className="build-play-btn" />
-              <div className="build-video-label">Watch the 4-minute overview</div>
-            </>
-          )}
+        <div className="build-video">
+          <div
+            id="vidalytics_embed_VSvGgU2avI3wQhy3"
+            style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
+          />
         </div>
 
         <div className="build-cta-cluster">
