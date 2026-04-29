@@ -154,7 +154,7 @@ const Build = () => {
             <div className="build-price-card featured" id="option-coaching">
               <span className="build-featured-tag">Most Popular</span>
               <div className="build-price-label">Option 2</div>
-              <h3>Course + 1:1 Coaching Call</h3>
+              <h3>Ai Audit + Course For Free</h3>
               <p className="build-desc">Everything in the course, plus a private session where we map your business and build your custom deployment roadmap together.</p>
               <div className="build-price-amount">$499<span>one-time</span></div>
               <a href={checkoutUrl} className="build-btn build-btn-primary">Work 1:1 With Us</a>
