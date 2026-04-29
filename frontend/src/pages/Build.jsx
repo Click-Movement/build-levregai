@@ -57,7 +57,7 @@ const Build = () => {
         </div>
 
         <div className="build-cta-cluster">
-          <a href={checkoutUrl} className="build-btn build-btn-primary">Course + 1:1 Coaching Call</a>
+          <a href={checkoutUrl} className="build-btn build-btn-primary">Ai Audit + Course For Free</a>
           <a href={checkoutUrl} className="build-btn build-btn-secondary">Unlock Full Course ($2500 Value) For $199</a>
         </div>
         <p className="build-cta-note">Lifetime access. Self-paced. All bonuses included.</p>
