@@ -4,7 +4,6 @@ import { ArrowRight, Award, TrendingUp, CheckCircle, Target, Lightbulb, Zap, Clo
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 import { caseStudies, pillars, pillarColors } from '../data/caseStudiesData';
 
@@ -22,8 +21,7 @@ const iconMap = {
 };
 
 const CaseStudies = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
 
   const philosophyPillars = [
     {

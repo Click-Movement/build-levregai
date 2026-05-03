@@ -4,7 +4,6 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, CheckCircle, Award, TrendingUp, ChevronRight, Home, FileText, Edit3, Scale, Video, Users, Calendar, Sparkles, Phone, Database, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 import { getCaseStudyBySlug, getRelatedCaseStudies, pillarColors } from '../data/caseStudiesData';
 
@@ -24,8 +23,7 @@ const iconMap = {
 const CaseStudyDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
   
   const caseStudy = getCaseStudyBySlug(slug);
   const relatedStudies = getRelatedCaseStudies(slug, 3);
@@ -111,7 +109,7 @@ const CaseStudyDetail = () => {
                 <div className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 bg-brand-950/30 text-brand-300 border border-brand-500/20">
                   {caseStudy.industry}
                 </div>
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ml-2 ${isDark ? 'bg-purple-950/30 text-purple-300 border border-purple-500/20' : 'bg-purple-50 text-purple-700 border border-purple-200'}`}>
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-medium ml-2 bg-purple-50 text-purple-700 border border-purple-200">
                   {caseStudy.pillar}
                 </div>
               </div>
@@ -148,8 +146,8 @@ const CaseStudyDetail = () => {
         <section className={`py-16 px-6 ${theme.bgSecondary}`}>
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-red-950/30' : 'bg-red-50'} flex items-center justify-center`}>
-                <Award className={`w-6 h-6 ${isDark ? 'text-red-400' : 'text-red-600'}`} />
+              <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center">
+                <Award className="w-6 h-6 text-red-600" />
               </div>
               <h2 className={`text-3xl md:text-4xl font-bold ${theme.textPrimary}`}>The Problem</h2>
             </div>
@@ -190,8 +188,8 @@ const CaseStudyDetail = () => {
         <section className={`py-16 px-6 ${theme.bgSecondary}`}>
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className={`w-12 h-12 rounded-lg ${isDark ? 'bg-green-950/30' : 'bg-green-50'} flex items-center justify-center`}>
-                <CheckCircle className={`w-6 h-6 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
+              <div className="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center">
+                <CheckCircle className="w-6 h-6 text-brand-600" />
               </div>
               <h2 className={`text-3xl md:text-4xl font-bold ${theme.textPrimary}`}>The Result</h2>
             </div>

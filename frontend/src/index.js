@@ -3,6 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
+document.documentElement.classList.remove("dark");
+document.documentElement.classList.add("light");
+document.body.classList.remove("dark");
+document.body.classList.add("light");
+try {
+  localStorage.removeItem("theme");
+} catch (_) {}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

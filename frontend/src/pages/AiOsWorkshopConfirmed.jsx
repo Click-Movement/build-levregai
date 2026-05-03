@@ -24,7 +24,7 @@ const AiOsWorkshopConfirmed = () => {
             <div className="flex justify-center mb-8">
               <CheckCircle className="w-20 h-20 text-primary" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-brand">
               Confirmed! We Will Contact You Shortly.
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">

@@ -4,15 +4,13 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, X, Home, ChevronRight, Clock, User, Calendar } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 import { getBlogArticleBySlug, getRelatedArticles } from '../data/blogData';
 
 const BlogDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
   
   const article = getBlogArticleBySlug(slug);
   const relatedArticles = getRelatedArticles(slug, 3);
@@ -158,8 +156,8 @@ const BlogDetail = () => {
                 <p className="font-semibold text-red-400 mb-2">Bad approach:</p>
                 <p className={theme.textSecondary}>{section.badApproach}</p>
               </div>
-              <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
-                <p className="font-semibold text-green-400 mb-2">Good approach:</p>
+              <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
+                <p className="font-semibold text-brand-400 mb-2">Good approach:</p>
                 <p className={theme.textSecondary}>{section.goodApproach}</p>
               </div>
               {section.principle && (
@@ -296,10 +294,10 @@ const BlogDetail = () => {
               <p className={`${theme.textSecondary} ml-8 italic`}>"{section.wrong}"</p>
             </div>
             
-            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
+            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
               <div className="flex items-start gap-3 mb-2">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <p className="font-semibold text-green-400">The outcome approach:</p>
+                <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
+                <p className="font-semibold text-brand-400">The outcome approach:</p>
               </div>
               <p className={`${theme.textSecondary} ml-8 italic`}>"{section.right}"</p>
             </div>
@@ -411,10 +409,10 @@ const BlogDetail = () => {
             <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Green Flags:</h3>
             <div className="space-y-4">
               {section.greenFlags.map((flag, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
+                <div key={idx} className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
                   <div className="flex items-start gap-3 mb-2">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <h4 className="font-bold text-green-400">{flag.title}</h4>
+                    <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
+                    <h4 className="font-bold text-brand-400">{flag.title}</h4>
                   </div>
                   <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
                 </div>
@@ -451,8 +449,8 @@ const BlogDetail = () => {
               </ul>
             </div>
             
-            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
-              <h4 className="text-lg font-semibold text-green-400 mb-2">Typical Result:</h4>
+            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
+              <h4 className="text-lg font-semibold text-brand-400 mb-2">Typical Result:</h4>
               <p className={`${theme.textSecondary} font-semibold`}>{section.result}</p>
             </div>
           </div>
@@ -575,8 +573,8 @@ const BlogDetail = () => {
               <p className={`${theme.textSecondary} leading-relaxed`}>{section.aiSolution}</p>
             </div>
             
-            <div className="p-4 rounded-lg bg-green-950/20 border-green-500/20 border">
-              <h4 className="text-lg font-semibold text-green-400 mb-2">Result:</h4>
+            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
+              <h4 className="text-lg font-semibold text-brand-400 mb-2">Result:</h4>
               <p className={`${theme.textSecondary} leading-relaxed`}>{section.result}</p>
             </div>
           </div>
@@ -588,12 +586,12 @@ const BlogDetail = () => {
     if (section.type === 'criteria') {
       return (
         <div key={index} className="my-12 grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-green-950/20 border-green-500/30 border">
+          <div className="p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border">
             <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Replace When:</h4>
             <ul className="space-y-3">
               {section.replaceWhen.map((item, idx) => (
                 <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -674,14 +672,14 @@ const BlogDetail = () => {
               </p>
             </div>
             
-            <div className={`p-6 rounded-xl bg-green-950/20 border-green-500/30 border`}>
+            <div className={`p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border`}>
               <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.after.title}</h4>
               <ul className="space-y-2 mb-4">
                 {section.after.items.map((item, idx) => (
                   <li key={idx} className={`${theme.textSecondary} text-sm`}>• {item}</li>
                 ))}
               </ul>
-              <p className={`${theme.textTertiary} text-sm italic border-t border-green-500/30 pt-4`}>
+              <p className={`${theme.textTertiary} text-sm italic border-t border-brand-500/30 pt-4`}>
                 {section.after.total}
               </p>
             </div>

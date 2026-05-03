@@ -1,8 +1,8 @@
 :root {
-  --build-green: #2d6a4f;
-  --build-green-dark: #1b5e3a;
-  --build-green-soft: #e8f5e9;
-  --build-green-border: #c8e6c9;
+  --build-blue: #0ea5e9;
+  --build-blue-dark: #0284c7;
+  --build-blue-soft: #e0f2fe;
+  --build-blue-border: #bae6fd;
   --build-ink: #1a1a2e;
   --build-ink-soft: #444;
   --build-muted: #666;
@@ -45,25 +45,25 @@
 .build-nav-cta {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--build-green);
+  color: var(--build-blue);
   text-decoration: none;
   padding: 8px 16px;
-  border: 1px solid var(--build-green-border);
+  border: 1px solid var(--build-blue-border);
   border-radius: 8px;
-  background: var(--build-green-soft);
+  background: var(--build-blue-soft);
   transition: all 0.2s;
 }
 
 .build-nav-cta:hover {
-  background: var(--build-green);
+  background: var(--build-blue);
   color: #fff;
 }
 
 .build-eyebrow {
   display: inline-block;
-  background: var(--build-green-soft);
-  border: 1px solid var(--build-green-border);
-  color: var(--build-green);
+  background: var(--build-blue-soft);
+  border: 1px solid var(--build-blue-border);
+  color: var(--build-blue);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 6px 14px;
@@ -118,12 +118,12 @@
 }
 
 .build-btn-primary {
-  background: var(--build-green);
+  background: var(--build-blue);
   color: #fff;
 }
 
 .build-btn-primary:hover {
-  background: var(--build-green-dark);
+  background: var(--build-blue-dark);
 }
 
 .build-btn-secondary {
@@ -133,8 +133,8 @@
 }
 
 .build-btn-secondary:hover {
-  border-color: var(--build-green);
-  color: var(--build-green);
+  border-color: var(--build-blue);
+  color: var(--build-blue);
 }
 
 .build-cta-note {
@@ -177,7 +177,7 @@
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--build-ink);
-  border-left: 3px solid var(--build-green);
+  border-left: 3px solid var(--build-blue);
   padding-left: 18px;
   margin: 28px 0;
 }
@@ -218,7 +218,7 @@
 .build-module-num {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--build-green);
+  color: var(--build-blue);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 6px;
@@ -250,14 +250,14 @@
   top: 9px;
   width: 6px;
   height: 6px;
-  background: var(--build-green);
+  background: var(--build-blue);
   border-radius: 50%;
 }
 
 .build-bonus {
   background: var(--build-card);
   border: 1px solid var(--build-line);
-  border-left: 3px solid var(--build-green);
+  border-left: 3px solid var(--build-blue);
   border-radius: 10px;
   padding: 22px 24px;
   margin-bottom: 14px;
@@ -266,7 +266,7 @@
 .build-bonus-tag {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--build-green);
+  color: var(--build-blue);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 6px;
@@ -309,7 +309,7 @@
 }
 
 .build-page details[open] {
-  border-color: var(--build-green);
+  border-color: var(--build-blue);
 }
 
 .build-page summary {
@@ -332,7 +332,7 @@
   content: "+";
   font-size: 1.4rem;
   font-weight: 400;
-  color: var(--build-green);
+  color: var(--build-blue);
   margin-left: 16px;
   line-height: 1;
 }
@@ -370,7 +370,7 @@
 }
 
 .build-price-card.featured {
-  border-color: var(--build-green);
+  border-color: var(--build-blue);
   box-shadow: 0 4px 24px rgba(45, 106, 79, 0.08);
   position: relative;
 }
@@ -379,7 +379,7 @@
   position: absolute;
   top: -10px;
   right: 20px;
-  background: var(--build-green);
+  background: var(--build-blue);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -392,7 +392,7 @@
 .build-price-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--build-green);
+  color: var(--build-blue);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 8px;
@@ -439,7 +439,7 @@
 }
 
 .build-footer a {
-  color: var(--build-green);
+  color: var(--build-blue);
   text-decoration: none;
 }
 

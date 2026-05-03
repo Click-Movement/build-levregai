@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Calendar } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 import LandingFooter from '../components/LandingFooter';
 
 const BookCall = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
 
   useEffect(() => {
     const script = document.createElement('script');

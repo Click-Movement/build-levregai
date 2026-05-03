@@ -72,7 +72,7 @@ const MarketingAssistantWorkshop = () => {
             <p className="text-primary font-medium tracking-wide uppercase text-sm mb-6">
               Live Virtual Workshop — Only $100
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-brand">
               Install Your Own AI Marketing Assistant in 90 Minutes
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
@@ -85,7 +85,7 @@ const MarketingAssistantWorkshop = () => {
             <a href={THRIVECART_URL} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
                 Reserve Your Seat — $100
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -187,7 +187,7 @@ const MarketingAssistantWorkshop = () => {
               <a href={THRIVECART_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
-                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                  className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                 >
                   Reserve Your Seat — $100
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -325,7 +325,7 @@ const MarketingAssistantWorkshop = () => {
                   <a href={THRIVECART_URL} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
-                      className="w-full glow-green-hover text-lg font-bold h-14 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                      className="w-full glow-brand-hover text-lg font-bold h-14 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                     >
                       Reserve Your Seat — $100
                       <ArrowRight className="ml-2 w-5 h-5" />
@@ -402,7 +402,7 @@ const MarketingAssistantWorkshop = () => {
         {/* SECTION 10: FINAL CTA */}
         <section className="py-24 px-6 bg-secondary">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-green">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-brand">
               Stop Grinding.{' '}
               <span className="text-primary">Start Installing.</span>
             </h2>
@@ -416,7 +416,7 @@ const MarketingAssistantWorkshop = () => {
             <a href={THRIVECART_URL} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
                 Reserve Your Seat — $100
                 <ArrowRight className="ml-2 w-5 h-5" />

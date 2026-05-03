@@ -20,7 +20,7 @@ const AiOsWorkshopApply = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
           <div className="max-w-3xl mx-auto text-center relative z-10 mb-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground text-shadow-brand">
               Apply To Our AI OS Workshop
             </h1>
           </div>

@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 import { Calendar, CheckCircle, ArrowRight, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 
 const TransformationCall = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
 
   const benefits = [
     {
@@ -263,13 +261,13 @@ const TransformationCall = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Right for you */}
               <div className={`p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.shadow}`}>
-                <h3 className={`text-2xl font-bold mb-6 ${'text-green-400'}`}>
+                <h3 className={`text-2xl font-bold mb-6 ${'text-brand-400'}`}>
                   This is right for you if:
                 </h3>
                 <ul className="space-y-4">
                   {rightForYou.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className={`w-5 h-5 ${'text-green-400'} flex-shrink-0 mt-0.5`} />
+                      <CheckCircle className={`w-5 h-5 ${'text-brand-400'} flex-shrink-0 mt-0.5`} />
                       <span className={theme.textSecondary}>{item}</span>
                     </li>
                   ))}

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ["class"],
+    darkMode: false,
     content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html"
@@ -14,18 +14,18 @@ module.exports = {
   		},
   		colors: {
   			brand: {
-  				DEFAULT: '#14B870',
-  				50: '#edfdf5',
-  				100: '#d3fae6',
-  				200: '#aaf4d1',
-  				300: '#72eab5',
-  				400: '#39d893',
-  				500: '#14B870',
-  				600: '#0a9d5e',
-  				700: '#087e4d',
-  				800: '#0a633f',
-  				900: '#086335',
-  				950: '#03371d',
+  				DEFAULT: '#0EA5E9',
+  				50: '#f0f9ff',
+  				100: '#e0f2fe',
+  				200: '#bae6fd',
+  				300: '#7dd3fc',
+  				400: '#38bdf8',
+  				500: '#0ea5e9',
+  				600: '#0284c7',
+  				700: '#0369a1',
+  				800: '#075985',
+  				900: '#0c4a6e',
+  				950: '#082f49',
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

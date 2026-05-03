@@ -4,12 +4,10 @@ import { ArrowRight, Target, Heart, Lightbulb, CheckCircle, Clock, TrendingUp } 
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 
 const About = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
@@ -33,7 +31,7 @@ const About = () => {
       icon: <CheckCircle className="w-8 h-8" />,
       title: 'Accountability',
       description: "We measure everything. If we say you'll see productivity gains, we track them. If something doesn't work, we fix it.",
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-brand-500 to-brand-600'
     }
   ];
 

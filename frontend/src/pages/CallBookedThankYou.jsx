@@ -4,12 +4,10 @@ import { CheckCircle, ArrowRight, BookOpen } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 
 const CallBookedThankYou = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
 
   const preparationSteps = [
     {
@@ -56,7 +54,7 @@ const CallBookedThankYou = () => {
           </div>
           
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-green-600 mb-8 mx-auto`}>
+            <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full bg-brand-600 mb-8 mx-auto`}>
               <CheckCircle className="w-12 h-12 text-white" />
             </div>
             

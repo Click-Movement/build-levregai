@@ -33,7 +33,6 @@ import Waitlist from './pages/Waitlist';
 import WaitlistConfirmed from './pages/WaitlistConfirmed';
 import Build from './pages/Build';
 import { Toaster } from './components/ui/sonner';
-import { ThemeProvider } from './context/ThemeContext';
 
 const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build'];
 const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm', '/waitlist', '/build'];
@@ -87,11 +86,9 @@ function AppContent() {
 function App() {
   return (
     <HelmetProvider>
-      <ThemeProvider>
-        <BrowserRouter>
-          <AppContent />
-        </BrowserRouter>
-      </ThemeProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </HelmetProvider>
   );
 }

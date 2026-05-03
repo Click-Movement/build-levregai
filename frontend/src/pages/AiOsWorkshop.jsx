@@ -218,7 +218,7 @@ const AiOsWorkshop = () => {
             <p className="text-primary font-medium tracking-wide uppercase text-sm mb-6">
               The Art of Building a Business That Runs Itself
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-foreground text-shadow-brand">
               We're Accepting Applications for the AI&nbsp;OS Workshop.<br />
               <span className="text-primary">5 Spots. One Is Reserved for a Company Like Yours.</span>
             </h1>
@@ -228,7 +228,7 @@ const AiOsWorkshop = () => {
             <Link to="/workshop/apply">
               <Button
                 size="lg"
-                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
                 Apply for Your AI OS Workshop
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -370,7 +370,7 @@ const AiOsWorkshop = () => {
               <Link to="/workshop/apply">
                 <Button
                   size="lg"
-                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                  className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                 >
                   Apply for Your AI OS Workshop
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -530,7 +530,7 @@ const AiOsWorkshop = () => {
               <Link to="/workshop/apply">
                 <Button
                   size="lg"
-                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                  className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                 >
                   Apply for Your AI OS Workshop
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -643,7 +643,7 @@ const AiOsWorkshop = () => {
               <Link to="/workshop/apply">
                 <Button
                   size="lg"
-                  className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                  className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                 >
                   Apply for Your AI OS Workshop
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -684,7 +684,7 @@ const AiOsWorkshop = () => {
         {/* SECTION 10: FINAL CTA */}
         <section className="py-24 px-6 bg-secondary">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-green">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-foreground tracking-tight text-shadow-brand">
               Stop Playing With AI.{' '}
               <span className="text-primary">Start Running Your Business on It.</span>
             </h2>
@@ -694,7 +694,7 @@ const AiOsWorkshop = () => {
             <Link to="/workshop/apply">
               <Button
                 size="lg"
-                className="glow-green-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                className="glow-brand-hover text-lg font-bold px-12 py-7 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
                 Apply Now
                 <ArrowRight className="ml-2 w-5 h-5" />

@@ -38,7 +38,7 @@ const Build = () => {
 
       <div className="build-wrap">
         <header className="build-header">
-          <img className="build-logo" src="/LevReg_BlackGreen.png" alt="LevregAi" />
+          <img className="build-logo" src="/LevReg_BlackBlue.png" alt="LevregAi" />
         </header>
 
         <div className="build-eyebrow">Build &amp; Deploy AI Employees</div>

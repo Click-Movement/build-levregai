@@ -92,7 +92,7 @@ const MarketingAssistantThankYou = () => {
               <CheckCircle className="w-20 h-20 text-primary" />
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight text-foreground text-shadow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight text-foreground text-shadow-brand">
               You're Registered!
             </h1>
             <p className="text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed mb-12">
@@ -126,7 +126,7 @@ const MarketingAssistantThankYou = () => {
                 <a href={buildGoogleCalendarUrl()} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto glow-green-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                    className="w-full sm:w-auto glow-brand-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                   >
                     Google Calendar
                   </Button>
@@ -134,7 +134,7 @@ const MarketingAssistantThankYou = () => {
                 <Button
                   size="lg"
                   onClick={handleIcsDownload}
-                  className="glow-green-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                  className="glow-brand-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                 >
                   <Download className="mr-2 w-4 h-4" />
                   Outlook / Apple
@@ -142,7 +142,7 @@ const MarketingAssistantThankYou = () => {
                 <a href={buildYahooCalendarUrl()} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto glow-green-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                    className="w-full sm:w-auto glow-brand-hover font-bold px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                   >
                     Yahoo Calendar
                   </Button>

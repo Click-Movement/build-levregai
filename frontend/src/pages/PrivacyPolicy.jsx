@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTheme } from '../context/ThemeContext';
 
 const PrivacyPolicy = () => {
-  const { isDark } = useTheme();
 
   return (
     <>
@@ -13,18 +11,18 @@ const PrivacyPolicy = () => {
         <link rel="canonical" href="https://www.levreg.ai/privacy-policy" />
       </Helmet>
 
-      <div className={`min-h-screen py-20 ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#F9FAFB]'}`}>
+      <div className={`min-h-screen py-20 bg-[#F9FAFB]`}>
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className={`text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+          <h1 className={`text-4xl font-bold mb-4 text-gray-900`}>
             Privacy Policy for LevReg.AI
           </h1>
-          <p className={`text-sm mb-12 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+          <p className={`text-sm mb-12 text-gray-500`}>
             Last Updated: January 30, 2026
           </p>
 
-          <div className={`space-y-8 leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className={`space-y-8 leading-relaxed text-gray-600`}>
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 1. Introduction
               </h2>
               <p className="mb-4">
@@ -36,49 +34,49 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 2. Information We Collect
               </h2>
               <p className="mb-4">
                 We may collect information about you in a variety of ways. The information we may collect on the Site includes:
               </p>
               
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Personal Data
               </h3>
               <p className="mb-4">
                 Personally identifiable information, such as your name, email address, and telephone number, and company details that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site, such as online chat and message boards.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Derivative Data
               </h3>
               <p className="mb-4">
                 Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Financial Data
               </h3>
               <p className="mb-4">
                 We do not collect any financial information.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Data from Social Networks
               </h3>
               <p className="mb-4">
                 We do not collect information from social networks.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Mobile Device Data
               </h3>
               <p className="mb-4">
                 We do not collect mobile device data.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Third-Party Data
               </h3>
               <p>
@@ -87,7 +85,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 3. Use of Your Information
               </h2>
               <p className="mb-4">
@@ -114,70 +112,70 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 4. Disclosure of Your Information
               </h2>
               <p className="mb-4">
                 We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 By Law or to Protect Rights
               </h3>
               <p className="mb-4">
                 If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Third-Party Service Providers
               </h3>
               <p className="mb-4">
                 We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Marketing Communications
               </h3>
               <p className="mb-4">
                 With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes, as permitted by law.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Online Postings
               </h3>
               <p className="mb-4">
                 When you post comments, contributions, or other content to the Site, your posts may be viewed by all users and may be publicly distributed outside the Site in perpetuity.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Third-Party Advertisers
               </h3>
               <p className="mb-4">
                 We may use third-party advertising companies to serve ads when you visit the Site. These companies may use information about your visits to the Site and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Affiliates
               </h3>
               <p className="mb-4">
                 We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include our parent company and any subsidiaries, joint venture partners or other companies that we control or that are under common control with us.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Business Partners
               </h3>
               <p className="mb-4">
                 We may share your information with our business partners to offer you certain products, services or promotions.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Other Third Parties
               </h3>
               <p className="mb-4">
                 We may share your information with advertisers and investors for the purpose of conducting general business analysis. We may also share your information with such third parties for marketing purposes, as permitted by law.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Sale or Bankruptcy
               </h3>
               <p className="mb-4">
@@ -190,25 +188,25 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 5. Tracking Technologies
               </h2>
               
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Cookies and Web Beacons
               </h3>
               <p className="mb-4">
                 We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help customize the Site and improve your experience. When you access the Site, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies, but be aware that such action could affect the availability and functionality of the Site.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Internet-Based Advertising
               </h3>
               <p className="mb-4">
                 Additionally, we may use third-party software to serve ads on the Site, implement email marketing campaigns, and manage other interactive marketing initiatives. This third-party software may use cookies or similar tracking technology to help manage and optimize your online experience with us.
               </p>
 
-              <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-3 text-gray-900`}>
                 Website Analytics
               </h3>
               <p>
@@ -217,7 +215,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 6. Third-Party Websites
               </h2>
               <p>
@@ -226,7 +224,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 7. Security of Your Information
               </h2>
               <p>
@@ -235,7 +233,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 8. Policy for Children (COPPA)
               </h2>
               <p>
@@ -244,7 +242,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 9. Controls for Do-Not-Track Features
               </h2>
               <p>
@@ -253,7 +251,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 10. Your California Privacy Rights (CCPA)
               </h2>
               <p className="mb-4">
@@ -265,7 +263,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 11. Your GDPR Rights
               </h2>
               <p className="mb-4">
@@ -285,7 +283,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-2xl font-semibold mb-4 text-gray-900`}>
                 12. Contact Us
               </h2>
               <p className="mb-2">

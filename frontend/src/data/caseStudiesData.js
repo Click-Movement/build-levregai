@@ -11,7 +11,7 @@ export const pillars = {
 export const pillarColors = {
   [pillars.IMPLEMENTATION]: 'from-brand-400 to-brand',
   [pillars.SYSTEMS]: 'from-purple-500 to-indigo-500',
-  [pillars.AUTOMATION]: 'from-green-500 to-emerald-500',
+  [pillars.AUTOMATION]: 'from-brand-500 to-brand-600',
   [pillars.LEVERAGE]: 'from-orange-500 to-amber-500',
   [pillars.TIME_FREEDOM]: 'from-indigo-500 to-brand'
 };

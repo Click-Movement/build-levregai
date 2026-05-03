@@ -4,12 +4,10 @@ import { ArrowRight, CheckCircle, Headphones, Megaphone, TrendingUp, FileText, S
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
 import { getThemeClasses } from '../utils/themeClasses';
 
 const Services = () => {
-  const { isDark } = useTheme();
-  const theme = getThemeClasses(isDark);
+  const theme = getThemeClasses();
   const roles = [
     {
       icon: <Headphones className="w-8 h-8" />,
@@ -33,7 +31,7 @@ const Services = () => {
       problem: 'Your sales team is juggling too much. Prospecting, follow-ups, proposals, CRM updates—leads fall through the cracks.',
       solution: 'We create AI-driven prospecting tools, follow-up automation, and proposal generation systems that keep your pipeline moving.',
       result: 'More conversations. Faster follow-up. Higher close rates.',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-brand-500 to-brand-600'
     },
     {
       icon: <FileText className="w-8 h-8" />,
@@ -182,7 +180,7 @@ const Services = () => {
                     </div>
                     
                     <div>
-                      <h4 className={`text-green-400 font-semibold mb-2 text-sm uppercase tracking-wide`}>The Result</h4>
+                      <h4 className={`text-brand-400 font-semibold mb-2 text-sm uppercase tracking-wide`}>The Result</h4>
                       <p className={`${theme.textSecondary} text-sm font-medium leading-relaxed`}>{role.result}</p>
                     </div>
                   </div>

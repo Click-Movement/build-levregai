@@ -12,7 +12,7 @@ const WaitlistConfirmed = () => {
       <div className="waitlist-container waitlist-confirmed-container">
         <img
           className="waitlist-logo"
-          src="/LevReg_BlackGreen.png"
+          src="/LevReg_BlackBlue.png"
           alt="LevRegAi"
           width="200"
         />

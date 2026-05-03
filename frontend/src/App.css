@@ -16,20 +16,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Theme-aware body background */
 body.light {
   background-color: #F9FAFB;
-}
-
-body.dark {
-  background-color: #060711;
 }
 
 .App {
   min-height: 100vh;
 }
 
-/* Smooth transitions for interactive elements */
 button {
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
@@ -46,25 +40,6 @@ a {
   transition: color 0.2s ease;
 }
 
-/* Custom scrollbar - dark mode */
-.dark ::-webkit-scrollbar {
-  width: 10px;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #14B870;
-  border-radius: 5px;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #39d893;
-}
-
-/* Custom scrollbar - light mode */
 .light ::-webkit-scrollbar {
   width: 10px;
 }
@@ -74,16 +49,15 @@ a {
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: #14B870;
+  background: #0EA5E9;
   border-radius: 5px;
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #39d893;
+  background: #38bdf8;
 }
 
-/* Selection color */
 ::selection {
-  background-color: #14B870;
+  background-color: #0EA5E9;
   color: white;
 }
