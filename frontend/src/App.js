@@ -32,9 +32,10 @@ import LeanBusinessThankYou from './pages/lm/LeanBusinessThankYou';
 import Waitlist from './pages/Waitlist';
 import WaitlistConfirmed from './pages/WaitlistConfirmed';
 import Build from './pages/Build';
+import CroApply from './pages/CroApply';
 import { Toaster } from './components/ui/sonner';
 
-const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build'];
+const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build', '/apply'];
 const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm', '/waitlist', '/build'];
 
 function AppContent() {
@@ -71,6 +72,7 @@ function AppContent() {
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
           <Route path="/build" element={<Build />} />
+          <Route path="/apply" element={<CroApply />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
