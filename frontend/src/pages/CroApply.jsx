@@ -26,6 +26,9 @@ const CroApply = () => {
               <span className="text-brand">Ai Chief Revenue Officer</span>
               {' '}In 2 Days!
             </h1>
+            <p className="mt-5 text-lg md:text-xl text-neutral-600 font-medium leading-relaxed">
+              Fill out the application below to get started
+            </p>
           </div>
 
           <div className="w-full max-w-3xl relative z-10 flex-1" style={{ minHeight: '600px' }}>
