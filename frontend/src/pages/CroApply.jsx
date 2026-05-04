@@ -18,13 +18,13 @@ const CroApply = () => {
         <link rel="canonical" href="https://levreg.ai/apply" />
       </Helmet>
 
-      <div className="workshop-theme min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-white text-neutral-950">
         <section className="relative min-h-screen flex flex-col items-center px-6 py-20">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
-
           <div className="max-w-3xl mx-auto text-center relative z-10 mb-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground text-shadow-brand">
-              We Will Build You An Ai Chief Revenue Officer In 2 Days!
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-black">
+              We Will Build You An{' '}
+              <span className="text-brand">Ai Chief Revenue Officer</span>
+              {' '}In 2 Days!
             </h1>
           </div>
 
