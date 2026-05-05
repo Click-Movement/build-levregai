@@ -1,9 +1,32 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+const TYPEFORM_EMBED_JS = 'https://embed.typeform.com/next/embed.js';
+
 const CroApply = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const runTypeformLoad = () => {
+      if (typeof window.tf?.load === 'function') {
+        window.tf.load();
+      }
+    };
+
+    const existingScript = document.querySelector('script[src*="embed.typeform.com/next/embed.js"]');
+    if (existingScript) {
+      // SPA revisit: embed.js only auto-scans on full page load; re-scan for this route’s nodes.
+      queueMicrotask(runTypeformLoad);
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = TYPEFORM_EMBED_JS;
+    script.async = true;
+    document.body.appendChild(script);
+    // First load: library initializes snippets present when the script finishes loading.
   }, []);
 
   return (
@@ -31,18 +54,10 @@ const CroApply = () => {
             </p>
           </div>
 
-          <div className="w-full max-w-3xl relative z-10 flex-1" style={{ minHeight: '600px' }}>
-            <iframe
-              title="Ai Chief Revenue Officer application"
-              src="https://natekennedymd.typeform.com/to/F8N4PIrt"
-              style={{
-                width: '100%',
-                height: '100%',
-                minHeight: '600px',
-                border: 'none',
-                borderRadius: '12px',
-              }}
-              allow="camera; microphone; autoplay; encrypted-media;"
+          <div className="w-full max-w-3xl relative z-10 flex-1 min-h-[600px]">
+            <div
+              className="w-full min-h-[600px] rounded-xl"
+              data-tf-live="01KQTNDX79CYBWJ97DQ0GT44XF"
             />
           </div>
         </section>
