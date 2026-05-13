@@ -5,8 +5,18 @@ import './lm-shared.css';
 import './StackSoloThankYou.css';
 import './EmailSkillAccess.css';
 
-/** Paste embed src when the video is ready (e.g. https://www.youtube.com/embed/VIDEO_ID or Loom share embed URL). */
-const VIDEO_EMBED_SRC = '';
+const VIDALYTICS_MOUNT_ID = 'vidalytics_embed_XckDPY1nIh1gEGJE';
+
+/** Vidalytics bootstrap (same as vendor embed; injected in useEffect so the mount div exists first). */
+const VIDALYTICS_BOOTSTRAP = `(function (v, i, d, a, l, y, t, c, s) {
+    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+    if (!vsl){vsl=function(u,cb){
+        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState==="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+        i.getElementsByTagName("head")[0].appendChild(s);
+    };}
+    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+})(window, document, 'Vidalytics', '${VIDALYTICS_MOUNT_ID}', 'https://fast.vidalytics.com/embeds/I5a5wJoO/XckDPY1nIh1gEGJE/');`;
 
 const SKILL_FILE_URL =
   'https://drive.google.com/file/d/1MXE6vE482KqnsteKgPSxDdEMnV6fLq5m/view?usp=sharing';
@@ -34,6 +44,18 @@ const EmailSkillAccess = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const boot = document.createElement('script');
+    boot.type = 'text/javascript';
+    boot.textContent = VIDALYTICS_BOOTSTRAP;
+    document.body.appendChild(boot);
+    return () => {
+      if (boot.parentNode) boot.parentNode.removeChild(boot);
+      const mount = document.getElementById(VIDALYTICS_MOUNT_ID);
+      if (mount) mount.innerHTML = '';
+    };
+  }, []);
+
   return (
     <div className="lm-page lm-stack-solo-ty es-access">
       <Helmet>
@@ -46,6 +68,7 @@ const EmailSkillAccess = () => {
         <link rel="canonical" href="https://levreg.ai/lm/emailskill/access" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fast.vidalytics.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
           rel="stylesheet"
@@ -66,22 +89,11 @@ const EmailSkillAccess = () => {
           <h1 className="es-hero-title">Here Is What To Do Next&hellip;</h1>
 
           <div className="es-video-wrap">
-            <div className="es-video-inner">
-              {VIDEO_EMBED_SRC ? (
-                <iframe
-                  title="Welcome video"
-                  src={VIDEO_EMBED_SRC}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="es-video-placeholder">
-                  <p>
-                    Your welcome video will appear here. Drop the embed URL into VIDEO_EMBED_SRC in
-                    EmailSkillAccess.jsx when it&apos;s ready.
-                  </p>
-                </div>
-              )}
+            <div className="es-vidalytics-host">
+              <div
+                id={VIDALYTICS_MOUNT_ID}
+                style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
+              />
             </div>
           </div>
 
