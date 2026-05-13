@@ -18,8 +18,8 @@ const VIDALYTICS_BOOTSTRAP = `(function (v, i, d, a, l, y, t, c, s) {
     vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
 })(window, document, 'Vidalytics', '${VIDALYTICS_MOUNT_ID}', 'https://fast.vidalytics.com/embeds/I5a5wJoO/XckDPY1nIh1gEGJE/');`;
 
-const SKILL_FILE_URL =
-  'https://drive.google.com/file/d/1MXE6vE482KqnsteKgPSxDdEMnV6fLq5m/view?usp=sharing';
+const SKILL_DOWNLOAD_URL =
+  'https://drive.google.com/drive/folders/15YDTnaqTR7xsUgK9YGOkyYpyrJdZ0Pnd?usp=sharing';
 
 const EmailSkillAccess = () => {
   useEffect(() => {
@@ -122,11 +122,12 @@ const EmailSkillAccess = () => {
               <div className="delivery-content">
                 <div className="delivery-title">daily-email-engine.skill</div>
                 <div className="delivery-desc">
-                  Claude skill file. Download from Google Drive and import into Claude (or your client) as a skill.
+                  Open the folder on Google Drive, download <strong>daily-email-engine.skill</strong>, and import it
+                  into Claude (or your client) as a skill.
                 </div>
                 <div className="download-wrap">
                   <a
-                    href={SKILL_FILE_URL}
+                    href={SKILL_DOWNLOAD_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="download-btn"
@@ -135,9 +136,9 @@ const EmailSkillAccess = () => {
                       <path d="M12 3v13M7 11l5 5 5-5" />
                       <path d="M3 19h18" />
                     </svg>
-                    Download skill file
+                    Open Drive folder
                   </a>
-                  <p className="download-note">Google Drive &middot; .skill</p>
+                  <p className="download-note">Google Drive folder &middot; Daily Email Skill</p>
                 </div>
               </div>
             </div>
