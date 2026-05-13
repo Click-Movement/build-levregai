@@ -29,6 +29,8 @@ import StackSolo from './pages/lm/StackSolo';
 import StackSoloThankYou from './pages/lm/StackSoloThankYou';
 import LeanBusiness from './pages/lm/LeanBusiness';
 import LeanBusinessThankYou from './pages/lm/LeanBusinessThankYou';
+import EmailSkill from './pages/lm/EmailSkill';
+import EmailSkillAccess from './pages/lm/EmailSkillAccess';
 import Waitlist from './pages/Waitlist';
 import WaitlistConfirmed from './pages/WaitlistConfirmed';
 import Build from './pages/Build';
@@ -68,6 +70,8 @@ function AppContent() {
           <Route path="/lm/oneteam/access" element={<StackSoloThankYou />} />
           <Route path="/lm/lean" element={<LeanBusiness />} />
           <Route path="/lm/lean/access" element={<LeanBusinessThankYou />} />
+          <Route path="/lm/emailskill" element={<EmailSkill />} />
+          <Route path="/lm/emailskill/access" element={<EmailSkillAccess />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/waitlist" element={<Waitlist />} />

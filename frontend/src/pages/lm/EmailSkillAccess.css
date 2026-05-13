@@ -1,0 +1,69 @@
+/* Thank-you extras — /lm/emailskill/access */
+
+.es-access .es-block-title {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 3.8vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+
+.es-access .es-block-title em {
+  font-style: italic;
+  color: var(--ink-light);
+}
+
+.es-access .es-video-wrap {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid var(--rule);
+  background: var(--surface);
+}
+
+.es-access .es-video-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.es-access .es-video-inner iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.es-access .es-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.es-access .es-video-placeholder p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+  max-width: 22rem;
+  line-height: 1.55;
+}
+
+.es-access .es-cal-headline {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.es-access .es-cal-wrap {
+  margin-bottom: 2rem;
+}
+
+.es-access .es-download-wrap {
+  margin-top: 0.25rem;
+}
