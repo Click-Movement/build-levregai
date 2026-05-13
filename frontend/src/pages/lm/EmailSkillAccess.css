@@ -1,5 +1,20 @@
 /* Thank-you extras — /lm/emailskill/access */
 
+.es-access .es-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.14;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+  padding-top: 3.5rem;
+}
+
+.es-access .es-hero-title em {
+  font-style: italic;
+  color: var(--ink-light);
+}
+
 .es-access .es-block-title {
   font-family: var(--serif);
   font-size: clamp(1.35rem, 3.8vw, 1.85rem);
@@ -66,4 +81,10 @@
 
 .es-access .es-download-wrap {
   margin-top: 0.25rem;
+}
+
+@media (max-width: 480px) {
+  .es-access .es-hero-title {
+    padding-top: 2.5rem;
+  }
 }

@@ -63,25 +63,7 @@ const EmailSkillAccess = () => {
 
       <div className="lm-main">
         <div className="container">
-          <section className="confirm-section">
-            <div className="check-wrap">
-              <svg viewBox="0 0 20 20">
-                <path d="M4 10.5l4.5 4.5 7.5-9" />
-              </svg>
-            </div>
-
-            <p className="confirm-eyebrow a1">You&apos;re in</p>
-            <h1 className="confirm-headline a2">
-              Check your inbox, then use the steps below to get the most from this skill.
-            </h1>
-            <p className="confirm-sub a3">
-              We sent a confirmation email. Once you&apos;re confirmed, everything on this page is yours.
-            </p>
-          </section>
-
-          <hr className="divider a4" />
-
-          <h2 className="es-block-title">Here Is What To Do Next&hellip;</h2>
+          <h1 className="es-hero-title">Here Is What To Do Next&hellip;</h1>
 
           <div className="es-video-wrap">
             <div className="es-video-inner">
