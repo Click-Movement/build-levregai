@@ -25,9 +25,10 @@ const ogHead = `
 <meta property="og:title" content="Email System Claude Skill | LevReg.Ai"/>
 <meta property="og:description" content="21 years in marketing with millions sold using email. Get the Claude skill built from that system."/>
 <meta property="og:site_name" content="LevReg.Ai"/>
-<meta property="og:image:width" content="1126"/>
-<meta property="og:image:height" content="242"/>
+<meta property="og:image:width" content="1024"/>
+<meta property="og:image:height" content="535"/>
 <meta property="og:image:alt" content="LevReg.Ai — Email system as a Claude skill"/>
+<meta property="og:image:type" content="image/jpeg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@levregai"/>
 <meta name="twitter:title" content="Email System Claude Skill | LevReg.Ai"/>

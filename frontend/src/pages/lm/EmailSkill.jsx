@@ -7,8 +7,8 @@ import './kit-form-emailskill.css';
 
 const OG_PAGE_URL = 'https://www.levreg.ai/lm/emailskill';
 const OG_IMAGE_URL = 'https://www.levreg.ai/og/lm-emailskill.jpg';
-const OG_IMAGE_WIDTH = 1126;
-const OG_IMAGE_HEIGHT = 242;
+const OG_IMAGE_WIDTH = 1024;
+const OG_IMAGE_HEIGHT = 535;
 const OG_TITLE = 'Email System Claude Skill | LevReg.Ai';
 const OG_DESCRIPTION =
   '21 years in marketing with millions sold using email. Get the Claude skill built from that system.';
@@ -101,6 +101,7 @@ const EmailSkill = () => {
         <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
         <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
         <meta property="og:image:alt" content="LevReg.Ai — Email system as a Claude skill" />
+        <meta property="og:image:type" content="image/jpeg" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
