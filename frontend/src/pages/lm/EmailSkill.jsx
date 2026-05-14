@@ -5,6 +5,14 @@ import './lm-shared.css';
 import './StackSolo.css';
 import './kit-form-emailskill.css';
 
+const OG_PAGE_URL = 'https://levreg.ai/lm/emailskill';
+const OG_IMAGE_URL = 'https://levreg.ai/og/lm-emailskill.jpg';
+const OG_IMAGE_WIDTH = 1126;
+const OG_IMAGE_HEIGHT = 242;
+const OG_TITLE = 'Email System Claude Skill | LevReg.Ai';
+const OG_DESCRIPTION =
+  '21 years in marketing with millions sold using email. Get the Claude skill built from that system.';
+
 const KIT_FORM_OPTIONS = JSON.stringify({
   settings: {
     after_subscribe: {
@@ -80,10 +88,25 @@ const EmailSkill = () => {
     <div className="lm-page lm-stack-solo">
       <Helmet>
         <title>Email System Claude Skill &mdash; LevReg.Ai</title>
-        <meta
-          name="description"
-          content="21 years in marketing with millions sold using email. Get the Claude skill built from that system."
-        />
+        <meta name="description" content={OG_DESCRIPTION} />
+        <link rel="canonical" href={OG_PAGE_URL} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={OG_PAGE_URL} />
+        <meta property="og:title" content={OG_TITLE} />
+        <meta property="og:description" content={OG_DESCRIPTION} />
+        <meta property="og:site_name" content="LevReg.Ai" />
+        <meta property="og:image" content={OG_IMAGE_URL} />
+        <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
+        <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+        <meta property="og:image:alt" content="LevReg.Ai — Email system as a Claude skill" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@levregai" />
+        <meta name="twitter:title" content={OG_TITLE} />
+        <meta name="twitter:description" content={OG_DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE_URL} />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
