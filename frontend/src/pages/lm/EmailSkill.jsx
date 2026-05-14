@@ -5,8 +5,8 @@ import './lm-shared.css';
 import './StackSolo.css';
 import './kit-form-emailskill.css';
 
-const OG_PAGE_URL = 'https://levreg.ai/lm/emailskill';
-const OG_IMAGE_URL = 'https://levreg.ai/og/lm-emailskill.jpg';
+const OG_PAGE_URL = 'https://www.levreg.ai/lm/emailskill';
+const OG_IMAGE_URL = 'https://www.levreg.ai/og/lm-emailskill.jpg';
 const OG_IMAGE_WIDTH = 1126;
 const OG_IMAGE_HEIGHT = 242;
 const OG_TITLE = 'Email System Claude Skill | LevReg.Ai';
@@ -93,10 +93,11 @@ const EmailSkill = () => {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={OG_PAGE_URL} />
+        <meta property="og:image" content={OG_IMAGE_URL} />
+        <meta property="og:image:secure_url" content={OG_IMAGE_URL} />
         <meta property="og:title" content={OG_TITLE} />
         <meta property="og:description" content={OG_DESCRIPTION} />
         <meta property="og:site_name" content="LevReg.Ai" />
-        <meta property="og:image" content={OG_IMAGE_URL} />
         <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
         <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
         <meta property="og:image:alt" content="LevReg.Ai — Email system as a Claude skill" />
