@@ -1,149 +1,68 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, BookOpen, Clock, Calendar, User } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { getThemeClasses } from '../utils/themeClasses';
 import { blogArticles } from '../data/blogData';
 
+const CTA_URL = '/book-call';
+
 const Blog = () => {
-  const theme = getThemeClasses();
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  };
-
   return (
-    <>
+    <div className="lr2">
       <Helmet>
-        <title>AI Strategy & Business Insights | LevReg.Ai Blog</title>
+        <title>AI Strategy & Business Insights | LevReg.AI</title>
         <meta name="description" content="Practical insights on AI implementation, team management, and business operations. Learn how to leverage AI agents to improve your business." />
         <meta name="keywords" content="AI strategy, business automation, AI agents, team management, business insights" />
         <link rel="canonical" href="https://levreg.ai/blog" />
-        
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://levreg.ai/blog" />
-        <meta property="og:title" content="AI Strategy & Business Insights | LevReg.Ai Blog" />
+        <meta property="og:title" content="AI Strategy & Business Insights | LevReg.AI" />
         <meta property="og:description" content="Practical insights on AI implementation, team management, and business operations." />
-        <meta property="og:site_name" content="LevReg.Ai" />
-        
-        {/* Twitter Card */}
+        <meta property="og:site_name" content="LevReg.AI" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
-        <meta name="twitter:title" content="AI Strategy & Business Insights | LevReg.Ai Blog" />
-        <meta name="twitter:description" content="Practical insights on AI implementation, team management, and business operations." />
       </Helmet>
-      
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-        {/* Hero Section */}
-        <section className="relative py-24 px-6">
-          <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className={`absolute top-1/4 -left-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-            <div className={`absolute bottom-1/4 -right-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-          </div>
-          
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
-              <BookOpen className={`w-4 h-4 ${theme.badgeIcon}`} />
-              <span className={`text-sm ${theme.badgeText} font-medium`}>Insights & Strategy</span>
-            </div>
-            
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-              AI Insights for
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">
-                Smart Business Owners
-              </span>
-            </h1>
-            
-            <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-              Practical insights on AI implementation, team management, and building systems that scale without burning out your best people.
-            </p>
-          </div>
-        </section>
 
-        {/* Articles Grid */}
-        <section className={`py-16 px-6 ${theme.bgSecondary}`}>
-          <div className="max-w-7xl mx-auto">
-            {blogArticles.length === 0 ? (
-              <div className="text-center py-20">
-                <p className={`text-xl ${theme.textTertiary}`}>Articles coming soon...</p>
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogArticles.map((article) => (
-                  <Link key={article.id} to={`/blog/${article.slug}`}>
-                    <Card 
-                      className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow} h-full hover:scale-[1.02]`}
-                    >
-                      <CardContent className="p-8">
-                        {/* Category Badge */}
-                        <div className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-brand-950/30 text-brand-300 border border-brand-500/20">
-                          {article.category}
-                        </div>
-                        
-                        {/* Title */}
-                        <h2 className={`text-2xl font-bold mb-3 ${theme.textPrimary} group-hover:text-brand-400 transition-colors line-clamp-3`}>
-                          {article.title}
-                        </h2>
-                        
-                        {/* Subtitle */}
-                        <p className={`text-lg font-semibold ${theme.textAccent} mb-4 line-clamp-2`}>
-                          {article.subtitle}
-                        </p>
-                        
-                        {/* Excerpt */}
-                        <p className={`${theme.textTertiary} leading-relaxed mb-6 line-clamp-3`}>
-                          {article.excerpt}
-                        </p>
-                        
-                        {/* Read More Link */}
-                        <div className={`flex items-center gap-2 ${theme.textAccent} font-medium group-hover:gap-3 transition-all`}>
-                          Read Article
-                          <ArrowRight className="w-4 h-4" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
+      {/* Hero */}
+      <section className="page-hero center wrap">
+        <div className="hero-eyebrow">
+          <span className="dot" aria-hidden="true"></span>
+          <span className="mono-label k">INSIGHTS & STRATEGY</span>
+        </div>
+        <h1>AI insights for <em>smart</em> business owners.</h1>
+        <p className="lede">Practical insights on AI implementation, team management, and building systems that scale without burning out your best people.</p>
+      </section>
 
-        {/* CTA Section */}
-        <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
-              Ready to Apply
-              <span className={theme.textAccent}> These Insights?</span>
-            </h2>
-            
-            <p className={`text-xl ${theme.textSecondary} mb-12 max-w-2xl mx-auto leading-relaxed`}>
-              Reading about AI is one thing. Installing systems that transform your business is another. Let's build your implementation roadmap.
-            </p>
-            
-            <Link to="/transformation-call">
-              <Button 
-                size="lg" 
-                className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-              >
-                Start Your AI Transformation
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            
-            <p className={`${theme.textTertiary} mt-6`}>
-              Free discovery session. No pressure. Just clarity on what AI can do for your business.
-            </p>
+      {/* Articles grid */}
+      <section className="section wrap" style={{ paddingTop: 'clamp(24px, 3vw, 48px)' }}>
+        {blogArticles.length === 0 ? (
+          <p className="mono-label" style={{ textAlign: 'center' }}>Articles coming soon…</p>
+        ) : (
+          <div className="lr-grid cols-3">
+            {blogArticles.map((article) => (
+              <Link key={article.id} to={`/blog/${article.slug}`} className="lr-card">
+                <span className="eyebrow">{article.category}</span>
+                <h3>{article.title}</h3>
+                {article.subtitle && <p className="lead">{article.subtitle}</p>}
+                <p>{article.excerpt}</p>
+                <span className="more">Read article <span className="arrow" aria-hidden="true">→</span></span>
+              </Link>
+            ))}
           </div>
-        </section>
-      </div>
-    </>
+        )}
+      </section>
+
+      {/* CTA */}
+      <section className="cta-band">
+        <div className="cta-band-inner">
+          <h2>Ready to apply these <em>insights</em>?</h2>
+          <p>Reading about AI is one thing. Installing systems that transform your business is another. Let's build your implementation roadmap.</p>
+          <div className="btns">
+            <a href={CTA_URL} className="btn btn-primary btn-lg">BOOK A DISCOVERY CALL →</a>
+          </div>
+          <div className="fine" style={{ color: 'var(--muted)' }}>Free discovery session · No pressure · Just clarity</div>
+        </div>
+      </section>
+    </div>
   );
 };
 

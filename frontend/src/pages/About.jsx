@@ -1,271 +1,170 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Target, Heart, Lightbulb, CheckCircle, Clock, TrendingUp } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Link } from 'react-router-dom';
-import { getThemeClasses } from '../utils/themeClasses';
+
+const CTA_URL = '/book-call';
+
+const values = [
+  {
+    title: 'Practicality Over Hype',
+    description: "We don't care about buzzwords. We care about results. If it doesn't make your team faster or better, we don't build it.",
+  },
+  {
+    title: 'People-First Technology',
+    description: 'AI should make employees feel like superheroes, not make them feel replaceable. Every system we build puts humans in control.',
+  },
+  {
+    title: 'Small Business Obsession',
+    description: "We're not building for enterprises. We're building for the businesses that can't afford to waste time or money on tools that don't work.",
+  },
+  {
+    title: 'Accountability',
+    description: "We measure everything. If we say you'll see productivity gains, we track them. If something doesn't work, we fix it.",
+  },
+];
 
 const About = () => {
-  const theme = getThemeClasses();
-  const values = [
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Practicality Over Hype',
-      description: "We don't care about buzzwords. We care about results. If it doesn't make your team faster or better, we don't build it.",
-      color: 'from-brand-400 to-brand'
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: 'People-First Technology',
-      description: 'AI should make employees feel like superheroes, not make them feel replaceable. Every system we build puts humans in control.',
-      color: 'from-pink-500 to-rose-500'
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: 'Small Business Obsession',
-      description: "We're not building for enterprises. We're building for the businesses that can't afford to waste time or money on tools that don't work.",
-      color: 'from-purple-500 to-indigo-500'
-    },
-    {
-      icon: <CheckCircle className="w-8 h-8" />,
-      title: 'Accountability',
-      description: "We measure everything. If we say you'll see productivity gains, we track them. If something doesn't work, we fix it.",
-      color: 'from-brand-500 to-brand-600'
-    }
-  ];
-
-  const scrollToContact = () => {
-    window.location.href = '/discovery';
-  };
-
   return (
-    <>
+    <div className="lr2">
       <Helmet>
-        <title>About LevReg.Ai - Making Small Businesses AI-First</title>
-        <meta name="description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts. We install, train, and support your team's AI transformation journey." />
+        <title>About LevReg.AI - Making Small Businesses AI-First</title>
+        <meta name="description" content="LevReg.AI was built to help small business CEOs implement AI without becoming experts. We install, train, and support your team's AI transformation journey." />
         <meta name="keywords" content="about LevReg AI, AI transformation, small business AI expert, AI-first business, employee AI enablement" />
         <link rel="canonical" href="https://levreg.ai/about" />
-        
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://levreg.ai/about" />
-        <meta property="og:title" content="About LevReg.Ai - Making Small Businesses AI-First" />
-        <meta property="og:description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts. We install, train, and support your team's AI transformation journey." />
-        <meta property="og:site_name" content="LevReg.Ai" />
-        
-        {/* Twitter Card */}
+        <meta property="og:title" content="About LevReg.AI - Making Small Businesses AI-First" />
+        <meta property="og:description" content="LevReg.AI was built to help small business CEOs implement AI without becoming experts." />
+        <meta property="og:site_name" content="LevReg.AI" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
-        <meta name="twitter:title" content="About LevReg.Ai - Making Small Businesses AI-First" />
-        <meta name="twitter:description" content="LevReg.Ai was built to help small business CEOs implement AI without becoming experts." />
       </Helmet>
-      
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-        {/* Hero Section */}
-      <section className="relative py-24 px-6">
-        <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
-            <Heart className={`w-4 h-4 ${theme.badgeIcon}`} />
-            <span className={`text-sm ${theme.badgeText} font-medium`}>Our Story</span>
+
+      {/* Hero */}
+      <section className="page-hero center wrap">
+        <div className="hero-eyebrow">
+          <span className="dot" aria-hidden="true"></span>
+          <span className="mono-label k">OUR STORY</span>
+        </div>
+        <h1>We exist so business owners don't have to become <em>AI experts</em>.</h1>
+        <p className="lede">The story behind the mission to make every small business AI-first.</p>
+      </section>
+
+      {/* Founder story */}
+      <section className="section wrap">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 01 — Origin</span>
+            <h2>It started with a <em>simple</em> question.</h2>
           </div>
-          
-          <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            We Exist So Business Owners
-            <br />
-            Don&apos;t Have to Become <span className={theme.textAccent}>AI Experts</span>
-          </h1>
-          
-          <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            The story behind the mission to make every small business AI-first.
-          </p>
+          <div className="right">
+            <p>"Why are small businesses getting left behind?" We saw it everywhere — and decided to do something about it.</p>
+          </div>
+        </div>
+        <div className="prose">
+          <p className="big">"Why are small businesses getting left behind?"</p>
+          <p>We saw it everywhere. CEOs drowning in work. Teams buried in manual tasks. Everyone knowing AI could help, but no one having the time or expertise to make it happen.</p>
+          <p>The big companies? They hire AI teams. They build internal systems. They move fast.</p>
+          <p>Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <strong>That's not training. That's abandonment.</strong></p>
+          <p className="big">So we built something different. LevReg.AI isn't a course. It's not a tool. It's a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.</p>
         </div>
       </section>
 
-      {/* Founder Story Section */}
-      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${theme.textPrimary}`}>
-            It Started with a
-            <span className={theme.textAccent}> Simple Question</span>
-          </h2>
-          
-          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed`}>
-            <p className={`text-2xl font-semibold ${theme.textPrimary} text-center mb-8`}>
-              "Why are small businesses getting left behind?"
-            </p>
-            
-            <p>
-              We saw it everywhere. CEOs drowning in work. Teams buried in manual tasks. Everyone knowing AI could help, but no one having the time or expertise to make it happen.
-            </p>
-            
-            <p>
-              The big companies? They hire AI teams. They build internal systems. They move fast.
-            </p>
-            
-            <p>
-              Small businesses? They get sold courses. Generic chatbot access. Vague promises about "transformation." <span className={`${theme.textPrimary} font-semibold`}>That&apos;s not training. That&apos;s abandonment.</span>
-            </p>
-            
-            <p className={`text-xl ${theme.textPrimary} font-semibold pt-4`}>
-              So we built something different. LevReg.Ai isn&apos;t a course. It&apos;s not a tool. It&apos;s a full-service AI enablement partner that comes into your business, understands your workflows, and installs systems your team can actually use. We do the hard part, so you can focus on running your business.
-            </p>
+      {/* AI-First vision */}
+      <section className="section wrap">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 02 — Vision</span>
+            <h2>What it means to be <em>AI-first</em>.</h2>
           </div>
+          <div className="right">
+            <p>An AI-first company doesn't replace humans with robots. It amplifies human capability with intelligent systems.</p>
+          </div>
+        </div>
+        <div className="prose">
+          <span className="check">Your customer support team answers twice as many tickets without working longer hours.</span>
+          <span className="check">Your marketing team ships campaigns in days instead of weeks.</span>
+          <span className="check">Your operations run smoothly even when someone's on vacation.</span>
+          <span className="check">Your employees feel empowered, not overwhelmed.</span>
+          <p className="big">That's what we're building. One small business at a time.</p>
         </div>
       </section>
 
-      {/* AI-First Vision */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-8 text-center ${theme.textPrimary}`}>
-            What It Means to Be
-            <span className={theme.textAccent}> AI-First</span>
-          </h2>
-          
-          <div className={`${theme.bgSecondary} border ${theme.border} rounded-2xl p-8 md:p-12`}>
-            <p className={`text-xl ${theme.textSecondary} leading-relaxed mb-6`}>
-              An AI-first company doesn&apos;t replace humans with robots. It amplifies human capability with intelligent systems.
-            </p>
-            
-            <div className="space-y-4 mt-8">
-              {[
-                'Your customer support team answers twice as many tickets without working longer hours.',
-                'Your marketing team ships campaigns in days instead of weeks.',
-                'Your operations run smoothly even when someone&apos;s on vacation.',
-                'Your employees feel empowered, not overwhelmed.'
-              ].map((text, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className={`w-6 h-6 ${theme.textAccent} flex-shrink-0 mt-1`} />
-                  <span className={`${theme.textSecondary} text-lg`}>{text}</span>
-                </div>
-              ))}
+      {/* Philosophy */}
+      <section className="section wrap">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 03 — Philosophy</span>
+            <h2>Technology <em>enhances</em> people. It doesn't replace them.</h2>
+          </div>
+          <div className="right">
+            <p>We believe in a future where AI makes work better — not scarcer.</p>
+          </div>
+        </div>
+        <div className="prose">
+          <p>Where employees feel more capable, not more anxious. Where small businesses compete on speed and intelligence, not just budget. Where the tools are so good, so intuitive, and so specific to your needs that using them feels like an unfair advantage.</p>
+          <p className="big">That's not a distant dream. That's what we're installing right now.</p>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="section wrap">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 04 — What drives us</span>
+            <h2>The principles behind every <em>install</em>.</h2>
+          </div>
+          <div className="right">
+            <p>The principles that guide everything we build.</p>
+          </div>
+        </div>
+        <div className="lr-grid cols-2">
+          {values.map((value) => (
+            <div className="lr-card" key={value.title}>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
             </div>
-            
-            <p className={`text-xl ${theme.textPrimary} font-semibold mt-8 pt-8 border-t ${theme.border}`}>
-              That&apos;s what we&apos;re building. One small business at a time.
-            </p>
+          ))}
+        </div>
+      </section>
+
+      {/* Why now + stats */}
+      <section className="section wrap">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 05 — Why now</span>
+            <h2>Small businesses can't <em>afford</em> to wait.</h2>
+          </div>
+          <div className="right">
+            <p>AI isn't coming. It's here. Your competitors are using it. The gap between AI-enabled businesses and everyone else is widening every day.</p>
+          </div>
+        </div>
+        <div className="lr-grid cols-3">
+          <div className="lr-card">
+            <span className="big-num">3×</span>
+            <span className="sub-k" style={{ marginBottom: 0 }}>Average productivity increase</span>
+          </div>
+          <div className="lr-card">
+            <span className="big-num">30 days</span>
+            <span className="sub-k" style={{ marginBottom: 0 }}>To ROI for most clients</span>
+          </div>
+          <div className="lr-card">
+            <span className="big-num">100%</span>
+            <span className="sub-k" style={{ marginBottom: 0 }}>Focused on small businesses</span>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${theme.textPrimary}`}>
-            Technology <span className={theme.textAccent}>Enhances People.</span>
-            <br />
-            It Doesn&apos;t Replace Them.
-          </h2>
-          
-          <p className={`text-xl ${theme.textSecondary} leading-relaxed max-w-3xl mx-auto`}>
-            We believe in a future where AI makes work better—not scarcer. Where employees feel more capable, not more anxious. Where small businesses compete on speed and intelligence, not just budget. Where the tools are so good, so intuitive, and so specific to your needs that using them feels like an unfair advantage.
-          </p>
-          
-          <p className={`text-2xl ${theme.textPrimary} font-bold mt-8`}>
-            That&apos;s not a distant dream. That&apos;s what we&apos;re installing right now.
-          </p>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-        <div className="max-w-7xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-            What <span className={theme.textAccent}>Drives Us</span>
-          </h2>
-          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
-            The principles that guide everything we build
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, idx) => (
-              <Card 
-                key={idx} 
-                className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
-              >
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
-                    {value.icon}
-                  </div>
-                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>{value.title}</h3>
-                  <p className={`${theme.textTertiary} leading-relaxed text-lg`}>{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+      {/* CTA */}
+      <section className="cta-band">
+        <div className="cta-band-inner">
+          <h2>You can close the gap. But only if you <em>act now</em>.</h2>
+          <p>Start your AI transformation with a free discovery call. No pressure — just clarity on what AI can do for your business.</p>
+          <div className="btns">
+            <a href={CTA_URL} className="btn btn-primary btn-lg">BOOK A DISCOVERY CALL →</a>
           </div>
         </div>
       </section>
-
-      {/* Why Now Section */}
-      <section className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${'bg-red-950/30 border-red-500/20'} border mb-8`}>
-            <Clock className={`w-4 h-4 ${'text-red-400'}`} />
-            <span className={`text-sm ${'text-red-300'} font-medium`}>Time Is Running Out</span>
-          </div>
-          
-          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
-            Small Businesses Can&apos;t
-            <br />
-            <span className={theme.textAccent}>Afford to Wait</span>
-          </h2>
-          
-          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed mb-12`}>
-            <p>
-              AI isn&apos;t coming. It&apos;s here. Your competitors are using it. Your customers expect the speed and accuracy it enables. Your employees are burning out doing work that could be automated.
-            </p>
-            <p className={`text-xl ${theme.textPrimary} font-semibold`}>
-              The gap between AI-enabled businesses and everyone else is widening every day.
-            </p>
-            <p className={`text-2xl ${theme.textPrimary} font-bold pt-4`}>
-              You can close it. But only if you act now.
-            </p>
-          </div>
-          
-          <Link to="/transformation-call">
-            <Button 
-              size="lg" 
-              className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-            >
-              Start Your Ai Transformation
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-16 text-center ${theme.textPrimary}`}>
-            The <span className={theme.textAccent}>Impact</span> We&apos;re Making
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
-                3x
-              </div>
-              <div className={theme.textTertiary}>Average productivity increase</div>
-            </div>
-            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
-                30 Days
-              </div>
-              <div className={theme.textTertiary}>To ROI for most clients</div>
-            </div>
-            <div className={`text-center p-8 rounded-xl ${theme.bgSecondary} border ${theme.border}`}>
-              <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${'from-brand-400 to-brand'} mb-3`}>
-                100%
-              </div>
-              <div className={theme.textTertiary}>Focused on small businesses</div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
-    </>
+    </div>
   );
 };
 
