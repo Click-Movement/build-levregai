@@ -1,17 +1,430 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, X, Home, ChevronRight, Clock, User, Calendar } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { getThemeClasses } from '../utils/themeClasses';
+import { useParams, Link } from 'react-router-dom';
 import { getBlogArticleBySlug, getRelatedArticles } from '../data/blogData';
+
+const CTA_URL = '/book-call';
+
+const renderSection = (section, index) => {
+  // ── Regular text section (no explicit type) ──
+  if (!section.type) {
+    return (
+      <div key={index} className="block">
+        {section.heading && <h2 id={section.id}>{section.heading}</h2>}
+        {section.content && section.content.split('\n\n').map((p, idx) => <p key={idx}>{p}</p>)}
+        {section.list && (
+          <ul>{section.list.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        )}
+        {section.conclusion && <p>{section.conclusion}</p>}
+        {section.assumptionsList && (
+          <ul>{section.assumptionsList.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        )}
+        {section.actualContent && <p>{section.actualContent}</p>}
+        {section.warningSignsList && (
+          <ul>{section.warningSignsList.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        )}
+        {section.action && <p className="lead-p">{section.action}</p>}
+        {section.insight && !section.before && <p>{section.insight}</p>}
+        {section.advantagesList && (
+          <ul>{section.advantagesList.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        )}
+        {section.warning && <p>{section.warning}</p>}
+
+        {section.before && Array.isArray(section.before) && (
+          <div className="block">
+            <div className="block">
+              <div className="lbl">Before implementation</div>
+              <ul>{section.before.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            </div>
+            <div className="block">
+              <div className="lbl accent">After implementation</div>
+              <ul>{section.after.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            </div>
+            {section.insight && <p>{section.insight}</p>}
+            {section.quote && <p style={{ color: 'var(--accent)', fontWeight: 600 }}>{section.quote}</p>}
+            {section.result && <p>{section.result}</p>}
+          </div>
+        )}
+
+        {section.moraleROI && (
+          <div className="block">
+            <div className="block">
+              <div className="lbl">The morale ROI</div>
+              <ul>{section.moraleROI.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            </div>
+            {section.scaleROI && (
+              <div className="block">
+                <div className="lbl">The scale ROI</div>
+                <ul>{section.scaleROI.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+              </div>
+            )}
+            {section.clientQuote && <p style={{ color: 'var(--accent)', fontStyle: 'italic' }}>{section.clientQuote}</p>}
+          </div>
+        )}
+
+        {section.badApproach && (
+          <div className="block">
+            <div className="panel-bad">
+              <div className="lbl bad">Bad approach</div>
+              <p>{section.badApproach}</p>
+            </div>
+            <div className="panel-good">
+              <div className="lbl accent">Good approach</div>
+              <p>{section.goodApproach}</p>
+            </div>
+            {section.principle && <p style={{ color: 'var(--accent)', fontWeight: 600 }}>{section.principle}</p>}
+            {section.examples && <p>{section.examples}</p>}
+            {section.examplesList && (
+              <ul>{section.examplesList.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            )}
+            {section.conclusion && <p>{section.conclusion}</p>}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── Bulleted list ──
+  if (section.type === 'list') {
+    return <ul key={index}>{section.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>;
+  }
+
+  // ── Comparison (before / after) ──
+  if (section.type === 'comparison') {
+    return (
+      <div key={index} className="two-col">
+        <div className="card" style={{ margin: 0 }}>
+          <h3>{section.before.title}</h3>
+          <ul>{section.before.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        </div>
+        <div className="card" style={{ margin: 0, borderColor: 'var(--accent)' }}>
+          <h3>{section.after.title}</h3>
+          <ul>{section.after.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Quote / callout ──
+  if (section.type === 'quote') {
+    return (
+      <div key={index} className="callout">
+        <p className="q">"{section.content}"</p>
+        {section.context && <p style={{ color: 'var(--muted)' }}>{section.context}</p>}
+      </div>
+    );
+  }
+
+  // ── Callout box ──
+  if (section.type === 'callout') {
+    return (
+      <div key={index} className="callout-dark">
+        <p className="big" dangerouslySetInnerHTML={{ __html: section.content }} />
+        {section.subtext && <p>{section.subtext}</p>}
+      </div>
+    );
+  }
+
+  // ── Questions ──
+  if (section.type === 'questions') {
+    return (
+      <div key={index} className="block">
+        {section.questions.map((q, idx) => (
+          <div key={idx} className="card">
+            <div className="row-head">
+              <span className="num-badge">{q.number}</span>
+              <h3>{q.question}</h3>
+            </div>
+            <p style={{ marginBottom: 0 }}>{q.answer}</p>
+          </div>
+        ))}
+        {section.conclusion && section.conclusion.split('\n\n').map((p, idx) => <p key={idx}>{p}</p>)}
+      </div>
+    );
+  }
+
+  // ── Example (wrong / right) ──
+  if (section.type === 'example') {
+    return (
+      <div key={index} className="card">
+        <h3>{section.title}</h3>
+        <div className="panel-bad">
+          <div className="lbl bad">The answer approach</div>
+          <p style={{ fontStyle: 'italic' }}>"{section.wrong}"</p>
+        </div>
+        <div className="panel-good">
+          <div className="lbl accent">The outcome approach</div>
+          <p style={{ fontStyle: 'italic' }}>"{section.right}"</p>
+        </div>
+        {section.explanation && <p>{section.explanation}</p>}
+        {section.key && <div className="callout"><p>{section.key}</p></div>}
+      </div>
+    );
+  }
+
+  // ── Service ──
+  if (section.type === 'service') {
+    return (
+      <div key={index} className="card">
+        <div className="row-head">
+          <span className="num-badge">{section.number}</span>
+          <h3>{section.title}</h3>
+        </div>
+        <p>{section.content}</p>
+        {section.items && <ul>{section.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>}
+        {section.systems && section.systems.map((sys, idx) => (
+          <div key={idx} className="panel-good">
+            <div className="lbl accent">{sys.name}</div>
+            <ul>{sys.features.map((f, fidx) => <li key={fidx}>{f}</li>)}</ul>
+          </div>
+        ))}
+        {section.footer && <p style={{ color: 'var(--accent)', fontStyle: 'italic', marginBottom: 0 }}>{section.footer}</p>}
+      </div>
+    );
+  }
+
+  // ── Costs ──
+  if (section.type === 'costs') {
+    return (
+      <div key={index} className="block">
+        {section.costs.map((cost, idx) => (
+          <div key={idx} className="card">
+            <h3>{cost.title}</h3>
+            <p>{cost.description}</p>
+            {cost.calculation && <p style={{ fontSize: '14px' }}>{cost.calculation}</p>}
+            <p className="price-tag" style={{ marginBottom: 0 }}>{cost.total}</p>
+          </div>
+        ))}
+        <div className="callout-dark">
+          <p className="big">{section.totalCost}</p>
+          <p>{section.comparison}</p>
+          <p style={{ color: '#fff', fontWeight: 600, marginBottom: 0 }}>{section.roi}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Red / green flags ──
+  if (section.type === 'flags') {
+    return (
+      <div key={index} className="two-col">
+        <div>
+          <div className="lbl bad" style={{ fontSize: '12px', marginBottom: '12px' }}>Red flags</div>
+          {section.redFlags.map((flag, idx) => (
+            <div key={idx} className="panel-bad">
+              <strong style={{ color: 'var(--fg)' }}>{flag.title}</strong>
+              <p style={{ marginTop: '6px', marginBottom: 0 }}>{flag.description}</p>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className="lbl accent" style={{ fontSize: '12px', marginBottom: '12px' }}>Green flags</div>
+          {section.greenFlags.map((flag, idx) => (
+            <div key={idx} className="panel-good">
+              <strong style={{ color: 'var(--fg)' }}>{flag.title}</strong>
+              <p style={{ marginTop: '6px', marginBottom: 0 }}>{flag.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ── System (problem / solution / result) ──
+  if (section.type === 'system') {
+    return (
+      <div key={index} className="card">
+        <div className="row-head">
+          <span className="num-badge">{section.number}</span>
+          <h3>{section.title}</h3>
+        </div>
+        <div className="block">
+          <div className="lbl">The problem</div>
+          <p>{section.problem}</p>
+        </div>
+        <div className="block">
+          <div className="lbl accent">The system</div>
+          <ul>{section.solution.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+        </div>
+        <div className="panel-good">
+          <div className="lbl accent">Typical result</div>
+          <p style={{ color: 'var(--fg)', fontWeight: 500, marginBottom: 0 }}>{section.result}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Pricing ──
+  if (section.type === 'pricing') {
+    return (
+      <div key={index} className="block">
+        {section.models.map((model, idx) => (
+          <div key={idx} className="card">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '12px' }}>
+              <h3 style={{ marginBottom: 0 }}>{model.name}</h3>
+              <span className="price-tag">{model.price}</span>
+            </div>
+            <p style={{ marginTop: '10px', marginBottom: 0 }}>{model.description}</p>
+          </div>
+        ))}
+        {section.factors && (
+          <div className="callout">
+            <div className="lbl accent">What determines price</div>
+            <ul>{section.factors.map((f, idx) => <li key={idx}>{f}</li>)}</ul>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── Industries ──
+  if (section.type === 'industries') {
+    return (
+      <div key={index} className="block">
+        {section.list.map((industry, idx) => (
+          <div key={idx} className="card">
+            <h3>{industry.name}</h3>
+            <p>{industry.description}</p>
+            <div className="panel-good">
+              <p style={{ marginBottom: 0 }}><strong style={{ color: 'var(--fg)' }}>Why it works:</strong> {industry.why}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // ── Question groups ──
+  if (section.type === 'question-groups') {
+    return (
+      <div key={index} className="block">
+        {section.groups.map((group, idx) => (
+          <div key={idx} className="block">
+            <div className="lbl accent">{group.category}</div>
+            <ol className="ol">{group.questions.map((q, qidx) => <li key={qidx}>{q}</li>)}</ol>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // ── Options ──
+  if (section.type === 'options') {
+    return (
+      <div key={index} className="block">
+        {section.options.map((option, idx) => (
+          <div key={idx} className="card">
+            <div className="row-head">
+              <span className="num-badge">{option.number}</span>
+              <h3>Option {option.number}: {option.title}</h3>
+            </div>
+            <p>{option.description}</p>
+            <p style={{ fontStyle: 'italic', marginBottom: 0 }}>{option.reality}</p>
+          </div>
+        ))}
+        {section.conclusion && (
+          <div className="callout-dark"><p style={{ color: '#fff', marginBottom: 0, whiteSpace: 'pre-line' }}>{section.conclusion}</p></div>
+        )}
+      </div>
+    );
+  }
+
+  // ── Role ──
+  if (section.type === 'role') {
+    return (
+      <div key={index} className="card">
+        <div className="row-head">
+          <span className="num-badge">{section.number}</span>
+          <h3>{section.title}</h3>
+        </div>
+        <div className="block">
+          <div className="lbl">The human problem</div>
+          <p>{section.humanProblem}</p>
+        </div>
+        <div className="block">
+          <div className="lbl accent">The AI solution</div>
+          <p>{section.aiSolution}</p>
+        </div>
+        <div className="panel-good">
+          <div className="lbl accent">Result</div>
+          <p style={{ marginBottom: 0 }}>{section.result}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Criteria (replace / keep) ──
+  if (section.type === 'criteria') {
+    return (
+      <div key={index} className="block">
+        <div className="two-col">
+          <div className="panel-good">
+            <div className="lbl accent">Replace when</div>
+            <ul>{section.replaceWhen.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+          </div>
+          <div className="panel-bad">
+            <div className="lbl bad">Keep when</div>
+            <ul>{section.keepWhen.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+          </div>
+        </div>
+        {section.test && (
+          <div className="callout"><p><strong style={{ color: 'var(--fg)' }}>The test: </strong>{section.test}</p></div>
+        )}
+      </div>
+    );
+  }
+
+  // ── Timeline ──
+  if (section.type === 'timeline') {
+    return (
+      <div key={index} className="block">
+        {section.weeks.map((week, idx) => (
+          <div key={idx} className="card">
+            <div className="row-head">
+              <span className="week-tag">{week.week}</span>
+              <h3>{week.title}</h3>
+            </div>
+            <p style={{ marginBottom: 0 }}>{week.description}</p>
+          </div>
+        ))}
+        {section.summary && (
+          <div className="panel-good">
+            <p style={{ color: 'var(--fg)', fontWeight: 600, marginBottom: section.comparison ? '8px' : 0 }}>{section.summary}</p>
+            {section.comparison && <p style={{ marginBottom: 0 }}>{section.comparison}</p>}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── ROI ──
+  if (section.type === 'roi') {
+    return (
+      <div key={index} className="block">
+        <div className="two-col">
+          <div className="card" style={{ margin: 0 }}>
+            <h3>{section.before.title}</h3>
+            <ul>{section.before.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            <p style={{ fontStyle: 'italic', fontSize: '14px', marginBottom: 0 }}>{section.before.total}</p>
+          </div>
+          <div className="card" style={{ margin: 0, borderColor: 'var(--accent)' }}>
+            <h3>{section.after.title}</h3>
+            <ul>{section.after.items.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
+            <p style={{ fontStyle: 'italic', fontSize: '14px', marginBottom: 0 }}>{section.after.total}</p>
+          </div>
+        </div>
+        {section.savings && (
+          <div className="callout-dark" style={{ textAlign: 'center' }}><p className="big" style={{ marginBottom: 0 }}>{section.savings}</p></div>
+        )}
+      </div>
+    );
+  }
+
+  return null;
+};
 
 const BlogDetail = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
-  const theme = getThemeClasses();
-  
   const article = getBlogArticleBySlug(slug);
   const relatedArticles = getRelatedArticles(slug, 3);
 
@@ -21,834 +434,126 @@ const BlogDetail = () => {
 
   if (!article) {
     return (
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary} flex items-center justify-center`}>
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
-          <Link to="/blog">
-            <Button className="bg-brand hover:bg-brand-700 text-white">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
-            </Button>
-          </Link>
-        </div>
+      <div className="lr2">
+        <section className="section wrap" style={{ textAlign: 'center' }}>
+          <h1 className="headline" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>Article not found</h1>
+          <div className="hero-ctas" style={{ justifyContent: 'center', marginTop: '24px' }}>
+            <Link to="/blog" className="btn btn-primary btn-lg">← Back to insights</Link>
+          </div>
+        </section>
       </div>
     );
   }
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  };
-
-  const renderSection = (section, index) => {
-    // Regular text section
-    if (!section.type) {
-      return (
-        <div key={index} className={`space-y-4 text-lg ${theme.textSecondary} leading-relaxed`}>
-          {section.heading && (
-            <h2 id={section.id} className={`text-3xl md:text-4xl font-bold ${theme.textPrimary} mb-6 mt-12`}>
-              {section.heading}
-            </h2>
-          )}
-          {section.content && section.content.split('\n\n').map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-          {section.list && (
-            <ul className="space-y-2 ml-6 mt-4">
-              {section.list.map((item, idx) => (
-                <li key={idx} className="list-disc">{item}</li>
-              ))}
-            </ul>
-          )}
-          {section.conclusion && (
-            <p className="mt-4">{section.conclusion}</p>
-          )}
-          {section.assumptionsList && (
-            <ul className="space-y-2 ml-6">
-              {section.assumptionsList.map((item, idx) => (
-                <li key={idx} className="list-disc">{item}</li>
-              ))}
-            </ul>
-          )}
-          {section.actualContent && (
-            <p className="mt-4">{section.actualContent}</p>
-          )}
-          {section.warningSignsList && (
-            <ul className="space-y-2 ml-6">
-              {section.warningSignsList.map((item, idx) => (
-                <li key={idx} className="list-disc">{item}</li>
-              ))}
-            </ul>
-          )}
-          {section.action && (
-            <p className={`text-2xl font-bold ${theme.textPrimary} mt-6`}>{section.action}</p>
-          )}
-          {section.insight && (
-            <p className="mt-4">{section.insight}</p>
-          )}
-          {section.advantagesList && (
-            <ul className="space-y-2 ml-6">
-              {section.advantagesList.map((item, idx) => (
-                <li key={idx} className="list-disc">{item}</li>
-              ))}
-            </ul>
-          )}
-          {section.warning && (
-            <p className="mt-6">{section.warning}</p>
-          )}
-          {section.before && (
-            <div className="mt-6 space-y-6">
-              <div>
-                <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-3`}>Before implementation:</h4>
-                <ul className="space-y-2">
-                  {section.before.map((item, idx) => (
-                    <li key={idx} className={`${theme.textSecondary} italic`}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-3`}>After implementation:</h4>
-                <ul className="space-y-2">
-                  {section.after.map((item, idx) => (
-                    <li key={idx} className={`${theme.textSecondary} italic`}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              {section.insight && (
-                <p className="mt-6">{section.insight}</p>
-              )}
-              {section.quote && (
-                <p className={`${theme.textAccent} font-semibold mt-4`}>{section.quote}</p>
-              )}
-              {section.result && (
-                <p className="mt-4">{section.result}</p>
-              )}
-            </div>
-          )}
-          {section.moraleROI && (
-            <div className="mt-6 space-y-6">
-              <div>
-                <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-3`}>The morale ROI:</h4>
-                <ul className="space-y-2 ml-6">
-                  {section.moraleROI.map((item, idx) => (
-                    <li key={idx} className="list-disc">{item}</li>
-                  ))}
-                </ul>
-              </div>
-              {section.scaleROI && (
-                <div>
-                  <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-3`}>The scale ROI:</h4>
-                  <ul className="space-y-2 ml-6">
-                    {section.scaleROI.map((item, idx) => (
-                      <li key={idx} className="list-disc">{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {section.clientQuote && (
-                <p className={`${theme.textAccent} italic mt-6`}>{section.clientQuote}</p>
-              )}
-            </div>
-          )}
-          {section.badApproach && (
-            <div className="mt-6 space-y-4">
-              <div className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
-                <p className="font-semibold text-red-400 mb-2">Bad approach:</p>
-                <p className={theme.textSecondary}>{section.badApproach}</p>
-              </div>
-              <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
-                <p className="font-semibold text-brand-400 mb-2">Good approach:</p>
-                <p className={theme.textSecondary}>{section.goodApproach}</p>
-              </div>
-              {section.principle && (
-                <p className={`${theme.textAccent} font-semibold mt-4`}>{section.principle}</p>
-              )}
-              {section.examples && (
-                <p className="mt-4">{section.examples}</p>
-              )}
-              {section.examplesList && (
-                <ul className="space-y-2 ml-6">
-                  {section.examplesList.map((item, idx) => (
-                    <li key={idx} className="list-disc">{item}</li>
-                  ))}
-                </ul>
-              )}
-              {section.conclusion && (
-                <p className="mt-4">{section.conclusion}</p>
-              )}
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // Bulleted list
-    if (section.type === 'list') {
-      return (
-        <ul key={index} className="space-y-3 ml-6 my-6">
-          {section.items.map((item, idx) => (
-            <li key={idx} className={`list-disc ${theme.textSecondary} text-lg`}>{item}</li>
-          ))}
-        </ul>
-      );
-    }
-
-    // Comparison (Before/After)
-    if (section.type === 'comparison') {
-      return (
-        <div key={index} className="my-12">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.before.title}</h4>
-              <ul className="space-y-3">
-                {section.before.items.map((item, idx) => (
-                  <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                    <span className="text-gray-400 mt-1">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={`p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.after.title}</h4>
-              <ul className="space-y-3">
-                {section.after.items.map((item, idx) => (
-                  <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                    <CheckCircle className={`w-5 h-5 ${theme.textAccent} flex-shrink-0 mt-0.5`} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // Quote/Callout
-    if (section.type === 'quote') {
-      return (
-        <div key={index} className="my-12 p-8 rounded-xl bg-brand-950/20 border-brand-500/30 border-l-4 border-l-brand-400 border">
-          <p className={`text-xl ${theme.textAccent} font-semibold italic mb-4`}>
-            "{section.content}"
-          </p>
-          {section.context && (
-            <p className={`${theme.textSecondary} leading-relaxed`}>{section.context}</p>
-          )}
-        </div>
-      );
-    }
-
-    // Callout Box
-    if (section.type === 'callout') {
-      return (
-        <div key={index} className="my-12 p-8 rounded-xl bg-brand text-white">
-          <p className="text-xl font-bold mb-2" dangerouslySetInnerHTML={{ __html: section.content }} />
-          {section.subtext && (
-            <p className="text-brand-100">{section.subtext}</p>
-          )}
-        </div>
-      );
-    }
-
-    // Questions List
-    if (section.type === 'questions') {
-      return (
-        <div key={index} className="my-12 space-y-6">
-          {section.questions.map((q, idx) => (
-            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <div className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-lg bg-brand-950/30 text-brand-400 flex items-center justify-center font-bold flex-shrink-0`}>
-                  {q.number}
-                </div>
-                <div className="flex-1">
-                  <h4 className={`text-lg font-bold ${theme.textPrimary} mb-2`}>{q.question}</h4>
-                  <p className={`${theme.textSecondary} leading-relaxed`}>{q.answer}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-          {section.conclusion && (
-            <div className={`mt-6 text-lg ${theme.textSecondary} leading-relaxed space-y-4`}>
-              {section.conclusion.split('\n\n').map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // Example (Wrong/Right comparison)
-    if (section.type === 'example') {
-      return (
-        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-          <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>{section.title}</h3>
-          
-          <div className="space-y-6">
-            <div className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
-              <div className="flex items-start gap-3 mb-2">
-                <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                <p className="font-semibold text-red-400">The answer approach:</p>
-              </div>
-              <p className={`${theme.textSecondary} ml-8 italic`}>"{section.wrong}"</p>
-            </div>
-            
-            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
-              <div className="flex items-start gap-3 mb-2">
-                <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
-                <p className="font-semibold text-brand-400">The outcome approach:</p>
-              </div>
-              <p className={`${theme.textSecondary} ml-8 italic`}>"{section.right}"</p>
-            </div>
-            
-            {section.explanation && (
-              <p className={`${theme.textSecondary} leading-relaxed`}>{section.explanation}</p>
-            )}
-            
-            {section.key && (
-              <div className={`p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border`}>
-                <p className={`${theme.textSecondary} leading-relaxed`}>{section.key}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      );
-    }
-
-    // Service (numbered service with items/systems)
-    if (section.type === 'service') {
-      return (
-        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
-              {section.number}
-            </div>
-            <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
-          </div>
-          
-          <p className={`${theme.textSecondary} leading-relaxed mb-4`}>{section.content}</p>
-          
-          {section.items && (
-            <ul className="space-y-2 ml-6 mb-4">
-              {section.items.map((item, idx) => (
-                <li key={idx} className={`list-disc ${theme.textSecondary}`}>{item}</li>
-              ))}
-            </ul>
-          )}
-          
-          {section.systems && (
-            <div className="space-y-4 mt-6">
-              {section.systems.map((sys, idx) => (
-                <div key={idx} className={`p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border`}>
-                  <h4 className={`font-bold ${theme.textPrimary} mb-2`}>{sys.name}</h4>
-                  <ul className="space-y-1">
-                    {sys.features.map((feature, fidx) => (
-                      <li key={fidx} className={`text-sm ${theme.textSecondary} flex items-start gap-2`}>
-                        <span className="mt-1">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-          
-          {section.footer && (
-            <p className={`${theme.textAccent} font-semibold mt-6 italic`}>{section.footer}</p>
-          )}
-        </div>
-      );
-    }
-
-    // Costs breakdown
-    if (section.type === 'costs') {
-      return (
-        <div key={index} className="my-12 space-y-6">
-          {section.costs.map((cost, idx) => (
-            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>{cost.title}</h4>
-              <p className={`${theme.textSecondary} leading-relaxed mb-2`}>{cost.description}</p>
-              {cost.calculation && (
-                <p className={`${theme.textTertiary} text-sm mb-2`}>{cost.calculation}</p>
-              )}
-              <p className={`${theme.textAccent} font-bold text-lg`}>{cost.total}</p>
-            </div>
-          ))}
-          
-          <div className={`p-6 rounded-xl bg-brand text-white`}>
-            <p className="text-2xl font-bold mb-2">{section.totalCost}</p>
-            <p className="text-brand-100 mb-4">{section.comparison}</p>
-            <p className="text-xl font-bold">{section.roi}</p>
-          </div>
-        </div>
-      );
-    }
-
-    // Red/Green Flags
-    if (section.type === 'flags') {
-      return (
-        <div key={index} className="my-12 grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Red Flags:</h3>
-            <div className="space-y-4">
-              {section.redFlags.map((flag, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-red-950/20 border-red-500/20 border">
-                  <div className="flex items-start gap-3 mb-2">
-                    <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                    <h4 className="font-bold text-red-400">{flag.title}</h4>
-                  </div>
-                  <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h3 className={`text-2xl font-bold ${theme.textPrimary} mb-6`}>Green Flags:</h3>
-            <div className="space-y-4">
-              {section.greenFlags.map((flag, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
-                  <div className="flex items-start gap-3 mb-2">
-                    <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
-                    <h4 className="font-bold text-brand-400">{flag.title}</h4>
-                  </div>
-                  <p className={`${theme.textSecondary} text-sm ml-8`}>{flag.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // System (problem/solution/result)
-    if (section.type === 'system') {
-      return (
-        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
-              {section.number}
-            </div>
-            <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
-          </div>
-          
-          <div className="space-y-6">
-            <div>
-              <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-2`}>The Problem:</h4>
-              <p className={`${theme.textSecondary} leading-relaxed`}>{section.problem}</p>
-            </div>
-            
-            <div>
-              <h4 className={`text-lg font-semibold ${theme.textAccent} mb-2`}>The System:</h4>
-              <ul className="space-y-2 ml-6">
-                {section.solution.map((item, idx) => (
-                  <li key={idx} className={`list-disc ${theme.textSecondary}`}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
-              <h4 className="text-lg font-semibold text-brand-400 mb-2">Typical Result:</h4>
-              <p className={`${theme.textSecondary} font-semibold`}>{section.result}</p>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // Pricing models
-    if (section.type === 'pricing') {
-      return (
-        <div key={index} className="my-12 space-y-6">
-          {section.models.map((model, idx) => (
-            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <div className="flex items-baseline justify-between mb-3">
-                <h4 className={`text-xl font-bold ${theme.textPrimary}`}>{model.name}</h4>
-                <span className={`text-2xl font-bold ${theme.textAccent}`}>{model.price}</span>
-              </div>
-              <p className={`${theme.textSecondary} leading-relaxed`}>{model.description}</p>
-            </div>
-          ))}
-          
-          {section.factors && (
-            <div className="p-6 rounded-xl bg-brand-950/20 border-brand-500/20 border mt-8">
-              <h4 className={`text-lg font-bold ${theme.textPrimary} mb-3`}>What determines price:</h4>
-              <ul className="space-y-2 ml-6">
-                {section.factors.map((factor, idx) => (
-                  <li key={idx} className={`list-disc ${theme.textSecondary}`}>{factor}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // Industries list
-    if (section.type === 'industries') {
-      return (
-        <div key={index} className="my-12 space-y-6">
-          {section.list.map((industry, idx) => (
-            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>{industry.name}</h4>
-              <p className={`${theme.textSecondary} leading-relaxed mb-3`}>{industry.description}</p>
-              <div className="p-3 rounded-lg bg-brand-950/20">
-                <p className={`text-sm ${theme.textAccent} font-semibold`}>Why it works: {industry.why}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    }
-
-    // Question groups
-    if (section.type === 'question-groups') {
-      return (
-        <div key={index} className="my-12 space-y-8">
-          {section.groups.map((group, idx) => (
-            <div key={idx}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{group.category}:</h4>
-              <ol className="space-y-3 ml-6">
-                {group.questions.map((q, qidx) => (
-                  <li key={qidx} className={`${theme.textSecondary} leading-relaxed`}>
-                    {qidx + 1}. {q}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ))}
-        </div>
-      );
-    }
-
-    // Options (numbered choices)
-    if (section.type === 'options') {
-      return (
-        <div key={index} className="my-12 space-y-6">
-          {section.options.map((option, idx) => (
-            <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <div className="flex items-start gap-4 mb-3">
-                <div className={`w-10 h-10 rounded-lg bg-brand-950/30 text-brand-400 flex items-center justify-center font-bold flex-shrink-0`}>
-                  {option.number}
-                </div>
-                <div className="flex-1">
-                  <h4 className={`text-xl font-bold ${theme.textPrimary} mb-2`}>Option {option.number}: {option.title}</h4>
-                  <p className={`${theme.textSecondary} leading-relaxed mb-2`}>{option.description}</p>
-                  <p className={`${theme.textTertiary} italic text-sm`}>{option.reality}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-          
-          {section.conclusion && (
-            <div className={`p-6 rounded-xl bg-brand text-white mt-8`}>
-              <p className="text-lg leading-relaxed whitespace-pre-line">{section.conclusion}</p>
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // Individual Role
-    if (section.type === 'role') {
-      return (
-        <div key={index} className={`my-12 p-8 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`w-12 h-12 rounded-lg bg-brand flex items-center justify-center text-white text-xl font-bold`}>
-              {section.number}
-            </div>
-            <h3 className={`text-2xl font-bold ${theme.textPrimary}`}>{section.title}</h3>
-          </div>
-          
-          <div className="space-y-6">
-            <div>
-              <h4 className={`text-lg font-semibold ${theme.textPrimary} mb-2`}>The Human Problem:</h4>
-              <p className={`${theme.textSecondary} leading-relaxed`}>{section.humanProblem}</p>
-            </div>
-            
-            <div>
-              <h4 className={`text-lg font-semibold ${theme.textAccent} mb-2`}>The AI Solution:</h4>
-              <p className={`${theme.textSecondary} leading-relaxed`}>{section.aiSolution}</p>
-            </div>
-            
-            <div className="p-4 rounded-lg bg-brand-950/20 border-brand-500/20 border">
-              <h4 className="text-lg font-semibold text-brand-400 mb-2">Result:</h4>
-              <p className={`${theme.textSecondary} leading-relaxed`}>{section.result}</p>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    // Criteria (Replace When / Keep When)
-    if (section.type === 'criteria') {
-      return (
-        <div key={index} className="my-12 grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border">
-            <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Replace When:</h4>
-            <ul className="space-y-3">
-              {section.replaceWhen.map((item, idx) => (
-                <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                  <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="p-6 rounded-xl bg-red-950/20 border-red-500/30 border">
-            <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Keep When:</h4>
-            <ul className="space-y-3">
-              {section.keepWhen.map((item, idx) => (
-                <li key={idx} className={`flex items-start gap-2 ${theme.textSecondary}`}>
-                  <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {section.test && (
-            <div className={`md:col-span-2 p-6 rounded-xl ${theme.cardBg} border-2 border-brand-500/30`}>
-              <p className={`text-lg ${theme.textSecondary} leading-relaxed`}>
-                <span className={`font-semibold ${theme.textPrimary}`}>The test: </span>
-                {section.test}
-              </p>
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // Timeline
-    if (section.type === 'timeline') {
-      return (
-        <div key={index} className="my-12 space-y-4">
-          {section.weeks.map((week, idx) => (
-            <div 
-              key={idx}
-              className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300`}
-            >
-              <div className="flex items-start gap-4">
-                <div className={`px-3 py-1 rounded-lg bg-brand-950/30 text-brand-400 font-semibold text-sm whitespace-nowrap`}>
-                  {week.week}
-                </div>
-                <div className="flex-1">
-                  <h4 className={`text-lg font-bold ${theme.textPrimary} mb-2`}>{week.title}</h4>
-                  <p className={`${theme.textSecondary} leading-relaxed`}>{week.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-          
-          {section.summary && (
-            <div className="mt-6 p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border">
-              <p className={`${theme.textPrimary} font-semibold mb-2`}>{section.summary}</p>
-              {section.comparison && (
-                <p className={`${theme.textSecondary}`}>{section.comparison}</p>
-              )}
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    // ROI Comparison
-    if (section.type === 'roi') {
-      return (
-        <div key={index} className="my-12">
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.before.title}</h4>
-              <ul className="space-y-2 mb-4">
-                {section.before.items.map((item, idx) => (
-                  <li key={idx} className={`${theme.textSecondary} text-sm`}>• {item}</li>
-                ))}
-              </ul>
-              <p className={`${theme.textTertiary} text-sm italic border-t ${theme.border} pt-4`}>
-                {section.before.total}
-              </p>
-            </div>
-            
-            <div className={`p-6 rounded-xl bg-brand-950/20 border-brand-500/30 border`}>
-              <h4 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>{section.after.title}</h4>
-              <ul className="space-y-2 mb-4">
-                {section.after.items.map((item, idx) => (
-                  <li key={idx} className={`${theme.textSecondary} text-sm`}>• {item}</li>
-                ))}
-              </ul>
-              <p className={`${theme.textTertiary} text-sm italic border-t border-brand-500/30 pt-4`}>
-                {section.after.total}
-              </p>
-            </div>
-          </div>
-          
-          {section.savings && (
-            <div className={`p-6 rounded-xl bg-brand text-white text-center`}>
-              <p className="text-2xl font-bold">{section.savings}</p>
-            </div>
-          )}
-        </div>
-      );
-    }
-
-    return null;
-  };
-
   return (
-    <>
+    <div className="lr2">
       <Helmet>
-        <title>{`${article.title} | LevReg.Ai Blog`}</title>
+        <title>{`${article.title} | LevReg.AI`}</title>
         <meta name="description" content={article.metaDescription} />
         <meta name="keywords" content={article.tags.join(', ')} />
         <link rel="canonical" href={`https://levreg.ai/blog/${slug}`} />
-        
-        {/* Open Graph */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://levreg.ai/blog/${slug}`} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.metaDescription} />
-        <meta property="og:site_name" content="LevReg.Ai" />
-        
-        {/* Twitter Card */}
+        <meta property="og:site_name" content="LevReg.AI" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@levregai" />
-        <meta name="twitter:title" content={article.title} />
-        <meta name="twitter:description" content={article.metaDescription} />
       </Helmet>
-      
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-        {/* Breadcrumb Navigation */}
-        <section className={`py-6 px-6 ${theme.bgSecondary} border-b ${theme.border}`}>
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 text-sm">
-              <Link to="/" className={`${theme.textTertiary} hover:${theme.textAccent} transition-colors`}>
-                <Home className="w-4 h-4" />
-              </Link>
-              <ChevronRight className={`w-4 h-4 ${theme.textTertiary}`} />
-              <Link to="/blog" className={`${theme.textTertiary} hover:${theme.textAccent} transition-colors`}>
-                Blog
-              </Link>
-              <ChevronRight className={`w-4 h-4 ${theme.textTertiary}`} />
-              <span className={theme.textPrimary}>Article</span>
-            </div>
-          </div>
-        </section>
 
-        {/* Article Header */}
-        <section className="relative py-16 px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Category Badge */}
-            <div className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 bg-brand-950/30 text-brand-300 border border-brand-500/20">
-              {article.category}
-            </div>
-            
-            {/* Title */}
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-              {article.title}
-            </h1>
-            
-            {/* Subtitle */}
-            <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-8 leading-relaxed`}>
-              {article.subtitle}
-            </p>
-          </div>
-        </section>
+      {/* Breadcrumb */}
+      <nav className="breadcrumb" aria-label="Breadcrumb">
+        <div className="breadcrumb-inner">
+          <Link to="/">Home</Link>
+          <span className="sep" aria-hidden="true">/</span>
+          <Link to="/blog">Insights</Link>
+          <span className="sep" aria-hidden="true">/</span>
+          <span className="here">Article</span>
+        </div>
+      </nav>
 
-        {/* Article Content */}
-        <section className={`py-12 px-6 ${theme.bgSecondary}`}>
-          <div className="max-w-4xl mx-auto">
-            {/* Introduction */}
-            <div className={`text-xl ${theme.textSecondary} leading-relaxed mb-12 space-y-4`}>
-              {article.content.introduction.split('\n\n').map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
+      {/* Header */}
+      <section className="page-hero wrap">
+        <div className="hero-eyebrow">
+          <span className="mono-label k">{article.category}</span>
+        </div>
+        <h1>{article.title}</h1>
+        <p className="lede">{article.subtitle}</p>
+      </section>
+
+      {/* Body */}
+      <section className="section wrap" style={{ paddingTop: 'clamp(16px, 2vw, 32px)' }}>
+        <div className="article">
+          {article.content.introduction.split('\n\n').map((p, idx) => (
+            idx === 0 ? <p key={idx} className="lead-p">{p}</p> : <p key={idx}>{p}</p>
+          ))}
+
+          {article.content.sections.map((section, index) => renderSection(section, index))}
+
+          {/* FAQ */}
+          {article.content.faq && article.content.faq.length > 0 && (
+            <>
+              <h2>Frequently asked questions</h2>
+              {article.content.faq.map((item, idx) => (
+                <div key={idx} className="card">
+                  <h3>{item.question}</h3>
+                  <p style={{ marginBottom: 0 }}>{item.answer}</p>
+                </div>
               ))}
-            </div>
-            
-            {/* Main Sections */}
-            {article.content.sections.map((section, index) => renderSection(section, index))}
-            
-            {/* FAQ Section */}
-            {article.content.faq && article.content.faq.length > 0 && (
-              <div className="mt-20">
-                <h2 className={`text-3xl md:text-4xl font-bold ${theme.textPrimary} mb-8`}>
-                  Frequently Asked Questions
-                </h2>
-                <div className="space-y-6">
-                  {article.content.faq.map((item, idx) => (
-                    <div key={idx} className={`p-6 rounded-xl ${theme.cardBg} border ${theme.cardBorder}`}>
-                      <h3 className={`text-xl font-bold ${theme.textPrimary} mb-3`}>
-                        {item.question}
-                      </h3>
-                      <p className={`${theme.textSecondary} leading-relaxed`}>
-                        {item.answer}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-            {/* Related Links */}
-            {article.content.relatedLinks && article.content.relatedLinks.length > 0 && (
-              <div className="mt-12 p-8 rounded-xl bg-brand-950/20 border-brand-500/30 border">
-                <h3 className={`text-xl font-bold ${theme.textPrimary} mb-4`}>Continue Your Journey</h3>
-                <div className="space-y-3">
-                  {article.content.relatedLinks.map((link, idx) => (
-                    <Link 
-                      key={idx}
-                      to={link.url}
-                      className={`flex items-center gap-2 ${theme.textAccent} hover:underline font-medium`}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                      {link.text}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
+            </>
+          )}
 
-        {/* CTA Section */}
-        <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme.textPrimary}`}>
-              Ready to Transform
-              <span className={theme.textAccent}> Your Business?</span>
-            </h2>
-            
-            <p className={`text-xl ${theme.textSecondary} mb-12 max-w-2xl mx-auto leading-relaxed`}>
-              Stop burning through good people in bad roles. Let's talk about installing AI systems that improve morale and cut costs.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/transformation-call">
-                <Button 
-                  size="lg" 
-                  className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group transition-all duration-300"
-                >
-                  Start Your AI Transformation
-                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link to="/blog">
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className={`border-brand-500/30 hover:border-brand-500 hover:bg-brand-950/30 hover:text-white ${theme.textPrimary} px-10 py-7 text-xl transition-all duration-300`}
-                >
-                  <ArrowLeft className="mr-2 w-6 h-6" />
-                  View All Insights
-                </Button>
-              </Link>
+          {/* Related links */}
+          {article.content.relatedLinks && article.content.relatedLinks.length > 0 && (
+            <div className="callout" style={{ marginTop: '40px' }}>
+              <div className="lbl accent">Continue your journey</div>
+              <ul style={{ marginTop: '12px', marginBottom: 0 }}>
+                {article.content.relatedLinks.map((link, idx) => (
+                  <li key={idx}><Link to={link.url} style={{ color: 'var(--accent)' }}>{link.text}</Link></li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Related articles */}
+      {relatedArticles.length > 0 && (
+        <section className="section wrap">
+          <div className="s-head">
+            <div className="left">
+              <span className="num">// More</span>
+              <h2>Related <em>insights</em>.</h2>
+            </div>
+            <div className="right">
+              <p>More practical guides on installing AI in real businesses.</p>
             </div>
           </div>
+          <div className="lr-grid cols-3">
+            {relatedArticles.map((rel) => (
+              <Link key={rel.id} to={`/blog/${rel.slug}`} className="lr-card">
+                <span className="eyebrow">{rel.category}</span>
+                <h3>{rel.title}</h3>
+                {rel.subtitle && <p className="lead">{rel.subtitle}</p>}
+                <span className="more">Read article <span className="arrow" aria-hidden="true">→</span></span>
+              </Link>
+            ))}
+          </div>
         </section>
-      </div>
-    </>
+      )}
+
+      {/* CTA */}
+      <section className="cta-band">
+        <div className="cta-band-inner">
+          <h2>Ready to transform <em>your business</em>?</h2>
+          <p>Reading about AI is one thing. Installing systems that transform your business is another. Let's build your implementation roadmap.</p>
+          <div className="btns">
+            <a href={CTA_URL} className="btn btn-primary btn-lg">BOOK A DISCOVERY CALL →</a>
+            <Link to="/blog" className="btn btn-lg">← View all insights</Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
