@@ -52,7 +52,7 @@ const Newsletter = () => {
           How To <em>Leverage</em> AI
         </h1>
 
-        <p className="hero-sub" style={{ margin: '0 auto 20px', maxWidth: '60ch' }}>
+        <p className="hero-sub" style={{ margin: '0 auto 10px', maxWidth: '60ch' }}>
           Stop collecting AI tips. Install an Ai Workforce that will double your sales and optimize your profit margin. Get simple guides you can use follow to Leverage Ai. Free.
         </p>
 
