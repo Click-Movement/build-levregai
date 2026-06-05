@@ -1,135 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+
+// Canonical contact address — see redesign plan "Wire-up items".
+const CONTACT_EMAIL = 'team@levregai.com';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    company: [
-      { label: 'About', href: '/about', internal: true },
-      { label: 'Services', href: '/services', internal: true },
-      { label: 'Contact', href: '/discovery', internal: true }
-    ],
-    legal: [
-      { label: 'Privacy Policy', href: '/privacy-policy', internal: true },
-      { label: 'Terms of Service', href: '/terms-of-service', internal: true },
-      { label: 'Cookie Policy', href: '/cookie-policy', internal: true }
-    ]
-  };
-
   return (
-    <footer className="border-t bg-white border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
-            <img
-              src="/LevReg_BlackBlue.png"
-              alt="LevReg.Ai"
-              className="h-10 w-auto mb-4"
-            />
-            <p className="text-sm leading-relaxed max-w-md text-gray-600">
-              LevReg.Ai partners with businesses to implement AI solutions that deliver measurable results with your Marketing, Sales, and Fulfillment.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-gray-900">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  {link.internal ? (
-                    <Link
-                      to={link.href}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className="hover:text-brand-400 transition-colors duration-200 text-sm text-gray-600"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="hover:text-brand-400 transition-colors duration-200 text-sm text-gray-600"
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-gray-900">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  {link.internal ? (
-                    <Link
-                      to={link.href}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className="hover:text-brand-400 transition-colors duration-200 text-sm text-gray-600"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="hover:text-brand-400 transition-colors duration-200 text-sm text-gray-600"
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
+    <footer className="lr2 site-footer">
+      <div className="foot-grid">
+        <div>
+          <img
+            src="/LevReg_BlackBlue.png"
+            alt="LevReg.AI"
+            style={{ height: '24px', marginBottom: '14px' }}
+          />
+          <div style={{ maxWidth: '36ch', lineHeight: 1.55 }}>
+            We install an AI workforce inside real operating businesses. Audited, owned, and operated by the people on your team.
           </div>
         </div>
 
-        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-gray-200">
-          <p className="text-sm text-gray-500">
-            © {currentYear} LevReg.Ai. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="https://www.linkedin.com/company/levregai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-400 transition-colors duration-200 text-gray-600"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.facebook.com/levregai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-400 transition-colors duration-200 text-gray-600"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.instagram.com/levregai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-400 transition-colors duration-200 text-gray-600"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://x.com/levregai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-400 transition-colors duration-200 text-gray-600"
-              aria-label="X (Twitter)"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-          </div>
+        <div>
+          <h5>Method</h5>
+          <ul>
+            <li><a href="/#method">AI Audit</a></li>
+            <li><a href="/#method">Development</a></li>
+            <li><a href="/#operators">Fractional Specialists</a></li>
+          </ul>
         </div>
+
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/#manifesto">Approach</a></li>
+            <li><a href="/#proof">Case studies</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Talk</h5>
+          <ul>
+            <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+            <li><a href="/book-call">Book a discovery call</a></li>
+            <li><a href="/book-call">Press &amp; speaking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="foot-bottom">
+        <span>© {currentYear} LevReg.AI · All rights reserved</span>
+        <span>Powered by Optimized Assets</span>
       </div>
     </footer>
   );

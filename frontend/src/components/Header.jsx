@@ -1,114 +1,78 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
-import { Button } from './ui/button';
+
+// Homepage section anchors — absolute so they resolve from any route.
+const NAV_LINKS = [
+  { label: 'Method', href: '/#method' },
+  { label: 'Specialists', href: '/#operators' },
+  { label: 'Proof', href: '/#proof' },
+  { label: 'Approach', href: '/#manifesto' },
+  { label: 'FAQ', href: '/#faq' },
+];
+
+// CTA destinations.
+const DISCOVERY_URL = '/book-call';
+const NEWSLETTER_URL = '/newsletter';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    const handleResize = () => {
+      if (window.innerWidth > 1024) setIsMobileMenuOpen(false);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Insights', href: '/blog' }
-  ];
-
-  const handleNavClick = () => {
-    window.scrollTo(0, 0);
-    setIsMobileMenuOpen(false);
-  };
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white border-b border-gray-200' : 'bg-white'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img
-              src="/LevReg_BlackBlue.png"
-              alt="LevReg.Ai"
-              className="h-10 md:h-12 w-auto"
-            />
-          </Link>
+    <header className="lr2 nav">
+      <div className="nav-inner">
+        <a href="/" className="brand" aria-label="LevReg.AI home">
+          <img src="/LevReg_BlackBlue.png" alt="LevReg.AI" className="brand-logo" />
+        </a>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={() => window.scrollTo(0, 0)}
-                className={`transition-colors duration-200 text-sm font-medium ${
-                  location.pathname === item.href
-                    ? 'text-brand-500'
-                    : 'text-gray-900 hover:text-brand-500'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+        <nav className="nav-links" aria-label="Primary">
+          {NAV_LINKS.map((item) => (
+            <a key={item.label} href={item.href}>{item.label}</a>
+          ))}
+        </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="https://www.levreg.ai/scorecard">
-              <Button
-                className="bg-brand hover:bg-brand-700 text-white transition-colors duration-200"
-              >
-                Start Here
-              </Button>
-            </a>
-          </div>
+        <button
+          className="nav-burger"
+          id="nav-burger"
+          type="button"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+        >
+          <span className="burger-bar" aria-hidden="true"></span>
+          <span className="burger-bar" aria-hidden="true"></span>
+        </button>
 
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              className="p-2 text-gray-900"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+        <div className="nav-cta">
+          <a href={DISCOVERY_URL} className="btn">Book an Audit</a>
+          <a href={NEWSLETTER_URL} className="btn btn-primary">FREE NEWSLETTER ↗</a>
         </div>
+      </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4 border-gray-200">
-            <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className={`transition-colors duration-200 py-2 ${
-                    location.pathname === item.href
-                      ? 'text-brand-500'
-                      : 'text-gray-900 hover:text-brand-500'
-                  }`}
-                  onClick={handleNavClick}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a href="https://www.levreg.ai/scorecard" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button
-                  className="bg-brand hover:bg-brand-700 text-white w-full mt-2"
-                >
-                  Start Here
-                </Button>
-              </a>
-            </nav>
-          </div>
-        )}
+      {/* Mobile drawer */}
+      <div
+        className={`mobile-menu${isMobileMenuOpen ? ' open' : ''}`}
+        id="mobile-menu"
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <nav className="mobile-menu-links" aria-label="Mobile">
+          {NAV_LINKS.map((item) => (
+            <a key={item.label} href={item.href} onClick={closeMenu}>{item.label}</a>
+          ))}
+        </nav>
+        <div className="mobile-menu-cta">
+          <a href={DISCOVERY_URL} className="btn btn-lg" onClick={closeMenu}>BOOK A DISCOVERY CALL</a>
+          <a href={NEWSLETTER_URL} className="btn btn-primary btn-lg" onClick={closeMenu}>FREE NEWSLETTER ↗</a>
+        </div>
       </div>
     </header>
   );

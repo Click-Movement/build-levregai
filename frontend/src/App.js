@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './styles/redesign.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
@@ -34,12 +35,13 @@ import EmailSkillAccess from './pages/lm/EmailSkillAccess';
 import Waitlist from './pages/Waitlist';
 import WaitlistConfirmed from './pages/WaitlistConfirmed';
 import Build from './pages/Build';
+import Newsletter from './pages/Newsletter';
 import CroApply from './pages/CroApply';
 import CroApplyConfirmed from './pages/CroApplyConfirmed';
 import { Toaster } from './components/ui/sonner';
 
 const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build', '/apply'];
-const LANDING_FOOTER_PREFIXES = ['/book-call', '/marketing-os', '/lm', '/waitlist', '/build'];
+const LANDING_FOOTER_PREFIXES = ['/marketing-os', '/lm', '/waitlist', '/build'];
 
 function AppContent() {
   const location = useLocation();
@@ -49,7 +51,8 @@ function AppContent() {
   return (
     <div className="App">
       {!hideHeader && <Header />}
-      <main className={hideHeader ? '' : 'pt-20'}>
+      {/* New sticky (in-flow) header needs no top spacer */}
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -74,6 +77,7 @@ function AppContent() {
           <Route path="/lm/emailskill/access" element={<EmailSkillAccess />} />
           <Route path="/transformation-call" element={<TransformationCall />} />
           <Route path="/book-call" element={<BookCall />} />
+          <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
           <Route path="/build" element={<Build />} />

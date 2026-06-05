@@ -1,321 +1,401 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Zap, Target, Users, TrendingUp, BarChart, CheckCircle, Sparkles, Clock, Shield } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Link } from 'react-router-dom';
-import { getThemeClasses } from '../utils/themeClasses';
+
+// CTA destinations.
+const DISCOVERY_URL = '/book-call';
 
 const Home = () => {
-  const theme = getThemeClasses();
-  const benefits = [
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Speed Without Chaos',
-      description: 'Tasks that took hours now take minutes. Your team moves faster without cutting corners or sacrificing quality.'
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Accuracy at Scale',
-      description: 'AI catches mistakes before they happen. Formatting errors, missed follow-ups, inconsistent messaging—all gone.'
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Employees Who Level Up',
-      description: "Your team doesn't get replaced. They get equipped. They do better work, feel more capable, and drive more value."
-    },
-    {
-      icon: <BarChart className="w-8 h-8" />,
-      title: 'Profit Margins Get Better',
-      description: 'Do more with the same team. Lower cost per output. Higher revenue per employee. Better margins without sacrificing quality.'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Systems That Stick',
-      description: "We don't just train your people—we install workflows, dashboards, and prompts that become part of how your business runs."
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: 'ROI You Can Measure',
-      description: 'Faster turnaround times. Fewer errors. Higher output. Lower stress. All trackable. All real.'
-    }
-  ];
-
-  const steps = [
-    {
-      number: '01',
-      title: 'Discovery',
-      description: 'We audit your workflows, talk to your team, and identify where AI will create the biggest impact across every role.'
-    },
-    {
-      number: '02',
-      title: 'Custom Build',
-      description: 'We design role-specific AI systems with prompts, workflows, dashboards, and automations built for your actual business.'
-    },
-    {
-      number: '03',
-      title: 'Team Training',
-      description: 'We train your employees hands-on. No fluff. No theory. Just practical, role-based enablement they can use immediately.'
-    },
-    {
-      number: '04',
-      title: 'Ongoing Support',
-      description: 'Your business evolves. So do your systems. We refine, optimize, and scale your AI infrastructure as you grow.'
-    }
-  ];
-
-  const scrollToSection = (id) => {
-    if (id === 'contact') {
-      window.location.href = '/discovery';
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
-    <>
+    <div className="lr2">
       <Helmet>
-        <title>AI Training for Small Business Teams | LevReg.Ai</title>
-        <meta name="description" content="Transform your small business with role-specific AI training. LevReg.Ai installs custom AI workflows that boost team productivity by 40-60%. Get your free discovery call." />
-        <meta name="keywords" content="AI training, small business AI, employee AI training, AI productivity, business automation, AI transformation" />
-        <link rel="canonical" href="https://levreg.ai/" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://levreg.ai/" />
-        <meta property="og:title" content="AI Training for Small Business Teams | LevReg.Ai" />
-        <meta property="og:description" content="Transform your small business with role-specific AI training. Boost team productivity by 40-60%." />
-        <meta property="og:site_name" content="LevReg.Ai" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@levregai" />
-        <meta name="twitter:title" content="AI Training for Small Business Teams | LevReg.Ai" />
-        <meta name="twitter:description" content="Transform your small business with role-specific AI training. Boost team productivity by 40-60%." />
+        <title>LevReg.AI — Install AI properly.</title>
+        <meta
+          name="description"
+          content="LevReg.AI installs an AI workforce focused on driving revenue for your business, built on frameworks from 21 years of operating experience."
+        />
       </Helmet>
-      
-      <div className={`min-h-screen ${theme.bgPrimary} ${theme.textPrimary}`}>
-        {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-        <div className={`absolute inset-0 ${theme.bgGradient} via-transparent to-transparent pointer-events-none`} />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className={`absolute top-1/4 -left-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-          <div className={`absolute bottom-1/4 -right-32 w-96 h-96 ${theme.gradientBlur} rounded-full blur-3xl`} />
-        </div>
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme.badgeBg} border ${theme.badgeBorder} mb-8`}>
-            <Sparkles className={`w-4 h-4 ${theme.badgeIcon}`} />
-            <span className={`text-sm ${theme.badgeText} font-medium`}>AI Transformation</span>
-          </div>
-          
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${theme.textPrimary}`}>
-            AI Transformation that Delivers <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand">Measurable ROI</span>
-          </h1>
-          
-          <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto leading-relaxed`}>
-            We help businesses implement AI solutions that deliver measurable results with Marketing, Sales, and Fulfillment.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://www.levreg.ai/scorecard">
-              <Button 
-                size="lg" 
-                className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group transition-all duration-300"
-              >
-                Free 2 Minute Assessment
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className={`border-brand-500/30 hover:border-brand-500 hover:bg-brand-950/30 hover:text-white ${theme.textPrimary} px-8 py-6 text-lg transition-all duration-300`}
-              onClick={() => scrollToSection('how-it-works')}
-            >
-              See How It Works
-            </Button>
-          </div>
-        </div>
-      </section>
 
-      {/* Origin Story Section */}
-      <section id="origin" className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${theme.textPrimary}`}>
-            Why <span className={theme.textAccent}>LevReg.Ai</span> Exists
-          </h2>
-          
-          <div className={`space-y-6 text-lg ${theme.textSecondary} leading-relaxed`}>
-            <p>
-              You're a CEO. You're running payroll, managing customers, putting out fires, and trying to grow. You know AI could help. You've heard the stories. The productivity gains. The speed. The accuracy.
+      {/* ─── HERO ────────────────────────────────────── */}
+      <section className="hero wrap" data-screen-label="01 Hero">
+        <div className="hero-eyebrow">
+          <span className="dot" aria-hidden="true"></span>
+          <span className="mono-label k">CURRENTLY ACCEPTING NEW CLIENTS</span>
+        </div>
+
+        <div className="hero-grid">
+          <div>
+            <h1 className="headline" id="hero-headline">
+              <em>Leverage</em> AI properly and watch your <em>profits</em> soar.
+            </h1>
+            <p className="hero-sub">
+              LevReg.AI installs an Ai workforce focused on driving revenue for your business. All based on frameworks built on 21 years of operating experience.
             </p>
-            <p>
-              But here's the problem: <span className={`${theme.textPrimary} font-semibold`}>You don't have time to become an AI expert.</span> And your team doesn't either. So nothing changes. Your competitors start moving faster. Your team stays buried in manual work. And you're left wondering when you'll ever catch up.
-            </p>
-            <p>
-              That's exactly why we built LevReg.Ai. We don't teach theory. We don't sell you a course and wish you luck. <span className={`${theme.textAccent} font-semibold`}>We come into your business, assess your workflows, and install role-specific AI systems that your team can use immediately.</span>
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-4 my-8 pt-8">
-              {[
-                'Customer support gets faster response templates and smarter routing systems.',
-                'Marketing gets campaign automation and content frameworks.',
-                'Sales gets prospecting tools and follow-up workflows.',
-                'Operations gets process documentation and error-catching systems.'
-              ].map((text, idx) => (
-                <div key={idx} className={`flex items-start gap-3 p-4 rounded-lg bg-brand-950/20 border-brand-500/10 border`}>
-                  <CheckCircle className={`w-5 h-5 ${theme.textAccent} flex-shrink-0 mt-0.5`} />
-                  <span className={theme.textSecondary}>{text}</span>
-                </div>
-              ))}
+            <div className="hero-ctas">
+              <a href={DISCOVERY_URL} className="btn btn-primary btn-lg">BOOK A DISCOVERY CALL →</a>
+              <a href="#method" className="btn btn-lg">See the Method</a>
             </div>
-            
-            <p className={`text-xl font-semibold ${theme.textPrimary} pt-4`}>
-              We handle the training. We build the systems. Your team shows up and starts winning.
-            </p>
           </div>
+
+          <aside className="hero-rail" aria-label="Operating record">
+            <div className="stat">
+              <span className="lbl">Operating record</span>
+              <span className="num">
+                21
+                <small style={{ fontFamily: 'var(--mono)', fontSize: '.4em', letterSpacing: '.05em', marginLeft: '8px', color: 'var(--muted)' }}>YRS</small>
+              </span>
+              <span className="sub">Marketing &amp; ops leadership - Virtual CMO for some of the largest online-education brands.</span>
+            </div>
+            <div className="stat">
+              <span className="lbl">Daily audience</span>
+              <span className="num">M+</span>
+              <span className="sub">Subscribers tuning into the in-house media company every weekday.</span>
+            </div>
+            <div className="stat">
+              <span className="lbl">Built first, sold second</span>
+              <span className="num">→</span>
+              <span className="sub">AI Workforce installed in our own businesses before we offered it to yours.</span>
+            </div>
+          </aside>
+        </div>
+
+        {/* Meta bar */}
+        <div className="hero-meta">
+          <span><b>Est.</b> 21 yrs operating · founded by Nate Kennedy</span>
+          <span className="sep" aria-hidden="true"></span>
+          <span><b>Coverage</b> US · CA · UK · AU</span>
+          <span className="sep" aria-hidden="true"></span>
+          <span>STATUS ● CURRENTLY ONBOARDING CLIENTS</span>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-        <div className="max-w-7xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-            What Happens When Your Team Goes
-            <span className={theme.textAccent}> AI-First</span>
-          </h2>
-          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
-            Transform your entire organization with measurable, immediate results
-          </p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, idx) => (
-              <Card 
-                key={idx} 
-                className={`${theme.cardBg} ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
-              >
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-xl bg-brand-950/30 group-hover:bg-brand-950/50 flex items-center justify-center mb-6 ${theme.textAccent} transition-colors duration-300`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className={`text-xl font-bold mb-3 ${theme.textPrimary}`}>{benefit.title}</h3>
-                  <p className={`${theme.textTertiary} leading-relaxed`}>{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* ─── MARQUEE ─────────────────────────────────── */}
+      <section className="marquee" aria-label="Operating principles">
+        <div className="marquee-track">
+          <div className="marquee-item"><em>Install</em>, don't experiment.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item"><em>Fractional</em> AI Specialist.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Built in our businesses <em>first</em>.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Outcomes over output.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Own your stack.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item"><em>Install</em>, don't experiment.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item"><em>Fractional</em> AI Specialist.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Built in our businesses <em>first</em>.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Outcomes over output.<span className="dot" aria-hidden="true"></span></div>
+          <div className="marquee-item">Own your stack.<span className="dot" aria-hidden="true"></span></div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center ${theme.textPrimary}`}>
-            From Overwhelmed to AI-Enabled
-            <span className={theme.textAccent}> in 4 Steps</span>
-          </h2>
-          <p className={`text-xl ${theme.textTertiary} text-center mb-16 max-w-2xl mx-auto`}>
-            A proven process that transforms your team from AI-curious to AI-powered
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {steps.map((step, idx) => (
-              <div 
-                key={idx}
-                className={`relative p-8 rounded-2xl ${theme.cardBg} border ${theme.cardBorder} ${theme.borderHover} transition-all duration-300 group ${theme.shadow}`}
-              >
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-brand flex items-center justify-center text-2xl font-bold shadow-lg text-white shadow-brand/30">
-                  {step.number}
-                </div>
-                <div className="mt-6">
-                  <h3 className={`text-2xl font-bold mb-3 ${theme.textPrimary}`}>{step.title}</h3>
-                  <p className={`${theme.textTertiary} leading-relaxed text-lg`}>{step.description}</p>
-                </div>
-              </div>
-            ))}
+      {/* ─── STORY ───────────────────────────────────── */}
+      <section className="section wrap" data-screen-label="02 Story">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 01 — Why us</span>
+            <h2>21 years of operating before helping you <em>Leverage</em> AI.</h2>
           </div>
-          
-          <div className="text-center mt-16">
-            <Link to="/transformation-call">
-              <Button 
-                size="lg" 
-                className="bg-brand hover:bg-brand-700 text-white px-8 py-6 text-lg group"
-              >
-                Start Your AI Transformation
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+          <div className="right">
+            <p>Most AI consultants are teaching you what they read last weekend. We installed AI inside our own businesses and our partners' then watched it move the line on revenue, margin, and team capacity. So we made a practice of it.</p>
           </div>
         </div>
-      </section>
 
-      {/* Proof & Trust Section */}
-      <section className={`py-24 px-6 ${theme.bgPrimary}`}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-8 text-center ${theme.textPrimary}`}>
-            Built for <span className={theme.textAccent}>Real Businesses</span>,
-            <br />Not Tech Companies
-          </h2>
-          
-          <div className={`${theme.bgSecondary} border ${theme.border} rounded-2xl p-8 md:p-12`}>
-            <p className={`text-xl ${theme.textSecondary} leading-relaxed mb-8`}>
-              LevReg.Ai was designed for small business owners who don't have time to learn AI, but need their teams to use it. We've worked with customer support teams drowning in tickets, marketing departments stuck on repetitive tasks, sales teams losing deals to slow follow-up, and operations managers buried in manual workflows.
-            </p>
-            <p className={`text-xl ${theme.textPrimary} font-semibold`}>
-              The result? Teams that move faster, work smarter, and deliver better outcomes without hiring more people or working longer hours.
-            </p>
-            
-            <div className={`grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t ${theme.border}`}>
-              <div className="text-center">
-                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>40-60%</div>
-                <div className={theme.textTertiary}>Time Saved on Tasks</div>
-              </div>
-              <div className="text-center">
-                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>10-20hrs</div>
-                <div className={theme.textTertiary}>Saved Per Employee/Week</div>
-              </div>
-              <div className="text-center">
-                <div className={`text-4xl font-bold ${theme.textAccent} mb-2`}>30 Days</div>
-                <div className={theme.textTertiary}>to Full ROI</div>
-              </div>
+        <div className="story-grid">
+          <div>
+            <p className="story-quote">"We didn't study AI. We shipped it in our companies, our partners' companies then other companies started asking how. So this is how."</p>
+            <div className="story-by">
+              <span className="av" aria-hidden="true"></span>
+              <span>Nate Kennedy · Founder, LevReg.AI</span>
+            </div>
+          </div>
+
+          <div className="bio-grid">
+            <div className="bio-cell">
+              <span className="k">// Operating</span>
+              <span className="v">21<small>yrs</small></span>
+              <span className="d">Marketing, growth, and operating leadership across education, media, and DTC.</span>
+            </div>
+            <div className="bio-cell">
+              <span className="k">// Virtual CMO</span>
+              <span className="v">10<small>yrs</small></span>
+              <span className="d">Fractional CMO for some of the largest online-education brands in the category.</span>
+            </div>
+            <div className="bio-cell">
+              <span className="k">// Media co.</span>
+              <span className="v">M+</span>
+              <span className="d">Owner-operator of a media company with millions of daily subscribers.</span>
+            </div>
+            <div className="bio-cell">
+              <span className="k">// AI installs</span>
+              <span className="v">In‑house first</span>
+              <span className="d">Every system we install in your business was first installed in ours.</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="contact" className={`py-24 px-6 ${theme.bgSecondary}`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${theme.textPrimary}`}>
-            Stop Waiting.
-            <span className={theme.textAccent}> Start Winning.</span>
-          </h2>
-          
-          <p className={`text-xl ${theme.textSecondary} mb-12 max-w-2xl mx-auto leading-relaxed`}>
-            Your competitors are already using AI. Your team is already overwhelmed. The only question is: how long will you wait to close the gap?
-          </p>
-          
-          <Link to="/transformation-call">
-            <Button 
-              size="lg" 
-              className="bg-brand hover:bg-brand-700 text-white px-10 py-7 text-xl group mb-6 transition-all duration-300"
-            >
-              Start Your Ai Transformation
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-          
-          <p className={theme.textTertiary}>
-            Free discovery session. No pressure. Just clarity on what AI can do for your business.
-          </p>
+      {/* ─── METHOD / SERVICES ──────────────────────── */}
+      <section id="method" className="section wrap" data-screen-label="03 Method">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 02 — Method</span>
+            <h2>Three doors. <em>One</em> install path.</h2>
+          </div>
+          <div className="right">
+            <p>Every engagement starts the same way: an AI Audit. From there you either hand the build to our team, retain us for ongoing consulting, and/or embed a Fractional AI Specialist inside your company to run the system day to day.</p>
+          </div>
+        </div>
+
+        <div className="services">
+          <div className="svc">
+            <span className="svc-num">A · 01 / Audit</span>
+            <h3>AI <em>Audit</em></h3>
+            <p>A diagnostic of your business, workflow by workflow, to find where AI actually pays back. You get a written install plan, ROI ranking, and risk map. Yours to keep.</p>
+            <ul>
+              <li>Workflow + tooling inventory</li>
+              <li>ROI &amp; risk ranking, by system</li>
+              <li>Written 90-day install plan</li>
+              <li>Executive readout + board doc</li>
+            </ul>
+            <div className="svc-foot">
+              <span>14 days · fixed scope</span>
+              <span className="price">From $1,500</span>
+            </div>
+          </div>
+
+          <div className="svc featured">
+            <span className="svc-num">B · 02 / Build</span>
+            <h3>Development &amp; <em>Consulting</em></h3>
+            <p>We install the systems the audit recommends. The agents, automations, data plumbing and we sit in the room while your team learns to run them. Production from week one.</p>
+            <ul>
+              <li>Agent &amp; workflow build-out</li>
+              <li>Data + tooling integration</li>
+              <li>Operating playbooks, written for you</li>
+              <li>Weekly senior consulting</li>
+            </ul>
+            <div className="svc-foot">
+              <span>60 – 90 days · scoped</span>
+              <span className="price">Custom pricing</span>
+            </div>
+          </div>
+
+          <div className="svc">
+            <span className="svc-num">C · 03 / Operate</span>
+            <h3>Fractional AI <em>Specialist</em></h3>
+            <p>We embed a trained AI operating specialist inside your business to own the system after launch optimizing your ai workforce, agents, integrations, and reporting every week. Fractional time, full ownership.</p>
+            <ul>
+              <li>Dedicated, fractional specialist</li>
+              <li>Weekly optimization &amp; tuning</li>
+              <li>Monthly executive scorecard</li>
+              <li>Backed by the LevReg.AI bench</li>
+            </ul>
+            <div className="svc-foot">
+              <span>Month to month · retained</span>
+              <span className="price">From $2,500/mo</span>
+            </div>
+          </div>
         </div>
       </section>
-      </div>
-    </>
+
+      {/* ─── PROCESS ─────────────────────────────────── */}
+      <section className="section wrap" data-screen-label="04 Process">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 03 — Process</span>
+            <h2>How the <em>install</em> actually works.</h2>
+          </div>
+          <div className="right">
+            <p>No deck-ware. No six-month "discovery." We start with a paid audit, ship in 60–90 days, and leave behind a system your team owns. Four phases, no surprises.</p>
+          </div>
+        </div>
+
+        <div className="process">
+          <div className="step">
+            <span className="step-num">0<em>1</em></span>
+            <h4>Audit</h4>
+            <p>Two weeks. We map every workflow, score it for AI leverage, and write the install plan you'd hand to a board.</p>
+            <span className="step-meta">Week 1 – 2</span>
+          </div>
+          <div className="step">
+            <span className="step-num">0<em>2</em></span>
+            <h4>Install</h4>
+            <p>We build agents, automations, and data plumbing in your stack — not a sandbox. Production-grade from day one.</p>
+            <span className="step-meta">Week 3 – 10</span>
+          </div>
+          <div className="step">
+            <span className="step-num">0<em>3</em></span>
+            <h4>Train</h4>
+            <p>Your team learns to run it, and we embed a Fractional AI Specialist — or certify one of yours.</p>
+            <span className="step-meta">Week 8 – 12</span>
+          </div>
+          <div className="step">
+            <span className="step-num">0<em>4</em></span>
+            <h4>Operate</h4>
+            <p>Weekly tuning, monthly executive scorecard, quarterly review against the install plan. You own the system.</p>
+            <span className="step-meta">Ongoing</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SPECIALIST FEATURE ───────────────────────── */}
+      <section id="operators" className="operator" data-screen-label="05 Specialist">
+        <div className="operator-inner">
+          <div>
+            <span className="mono-label" style={{ color: 'rgba(255,255,255,.7)' }}>// 04 — Embedded specialists</span>
+            <h2 style={{ marginTop: '18px' }}>A <em>specialist</em> on your team. Not a Slack channel and a prayer.</h2>
+            <p>Every system we install needs someone to run it every week — tuning agents, rewriting prompts, watching the data, killing the things that aren't working. We train and embed that person, fractionally. They sit on your org chart, report to you, and are backed by the LevReg.AI bench.</p>
+            <div className="hero-ctas">
+              <a href={DISCOVERY_URL} className="btn btn-primary btn-lg" style={{ background: 'var(--accent)', borderColor: 'var(--accent)' }}>Embed a Specialist <span className="arrow">→</span></a>
+              <a href="#method" className="btn btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,.4)' }}>How they're trained</a>
+            </div>
+          </div>
+
+          <aside className="op-id-card" aria-label="Sample specialist ID">
+            <div className="seal">AI<br />Specialist<br />Lv. III</div>
+            <div className="op-id-row">
+              <span className="k">// Specialist</span>
+              <span className="v disp">M. Alvarez</span>
+            </div>
+            <div className="op-id-row">
+              <span className="k">// Cert ID</span>
+              <span className="v">LV-RG-0247</span>
+            </div>
+            <div className="op-id-row">
+              <span className="k">// Specialty</span>
+              <span className="v">Revenue ops · agentic workflows</span>
+            </div>
+            <div className="op-id-row">
+              <span className="k">// Embedded</span>
+              <span className="v">Acme Health · 11 mo · ongoing</span>
+            </div>
+            <div className="op-id-row">
+              <span className="k">// Cadence</span>
+              <span className="v">Weekly tune · Monthly readout</span>
+            </div>
+            <div className="op-id-row">
+              <span className="k">// Throughput</span>
+              <div className="op-id-bars" aria-hidden="true">
+                <span style={{ height: '18%' }}></span>
+                <span style={{ height: '42%' }}></span>
+                <span style={{ height: '30%' }}></span>
+                <span style={{ height: '64%' }}></span>
+                <span style={{ height: '78%' }}></span>
+                <span style={{ height: '90%' }}></span>
+                <span style={{ height: '72%' }}></span>
+                <span style={{ height: '96%', background: '#0EA5E9' }}></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* ─── PROOF ──────────────────────────────────── */}
+      <section id="proof" className="section wrap" data-screen-label="06 Proof">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 05 — In production</span>
+            <h2>Installed inside companies that <em>ship</em>.</h2>
+          </div>
+          <div className="right">
+            <p>We have work industry leaders to install revenue driving Ai systems into their business. Designed from frameworks developed over the past 21 years.</p>
+          </div>
+        </div>
+
+        <div className="logos" role="list" aria-label="Client categories">
+          <div className="logo-cell" role="listitem">Education Co.</div>
+          <div className="logo-cell" role="listitem">Media Group</div>
+          <div className="logo-cell" role="listitem">DTC Brand</div>
+          <div className="logo-cell" role="listitem">Health Network</div>
+          <div className="logo-cell" role="listitem">B2B SaaS</div>
+          <div className="logo-cell" role="listitem">Pro Services</div>
+        </div>
+
+        <div className="cases">
+          <article className="case">
+            <div className="img">
+              <span className="tag">Case · Edu</span>
+              <span className="ph">// install screenshot</span>
+            </div>
+            <h4>Cut sales-ops cycle time from 9 days to 38 hours.</h4>
+            <div className="meta"><span><b>+62%</b> throughput</span><span>Education · 14 weeks</span></div>
+          </article>
+          <article className="case">
+            <div className="img">
+              <span className="tag">Case · Media</span>
+              <span className="ph">// install screenshot</span>
+            </div>
+            <h4>Replaced 3 production tools with one agentic pipeline.</h4>
+            <div className="meta"><span><b>−$182k</b> annual run-rate</span><span>Media · 9 weeks</span></div>
+          </article>
+          <article className="case">
+            <div className="img">
+              <span className="tag">Case · DTC</span>
+              <span className="ph">// install screenshot</span>
+            </div>
+            <h4>Embedded Specialist owns 14 weekly optimizations.</h4>
+            <div className="meta"><span><b>+3.4×</b> capacity</span><span>DTC · ongoing 11 mo</span></div>
+          </article>
+        </div>
+      </section>
+
+      {/* ─── MANIFESTO ─────────────────────────────── */}
+      <section id="manifesto" className="manifesto wrap" data-screen-label="07 Manifesto">
+        <div className="manifesto-grid">
+          <div>
+            <span className="mono-label k">// 06 — Manifesto</span>
+          </div>
+          <div>
+            <p>We built AI inside our own companies first. It moved the line on revenue, margin, and team capacity in ways a deck couldn't. So we kept going and partners asked us to do the same in theirs.</p>
+            <p>This is the practice that came out of it. Specialists, not advisors. Installs, not strategies. Systems your team owns, not subscriptions we manage on the side.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ────────────────────────────────────── */}
+      <section id="faq" className="section wrap" data-screen-label="08 FAQ">
+        <div className="s-head">
+          <div className="left">
+            <span className="num">// 07 — Questions</span>
+            <h2>You probably want to know.</h2>
+          </div>
+          <div className="right">
+            <p>If we haven't answered it here, ask in the audit call. We'd rather be honest than salesy.</p>
+          </div>
+        </div>
+
+        <div className="faq">
+          <details open>
+            <summary>How is this different from hiring an "AI consultant"?<span className="icon" aria-hidden="true">+</span></summary>
+            <div className="a">We installed AI inside our own operating companies before we ever sold a service. Most "AI consultants" are teaching you what they read last weekend. We're shipping systems we run ourselves, with operators we trained not advice from a deck.</div>
+          </details>
+          <details>
+            <summary>What does a Fractional AI Specialist actually do?<span className="icon" aria-hidden="true">+</span></summary>
+            <div className="a">They own the system after install. Weekly: tune prompts and agents, watch usage and data, kill workflows that aren't earning, propose new ones. Monthly: executive scorecard. They sit on your team, fractionally, and are backed by our bench.</div>
+          </details>
+          <details>
+            <summary>Do you work with companies that haven't started with AI?<span className="icon" aria-hidden="true">+</span></summary>
+            <div className="a">Often the best ones. Zero legacy, zero bad habits, faster install. The audit identifies where to start so you don't waste the first 90 days on the wrong problem.</div>
+          </details>
+          <details>
+            <summary>What if we already have an internal AI lead?<span className="icon" aria-hidden="true">+</span></summary>
+            <div className="a">Great. We train them through the same program as our specialists, hand them the playbooks, and back them with our bench when they need it.</div>
+          </details>
+          <details>
+            <summary>What does an install actually cost?<span className="icon" aria-hidden="true">+</span></summary>
+            <div className="a">We start with a discovery call to make sure you are ready to Leverage Ai.  If you are we schedule an Audit and that starts at $1500 one time. The development cost for your customized the Ai workforce depends on the scope. Our Fractional Ai Specialists start at $2,500/month. </div>
+          </details>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA ─────────────────────────────── */}
+      <section id="contact" className="cta-final" data-screen-label="09 CTA">
+        <div className="cta-final-inner">
+          <span className="mono-label k">// 08 — Next step</span>
+          <h2 style={{ marginTop: '24px' }}>Stop researching. Start leveraging.</h2>
+          <div className="row">
+            <a href={DISCOVERY_URL} className="btn btn-primary btn-lg">BOOK A DISCOVERY CALL →</a>
+            <a href="mailto:nate@levreg.ai" className="btn btn-lg">MESSAGE NATE DIRECTLY</a>
+            <span className="availability">CURRENTLY ACCEPTING NEW AUDITS</span>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
