@@ -918,9 +918,23 @@
 }
 
 /* ─── Newsletter optin (Beehiiv embed) ──────────── */
-.lr2 .newsletter-form { width: 100%; }
-.lr2 .newsletter-form > * { margin-left: auto; margin-right: auto; }
-.lr2 .newsletter-form iframe { display: block; margin: 0 auto; max-width: 100%; }
+/* The Beehiiv loader injects an iframe with its own inline width, so we
+   center it by constraining the embed to a centered column and forcing the
+   iframe to fill it (overriding the loader's inline styles). */
+.lr2 .newsletter-form {
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lr2 .newsletter-form > * { margin-left: auto !important; margin-right: auto !important; }
+.lr2 .newsletter-form iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  border: 0;
+}
 
 /* ─── Reduced motion ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

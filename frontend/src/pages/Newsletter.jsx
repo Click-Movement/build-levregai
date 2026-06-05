@@ -59,7 +59,7 @@ const Newsletter = () => {
         <div
           ref={formRef}
           className="newsletter-form"
-          style={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+          style={{ width: '100%', maxWidth: '560px', margin: '0 auto' }}
         />
       </section>
     </div>
