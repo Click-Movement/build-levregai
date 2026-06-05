@@ -53,7 +53,7 @@ const Header = () => {
         </button>
 
         <div className="nav-cta">
-          <a href={DISCOVERY_URL} className="btn">Book an Audit</a>
+          <a href={DISCOVERY_URL} className="btn">Discovery Call</a>
           <a href={NEWSLETTER_URL} className="btn btn-primary">FREE NEWSLETTER ↗</a>
         </div>
       </div>
