@@ -22,7 +22,7 @@ const Home = () => {
           <span className="mono-label k">CURRENTLY ACCEPTING NEW CLIENTS</span>
         </div>
 
-        <div className="hero-grid">
+        <div className="hero-grid stacked">
           <div>
             <h1 className="headline" id="hero-headline">
               <em>Leverage</em> AI properly and watch your <em>profits</em> soar.
@@ -86,7 +86,7 @@ const Home = () => {
 
       {/* ─── STORY ───────────────────────────────────── */}
       <section className="section wrap" data-screen-label="02 Story">
-        <div className="s-head">
+        <div className="s-head stacked">
           <div className="left">
             <span className="num">// 01 — Why us</span>
             <h2>21 years of operating before helping you <em>Leverage</em> AI.</h2>
@@ -132,7 +132,7 @@ const Home = () => {
 
       {/* ─── METHOD / SERVICES ──────────────────────── */}
       <section id="method" className="section wrap" data-screen-label="03 Method">
-        <div className="s-head">
+        <div className="s-head stacked">
           <div className="left">
             <span className="num">// 02 — Method</span>
             <h2>Three doors. <em>One</em> install path.</h2>
@@ -195,7 +195,7 @@ const Home = () => {
 
       {/* ─── PROCESS ─────────────────────────────────── */}
       <section className="section wrap" data-screen-label="04 Process">
-        <div className="s-head">
+        <div className="s-head stacked">
           <div className="left">
             <span className="num">// 03 — Process</span>
             <h2>How the <em>install</em> actually works.</h2>
@@ -287,7 +287,7 @@ const Home = () => {
 
       {/* ─── PROOF ──────────────────────────────────── */}
       <section id="proof" className="section wrap" data-screen-label="06 Proof">
-        <div className="s-head">
+        <div className="s-head stacked">
           <div className="left">
             <span className="num">// 05 — In production</span>
             <h2>Installed inside companies that <em>ship</em>.</h2>
@@ -349,7 +349,7 @@ const Home = () => {
 
       {/* ─── FAQ ────────────────────────────────────── */}
       <section id="faq" className="section wrap" data-screen-label="08 FAQ">
-        <div className="s-head">
+        <div className="s-head stacked">
           <div className="left">
             <span className="num">// 07 — Questions</span>
             <h2>You probably want to know.</h2>
