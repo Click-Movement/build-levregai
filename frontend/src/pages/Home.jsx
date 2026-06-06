@@ -307,26 +307,147 @@ const Home = () => {
         </div>
 
         <div className="cases">
+          {/* ── Case · Mark Evans DM (Education) ── */}
           <article className="case">
-            <div className="img">
-              <span className="tag">Case · Edu</span>
-              <span className="ph">// install screenshot</span>
+            <div className="img mock">
+              <div className="case-mock" aria-label="Mark Evans DM deal-flow agent dashboard">
+                <div className="cm-bar">
+                  <div className="cm-dots"><span></span><span></span><span></span></div>
+                  <div className="cm-title"><b>MARK EVANS DM</b> <span>/ deal-flow agent</span></div>
+                  <div className="cm-status"><span className="cm-live">LIVE</span> <span>BUILD 3.4.1</span></div>
+                </div>
+                <div className="cm-sub">
+                  <span>Sales-ops install · Week 14</span>
+                  <span>Autonomous</span>
+                </div>
+                <div className="cm-stats">
+                  <div className="cm-stat">
+                    <span className="cm-k">Cycle time</span>
+                    <span className="cm-v">38<small>h</small></span>
+                    <span className="cm-d">was 9 days · ▼ 90%</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Throughput</span>
+                    <span className="cm-v accent">+62%</span>
+                    <span className="cm-d">deals qualified / wk</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Agent actions</span>
+                    <span className="cm-v">1,284</span>
+                    <span className="cm-d">last 7 days</span>
+                  </div>
+                </div>
+                <div className="cm-rows">
+                  <div className="cm-rowhead">Deal queue</div>
+                  <div className="cm-row">
+                    <span className="cm-id">DM-4471</span>
+                    <span className="cm-label">Inbound investor lead</span>
+                    <span className="cm-pill run">RUN</span>
+                  </div>
+                  <div className="cm-row">
+                    <span className="cm-id">DM-4470</span>
+                    <span className="cm-label">Follow-up sequence drafted</span>
+                    <span className="cm-pill done">DONE</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <h4>Cut sales-ops cycle time from 9 days to 38 hours.</h4>
             <div className="meta"><span><b>+62%</b> throughput</span><span>Education · 14 weeks</span></div>
           </article>
+
+          {/* ── Case · NewsFlash (Media) ── */}
           <article className="case">
-            <div className="img">
-              <span className="tag">Case · Media</span>
-              <span className="ph">// install screenshot</span>
+            <div className="img mock">
+              <div className="case-mock" aria-label="NewsFlash editorial pipeline dashboard">
+                <div className="cm-bar">
+                  <div className="cm-dots"><span></span><span></span><span></span></div>
+                  <div className="cm-title"><b>NEWSFLASH</b> <span>/ editorial pipeline</span></div>
+                  <div className="cm-status"><span className="cm-live">SHIPPING</span> <span>ISSUE 612</span></div>
+                </div>
+                <div className="cm-sub">
+                  <span>3 tools → 1 agentic pipeline</span>
+                  <span>−$182K run-rate</span>
+                </div>
+                <div className="cm-stats">
+                  <div className="cm-stat">
+                    <span className="cm-k">Time to publish</span>
+                    <span className="cm-v">11<small>min</small></span>
+                    <span className="cm-d">source → inbox · was 4h+</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Daily reach</span>
+                    <span className="cm-v">3.0<small>M</small></span>
+                    <span className="cm-d">5-min read · 1 operator</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Run-rate</span>
+                    <span className="cm-v accent">−$182K</span>
+                    <span className="cm-d">annual · saved</span>
+                  </div>
+                </div>
+                <div className="cm-rows">
+                  <div className="cm-rowhead">Today's run log</div>
+                  <div className="cm-row">
+                    <span className="cm-id">06:00</span>
+                    <span className="cm-label">Issue 612 assembled</span>
+                    <span className="cm-pill run">SHIP</span>
+                  </div>
+                  <div className="cm-row">
+                    <span className="cm-id">05:54</span>
+                    <span className="cm-label">Fact-check pass · 2 flagged</span>
+                    <span className="cm-pill done">DONE</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <h4>Replaced 3 production tools with one agentic pipeline.</h4>
             <div className="meta"><span><b>−$182k</b> annual run-rate</span><span>Media · 9 weeks</span></div>
           </article>
+
+          {/* ── Case · Healthier Rx (DTC) ── */}
           <article className="case">
-            <div className="img">
-              <span className="tag">Case · DTC</span>
-              <span className="ph">// install screenshot</span>
+            <div className="img mock">
+              <div className="case-mock" aria-label="Healthier Rx research specialist dashboard">
+                <div className="cm-bar">
+                  <div className="cm-dots"><span></span><span></span><span></span></div>
+                  <div className="cm-title"><b>HEALTHIER RX</b> <span>/ research specialist</span></div>
+                  <div className="cm-status"><span className="cm-live">EMBEDDED</span> <span>MONTH 11</span></div>
+                </div>
+                <div className="cm-sub">
+                  <span>Fractional specialist · weekly ops</span>
+                  <span>+3.4× capacity</span>
+                </div>
+                <div className="cm-stats">
+                  <div className="cm-stat">
+                    <span className="cm-k">This week</span>
+                    <span className="cm-v">14</span>
+                    <span className="cm-d">optimizations shipped</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Studies indexed</span>
+                    <span className="cm-v">1,240<small>+</small></span>
+                    <span className="cm-d">48 compounds profiled</span>
+                  </div>
+                  <div className="cm-stat">
+                    <span className="cm-k">Answer accuracy</span>
+                    <span className="cm-v accent">97%</span>
+                    <span className="cm-d">clinician-reviewed</span>
+                  </div>
+                </div>
+                <div className="cm-rows">
+                  <div className="cm-rowhead">Research assistant · live answer</div>
+                  <div className="cm-row qa">
+                    <span className="cm-id">READER</span>
+                    <span className="cm-label">Beginner BPC-157 protocol for joint pain?</span>
+                  </div>
+                  <div className="cm-row qa">
+                    <span className="cm-id">RX</span>
+                    <span className="cm-label">250–500 mcg / day, subcutaneous, 4–6 weeks.</span>
+                    <span className="cm-pill done">SOURCED</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <h4>Embedded Specialist owns 14 weekly optimizations.</h4>
             <div className="meta"><span><b>+3.4×</b> capacity</span><span>DTC · ongoing 11 mo</span></div>
