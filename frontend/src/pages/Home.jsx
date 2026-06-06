@@ -353,7 +353,7 @@ const Home = () => {
               </div>
             </div>
             <h4>Cut sales-ops cycle time from 9 days to 38 hours.</h4>
-            <div className="meta"><span><b>+62%</b> throughput</span><span>Education · 14 weeks</span></div>
+            <div className="meta"><span><b>+62%</b> throughput</span><span>Mark Evans DM · 14 weeks</span></div>
           </article>
 
           {/* ── Case · NewsFlash (Media) ── */}
@@ -402,7 +402,7 @@ const Home = () => {
               </div>
             </div>
             <h4>Replaced 3 production tools with one agentic pipeline.</h4>
-            <div className="meta"><span><b>−$182k</b> annual run-rate</span><span>Media · 9 weeks</span></div>
+            <div className="meta"><span><b>−$182k</b> annual run-rate</span><span>NewsFlash · 9 weeks</span></div>
           </article>
 
           {/* ── Case · Healthier Rx (DTC) ── */}
@@ -450,7 +450,7 @@ const Home = () => {
               </div>
             </div>
             <h4>Embedded Specialist owns 14 weekly optimizations.</h4>
-            <div className="meta"><span><b>+3.4×</b> capacity</span><span>DTC · ongoing 11 mo</span></div>
+            <div className="meta"><span><b>+3.4×</b> capacity</span><span>Healthier Rx · ongoing 11 mo</span></div>
           </article>
         </div>
       </section>
