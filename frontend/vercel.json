@@ -1,4 +1,9 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "npx react-scripts build && node scripts/prerenderLmEmailskill.cjs",
+  "outputDirectory": "build",
   "rewrites": [
     {
       "source": "/go/medspa/:path*",
@@ -15,6 +20,10 @@
     {
       "source": "/scorecard",
       "destination": "https://three-engine-scorecard.vercel.app/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

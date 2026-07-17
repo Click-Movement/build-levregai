@@ -16,8 +16,8 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# Lock files (Vercel uses Yarn)
-package-lock.json
+# Prefer committing a lockfile for reproducible Vercel installs.
+# Keep package-lock.json tracked when using npm; ignore yarn.lock if unused.
 yarn.lock
 
 # Testing
