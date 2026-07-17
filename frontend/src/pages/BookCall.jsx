@@ -53,8 +53,9 @@ const BookCall = () => {
       <section className="wrap" style={{ paddingBottom: 'clamp(72px, 9vw, 144px)' }}>
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/levregai/audit"
+          data-url="https://calendly.com/leverageai/audit?hide_gdpr_banner=1"
           style={{
+            minWidth: '320px',
             width: '100%',
             height: '700px',
             overflow: 'auto',
