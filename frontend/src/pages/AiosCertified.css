@@ -1,0 +1,503 @@
+/* AiOS Certified Operator — page-scoped layout on top of .lr2 */
+
+.aios-certified {
+  --ac-reveal: 0.55s ease both;
+}
+
+.aios-certified .ac-brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.aios-certified .ac-brand-bar .brand-logo {
+  height: 22px;
+  width: auto;
+}
+
+.aios-certified .ac-brand-bar .product-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.aios-certified .hero-fine {
+  margin-top: 20px;
+  max-width: 48ch;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.aios-certified .ac-prose {
+  max-width: 62ch;
+}
+
+.aios-certified .ac-prose p {
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.6;
+  color: var(--fg);
+  margin-bottom: 1.15em;
+}
+
+.aios-certified .ac-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.aios-certified .ac-prose .pull {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 1.4em 0;
+}
+
+.aios-certified .ac-prose .pull em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.aios-certified .ac-authority {
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(40px, 5vw, 64px) 0;
+}
+
+.aios-certified .ac-authority-inner {
+  display: grid;
+  gap: 28px;
+}
+
+.aios-certified .ac-authority p {
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.55;
+  max-width: 72ch;
+  color: var(--fg);
+}
+
+.aios-certified .ac-placeholder-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aios-certified .ac-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px dashed var(--line-strong);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.aios-certified .ac-chip .tag {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.aios-certified .ac-engine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  margin-top: 48px;
+}
+
+.aios-certified .ac-engine {
+  padding: 32px 28px 32px 0;
+  border-right: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aios-certified .ac-engine:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.aios-certified .ac-engine .k {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.aios-certified .ac-engine h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.aios-certified .ac-engine p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.aios-certified .ac-compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.aios-certified .ac-compare th,
+.aios-certified .ac-compare td {
+  text-align: left;
+  vertical-align: top;
+  padding: 20px 24px 20px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.aios-certified .ac-compare th {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom-color: var(--line-strong);
+}
+
+.aios-certified .ac-compare th:last-child,
+.aios-certified .ac-compare td:last-child {
+  color: var(--fg);
+  font-weight: 500;
+  padding-right: 0;
+}
+
+.aios-certified .ac-compare td:first-child {
+  color: var(--muted);
+}
+
+.aios-certified .ac-compare td:last-child {
+  color: var(--fg);
+}
+
+.aios-certified .ac-origin {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.aios-certified .ac-signoff {
+  margin-top: 32px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+}
+
+.aios-certified .ac-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line-strong);
+  margin-top: 40px;
+}
+
+.aios-certified .ac-price {
+  padding: 36px 28px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg);
+}
+
+.aios-certified .ac-price:last-child {
+  border-right: 0;
+}
+
+.aios-certified .ac-price.featured {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.aios-certified .ac-price .term {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.aios-certified .ac-price.featured .term {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.aios-certified .ac-price .amount {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(36px, 4vw, 52px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.aios-certified .ac-price .amount small {
+  font-family: var(--mono);
+  font-size: 0.28em;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  margin-left: 6px;
+  opacity: 0.7;
+}
+
+.aios-certified .ac-price-note {
+  margin-top: 28px;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.aios-certified .ac-guarantees {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  margin-top: 40px;
+}
+
+.aios-certified .ac-guarantee {
+  padding: 36px 32px 36px 0;
+  border-right: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aios-certified .ac-guarantee:last-child {
+  border-right: 0;
+  padding-right: 0;
+  padding-left: 32px;
+}
+
+.aios-certified .ac-guarantee h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.aios-certified .ac-guarantee p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.aios-certified .ac-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.aios-certified .ac-quote {
+  border: 1px dashed var(--line-strong);
+  background: var(--panel);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+}
+
+.aios-certified .ac-quote .arc {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.aios-certified .ac-quote .body {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+  flex: 1;
+}
+
+.aios-certified .ac-quote .who {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.aios-certified .ac-inline-link {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aios-certified .ac-inline-link:hover {
+  color: var(--fg);
+}
+
+.aios-certified .ac-scarcity {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.aios-certified .ac-closer {
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 42ch;
+}
+
+/* Motion */
+.aios-certified .ac-reveal {
+  animation: acFadeUp var(--ac-reveal);
+}
+
+.aios-certified .ac-reveal-d1 { animation-delay: 0.08s; }
+.aios-certified .ac-reveal-d2 { animation-delay: 0.16s; }
+.aios-certified .ac-reveal-d3 { animation-delay: 0.24s; }
+
+@keyframes acFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aios-certified .ac-reveal,
+  .aios-certified .ac-reveal-d1,
+  .aios-certified .ac-reveal-d2,
+  .aios-certified .ac-reveal-d3 {
+    animation: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .aios-certified .ac-engine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-certified .ac-engine {
+    border-right: 0;
+    border-bottom: 1px dashed var(--line);
+    padding: 28px 0;
+  }
+
+  .aios-certified .ac-engine:last-child {
+    border-bottom: 0;
+  }
+
+  .aios-certified .ac-pricing {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-certified .ac-price {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .aios-certified .ac-price:last-child {
+    border-bottom: 0;
+  }
+
+  .aios-certified .ac-guarantees {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-certified .ac-guarantee {
+    border-right: 0;
+    border-bottom: 1px dashed var(--line);
+    padding: 28px 0;
+  }
+
+  .aios-certified .ac-guarantee:last-child {
+    border-bottom: 0;
+    padding-left: 0;
+  }
+
+  .aios-certified .ac-quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-certified .ac-compare thead {
+    display: none;
+  }
+
+  .aios-certified .ac-compare,
+  .aios-certified .ac-compare tbody,
+  .aios-certified .ac-compare tr,
+  .aios-certified .ac-compare td {
+    display: block;
+    width: 100%;
+  }
+
+  .aios-certified .ac-compare tr {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .aios-certified .ac-compare td {
+    border: 0;
+    padding: 4px 0;
+  }
+
+  .aios-certified .ac-compare td:first-child::before {
+    content: "The old way — ";
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .aios-certified .ac-compare td:last-child::before {
+    content: "AiOS — ";
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .aios-certified .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .aios-certified .ac-brand-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
