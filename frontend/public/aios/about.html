@@ -363,17 +363,52 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
-    // LevReg: install Meta Pixel once after unpack (avoid double PageView from script replay)
+    // LevReg: install Meta Pixel once after unpack.
+    // autoConfig:false stops Meta's history/SPA auto-PageView after design-canvas boot.
+    // Stub + callMethod guards drop any second PageView on this page load.
     if (!window.__levregMetaInstalled) {
       window.__levregMetaInstalled = true;
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1628735181915015');
+      window.__levregPVSent = false;
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;
+        n=f.fbq=function(){
+          try {
+            if (arguments[0] === 'track' && arguments[1] === 'PageView') {
+              if (window.__levregPVSent) return;
+              window.__levregPVSent = true;
+            }
+          } catch (err) {}
+          if(n.callMethod){return n.callMethod.apply(n,arguments)}
+          n.queue.push(arguments)
+        };
+        if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+      }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      (function wrapWhenReady() {
+        if (window.fbq && window.fbq.callMethod && !window.__levregFbqWrapped) {
+          window.__levregFbqWrapped = true;
+          var cm = window.fbq.callMethod;
+          var pvCount = 0;
+          window.fbq.callMethod = function() {
+            if (arguments[0] === 'track' && arguments[1] === 'PageView') {
+              pvCount += 1;
+              if (pvCount > 1) return;
+            }
+            return cm.apply(this, arguments);
+          };
+          return;
+        }
+        setTimeout(wrapWhenReady, 20);
+      })();
+      fbq('init', '1628735181915015', {}, {autoConfig: false});
       fbq('track', 'PageView');
     }
+
+
+
+
 
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
