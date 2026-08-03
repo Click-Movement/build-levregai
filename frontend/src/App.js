@@ -40,6 +40,7 @@ import CroApply from './pages/CroApply';
 import CroApplyConfirmed from './pages/CroApplyConfirmed';
 import AiosCertified from './pages/AiosCertified';
 import StaticHtmlRedirect from './pages/StaticHtmlRedirect';
+import MetaPixelPageView from './components/MetaPixelPageView';
 import { Toaster } from './components/ui/sonner';
 
 const HEADERLESS_PREFIXES = [
@@ -63,6 +64,7 @@ function AppContent() {
 
   return (
     <div className="App">
+      <MetaPixelPageView />
       {!hideHeader && <Header />}
       {/* New sticky (in-flow) header needs no top spacer */}
       <main>
