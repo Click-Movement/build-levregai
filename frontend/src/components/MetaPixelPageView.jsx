@@ -17,7 +17,10 @@ const MetaPixelPageView = () => {
     }
 
     if (typeof window.fbq === 'function') {
+      // Allow SPA navigations to count as new page views.
+      window.__levregMetaPageView = false;
       window.fbq('track', 'PageView');
+      window.__levregMetaPageView = true;
     }
   }, [location.pathname, location.search]);
 
