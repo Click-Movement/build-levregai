@@ -6,18 +6,23 @@
   "outputDirectory": "build",
   "redirects": [
     {
-      "source": "/aios",
-      "destination": "/aios/",
+      "source": "/aios/index.html",
+      "destination": "/aios",
+      "permanent": false
+    },
+    {
+      "source": "/aios/",
+      "destination": "/aios",
       "permanent": false
     },
     {
       "source": "/aios-certified",
-      "destination": "/aios/",
+      "destination": "/aios",
       "permanent": true
     },
     {
       "source": "/aios-certified/",
-      "destination": "/aios/",
+      "destination": "/aios",
       "permanent": true
     },
     {
@@ -43,8 +48,8 @@
   ],
   "rewrites": [
     {
-      "source": "/aios/",
-      "destination": "/aios/index.html"
+      "source": "/aios",
+      "destination": "/index.html"
     },
     {
       "source": "/plan/",

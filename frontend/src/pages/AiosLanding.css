@@ -1,0 +1,216 @@
+/* Leverage AiOS landing — cream + cyan funnel */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+.aios-page {
+  --bg: #F6F2EB;
+  --bg-deep: #FFFFFF;
+  --panel: #EFE9DC;
+  --fg: #111110;
+  --muted: #3B3934;
+  --line: #E5E7EB;
+  --accent: #0EA5E9;
+  --accent-deep: #0284C7;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+.aios-page *,
+.aios-page *::before,
+.aios-page *::after {
+  box-sizing: border-box;
+}
+
+.aios-page a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.aios-page a:hover {
+  color: var(--accent-deep);
+}
+
+.aios-page .aios-hover-cyan:hover {
+  color: #0EA5E9 !important;
+}
+
+.aios-page .aios-btn-primary:hover {
+  background: #0284C7 !important;
+  color: #fff !important;
+}
+
+.aios-page .aios-hover-border:hover {
+  border-color: #111110 !important;
+  color: #111110 !important;
+}
+
+.aios-page .aios-hover-light:hover {
+  color: #7DD3FC !important;
+}
+
+.aios-page .aios-hover-cream:hover {
+  color: #F6F2EB !important;
+}
+
+@keyframes aiosPulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.45); }
+  50% { box-shadow: 0 0 0 7px rgba(14, 165, 233, 0); }
+}
+
+.aios-page [style*="animation:pulseDot"] {
+  animation-name: aiosPulseDot !important;
+}
+
+/* Pricing cards */
+.aios-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.aios-plan {
+  border-radius: 24px;
+  padding: 38px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  color: #111110;
+}
+
+.aios-plan.is-selected {
+  background: #111110;
+  color: #F6F2EB;
+  border-color: #111110;
+}
+
+.aios-plan-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0EA5E9;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  padding: 6px 14px;
+  white-space: nowrap;
+}
+
+.aios-plan-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 14px;
+}
+
+.aios-plan-price {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.aios-plan-period {
+  font-size: 14px;
+  opacity: 0.65;
+  margin-top: 4px;
+}
+
+/* FAQ */
+.aios-faq-item {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.aios-faq-btn {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 28px;
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #111110;
+}
+
+.aios-faq-btn::-webkit-details-marker {
+  display: none;
+}
+
+.aios-faq-btn:hover {
+  color: #0EA5E9;
+}
+
+.aios-faq-mark {
+  color: #0EA5E9;
+  font-size: 22px;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.aios-faq-item[open] .aios-faq-mark {
+  transform: rotate(45deg);
+}
+
+.aios-faq-answer {
+  padding: 0 28px 24px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #3B3934;
+}
+
+/* Sticky header mobile */
+@media (max-width: 860px) {
+  .aios-page header nav {
+    display: none !important;
+  }
+
+  .aios-plans {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-page section[data-screen-label="01b Trusted by"] > div:last-child,
+  .aios-page section[data-screen-label="03 Calendar test"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="04 Failed fixes"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="05 Wrong order"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="06 AiOS system"] div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="08 Operator"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="09 Origin story"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="10 The swap"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="10b What you're buying"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="10c Transformation"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="10d The Program"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="11c The Difference"] > div > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="12 Guarantees"] > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="13 Testimonials"] > div > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aios-page section[data-screen-label="07 Inputs vs outputs"] div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aios-page footer > div {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}

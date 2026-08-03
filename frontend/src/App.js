@@ -38,7 +38,7 @@ import Build from './pages/Build';
 import Newsletter from './pages/Newsletter';
 import CroApply from './pages/CroApply';
 import CroApplyConfirmed from './pages/CroApplyConfirmed';
-import AiosCertified from './pages/AiosCertified';
+import AiosLanding from './pages/AiosLanding';
 import StaticHtmlRedirect from './pages/StaticHtmlRedirect';
 import MetaPixelPageView from './components/MetaPixelPageView';
 import { Toaster } from './components/ui/sonner';
@@ -96,8 +96,9 @@ function AppContent() {
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
           <Route path="/build" element={<Build />} />
-          <Route path="/aios" element={<AiosCertified />} />
-          <Route path="/aios-certified" element={<AiosCertified />} />
+          <Route path="/aios" element={<AiosLanding />} />
+          <Route path="/aios/" element={<AiosLanding />} />
+          <Route path="/aios-certified" element={<AiosLanding />} />
           <Route path="/plan" element={<StaticHtmlRedirect to="/plan/index.html" />} />
           <Route path="/apply" element={<StaticHtmlRedirect to="/apply/index.html" />} />
           <Route path="/install-call" element={<StaticHtmlRedirect to="/install-call/index.html" />} />

@@ -4,8 +4,6 @@ import { useLocation } from 'react-router-dom';
 // These React routes immediately hard-navigate to static HTML that has its own Meta Pixel.
 // Skip SPA PageView here to avoid a double fire (SPA + static).
 const STATIC_HTML_REDIRECTS = new Set([
-  '/aios',
-  '/aios-certified',
   '/plan',
   '/apply',
   '/install-call',
