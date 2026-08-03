@@ -608,14 +608,17 @@ export const AIOS_LANDING_HTML = `<div style="background:#111110;color:#F6F2EB;t
   <div style="max-width:1100px;margin:0 auto">
     <h2 style="text-align:center;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.025em;margin:0 0 44px">What owners say once the machine is running</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="background:#F6F2EB;border:1px dashed #C9C3B7;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:220px;text-align:center">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.07em;color:#78746B;line-height:1.7">// INSERT TESTIMONIAL<br>Client name, company, before state, specific shipped-output or revenue result, timeframe</div>
+      <div style="background:#F6F2EB;border:1px solid #E5E7EB;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;gap:24px">
+        <p style="font-size:16px;line-height:1.65;color:#3B3934;margin:0;font-style:italic">"Everything is going great with my AiOS Certified Operator. We are three months in and I am focused on building the business instead of doing the repetitive tasks I used to."</p>
+        <div style="font-size:14px;font-weight:700;color:#111110">— Jon Wheatley</div>
       </div>
-      <div style="background:#F6F2EB;border:1px dashed #C9C3B7;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:220px;text-align:center">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.07em;color:#78746B;line-height:1.7">// INSERT TESTIMONIAL<br>"Burned by previous hire" arc → operator shipping in week one</div>
+      <div style="background:#F6F2EB;border:1px solid #E5E7EB;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;gap:24px">
+        <p style="font-size:16px;line-height:1.65;color:#3B3934;margin:0;font-style:italic">"My AiOS Operator runs my three engines daily and the meter shows me what is actually getting done weekly. I have been able to move the big growth ideas forward that were getting backlogged."</p>
+        <div style="font-size:14px;font-weight:700;color:#111110">— Laurissa Donald</div>
       </div>
-      <div style="background:#F6F2EB;border:1px dashed #C9C3B7;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:220px;text-align:center">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.07em;color:#78746B;line-height:1.7">// INSERT TESTIMONIAL<br>Operator transition story → "the machine stayed"</div>
+      <div style="background:#F6F2EB;border:1px solid #E5E7EB;border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;gap:24px">
+        <p style="font-size:16px;line-height:1.65;color:#3B3934;margin:0;font-style:italic">"I didn't realize how much of a bottle neck I was in my company until we got the Leverage AiOS fully installed and my operator managing it. It's refreshing to be working on more important things."</p>
+        <div style="font-size:14px;font-weight:700;color:#111110">— Chris Broughton</div>
       </div>
     </div>
   </div>
