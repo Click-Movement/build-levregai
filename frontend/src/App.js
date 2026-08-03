@@ -41,8 +41,8 @@ import CroApplyConfirmed from './pages/CroApplyConfirmed';
 import AiosCertified from './pages/AiosCertified';
 import { Toaster } from './components/ui/sonner';
 
-const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build', '/apply', '/aios-certified'];
-const LANDING_FOOTER_PREFIXES = ['/marketing-os', '/lm', '/waitlist', '/build', '/aios-certified'];
+const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build', '/apply', '/aios'];
+const LANDING_FOOTER_PREFIXES = ['/marketing-os', '/lm', '/waitlist', '/build', '/aios'];
 
 function AppContent() {
   const location = useLocation();
@@ -82,6 +82,7 @@ function AppContent() {
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/waitlist/confirmed" element={<WaitlistConfirmed />} />
           <Route path="/build" element={<Build />} />
+          <Route path="/aios" element={<AiosCertified />} />
           <Route path="/aios-certified" element={<AiosCertified />} />
           <Route path="/apply" element={<CroApply />} />
           <Route path="/apply/confirmed" element={<CroApplyConfirmed />} />

@@ -4,7 +4,28 @@
   "installCommand": "npm install --legacy-peer-deps",
   "buildCommand": "node scripts/vercel-build.cjs",
   "outputDirectory": "build",
+  "redirects": [
+    {
+      "source": "/aios",
+      "destination": "/aios/",
+      "permanent": false
+    },
+    {
+      "source": "/aios-certified",
+      "destination": "/aios/",
+      "permanent": true
+    },
+    {
+      "source": "/aios-certified/",
+      "destination": "/aios/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/aios/",
+      "destination": "/aios/index.html"
+    },
     {
       "source": "/go/medspa/:path*",
       "destination": "https://medspa-amber.vercel.app/:path*"
