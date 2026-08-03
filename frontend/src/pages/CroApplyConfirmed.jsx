@@ -16,7 +16,7 @@ const CroApplyConfirmed = () => {
           content="Your Ai Chief Revenue Officer application has been received. We will contact you shortly."
         />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://levreg.ai/apply/confirmed" />
+        <link rel="canonical" href="https://levreg.ai/cro-apply/confirmed" />
       </Helmet>
 
       <div className="min-h-screen bg-white text-neutral-950">

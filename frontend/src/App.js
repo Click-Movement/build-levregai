@@ -39,9 +39,21 @@ import Newsletter from './pages/Newsletter';
 import CroApply from './pages/CroApply';
 import CroApplyConfirmed from './pages/CroApplyConfirmed';
 import AiosCertified from './pages/AiosCertified';
+import StaticHtmlRedirect from './pages/StaticHtmlRedirect';
 import { Toaster } from './components/ui/sonner';
 
-const HEADERLESS_PREFIXES = ['/workshop', '/marketing-os', '/lm', '/waitlist', '/build', '/apply', '/aios'];
+const HEADERLESS_PREFIXES = [
+  '/workshop',
+  '/marketing-os',
+  '/lm',
+  '/waitlist',
+  '/build',
+  '/apply',
+  '/aios',
+  '/plan',
+  '/install-call',
+  '/cro-apply',
+];
 const LANDING_FOOTER_PREFIXES = ['/marketing-os', '/lm', '/waitlist', '/build', '/aios'];
 
 function AppContent() {
@@ -84,7 +96,12 @@ function AppContent() {
           <Route path="/build" element={<Build />} />
           <Route path="/aios" element={<AiosCertified />} />
           <Route path="/aios-certified" element={<AiosCertified />} />
-          <Route path="/apply" element={<CroApply />} />
+          <Route path="/plan" element={<StaticHtmlRedirect to="/plan/index.html" />} />
+          <Route path="/apply" element={<StaticHtmlRedirect to="/apply/index.html" />} />
+          <Route path="/install-call" element={<StaticHtmlRedirect to="/install-call/index.html" />} />
+          <Route path="/install-call-complete" element={<StaticHtmlRedirect to="/install-call-complete/index.html" />} />
+          <Route path="/cro-apply" element={<CroApply />} />
+          <Route path="/cro-apply/confirmed" element={<CroApplyConfirmed />} />
           <Route path="/apply/confirmed" element={<CroApplyConfirmed />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

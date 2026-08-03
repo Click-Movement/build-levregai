@@ -38,7 +38,7 @@ const CroApply = () => {
           content="We build you an Ai Chief Revenue Officer in 2 days. Apply to get started."
         />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://levreg.ai/apply" />
+        <link rel="canonical" href="https://levreg.ai/cro-apply" />
       </Helmet>
 
       <div className="min-h-screen bg-white text-neutral-950">

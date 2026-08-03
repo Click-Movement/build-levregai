@@ -19,12 +19,48 @@
       "source": "/aios-certified/",
       "destination": "/aios/",
       "permanent": true
+    },
+    {
+      "source": "/plan",
+      "destination": "/plan/",
+      "permanent": false
+    },
+    {
+      "source": "/apply",
+      "destination": "/apply/",
+      "permanent": false
+    },
+    {
+      "source": "/install-call",
+      "destination": "/install-call/",
+      "permanent": false
+    },
+    {
+      "source": "/install-call-complete",
+      "destination": "/install-call-complete/",
+      "permanent": false
     }
   ],
   "rewrites": [
     {
       "source": "/aios/",
       "destination": "/aios/index.html"
+    },
+    {
+      "source": "/plan/",
+      "destination": "/plan/index.html"
+    },
+    {
+      "source": "/apply/",
+      "destination": "/apply/index.html"
+    },
+    {
+      "source": "/install-call/",
+      "destination": "/install-call/index.html"
+    },
+    {
+      "source": "/install-call-complete/",
+      "destination": "/install-call-complete/index.html"
     },
     {
       "source": "/go/medspa/:path*",
