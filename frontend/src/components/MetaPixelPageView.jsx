@@ -1,6 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// These React routes immediately hard-navigate to static HTML that has its own Meta Pixel.
+// Skip SPA PageView here to avoid a double fire (SPA + static).
+const STATIC_HTML_REDIRECTS = new Set([
+  '/aios',
+  '/aios-certified',
+  '/plan',
+  '/apply',
+  '/install-call',
+  '/install-call-complete',
+]);
+
 /**
  * Fires Meta Pixel PageView on SPA client-side navigations.
  * Skips the first mount because the base snippet in index.html already
@@ -16,11 +27,12 @@ const MetaPixelPageView = () => {
       return;
     }
 
+    if (STATIC_HTML_REDIRECTS.has(location.pathname)) {
+      return;
+    }
+
     if (typeof window.fbq === 'function') {
-      // Allow SPA navigations to count as new page views.
-      window.__levregMetaPageView = false;
       window.fbq('track', 'PageView');
-      window.__levregMetaPageView = true;
     }
   }, [location.pathname, location.search]);
 
