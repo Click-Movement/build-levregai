@@ -1,0 +1,14 @@
+/* Shared AiOS funnel page chrome — extends AiosLanding tokens via .aios-page */
+
+@media (max-width: 860px) {
+  .aios-page section[data-screen-label="02 Sound familiar"] > div > div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="03 The architecture"] div[style*="grid-template-columns"],
+  .aios-page section[data-screen-label="04 Is this a fit"] > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aios-page section[data-screen-label="01 Booked"] h1,
+  .aios-page section[data-screen-label="02 Before your call"] h2 {
+    white-space: normal !important;
+  }
+}

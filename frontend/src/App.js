@@ -39,7 +39,10 @@ import Newsletter from './pages/Newsletter';
 import CroApply from './pages/CroApply';
 import CroApplyConfirmed from './pages/CroApplyConfirmed';
 import AiosLanding from './pages/AiosLanding';
-import StaticHtmlRedirect from './pages/StaticHtmlRedirect';
+import PlanLanding from './pages/PlanLanding';
+import ApplyLanding from './pages/ApplyLanding';
+import InstallCallLanding from './pages/InstallCallLanding';
+import InstallCallCompleteLanding from './pages/InstallCallCompleteLanding';
 import MetaPixelPageView from './components/MetaPixelPageView';
 import { Toaster } from './components/ui/sonner';
 
@@ -55,12 +58,24 @@ const HEADERLESS_PREFIXES = [
   '/install-call',
   '/cro-apply',
 ];
-const LANDING_FOOTER_PREFIXES = ['/marketing-os', '/lm', '/waitlist', '/build', '/aios'];
+const LANDING_FOOTER_PREFIXES = [
+  '/marketing-os',
+  '/lm',
+  '/waitlist',
+  '/build',
+  '/aios',
+  '/plan',
+  '/install-call',
+];
 
 function AppContent() {
   const location = useLocation();
   const hideHeader = HEADERLESS_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
-  const hidMainFooter = LANDING_FOOTER_PREFIXES.some(prefix => location.pathname.startsWith(prefix));
+  // Exact /apply only — keep site footer on /apply/confirmed (CRO thank-you).
+  const hidMainFooter =
+    LANDING_FOOTER_PREFIXES.some(prefix => location.pathname.startsWith(prefix)) ||
+    location.pathname === '/apply' ||
+    location.pathname === '/apply/';
 
   return (
     <div className="App">
@@ -99,13 +114,17 @@ function AppContent() {
           <Route path="/aios" element={<AiosLanding />} />
           <Route path="/aios/" element={<AiosLanding />} />
           <Route path="/aios-certified" element={<AiosLanding />} />
-          <Route path="/plan" element={<StaticHtmlRedirect to="/plan/index.html" />} />
-          <Route path="/apply" element={<StaticHtmlRedirect to="/apply/index.html" />} />
-          <Route path="/install-call" element={<StaticHtmlRedirect to="/install-call/index.html" />} />
-          <Route path="/install-call-complete" element={<StaticHtmlRedirect to="/install-call-complete/index.html" />} />
+          <Route path="/plan" element={<PlanLanding />} />
+          <Route path="/plan/" element={<PlanLanding />} />
+          <Route path="/apply/confirmed" element={<CroApplyConfirmed />} />
+          <Route path="/apply" element={<ApplyLanding />} />
+          <Route path="/apply/" element={<ApplyLanding />} />
+          <Route path="/install-call-complete" element={<InstallCallCompleteLanding />} />
+          <Route path="/install-call-complete/" element={<InstallCallCompleteLanding />} />
+          <Route path="/install-call" element={<InstallCallLanding />} />
+          <Route path="/install-call/" element={<InstallCallLanding />} />
           <Route path="/cro-apply" element={<CroApply />} />
           <Route path="/cro-apply/confirmed" element={<CroApplyConfirmed />} />
-          <Route path="/apply/confirmed" element={<CroApplyConfirmed />} />
           <Route path="/thank-you" element={<CallBookedThankYou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
